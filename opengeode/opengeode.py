@@ -61,11 +61,14 @@ except ImportError:
 
 #from PySide import phonon
 
-from PySide import QtGui, QtCore
-from PySide.QtCore import Qt, QSize, QFile, QIODevice, QRectF, QTimer, QPoint
+from PyQt5 import QtGui, QtCore, QtWidgets
+from PyQt5.QtCore import Qt, QSize, QFile, QIODevice, QRectF, QTimer, QPoint
+from PyQt5 import uic
+from PyQt5 import QtSvg
 
-from PySide.QtUiTools import QUiLoader
-from PySide import QtSvg
+# FIXME : quick fix
+QtCore.Signal = QtCore.pyqtSignal
+QtCore.Slot = QtCore.pyqtSlot
 
 from genericSymbols import(Symbol, Comment, Cornergrabber, Connection)
 from sdlSymbols import(Input, Output, Decision, DecisionAnswer, Task,
@@ -165,7 +168,7 @@ ACTIONS = {
 }
 
 
-class Vi_bar(QtGui.QLineEdit, object):
+class Vi_bar(QtWidgets.QLineEdit, object):
     ''' Line editor for the Vi-like command mode '''
     def __init__(self):
         ''' Create the bar - no need for parent '''
@@ -178,7 +181,7 @@ class Vi_bar(QtGui.QLineEdit, object):
             self.clearFocus()
 
 
-class File_toolbar(QtGui.QToolBar, object):
+class File_toolbar(QtWidgets.QToolBar, object):
     ''' Toolbar with file open, save, etc '''
     def __init__(self, parent):
         ''' Create the toolbar using standard icons '''
@@ -186,21 +189,21 @@ class File_toolbar(QtGui.QToolBar, object):
         self.setMovable(False)
         self.setFloatable(False)
         self.new_button = self.addAction(self.style().standardIcon(
-            QtGui.QStyle.SP_FileIcon), 'New model')
+            QtWidgets.QStyle.SP_FileIcon), 'New model')
         self.open_button = self.addAction(self.style().standardIcon(
-            QtGui.QStyle.SP_DialogOpenButton), 'Open model')
+            QtWidgets.QStyle.SP_DialogOpenButton), 'Open model')
         self.save_button = self.addAction(self.style().standardIcon(
-            QtGui.QStyle.SP_DialogSaveButton), 'Save model')
+            QtWidgets.QStyle.SP_DialogSaveButton), 'Save model')
         self.check_button = self.addAction(self.style().standardIcon(
-            QtGui.QStyle.SP_DialogApplyButton), 'Check model')
+            QtWidgets.QStyle.SP_DialogApplyButton), 'Check model')
         self.addSeparator()
         # Up arrow to come back from a subscene (e.g. procedure)
         self.up_button = self.addAction(self.style().standardIcon(
-            QtGui.QStyle.SP_ArrowUp), 'Go one level above')
+            QtWidgets.QStyle.SP_ArrowUp), 'Go one level above')
         self.up_button.setEnabled(False)
 
 
-class Sdl_toolbar(QtGui.QToolBar, object):
+class Sdl_toolbar(QtWidgets.QToolBar, object):
     '''
         Toolbar with SDL symbols
         The list of symbols is passed as paramters at creation time ; the class
@@ -283,7 +286,7 @@ class Sdl_toolbar(QtGui.QToolBar, object):
                     LOG.debug('No menu item for symbol "' + action + '"')
 
 
-class SDL_Scene(QtGui.QGraphicsScene, object):
+class SDL_Scene(QtWidgets.QGraphicsScene, object):
     ''' Main graphic scene (canvas) where the user can place SDL symbols '''
     # Signal to be emitted when the scene is left (e.g. UP button)
     scene_left = QtCore.Signal()
@@ -308,7 +311,7 @@ class SDL_Scene(QtGui.QGraphicsScene, object):
 
         # Create a stack for handling undo/redo commands
         # (defined in undoCommands.py)
-        self.undo_stack = QtGui.QUndoStack(self)
+        self.undo_stack = QtWidgets.QUndoStack(self)
         # buttonSelected is used to set which symbol to draw
         # on next scene click (see mousePressEvent)
         self.button_selected = None
@@ -1120,7 +1123,7 @@ class SDL_Scene(QtGui.QGraphicsScene, object):
             return None
 
 
-class SDL_View(QtGui.QGraphicsView, object):
+class SDL_View(QtWidgets.QGraphicsView, object):
     ''' Main graphic view used to display the SDL scene and handle zoom '''
     # signal to ask the main application that a new scene is needed
     need_new_scene = QtCore.Signal()
@@ -1718,7 +1721,7 @@ class SDL_View(QtGui.QGraphicsView, object):
                     LOG.error(str(traceback.format_exc()))
 
 
-class OG_MainWindow(QtGui.QMainWindow, object):
+class OG_MainWindow(QtWidgets.QMainWindow, object):
     ''' Main GUI window '''
     def __init__(self, parent=None):
         ''' Create the main window '''
@@ -1732,6 +1735,8 @@ class OG_MainWindow(QtGui.QMainWindow, object):
         self.datatypes_view = None
         self.datatypes_scene = None
         self.asn1_area = None
+        self.self = uic.loadUi('../opengeode.ui', self)
+        self.start(None)
 
     def new_scene(self):
         ''' Create a new, clean SDL scene. This function is necessary because
@@ -1748,80 +1753,93 @@ class OG_MainWindow(QtGui.QMainWindow, object):
         # Create a graphic scene: the main canvas
         self.new_scene()
         # Find SDL_View widget
-        self.view = self.findChild(SDL_View, 'graphicsView')
-        self.view.setScene(self.scene)
+
+        #self.printChildrenTree(self) # for debug
+        self.view = self.findMyChild('graphicsView')
+
+        if self.view is not None:
+            #FIXME
+            self.view.setScene(self.scene)
 
         # Find Menu Actions
-        open_action = self.findChild(QtGui.QAction, 'actionOpen')
-        new_action = self.findChild(QtGui.QAction, 'actionNew')
-        save_action = self.findChild(QtGui.QAction, 'actionSave')
-        save_as_action = self.findChild(QtGui.QAction, 'actionSaveAs')
-        quit_action = self.findChild(QtGui.QAction, 'actionQuit')
-        check_action = self.findChild(QtGui.QAction, 'actionCheck_model')
-        about_action = self.findChild(QtGui.QAction, 'actionAbout')
-        ada_action = self.findChild(QtGui.QAction, 'actionGenerate_Ada_code')
-        png_action = self.findChild(QtGui.QAction, 'actionExport_to_PNG')
+        open_action = self.findMyChild('actionOpen')
+        new_action = self.findMyChild('actionNew')
+        save_action = self.findMyChild('actionSave')
+        save_as_action = self.findMyChild('actionSaveAs')
+        quit_action = self.findMyChild('actionQuit')
+        check_action = self.findMyChild('actionCheck_model')
+        about_action = self.findMyChild('actionAbout')
+        ada_action = self.findMyChild('actionGenerate_Ada_code')
+        png_action = self.findMyChild('actionExport_to_PNG')
 
-        # Connect menu actions
-        open_action.activated.connect(self.view.open_diagram)
-        save_action.activated.connect(self.view.save_diagram)
-        save_as_action.activated.connect(self.view.save_as)
-        quit_action.activated.connect(self.close)
-        new_action.activated.connect(self.view.new_diagram)
-        check_action.activated.connect(self.view.check_model)
-        about_action.activated.connect(self.view.about_og)
-        ada_action.activated.connect(self.view.generate_ada)
-        png_action.activated.connect(self.view.save_png)
+        if self.view is not None:
+            #FIXME
+            # Connect menu actions
+            open_action.triggered.connect(self.view.open_diagram)
+            save_action.triggered.connect(self.view.save_diagram)
+            save_as_action.triggered.connect(self.view.save_as)
+            quit_action.triggered.connect(self.close)
+            new_action.triggered.connect(self.view.new_diagram)
+            check_action.triggered.connect(self.view.check_model)
+            about_action.triggered.connect(self.view.about_og)
+            ada_action.triggered.connect(self.view.generate_ada)
+            png_action.triggered.connect(self.view.save_png)
 
-        # Connect signal to let the view request a new scene
-        self.view.need_new_scene.connect(self.new_scene)
+            # Connect signal to let the view request a new scene
+            self.view.need_new_scene.connect(self.new_scene)
 
-        # Add a toolbar widget (not in .ui file due to pyside bugs)
-        toolbar = Sdl_toolbar(self)
+            # Add a toolbar widget (not in .ui file due to pyside bugs)
+            toolbar = Sdl_toolbar(self)
 
-        # Associate the toolbar to the scene
-        self.view.toolbar = toolbar
+            # Associate the toolbar to the scene
+            self.view.toolbar = toolbar
 
-        # Set initial toolbar to the PROCESS editor
-        self.view.set_toolbar()
+            # Set initial toolbar to the PROCESS editor
+            self.view.set_toolbar()
 
-        self.addToolBar(Qt.LeftToolBarArea, toolbar)
+            self.addToolBar(Qt.LeftToolBarArea, toolbar)
 
-        # Add a toolbar with New/Open/Save/Check buttons
-        filebar = File_toolbar(self)
-        filebar.open_button.activated.connect(self.view.open_diagram)
-        filebar.new_button.activated.connect(self.view.new_diagram)
-        filebar.check_button.activated.connect(self.view.check_model)
-        filebar.save_button.activated.connect(self.view.save_diagram)
-        self.view.up_button = filebar.up_button
-        filebar.up_button.activated.connect(self.view.go_up)
-        self.addToolBar(Qt.TopToolBarArea, filebar)
+            # Add a toolbar with New/Open/Save/Check buttons
+            filebar = File_toolbar(self)
+            filebar.open_button.triggered.connect(self.view.open_diagram)
+            filebar.new_button.triggered.connect(self.view.new_diagram)
+            filebar.check_button.triggered.connect(self.view.check_model)
+            filebar.save_button.triggered.connect(self.view.save_diagram)
+            self.view.up_button = filebar.up_button
+            filebar.up_button.triggered.connect(self.view.go_up)
+            self.addToolBar(Qt.TopToolBarArea, filebar)
 
         self.scene.clearSelection()
         self.scene.clear_focus()
 
         # widget wrapping the view. We have to maximize it
-        process_widget = self.findChild(QtGui.QWidget, 'process')
-        process_widget.showMaximized()
-        self.view.wrapping_window = process_widget
-        self.scene.undo_stack.cleanChanged.connect(
-                lambda x: process_widget.setWindowModified(not x))
+        process_widget = self.findMyChild('process')
+
+        if process_widget is not None and self.view is not None:
+            #FIXME
+            process_widget.showMaximized()
+            self.view.wrapping_window = process_widget
+            self.scene.undo_stack.cleanChanged.connect(
+                    lambda x: process_widget.setWindowModified(not x))
 
         # get the messages list window (to display errors and warnings)
         # it is a QtGui.QListWidget
-        msg_dock = self.findChild(QtGui.QDockWidget, 'msgDock')
+        msg_dock = self.findMyChild('msgDock')
         msg_dock.setWindowTitle('Use F7 to check the model'
                                 ' or update the Data view')
         msg_dock.setStyleSheet('QDockWidget::title {background: lightgrey;}')
-        messages = self.findChild(QtGui.QListWidget, 'messages')
+        messages = self.findMyChild('messages')
         messages.addItem('Welcome to OpenGEODE.')
-        self.view.messages_window = messages
-        self.scene.messages_window = messages
-        messages.itemClicked.connect(self.view.show_item)
 
-        statechart_dock = self.findChild(QtGui.QDockWidget, 'statechart_dock')
+        if self.view is not None:
+            #FIXME
+            self.view.messages_window = messages
+            self.scene.messages_window = messages
+            messages.itemClicked.connect(self.view.show_item)
+
+        statechart_dock = self.findMyChild('statechart_dock')
         if graphviz:
-            self.statechart_view = self.findChild(SDL_View, 'statechart_view')
+            self.statechart_view = self.findMyChild('statechart_view')
             self.statechart_scene = SDL_Scene(context='statechart')
             self.statechart_view.setScene(self.statechart_scene)
         else:
@@ -1829,7 +1847,7 @@ class OG_MainWindow(QtGui.QMainWindow, object):
 
         # Set up the dock area to display the ASN.1 Data model
         #asn1_dock = self.findChild(QtGui.QDockWidget, 'datatypes_dock')
-        self.datatypes_view = self.findChild(SDL_View, 'datatypes_view')
+        self.datatypes_view = self.findMyChild('datatypes_view')
         self.datatypes_scene = SDL_Scene(context='asn1')
         self.datatypes_view.setScene(self.datatypes_scene)
         self.asn1_area = sdlSymbols.ASN1Viewer()
@@ -1958,6 +1976,35 @@ class OG_MainWindow(QtGui.QMainWindow, object):
         self.scene.undo_stack.clear()
         LOG.debug('Bye bye!')
         super(OG_MainWindow, self).closeEvent(event)
+
+    def findMyChild(self, child_object_name, parent=None):
+        """
+        Finds parents child object and returns it.
+
+        :param child_object_name: string, name of the child object.
+        :param parent: source object for searching, when None, parent == self
+        :return: Child object of @parent or None when child cannot be found.
+        """
+        if parent is None:
+            parent = self
+        for child in parent.children():
+            if child.objectName() == child_object_name:
+                return child
+            if len(child.children()) > 0:
+                # We want to find nested children.
+                ret = self.findMyChild(child_object_name, child)
+                if ret is not None:
+                    return ret
+
+    def printChildrenTree(self, parent, tree_level=1):
+        """
+        Prints parent-children tree.
+        """
+        for child in parent.children():
+            print '%s %s = %d children' % (tree_level * '> ', child.objectName() \
+                    if len(child.objectName()) > 0 else "''", len(child.children()))
+            if len(child.children()) > 0:
+                self.printChildrenTree(child, tree_level=tree_level+1)
 
 
 def parse_args():
@@ -2168,9 +2215,9 @@ def cli(options):
 
 def init_qt():
     ''' Initialize Qt '''
-    app = QtGui.QApplication.instance()
+    app = QtWidgets.QApplication.instance()
     if app is None:
-        app = QtGui.QApplication(sys.argv)
+        app = QtWidgets.QApplication(sys.argv)
     return app
 
 
@@ -2183,8 +2230,7 @@ def gui(options):
     app.setApplicationName('OpenGEODE')
     app.setWindowIcon(QtGui.QIcon(':icons/input.png'))
 
-    # Set all encodings to utf-8 in Qt
-    QtCore.QTextCodec.setCodecForCStrings(
+    QtCore.QTextCodec.setCodecForLocale(
         QtCore.QTextCodec.codecForName('UTF-8')
     )
 
@@ -2199,16 +2245,7 @@ def gui(options):
     # Initialize the clipboard
     Clipboard.CLIPBOARD = SDL_Scene(context='clipboard')
 
-    # Load the application layout from the .ui file
-    loader = QUiLoader()
-    loader.registerCustomWidget(OG_MainWindow)
-    loader.registerCustomWidget(SDL_View)
-    ui_file = QFile(':/opengeode.ui')
-    ui_file.open(QFile.ReadOnly)
-    my_widget = loader.load(ui_file)
-    ui_file.close()
-    my_widget.start(options.files)
-
+    OG_MainWindow()
     return app.exec_()
 
 

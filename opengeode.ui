@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>MainWindow</class>
- <widget class="OG_MainWindow" name="MainWindow">
+ <widget class="QMainWindow" name="MainWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -260,7 +260,7 @@
   <customwidget>
    <class>SDL_View</class>
    <extends>QGraphicsView</extends>
-   <header>sdlview.h</header>
+   <header>opengeode</header>
   </customwidget>
  </customwidgets>
  <resources/>
