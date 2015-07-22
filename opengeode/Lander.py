@@ -21,12 +21,13 @@ import logging
 import math
 import random
 
-from PySide import QtGui, QtCore
-from PySide.QtCore import QPointF
-from PySide.QtGui import QPainterPath
+from PyQt5 import QtGui, QtCore
+from PyQt5.QtCore import QPointF
+from PyQt5.QtGui import QPainterPath
 
 try:
     from PySide import phonon
+    pass
 except ImportError:
     # In some distributions, phonon cannot be installed properly
     # Discard - but sound will not work.
@@ -84,7 +85,7 @@ class Rocket(genericSymbols.Symbol, object):
         ''' Qt Property that can be used in animations '''
         self.setRotation(value)
 
-    angle = QtCore.Property(float, _rotation, _set_rotation)
+    angle = QtCore.pyqtProperty(float, _rotation, _set_rotation)
 
     def resize_item(self, _):
         ''' Redefine the resizing function - forbid resizing '''

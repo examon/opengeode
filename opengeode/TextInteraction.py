@@ -17,12 +17,13 @@
 import string
 import logging
 
-from PySide.QtCore import Qt, QRegExp, Slot
+from PyQt5.QtCore import Qt, QRegExp, QStringListModel, pyqtSlot
 
-from PySide.QtGui import(QGraphicsTextItem, QGraphicsProxyWidget, QListWidget,
-                         QStringListModel, QCompleter, QListWidgetItem, QFont,
-                         QTextCursor, QSyntaxHighlighter, QTextCharFormat,
-                         QTextBlockFormat, QStringListModel)
+from PyQt5.QtGui import (QFont, QTextCursor, QSyntaxHighlighter,
+                         QTextCharFormat, QTextBlockFormat)
+
+from PyQt5.QtWidgets import (QGraphicsTextItem, QGraphicsProxyWidget,
+                             QListWidget, QCompleter, QListWidgetItem)
 
 import undoCommands
 
@@ -224,7 +225,7 @@ class EditableText(QGraphicsTextItem, object):
             parent_rect.setHeight(max(rect.height(), parent_rect.height()))
             self.parentItem().resize_item(parent_rect)
 
-    @Slot(QListWidgetItem)
+    @pyqtSlot(QListWidgetItem)
     def completion_selected(self, item):
         '''
             Slot connected to the autocompletion popup,

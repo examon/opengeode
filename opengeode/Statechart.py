@@ -23,7 +23,7 @@ import os
 import logging
 from collections import defaultdict
 import re
-from PySide import QtGui, QtCore
+from PyQt5 import QtGui, QtCore
 
 try:
     import pygraphviz as dotgraph

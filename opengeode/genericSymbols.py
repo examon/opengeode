@@ -52,13 +52,14 @@ __all__ = ['Symbol', 'VerticalSymbol', 'HorizontalSymbol', 'Comment']
 import os
 import logging
 
-from PySide.QtCore import Qt, QPoint, QPointF, QRect, QFile, QObject, Property
+from PyQt5.QtCore import Qt, QPoint, QPointF, QRect, QFile, QObject, pyqtProperty
 
-from PySide.QtGui import(QGraphicsPathItem, QGraphicsPolygonItem, QPainterPath,
-                         QGraphicsItem, QPen, QColor, QMenu, QFileDialog,
-                         QPainter, QLineEdit, QTextBlockFormat)
+from PyQt5.QtGui import(QPainterPath, QPen, QColor, QPainter, QTextBlockFormat)
 
-from PySide.QtUiTools import QUiLoader
+from PyQt5.QtWidgets import (QGraphicsPathItem, QGraphicsPolygonItem,
+                             QGraphicsItem, QMenu, QFileDialog, QLineEdit)
+
+from PyQt5 import uic
 
 import undoCommands
 import ogAST
@@ -72,7 +73,7 @@ LOG = logging.getLogger(__name__)
 
 
 # pylint: disable=R0904, R0902
-class Symbol(QObject, QGraphicsPathItem, object):
+class Symbol(QGraphicsPathItem, object):
     '''
         Top-level class used to handle all SDL symbols
         Inherits from QObject to allow animations
@@ -163,14 +164,14 @@ class Symbol(QObject, QGraphicsPathItem, object):
     # The "position" property cannot be defined as a standard Python
     # property because it is used in a QPropertyAnimation, which only
     # works using Qt properties. However it behaves the same way.
-    position = Property(QPointF, lambda self: self.pos(),
+    position = pyqtProperty(QPointF, lambda self: self.pos(),
                                  lambda self, val: self.set_valid_pos(val))
 
-    pos_x = Property(float, lambda self: self.x(),
+    pos_x = pyqtProperty(float, lambda self: self.x(),
                             lambda self, val:
                                     self.set_valid_pos(QPointF(val, self.y())))
 
-    pos_y = Property(float, lambda self: self.y(),
+    pos_y = pyqtProperty(float, lambda self: self.y(),
                             lambda self, val:
                                     self.set_valid_pos(QPointF(self.x(), val)))
 
@@ -408,10 +409,9 @@ class Symbol(QObject, QGraphicsPathItem, object):
 
     def loadHyperlinkDialog(self):
         ''' Load dialog from ui file for defining hyperlink '''
-        loader = QUiLoader()
         ui_file = QFile(':/hyperlink.ui')  # UI_DIALOG_FILE)
         ui_file.open(QFile.ReadOnly)
-        self.hyperlink_dialog = loader.load(ui_file)
+        self.hyperlink_dialog = uic.loadUi(ui_file)
         ui_file.close()
         self.hyperlink_dialog.accepted.connect(self.hyperlinkChanged)
         self.hlink_field = self.hyperlink_dialog.findChild(QLineEdit, 'hlink')

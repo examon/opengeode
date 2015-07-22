@@ -18,8 +18,8 @@
 
 
 import logging
-from PySide.QtGui import QUndoCommand
-from PySide.QtCore import QPropertyAnimation, QEasingCurve, QAbstractAnimation
+from PyQt5.QtWidgets import QUndoCommand
+from PyQt5.QtCore import QPropertyAnimation, QEasingCurve, QAbstractAnimation
 
 LOG = logging.getLogger(__name__)
 

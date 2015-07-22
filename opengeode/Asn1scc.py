@@ -21,7 +21,7 @@ import distutils.spawn as spawn
 import sys
 import importlib
 import logging
-from PySide.QtCore import QProcess
+from PyQt5.QtCore import QProcess
 
 
 LOG = logging.getLogger(__name__)

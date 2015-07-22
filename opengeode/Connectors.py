@@ -18,10 +18,11 @@
 import math
 import logging
 
-from PySide.QtCore import Qt, QPointF, QLineF, Slot
+from PyQt5.QtCore import Qt, QPointF, QLineF, pyqtSlot
 
-from PySide.QtGui import(QGraphicsPathItem, QPainterPath, QGraphicsItem, QPen,
-                         QPainter, QFont, QGraphicsTextItem, QColor,
+from PyQt5.QtWidgets import QGraphicsPathItem, QGraphicsItem, QGraphicsTextItem
+
+from PyQt5.QtGui import (QPainterPath, QPen, QPainter, QFont, QColor,
                          QFontMetrics, QTextBlockFormat, QTextCursor)
 
 import ogParser
@@ -295,7 +296,7 @@ class Signalroute(Connection):
         self.process = process
         self.reshape()
 
-    @Slot()
+    @pyqtSlot()
     def change_siglist(self):
         ''' Called when user modified the text of label_in or label_out '''
         for each in self.label_in, self.label_out:

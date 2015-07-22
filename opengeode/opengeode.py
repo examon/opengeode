@@ -49,7 +49,7 @@ import sdl92Lexer  # NOQA
 import sdl92Parser  # NOQA
 import genericSymbols  # NOQA
 import sdlSymbols
-import PySide.QtXml  # NOQA
+#import PySide.QtXml  # NOQA
 import singledispatch  # NOQA
 import Asn1scc  # NOQA
 import Connectors  # NOQA
@@ -58,8 +58,6 @@ try:
     import stringtemplate3  # NOQA
 except ImportError:
     pass
-
-#from PySide import phonon
 
 from PyQt5 import QtGui, QtCore, QtWidgets
 from PyQt5.QtCore import Qt, QSize, QFile, QIODevice, QRectF, QTimer, QPoint
@@ -1755,11 +1753,10 @@ class OG_MainWindow(QtWidgets.QMainWindow, object):
         # Find SDL_View widget
 
         #self.printChildrenTree(self) # for debug
-        self.view = self.findMyChild('graphicsView')
+        #self.view = self.findMyChild('graphicsView')
+        self.view = self.graphicsView
 
-        if self.view is not None:
-            #FIXME
-            self.view.setScene(self.scene)
+        self.view.setScene(self.scene)
 
         # Find Menu Actions
         open_action = self.findMyChild('actionOpen')
@@ -1772,55 +1769,51 @@ class OG_MainWindow(QtWidgets.QMainWindow, object):
         ada_action = self.findMyChild('actionGenerate_Ada_code')
         png_action = self.findMyChild('actionExport_to_PNG')
 
-        if self.view is not None:
-            #FIXME
-            # Connect menu actions
-            open_action.triggered.connect(self.view.open_diagram)
-            save_action.triggered.connect(self.view.save_diagram)
-            save_as_action.triggered.connect(self.view.save_as)
-            quit_action.triggered.connect(self.close)
-            new_action.triggered.connect(self.view.new_diagram)
-            check_action.triggered.connect(self.view.check_model)
-            about_action.triggered.connect(self.view.about_og)
-            ada_action.triggered.connect(self.view.generate_ada)
-            png_action.triggered.connect(self.view.save_png)
+        # Connect menu actions
+        open_action.triggered.connect(self.view.open_diagram)
+        save_action.triggered.connect(self.view.save_diagram)
+        save_as_action.triggered.connect(self.view.save_as)
+        quit_action.triggered.connect(self.close)
+        new_action.triggered.connect(self.view.new_diagram)
+        check_action.triggered.connect(self.view.check_model)
+        about_action.triggered.connect(self.view.about_og)
+        ada_action.triggered.connect(self.view.generate_ada)
+        png_action.triggered.connect(self.view.save_png)
 
-            # Connect signal to let the view request a new scene
-            self.view.need_new_scene.connect(self.new_scene)
+        # Connect signal to let the view request a new scene
+        self.view.need_new_scene.connect(self.new_scene)
 
-            # Add a toolbar widget (not in .ui file due to pyside bugs)
-            toolbar = Sdl_toolbar(self)
+        # Add a toolbar widget (not in .ui file due to pyside bugs)
+        toolbar = Sdl_toolbar(self)
 
-            # Associate the toolbar to the scene
-            self.view.toolbar = toolbar
+        # Associate the toolbar to the scene
+        self.view.toolbar = toolbar
 
-            # Set initial toolbar to the PROCESS editor
-            self.view.set_toolbar()
+        # Set initial toolbar to the PROCESS editor
+        self.view.set_toolbar()
 
-            self.addToolBar(Qt.LeftToolBarArea, toolbar)
+        self.addToolBar(Qt.LeftToolBarArea, toolbar)
 
-            # Add a toolbar with New/Open/Save/Check buttons
-            filebar = File_toolbar(self)
-            filebar.open_button.triggered.connect(self.view.open_diagram)
-            filebar.new_button.triggered.connect(self.view.new_diagram)
-            filebar.check_button.triggered.connect(self.view.check_model)
-            filebar.save_button.triggered.connect(self.view.save_diagram)
-            self.view.up_button = filebar.up_button
-            filebar.up_button.triggered.connect(self.view.go_up)
-            self.addToolBar(Qt.TopToolBarArea, filebar)
+        # Add a toolbar with New/Open/Save/Check buttons
+        filebar = File_toolbar(self)
+        filebar.open_button.triggered.connect(self.view.open_diagram)
+        filebar.new_button.triggered.connect(self.view.new_diagram)
+        filebar.check_button.triggered.connect(self.view.check_model)
+        filebar.save_button.triggered.connect(self.view.save_diagram)
+        self.view.up_button = filebar.up_button
+        filebar.up_button.triggered.connect(self.view.go_up)
+        self.addToolBar(Qt.TopToolBarArea, filebar)
 
         self.scene.clearSelection()
         self.scene.clear_focus()
 
         # widget wrapping the view. We have to maximize it
-        process_widget = self.findMyChild('process')
+        process_widget = self.process
 
-        if process_widget is not None and self.view is not None:
-            #FIXME
-            process_widget.showMaximized()
-            self.view.wrapping_window = process_widget
-            self.scene.undo_stack.cleanChanged.connect(
-                    lambda x: process_widget.setWindowModified(not x))
+        process_widget.showMaximized()
+        self.view.wrapping_window = process_widget
+        self.scene.undo_stack.cleanChanged.connect(
+                lambda x: process_widget.setWindowModified(not x))
 
         # get the messages list window (to display errors and warnings)
         # it is a QtGui.QListWidget
@@ -1831,11 +1824,9 @@ class OG_MainWindow(QtWidgets.QMainWindow, object):
         messages = self.findMyChild('messages')
         messages.addItem('Welcome to OpenGEODE.')
 
-        if self.view is not None:
-            #FIXME
-            self.view.messages_window = messages
-            self.scene.messages_window = messages
-            messages.itemClicked.connect(self.view.show_item)
+        self.view.messages_window = messages
+        self.scene.messages_window = messages
+        messages.itemClicked.connect(self.view.show_item)
 
         statechart_dock = self.findMyChild('statechart_dock')
         if graphviz:

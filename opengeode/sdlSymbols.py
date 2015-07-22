@@ -26,8 +26,8 @@ __all__ = ['Input', 'Output', 'State', 'Task', 'ProcedureCall', 'Label',
 import logging
 from itertools import chain
 
-from PySide.QtCore import Qt, QPoint, QRect, QRectF, QPointF
-from PySide.QtGui import(QPainterPath, QBrush, QColor, QRadialGradient, QPen)
+from PyQt5.QtCore import Qt, QPoint, QRect, QRectF, QPointF
+from PyQt5.QtGui import(QPainterPath, QBrush, QColor, QRadialGradient, QPen)
 
 from genericSymbols import HorizontalSymbol, VerticalSymbol, Comment
 from Connectors import Connection, JoinConnection, Signalroute

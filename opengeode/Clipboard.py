@@ -18,7 +18,7 @@
 import traceback
 import logging
 from itertools import chain
-import PySide
+import PyQt5
 
 import ogAST
 import sdlSymbols
@@ -93,7 +93,7 @@ def copy_branch(top_level_item):
     res_terminators = terminators
     for term in terminators:
         # Get symbol at terminator coordinates
-        symbols = top_level_item.scene().items(PySide.QtCore.QRectF
+        symbols = top_level_item.scene().items(PyQt5.QtCore.QRectF
                 (term.pos_x, term.pos_y, term.width, term.height).center())
         for symbol in symbols:
             if (isinstance(symbol, sdlSymbols.State) and [c for c in
