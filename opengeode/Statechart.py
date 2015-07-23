@@ -60,7 +60,7 @@ class Record(genericSymbols.HorizontalSymbol, object):
         self.setBrush(QtGui.QBrush(QtGui.QColor(255, 255, 202)))
         self.graph = graph
         if 'properties' in node:
-            property_box = QtGui.QGraphicsTextItem(self)
+            property_box = QtWidgets.QGraphicsTextItem(self)
             property_box.setPos(5, 30)
             property_box.setPlainText(node['properties'])
         # Text in statecharts is read-only:

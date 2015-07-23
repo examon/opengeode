@@ -606,13 +606,13 @@ class SDL_Scene(QtWidgets.QGraphicsScene, object):
                 else:
                     errs.append(error)
             self.clear_focus()
-            msg_box = QtGui.QMessageBox(view)
-            msg_box.setIcon(QtGui.QMessageBox.Warning)
+            msg_box = QtWidgets.QMessageBox(view)
+            msg_box.setIcon(QtWidgets.QMessageBox.Warning)
             msg_box.setWindowTitle('OpenGEODE - Syntax Error')
             msg_box.setInformativeText('\n'.join(errs))
             msg_box.setText("Syntax error!")
-            msg_box.setStandardButtons(QtGui.QMessageBox.Discard)
-            msg_box.setDefaultButton(QtGui.QMessageBox.Discard)
+            msg_box.setStandardButtons(QtWidgets.QMessageBox.Discard)
+            msg_box.setDefaultButton(QtWidgets.QMessageBox.Discard)
             msg_box.exec_()
 
     def check_syntax(self, symbol):
@@ -880,7 +880,7 @@ class SDL_Scene(QtWidgets.QGraphicsScene, object):
                 QRectF(pos.x() - dist, pos.y() - dist, 2 * dist, 2 * dist))
         for item in items:
             if((selectable_only and item.flags() &
-                    QtGui.QGraphicsItem.ItemIsSelectable)
+                    QtWidgets.QGraphicsItem.ItemIsSelectable)
                     or not selectable_only):
                 return item.parent if isinstance(item, Cornergrabber) else item
 
@@ -1242,7 +1242,7 @@ class SDL_View(QtWidgets.QGraphicsView, object):
 
     def about_og(self):
         ''' Display the About dialog '''
-        QtGui.QMessageBox.about(self, 'About OpenGEODE',
+        QtWidgets.QMessageBox.about(self, 'About OpenGEODE',
                 'OpenGEODE - a tiny SDL editor for TASTE\n\n'
                 'Author: \nMaxime Perrotin'
                 '\n\nContact: maxime.perrotin@esa.int\n\n'
@@ -1256,12 +1256,12 @@ class SDL_View(QtWidgets.QGraphicsView, object):
         '''
         if wheelEvent.modifiers() == Qt.ControlModifier:
             # Google-Earth zoom mode (Zoom with center on the mouse position)
-            self.setTransformationAnchor(QtGui.QGraphicsView.AnchorUnderMouse)
+            self.setTransformationAnchor(QtWidgets.QGraphicsView.AnchorUnderMouse)
             if wheelEvent.delta() < 0:
                 self.scale(0.9, 0.9)
             else:
                 self.scale(1.1, 1.1)
-            self.setTransformationAnchor(QtGui.QGraphicsView.AnchorViewCenter)
+            self.setTransformationAnchor(QtWidgets.QGraphicsView.AnchorViewCenter)
         else:
             return super(SDL_View, self).wheelEvent(wheelEvent)
 
@@ -1413,7 +1413,7 @@ class SDL_View(QtWidgets.QGraphicsView, object):
     def save_diagram(self, save_as=False, autosave=False):
         ''' Save the diagram to a .pr file '''
         if (not self.filename or save_as) and not autosave:
-            self.filename = QtGui.QFileDialog.getSaveFileName(
+            self.filename = QtWidgets.QFileDialog.getSaveFileName(
                     self, "Save model", ".", "SDL Model (*.pr)")[0]
         if self.filename and self.filename.split('.')[-1] != 'pr':
             self.filename += ".pr"
@@ -1471,7 +1471,7 @@ class SDL_View(QtWidgets.QGraphicsView, object):
 
     def save_png(self):
         ''' Save the current view as a PNG image '''
-        filename = QtGui.QFileDialog.getSaveFileName(
+        filename = QtWidgets.QFileDialog.getSaveFileName(
                 self, "Save picture", ".", "Image (*.png)")[0]
         self.scene().export_img(filename, doc_format='png')
 
@@ -1531,7 +1531,7 @@ class SDL_View(QtWidgets.QGraphicsView, object):
         ''' Load one or several .pr file and display the state machine '''
         if not self.new_diagram():
             return
-        filenames, _ = QtGui.QFileDialog.getOpenFileNames(self,
+        filenames, _ = QtWidgets.QFileDialog.getOpenFileNames(self,
                 "Open model(s)", ".", "SDL model (*.pr)")
         if not filenames:
             return
@@ -1552,19 +1552,19 @@ class SDL_View(QtWidgets.QGraphicsView, object):
 
     def propose_to_save(self):
         ''' Display a dialog to let the user save his diagram '''
-        msg_box = QtGui.QMessageBox(self)
+        msg_box = QtWidgets.QMessageBox(self)
         msg_box.setWindowTitle('OpenGEODE')
         msg_box.setText("The model has been modified.")
         msg_box.setInformativeText("Do you want to save your changes?")
-        msg_box.setStandardButtons(QtGui.QMessageBox.Save |
-                QtGui.QMessageBox.Discard |
-                QtGui.QMessageBox.Cancel)
-        msg_box.setDefaultButton(QtGui.QMessageBox.Save)
+        msg_box.setStandardButtons(QtWidgets.QMessageBox.Save |
+                QtWidgets.QMessageBox.Discard |
+                QtWidgets.QMessageBox.Cancel)
+        msg_box.setDefaultButton(QtWidgets.QMessageBox.Save)
         ret = msg_box.exec_()
-        if ret == QtGui.QMessageBox.Save:
+        if ret == QtWidgets.QMessageBox.Save:
             if not self.save_diagram():
                 return False
-        elif ret == QtGui.QMessageBox.Cancel:
+        elif ret == QtWidgets.QMessageBox.Cancel:
             return False
         return True
 
@@ -1596,7 +1596,7 @@ class SDL_View(QtWidgets.QGraphicsView, object):
                 # problem is in decision answers branches
                 error[0] = 'Internal error - ' + str(error[0])
             LOG.error(error[0])
-            item = QtGui.QListWidgetItem(u'[ERROR] ' + error[0])
+            item = QtWidgets.QListWidgetItem(u'[ERROR] ' + error[0])
             if len(error) == 3:
                 item.setData(Qt.UserRole, error[1])
                 #found = self.scene().symbol_near(QPoint(*error[1]), 1)
@@ -1607,7 +1607,7 @@ class SDL_View(QtWidgets.QGraphicsView, object):
                 self.messages_window.addItem(item)
         for warning in warnings:
             LOG.warning(warning[0])
-            item = QtGui.QListWidgetItem(u'[WARNING] ' + str(warning[0]))
+            item = QtWidgets.QListWidgetItem(u'[WARNING] ' + str(warning[0]))
             if len(warning) == 3:
                 item.setData(Qt.UserRole, warning[1])
                 item.setData(Qt.UserRole + 1, warning[2])
@@ -1752,7 +1752,6 @@ class OG_MainWindow(QtWidgets.QMainWindow, object):
         self.new_scene()
         # Find SDL_View widget
 
-        #self.printChildrenTree(self) # for debug
         #self.view = self.findMyChild('graphicsView')
         self.view = self.graphicsView
 
