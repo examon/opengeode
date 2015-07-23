@@ -975,7 +975,7 @@ class SDL_Scene(QtWidgets.QGraphicsScene, object):
     # pylint: disable=C0103
     def mouseReleaseEvent(self, event):
         if self.mode == 'select_items':
-            for item in self.items(self.select_rect.rect().toRect(),
+            for item in self.items(self.select_rect.rect(),
                     mode=Qt.ContainsItemBoundingRect):
                 try:
                     item.select()
