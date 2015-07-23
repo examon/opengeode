@@ -54,7 +54,8 @@ import logging
 
 from PyQt5.QtCore import Qt, QPoint, QPointF, QRect, QFile, QObject, pyqtProperty
 
-from PyQt5.QtGui import(QPainterPath, QPen, QColor, QPainter, QTextBlockFormat)
+from PyQt5.QtGui import(QPainterPath, QPen, QColor, QPainter, QTextBlockFormat,
+                        QPolygonF)
 
 from PyQt5.QtWidgets import (QGraphicsPathItem, QGraphicsPolygonItem,
                              QGraphicsItem, QMenu, QFileDialog, QLineEdit)
@@ -868,7 +869,7 @@ class Cornergrabber(QGraphicsPolygonItem, object):
         self.prepareGeometryChange()
         rect = self.parent.boundingRect()
         self.setPos(0, 0)
-        self.setPolygon(rect)
+        self.setPolygon(QPolygonF(rect))
         self.show()
 
     def mousePressEvent(self, event):
