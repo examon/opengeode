@@ -49,7 +49,7 @@ import sdl92Lexer  # NOQA
 import sdl92Parser  # NOQA
 import genericSymbols  # NOQA
 import sdlSymbols
-#import PySide.QtXml  # NOQA
+import PySide.QtXml  # NOQA
 import singledispatch  # NOQA
 import Asn1scc  # NOQA
 import Connectors  # NOQA
@@ -63,10 +63,6 @@ from PyQt5 import QtGui, QtCore, QtWidgets
 from PyQt5.QtCore import Qt, QSize, QFile, QIODevice, QRectF, QTimer, QPoint
 from PyQt5 import uic
 from PyQt5 import QtSvg
-
-# FIXME : quick fix
-QtCore.Signal = QtCore.pyqtSignal
-QtCore.Slot = QtCore.pyqtSlot
 
 from genericSymbols import(Symbol, Comment, Cornergrabber, Connection)
 from sdlSymbols import(Input, Output, Decision, DecisionAnswer, Task,
@@ -287,7 +283,7 @@ class Sdl_toolbar(QtWidgets.QToolBar, object):
 class SDL_Scene(QtWidgets.QGraphicsScene, object):
     ''' Main graphic scene (canvas) where the user can place SDL symbols '''
     # Signal to be emitted when the scene is left (e.g. UP button)
-    scene_left = QtCore.Signal()
+    scene_left = QtCore.pyqtSignal()
 
     def __init__(self, context='process'):
         '''
@@ -1124,8 +1120,8 @@ class SDL_Scene(QtWidgets.QGraphicsScene, object):
 class SDL_View(QtWidgets.QGraphicsView, object):
     ''' Main graphic view used to display the SDL scene and handle zoom '''
     # signal to ask the main application that a new scene is needed
-    need_new_scene = QtCore.Signal()
-    update_asn1_dock = QtCore.Signal(ogAST.AST)
+    need_new_scene = QtCore.pyqtSignal()
+    update_asn1_dock = QtCore.pyqtSignal(ogAST.AST)
 
     def __init__(self, scene):
         ''' Create the SDL view holding the scene '''
@@ -1870,7 +1866,7 @@ class OG_MainWindow(QtWidgets.QMainWindow, object):
             sdlSymbols.CONTEXT = ogAST.Block()
 
 
-    @QtCore.Slot(ogAST.AST)
+    @QtCore.pyqtSlot(ogAST.AST)
     def set_asn1_view(self, ast):
         ''' Display the ASN.1 types in the dedicated scene '''
         # Update the dock widget with ASN.1 files content
