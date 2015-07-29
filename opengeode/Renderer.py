@@ -30,13 +30,13 @@
     When rendering a (set of) symbol(s), update text autocompletion list(s).
 """
 
-import ogAST
-import sdlSymbols
-import genericSymbols
+from . import ogAST
+from . import sdlSymbols
+from . import genericSymbols
 import logging
 from itertools import chain
 from singledispatch import singledispatch
-from ogParser import type_name
+from .ogParser import type_name
 
 LOG = logging.getLogger(__name__)
 
@@ -142,10 +142,10 @@ def _automaton(ast, scene):
             new_state = render(state, scene=scene, states=ast.states,
                                terminators=ast.parent.terminators)
             if new_state.nested_scene:
-                if unicode(new_state).lower() in nested_states:
+                if str(new_state).lower() in nested_states:
                     new_state.nested_scene = None
                 else:
-                    nested_states.append(unicode(new_state).lower())
+                    nested_states.append(str(new_state).lower())
         except TypeError:
             # Discard terminators (see _state function for explanation)
             pass
@@ -180,7 +180,7 @@ def _state(ast, scene, states, terminators, parent=None):
                 term.inputString == ast.inputString):
             raise TypeError('This state is a terminator')
     new_state = sdlSymbols.State(parent=None, ast=ast)
-    if new_state not in scene.items():
+    if new_state not in list(scene.items()):
         add_to_scene(new_state, scene)
 
     for exit in chain(ast.inputs, ast.connects):
@@ -248,7 +248,7 @@ def _floating_label(ast, scene, states, parent=None):
     ''' Add a Floating label from the AST to the scene '''
     _ = parent
     lab = sdlSymbols.Label(parent=None, ast=ast)
-    if lab not in scene.items():
+    if lab not in list(scene.items()):
         add_to_scene(lab, scene)
     lab.pos_x, lab.pos_y = ast.pos_x, ast.pos_y
     if ast.transition:
@@ -362,7 +362,7 @@ def _input(ast, scene, parent, states):
     ''' Add input from the AST to the scene '''
     # Note: PROVIDED clause is not supported
     inp = sdlSymbols.Input(parent, ast=ast)
-    if inp not in scene.items():
+    if inp not in list(scene.items()):
         add_to_scene(inp, scene)
     if not parent:
         inp.pos_x, inp.pos_y = ast.pos_x, ast.pos_y
@@ -378,7 +378,7 @@ def _input(ast, scene, parent, states):
 def _connect(ast, scene, parent, states):
     ''' Add connect symbol from the AST to the scene '''
     conn = sdlSymbols.Connect(parent, ast=ast)
-    if conn not in scene.items():
+    if conn not in list(scene.items()):
         add_to_scene(conn, scene)
     if not parent:
         conn.pos_x, conn.pos_y = ast.pos_x, ast.pos_y
