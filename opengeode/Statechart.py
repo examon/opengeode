@@ -32,8 +32,8 @@ except ImportError:
           'If you are using Debian (or Ubuntu) you can install it from\n'
           'the official repos: sudo apt-get install python-pygraphviz')
 
-import genericSymbols
-from Connectors import Edge
+from . import genericSymbols
+from .Connectors import Edge
 
 RENDER_DPI = {'X': 93.0, 'Y': 95.0}
 G_SYMBOLS = set()
@@ -177,7 +177,7 @@ class Diamond(genericSymbols.HorizontalSymbol, object):
 
 def edges(scene, node):
     ''' Return all edges of a given node '''
-    for item in scene.items():
+    for item in list(scene.items()):
         if isinstance(item, Edge) and node in (
                 item.edge['source'], item.edge['target']):
             yield item
@@ -308,7 +308,7 @@ def update(scene):
         node.mapToScene(node.boundingRect().center()),
         'shape': type(node), 'width': node.boundingRect().width(),
         'height': node.boundingRect().height()}
-        for node in scene.items() if isinstance(node,
+        for node in list(scene.items()) if isinstance(node,
                                                (Point, Diamond, Record))]
     graph = dotgraph.AGraph(
             strict=False, directed=True, splines='spline', start='rand')
@@ -325,7 +325,7 @@ def update(scene):
         center_y = (bb_height - center_pos.y()) * (dpi / RENDER_DPI['Y'])
 
         #pos = unicode('{x},{y}'.format(x=int(center_x), y=int(center_y)))
-        pos = unicode('{x},{y}'.format(x=float(center_x), y=float(center_y)))
+        pos = str('{x},{y}'.format(x=float(center_x), y=float(center_y)))
 
         if node['shape'] in (Point, Diamond):
             graph.add_node(node['name'], pos=pos, shape=lookup[node['shape']],
@@ -428,7 +428,7 @@ def create_dot_graph(root_ast, basic=False):
     '''
     graph = dotgraph.AGraph(strict=False, directed=True)
     diamond = 0
-    for state in root_ast.mapping.viewkeys():
+    for state in root_ast.mapping.keys():
         # create a new node for each state (including nested states)
         if state.endswith('START'):
             graph.add_node(state, label='', shape='point',
@@ -443,7 +443,7 @@ def create_dot_graph(root_ast, basic=False):
         graph.add_subgraph(subnodes, name='cluster_' + each.statename.lower(),
                            label=each.statename.lower(),
                            style='rounded', shape='record')
-    for state, inputs in root_ast.mapping.viewitems():
+    for state, inputs in root_ast.mapping.items():
         # Add edges
         transitions = \
             inputs if not state.endswith('START') \
@@ -514,7 +514,7 @@ def create_dot_graph(root_ast, basic=False):
                     target_states[target].add(label)
                 else:
                     graph.add_edge(source, target, label=label)
-        for target, labels in target_states.viewitems():
+        for target, labels in target_states.items():
             # Basic mode
             graph.add_edge(source, target, label=',\n'.join(labels))
 #    with open('statechart.dot', 'w') as output:
