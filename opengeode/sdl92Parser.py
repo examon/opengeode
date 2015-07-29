@@ -710,7 +710,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -876,7 +876,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -1043,7 +1043,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -1127,7 +1127,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -1279,7 +1279,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -1434,7 +1434,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -1585,7 +1585,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -1756,7 +1756,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -1902,7 +1902,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -2054,7 +2054,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -2190,7 +2190,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -2307,7 +2307,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -2886,7 +2886,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -3025,7 +3025,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -3159,7 +3159,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -3491,7 +3491,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -3630,7 +3630,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -3807,7 +3807,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -3935,7 +3935,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -4197,7 +4197,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -4336,7 +4336,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -4548,7 +4548,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -4605,7 +4605,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -4662,7 +4662,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -4838,7 +4838,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -4895,7 +4895,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -5014,7 +5014,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -5115,7 +5115,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -5237,7 +5237,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -5371,7 +5371,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -5510,7 +5510,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -5567,7 +5567,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -5706,7 +5706,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -5817,7 +5817,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -5984,7 +5984,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -6070,7 +6070,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -6180,7 +6180,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -6278,7 +6278,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -6489,7 +6489,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -6709,7 +6709,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -6945,7 +6945,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -7164,7 +7164,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -7294,7 +7294,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -7494,7 +7494,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -7680,7 +7680,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -7810,7 +7810,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -7974,7 +7974,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -8093,7 +8093,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -8298,7 +8298,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -8446,7 +8446,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -8631,7 +8631,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -8732,7 +8732,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -8882,7 +8882,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -8983,7 +8983,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -9070,7 +9070,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -9127,7 +9127,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -9251,7 +9251,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -9308,7 +9308,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -9520,7 +9520,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -9680,7 +9680,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -9757,7 +9757,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -9893,7 +9893,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -10102,7 +10102,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -10302,7 +10302,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -10453,7 +10453,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -10617,7 +10617,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -10730,7 +10730,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -10863,7 +10863,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -10999,7 +10999,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -11132,7 +11132,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -11257,7 +11257,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -11391,7 +11391,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -11573,7 +11573,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -11673,7 +11673,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -11919,7 +11919,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -12104,7 +12104,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -12204,7 +12204,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -12376,7 +12376,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -12546,7 +12546,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -12625,7 +12625,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -12738,7 +12738,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -13009,7 +13009,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -13095,7 +13095,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -13223,7 +13223,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -13310,7 +13310,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -13474,7 +13474,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -13625,7 +13625,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -13702,7 +13702,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -13800,7 +13800,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -13892,7 +13892,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -14033,7 +14033,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -14136,7 +14136,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -14254,7 +14254,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -14311,7 +14311,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -14447,7 +14447,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -14628,7 +14628,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -14950,7 +14950,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -15144,7 +15144,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -15330,7 +15330,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -15432,7 +15432,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -15557,7 +15557,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -15637,7 +15637,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -15694,7 +15694,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -15788,7 +15788,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -15950,7 +15950,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -16064,7 +16064,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -16257,7 +16257,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -16412,7 +16412,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -16589,7 +16589,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -16736,7 +16736,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -16969,7 +16969,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -17143,7 +17143,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -17776,7 +17776,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -17860,7 +17860,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -17925,7 +17925,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -18089,7 +18089,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -18170,7 +18170,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -18235,7 +18235,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -18308,7 +18308,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -18365,7 +18365,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -18546,7 +18546,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -18700,7 +18700,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -18817,7 +18817,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -18898,7 +18898,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -18984,7 +18984,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -19070,7 +19070,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -19127,7 +19127,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -19236,7 +19236,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -19345,7 +19345,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -19402,7 +19402,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -19483,7 +19483,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -19568,7 +19568,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -19625,7 +19625,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -19771,7 +19771,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -19889,7 +19889,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -20071,7 +20071,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -20190,7 +20190,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -20310,7 +20310,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -20402,7 +20402,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -20459,7 +20459,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -20568,7 +20568,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -20660,7 +20660,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -20767,7 +20767,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -20859,7 +20859,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -21057,7 +21057,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -21227,7 +21227,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -21352,7 +21352,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -21514,7 +21514,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -21639,7 +21639,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -21780,7 +21780,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -21846,7 +21846,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -21903,7 +21903,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -21960,7 +21960,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -22059,7 +22059,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -22140,7 +22140,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -22197,7 +22197,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -22254,7 +22254,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -22311,7 +22311,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -22368,7 +22368,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -22425,7 +22425,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -22482,7 +22482,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -22539,7 +22539,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -22605,7 +22605,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -22662,7 +22662,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -22719,7 +22719,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -22776,7 +22776,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -22833,7 +22833,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -22890,7 +22890,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -22947,7 +22947,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -23004,7 +23004,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -23061,7 +23061,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -23118,7 +23118,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -23175,7 +23175,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -23232,7 +23232,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -23289,7 +23289,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -23346,7 +23346,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -23403,7 +23403,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -23460,7 +23460,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -23517,7 +23517,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -23574,7 +23574,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -23631,7 +23631,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -23688,7 +23688,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -23745,7 +23745,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -23802,7 +23802,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -23859,7 +23859,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -23916,7 +23916,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -23973,7 +23973,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -24030,7 +24030,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -24340,7 +24340,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -24413,7 +24413,7 @@ class sdl92Parser(Parser):
                     self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
 
 
-            except RecognitionException, re:
+            except RecognitionException as re:
                 self.reportError(re)
                 self.recover(self.input, re)
                 retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
@@ -25676,137 +25676,137 @@ class sdl92Parser(Parser):
     # lookup tables for DFA #25
 
     DFA25_eot = DFA.unpack(
-        u"\111\uffff"
+        "\111\uffff"
         )
 
     DFA25_eof = DFA.unpack(
-        u"\10\uffff\1\12\100\uffff"
+        "\10\uffff\1\12\100\uffff"
         )
 
     DFA25_min = DFA.unpack(
-        u"\1\112\1\166\1\7\1\21\1\u008b\1\u0080\1\7\1\136\1\14\2\uffff\1"
-        u"\u0080\1\u008d\1\u008b\1\u00b1\1\u0083\1\7\1\uffff\1\u008d\2\u0080"
-        u"\1\u00b2\1\u008b\1\u00b1\1\u0080\1\u008c\1\u008d\1\55\1\u0080\1"
-        u"\u00b2\1\u008c\1\21\1\u0080\1\136\1\u008d\1\55\1\u008d\1\u008c"
-        u"\1\u00de\1\u0080\1\u008b\1\u008d\1\21\1\u008c\1\u0080\1\u008b\2"
-        u"\u008d\1\u0080\1\u008b\1\u0080\1\u008d\1\u0080\1\u008c\1\u0080"
-        u"\1\u008d\1\u00de\1\u008c\1\u0080\1\112\1\u00de\1\u008c\1\166\1"
-        u"\21\1\u00de\1\21\1\u00b0\1\25\1\u0080\1\u008d\1\u0080\1\u008c\1"
-        u"\21"
+        "\1\112\1\166\1\7\1\21\1\u008b\1\u0080\1\7\1\136\1\14\2\uffff\1"
+        "\u0080\1\u008d\1\u008b\1\u00b1\1\u0083\1\7\1\uffff\1\u008d\2\u0080"
+        "\1\u00b2\1\u008b\1\u00b1\1\u0080\1\u008c\1\u008d\1\55\1\u0080\1"
+        "\u00b2\1\u008c\1\21\1\u0080\1\136\1\u008d\1\55\1\u008d\1\u008c"
+        "\1\u00de\1\u0080\1\u008b\1\u008d\1\21\1\u008c\1\u0080\1\u008b\2"
+        "\u008d\1\u0080\1\u008b\1\u0080\1\u008d\1\u0080\1\u008c\1\u0080"
+        "\1\u008d\1\u00de\1\u008c\1\u0080\1\112\1\u00de\1\u008c\1\166\1"
+        "\21\1\u00de\1\21\1\u00b0\1\25\1\u0080\1\u008d\1\u0080\1\u008c\1"
+        "\21"
         )
 
     DFA25_max = DFA.unpack(
-        u"\1\u00dd\1\166\1\u0081\1\u00dd\1\u008b\1\u0080\1\u00b0\1\136\1"
-        u"\u00dd\2\uffff\1\u0080\1\u008d\1\u008b\1\u00b1\1\u0083\1\u00b0"
-        u"\1\uffff\1\u008d\2\u0080\1\u00b2\1\u008b\1\u00b1\1\u0080\1\u008c"
-        u"\1\u008d\1\55\1\u0080\1\u00b2\1\u008c\1\u00dd\1\u0080\1\136\1\u008d"
-        u"\1\u00b3\1\u008d\1\u008c\1\u00de\1\u0080\1\u008b\1\u008d\1\21\1"
-        u"\u008c\1\u0080\1\u008b\2\u008d\1\u0080\1\u008b\1\u0080\1\u008d"
-        u"\1\u0080\1\u008c\1\u0080\1\u008d\1\u00de\1\u008c\1\u0080\1\112"
-        u"\1\u00de\1\u008c\1\166\1\u00dd\1\u00de\1\u00dd\1\u00b0\1\u00dd"
-        u"\1\u0080\1\u008d\1\u0080\1\u008c\1\u00dd"
+        "\1\u00dd\1\166\1\u0081\1\u00dd\1\u008b\1\u0080\1\u00b0\1\136\1"
+        "\u00dd\2\uffff\1\u0080\1\u008d\1\u008b\1\u00b1\1\u0083\1\u00b0"
+        "\1\uffff\1\u008d\2\u0080\1\u00b2\1\u008b\1\u00b1\1\u0080\1\u008c"
+        "\1\u008d\1\55\1\u0080\1\u00b2\1\u008c\1\u00dd\1\u0080\1\136\1\u008d"
+        "\1\u00b3\1\u008d\1\u008c\1\u00de\1\u0080\1\u008b\1\u008d\1\21\1"
+        "\u008c\1\u0080\1\u008b\2\u008d\1\u0080\1\u008b\1\u0080\1\u008d"
+        "\1\u0080\1\u008c\1\u0080\1\u008d\1\u00de\1\u008c\1\u0080\1\112"
+        "\1\u00de\1\u008c\1\166\1\u00dd\1\u00de\1\u00dd\1\u00b0\1\u00dd"
+        "\1\u0080\1\u008d\1\u0080\1\u008c\1\u00dd"
         )
 
     DFA25_accept = DFA.unpack(
-        u"\11\uffff\1\1\1\3\6\uffff\1\2\67\uffff"
+        "\11\uffff\1\1\1\3\6\uffff\1\2\67\uffff"
         )
 
     DFA25_special = DFA.unpack(
-        u"\111\uffff"
+        "\111\uffff"
         )
 
             
     DFA25_transition = [
-        DFA.unpack(u"\1\1\u0092\uffff\1\2"),
-        DFA.unpack(u"\1\3"),
-        DFA.unpack(u"\1\4\11\uffff\1\4\2\uffff\1\4\4\uffff\1\4\31\uffff"
-        u"\1\4\2\uffff\2\4\3\uffff\1\4\3\uffff\1\4\7\uffff\2\4\1\uffff\2"
-        u"\4\3\uffff\1\4\11\uffff\1\4\2\uffff\1\4\7\uffff\1\4\2\uffff\1\4"
-        u"\31\uffff\1\4"),
-        DFA.unpack(u"\1\7\153\uffff\1\11\5\uffff\1\10\7\uffff\1\5\114\uffff"
-        u"\1\12\4\uffff\1\6"),
-        DFA.unpack(u"\1\13"),
-        DFA.unpack(u"\1\14"),
-        DFA.unpack(u"\1\15\11\uffff\1\15\2\uffff\1\15\4\uffff\1\15\31\uffff"
-        u"\1\15\2\uffff\2\15\3\uffff\1\15\3\uffff\1\15\7\uffff\2\15\1\uffff"
-        u"\2\15\3\uffff\1\15\11\uffff\1\15\2\uffff\1\15\7\uffff\1\15\2\uffff"
-        u"\1\15\31\uffff\1\15\56\uffff\1\16"),
-        DFA.unpack(u"\1\17"),
-        DFA.unpack(u"\1\12\7\uffff\1\12\1\21\25\uffff\1\21\33\uffff\1\21"
-        u"\2\uffff\1\12\13\uffff\1\12\2\uffff\1\21\11\uffff\1\12\13\uffff"
-        u"\1\12\12\uffff\2\12\2\uffff\1\21\2\uffff\1\21\1\uffff\1\10\131"
-        u"\uffff\1\20"),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u"\1\22"),
-        DFA.unpack(u"\1\23"),
-        DFA.unpack(u"\1\24"),
-        DFA.unpack(u"\1\25"),
-        DFA.unpack(u"\1\10"),
-        DFA.unpack(u"\1\26\11\uffff\1\26\2\uffff\1\26\4\uffff\1\26\31\uffff"
-        u"\1\26\2\uffff\2\26\3\uffff\1\26\3\uffff\1\26\7\uffff\2\26\1\uffff"
-        u"\2\26\3\uffff\1\26\11\uffff\1\26\2\uffff\1\26\7\uffff\1\26\2\uffff"
-        u"\1\26\31\uffff\1\26\56\uffff\1\27"),
-        DFA.unpack(u""),
-        DFA.unpack(u"\1\30"),
-        DFA.unpack(u"\1\31"),
-        DFA.unpack(u"\1\32"),
-        DFA.unpack(u"\1\33"),
-        DFA.unpack(u"\1\34"),
-        DFA.unpack(u"\1\35"),
-        DFA.unpack(u"\1\36"),
-        DFA.unpack(u"\1\37"),
-        DFA.unpack(u"\1\40"),
-        DFA.unpack(u"\1\41"),
-        DFA.unpack(u"\1\42"),
-        DFA.unpack(u"\1\43"),
-        DFA.unpack(u"\1\44"),
-        DFA.unpack(u"\1\7\153\uffff\1\11\5\uffff\1\10\124\uffff\1\12\4\uffff"
-        u"\1\6"),
-        DFA.unpack(u"\1\45"),
-        DFA.unpack(u"\1\46"),
-        DFA.unpack(u"\1\47"),
-        DFA.unpack(u"\1\21\24\uffff\1\12\160\uffff\1\12"),
-        DFA.unpack(u"\1\50"),
-        DFA.unpack(u"\1\51"),
-        DFA.unpack(u"\1\52"),
-        DFA.unpack(u"\1\53"),
-        DFA.unpack(u"\1\54"),
-        DFA.unpack(u"\1\55"),
-        DFA.unpack(u"\1\7"),
-        DFA.unpack(u"\1\56"),
-        DFA.unpack(u"\1\57"),
-        DFA.unpack(u"\1\60"),
-        DFA.unpack(u"\1\61"),
-        DFA.unpack(u"\1\62"),
-        DFA.unpack(u"\1\63"),
-        DFA.unpack(u"\1\64"),
-        DFA.unpack(u"\1\65"),
-        DFA.unpack(u"\1\66"),
-        DFA.unpack(u"\1\67"),
-        DFA.unpack(u"\1\70"),
-        DFA.unpack(u"\1\71"),
-        DFA.unpack(u"\1\72"),
-        DFA.unpack(u"\1\73"),
-        DFA.unpack(u"\1\74"),
-        DFA.unpack(u"\1\75"),
-        DFA.unpack(u"\1\76"),
-        DFA.unpack(u"\1\77"),
-        DFA.unpack(u"\1\100"),
-        DFA.unpack(u"\1\101"),
-        DFA.unpack(u"\1\7\u00cb\uffff\1\102"),
-        DFA.unpack(u"\1\103"),
-        DFA.unpack(u"\1\7\161\uffff\1\10\7\uffff\1\104\114\uffff\1\12\4"
-        u"\uffff\1\6"),
-        DFA.unpack(u"\1\16"),
-        DFA.unpack(u"\1\21\2\uffff\1\21\22\uffff\1\21\16\uffff\1\21\14\uffff"
-        u"\1\21\2\uffff\1\12\13\uffff\1\21\2\uffff\1\21\6\uffff\1\21\1\uffff"
-        u"\1\21\10\uffff\1\21\3\uffff\1\21\21\uffff\1\21\133\uffff\1\21"),
-        DFA.unpack(u"\1\105"),
-        DFA.unpack(u"\1\106"),
-        DFA.unpack(u"\1\107"),
-        DFA.unpack(u"\1\110"),
-        DFA.unpack(u"\1\7\161\uffff\1\10\124\uffff\1\12\4\uffff\1\6")
+        DFA.unpack("\1\1\u0092\uffff\1\2"),
+        DFA.unpack("\1\3"),
+        DFA.unpack("\1\4\11\uffff\1\4\2\uffff\1\4\4\uffff\1\4\31\uffff"
+        "\1\4\2\uffff\2\4\3\uffff\1\4\3\uffff\1\4\7\uffff\2\4\1\uffff\2"
+        "\4\3\uffff\1\4\11\uffff\1\4\2\uffff\1\4\7\uffff\1\4\2\uffff\1\4"
+        "\31\uffff\1\4"),
+        DFA.unpack("\1\7\153\uffff\1\11\5\uffff\1\10\7\uffff\1\5\114\uffff"
+        "\1\12\4\uffff\1\6"),
+        DFA.unpack("\1\13"),
+        DFA.unpack("\1\14"),
+        DFA.unpack("\1\15\11\uffff\1\15\2\uffff\1\15\4\uffff\1\15\31\uffff"
+        "\1\15\2\uffff\2\15\3\uffff\1\15\3\uffff\1\15\7\uffff\2\15\1\uffff"
+        "\2\15\3\uffff\1\15\11\uffff\1\15\2\uffff\1\15\7\uffff\1\15\2\uffff"
+        "\1\15\31\uffff\1\15\56\uffff\1\16"),
+        DFA.unpack("\1\17"),
+        DFA.unpack("\1\12\7\uffff\1\12\1\21\25\uffff\1\21\33\uffff\1\21"
+        "\2\uffff\1\12\13\uffff\1\12\2\uffff\1\21\11\uffff\1\12\13\uffff"
+        "\1\12\12\uffff\2\12\2\uffff\1\21\2\uffff\1\21\1\uffff\1\10\131"
+        "\uffff\1\20"),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack("\1\22"),
+        DFA.unpack("\1\23"),
+        DFA.unpack("\1\24"),
+        DFA.unpack("\1\25"),
+        DFA.unpack("\1\10"),
+        DFA.unpack("\1\26\11\uffff\1\26\2\uffff\1\26\4\uffff\1\26\31\uffff"
+        "\1\26\2\uffff\2\26\3\uffff\1\26\3\uffff\1\26\7\uffff\2\26\1\uffff"
+        "\2\26\3\uffff\1\26\11\uffff\1\26\2\uffff\1\26\7\uffff\1\26\2\uffff"
+        "\1\26\31\uffff\1\26\56\uffff\1\27"),
+        DFA.unpack(""),
+        DFA.unpack("\1\30"),
+        DFA.unpack("\1\31"),
+        DFA.unpack("\1\32"),
+        DFA.unpack("\1\33"),
+        DFA.unpack("\1\34"),
+        DFA.unpack("\1\35"),
+        DFA.unpack("\1\36"),
+        DFA.unpack("\1\37"),
+        DFA.unpack("\1\40"),
+        DFA.unpack("\1\41"),
+        DFA.unpack("\1\42"),
+        DFA.unpack("\1\43"),
+        DFA.unpack("\1\44"),
+        DFA.unpack("\1\7\153\uffff\1\11\5\uffff\1\10\124\uffff\1\12\4\uffff"
+        "\1\6"),
+        DFA.unpack("\1\45"),
+        DFA.unpack("\1\46"),
+        DFA.unpack("\1\47"),
+        DFA.unpack("\1\21\24\uffff\1\12\160\uffff\1\12"),
+        DFA.unpack("\1\50"),
+        DFA.unpack("\1\51"),
+        DFA.unpack("\1\52"),
+        DFA.unpack("\1\53"),
+        DFA.unpack("\1\54"),
+        DFA.unpack("\1\55"),
+        DFA.unpack("\1\7"),
+        DFA.unpack("\1\56"),
+        DFA.unpack("\1\57"),
+        DFA.unpack("\1\60"),
+        DFA.unpack("\1\61"),
+        DFA.unpack("\1\62"),
+        DFA.unpack("\1\63"),
+        DFA.unpack("\1\64"),
+        DFA.unpack("\1\65"),
+        DFA.unpack("\1\66"),
+        DFA.unpack("\1\67"),
+        DFA.unpack("\1\70"),
+        DFA.unpack("\1\71"),
+        DFA.unpack("\1\72"),
+        DFA.unpack("\1\73"),
+        DFA.unpack("\1\74"),
+        DFA.unpack("\1\75"),
+        DFA.unpack("\1\76"),
+        DFA.unpack("\1\77"),
+        DFA.unpack("\1\100"),
+        DFA.unpack("\1\101"),
+        DFA.unpack("\1\7\u00cb\uffff\1\102"),
+        DFA.unpack("\1\103"),
+        DFA.unpack("\1\7\161\uffff\1\10\7\uffff\1\104\114\uffff\1\12\4"
+        "\uffff\1\6"),
+        DFA.unpack("\1\16"),
+        DFA.unpack("\1\21\2\uffff\1\21\22\uffff\1\21\16\uffff\1\21\14\uffff"
+        "\1\21\2\uffff\1\12\13\uffff\1\21\2\uffff\1\21\6\uffff\1\21\1\uffff"
+        "\1\21\10\uffff\1\21\3\uffff\1\21\21\uffff\1\21\133\uffff\1\21"),
+        DFA.unpack("\1\105"),
+        DFA.unpack("\1\106"),
+        DFA.unpack("\1\107"),
+        DFA.unpack("\1\110"),
+        DFA.unpack("\1\7\161\uffff\1\10\124\uffff\1\12\4\uffff\1\6")
     ]
 
     # class definition for DFA #25
@@ -25818,51 +25818,51 @@ class sdl92Parser(Parser):
     # lookup tables for DFA #38
 
     DFA38_eot = DFA.unpack(
-        u"\17\uffff"
+        "\17\uffff"
         )
 
     DFA38_eof = DFA.unpack(
-        u"\1\2\16\uffff"
+        "\1\2\16\uffff"
         )
 
     DFA38_min = DFA.unpack(
-        u"\1\30\1\7\12\uffff\1\u00b1\1\u00b2\1\102"
+        "\1\30\1\7\12\uffff\1\u00b1\1\u00b2\1\102"
         )
 
     DFA38_max = DFA.unpack(
-        u"\1\u00dd\1\u00b0\12\uffff\1\u00b1\1\u00b2\1\u00b3"
+        "\1\u00dd\1\u00b0\12\uffff\1\u00b1\1\u00b2\1\u00b3"
         )
 
     DFA38_accept = DFA.unpack(
-        u"\2\uffff\1\12\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\3\uffff"
+        "\2\uffff\1\12\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\3\uffff"
         )
 
     DFA38_special = DFA.unpack(
-        u"\17\uffff"
+        "\17\uffff"
         )
 
             
     DFA38_transition = [
-        DFA.unpack(u"\1\12\22\uffff\1\6\16\uffff\1\11\14\uffff\1\3\16\uffff"
-        u"\1\5\11\uffff\1\13\1\uffff\1\10\10\uffff\1\7\3\uffff\1\4\155\uffff"
-        u"\1\1"),
-        DFA.unpack(u"\1\3\11\uffff\1\3\2\uffff\1\3\4\uffff\1\3\5\uffff\1"
-        u"\2\23\uffff\1\3\2\uffff\2\3\3\uffff\1\3\3\uffff\1\3\7\uffff\2\3"
-        u"\1\uffff\2\3\3\uffff\1\3\11\uffff\1\3\2\uffff\1\3\7\uffff\1\3\2"
-        u"\uffff\1\3\31\uffff\1\3\56\uffff\1\14"),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u"\1\15"),
-        DFA.unpack(u"\1\16"),
-        DFA.unpack(u"\1\5\160\uffff\1\4")
+        DFA.unpack("\1\12\22\uffff\1\6\16\uffff\1\11\14\uffff\1\3\16\uffff"
+        "\1\5\11\uffff\1\13\1\uffff\1\10\10\uffff\1\7\3\uffff\1\4\155\uffff"
+        "\1\1"),
+        DFA.unpack("\1\3\11\uffff\1\3\2\uffff\1\3\4\uffff\1\3\5\uffff\1"
+        "\2\23\uffff\1\3\2\uffff\2\3\3\uffff\1\3\3\uffff\1\3\7\uffff\2\3"
+        "\1\uffff\2\3\3\uffff\1\3\11\uffff\1\3\2\uffff\1\3\7\uffff\1\3\2"
+        "\uffff\1\3\31\uffff\1\3\56\uffff\1\14"),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack("\1\15"),
+        DFA.unpack("\1\16"),
+        DFA.unpack("\1\5\160\uffff\1\4")
     ]
 
     # class definition for DFA #38
@@ -25874,66 +25874,66 @@ class sdl92Parser(Parser):
     # lookup tables for DFA #45
 
     DFA45_eot = DFA.unpack(
-        u"\33\uffff"
+        "\33\uffff"
         )
 
     DFA45_eof = DFA.unpack(
-        u"\3\uffff\1\10\27\uffff"
+        "\3\uffff\1\10\27\uffff"
         )
 
     DFA45_min = DFA.unpack(
-        u"\1\21\1\7\1\136\1\35\1\u00b1\1\u008b\1\u0083\2\uffff\1\u00b2\1"
-        u"\u0080\1\55\1\u008d\1\136\1\u0080\1\u00de\1\u008c\1\21\1\u008d"
-        u"\1\u008b\1\u0080\1\u008d\1\u0080\1\u008c\1\u00de\1\21\1\u00b0"
+        "\1\21\1\7\1\136\1\35\1\u00b1\1\u008b\1\u0083\2\uffff\1\u00b2\1"
+        "\u0080\1\55\1\u008d\1\136\1\u0080\1\u00de\1\u008c\1\21\1\u008d"
+        "\1\u008b\1\u0080\1\u008d\1\u0080\1\u008c\1\u00de\1\21\1\u00b0"
         )
 
     DFA45_max = DFA.unpack(
-        u"\1\u00dd\1\u00b0\1\136\1\u0083\1\u00b1\1\u008b\1\u0083\2\uffff"
-        u"\1\u00b2\1\u0080\1\55\1\u008d\1\136\1\u0080\1\u00de\1\u008c\1\21"
-        u"\1\u008d\1\u008b\1\u0080\1\u008d\1\u0080\1\u008c\1\u00de\1\u00dd"
-        u"\1\u00b0"
+        "\1\u00dd\1\u00b0\1\136\1\u0083\1\u00b1\1\u008b\1\u0083\2\uffff"
+        "\1\u00b2\1\u0080\1\55\1\u008d\1\136\1\u0080\1\u00de\1\u008c\1\21"
+        "\1\u008d\1\u008b\1\u0080\1\u008d\1\u0080\1\u008c\1\u00de\1\u00dd"
+        "\1\u00b0"
         )
 
     DFA45_accept = DFA.unpack(
-        u"\7\uffff\1\1\1\2\22\uffff"
+        "\7\uffff\1\1\1\2\22\uffff"
         )
 
     DFA45_special = DFA.unpack(
-        u"\33\uffff"
+        "\33\uffff"
         )
 
             
     DFA45_transition = [
-        DFA.unpack(u"\1\2\161\uffff\1\3\131\uffff\1\1"),
-        DFA.unpack(u"\1\5\11\uffff\1\5\2\uffff\1\5\4\uffff\1\5\31\uffff"
-        u"\1\5\2\uffff\2\5\3\uffff\1\5\3\uffff\1\5\7\uffff\2\5\1\uffff\2"
-        u"\5\3\uffff\1\5\11\uffff\1\5\2\uffff\1\5\7\uffff\1\5\2\uffff\1\5"
-        u"\31\uffff\1\5\56\uffff\1\4"),
-        DFA.unpack(u"\1\6"),
-        DFA.unpack(u"\1\10\130\uffff\1\7\14\uffff\1\3"),
-        DFA.unpack(u"\1\11"),
-        DFA.unpack(u"\1\12"),
-        DFA.unpack(u"\1\3"),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u"\1\13"),
-        DFA.unpack(u"\1\14"),
-        DFA.unpack(u"\1\15"),
-        DFA.unpack(u"\1\16"),
-        DFA.unpack(u"\1\17"),
-        DFA.unpack(u"\1\20"),
-        DFA.unpack(u"\1\21"),
-        DFA.unpack(u"\1\22"),
-        DFA.unpack(u"\1\2"),
-        DFA.unpack(u"\1\23"),
-        DFA.unpack(u"\1\24"),
-        DFA.unpack(u"\1\25"),
-        DFA.unpack(u"\1\26"),
-        DFA.unpack(u"\1\27"),
-        DFA.unpack(u"\1\30"),
-        DFA.unpack(u"\1\31"),
-        DFA.unpack(u"\1\2\u00cb\uffff\1\32"),
-        DFA.unpack(u"\1\4")
+        DFA.unpack("\1\2\161\uffff\1\3\131\uffff\1\1"),
+        DFA.unpack("\1\5\11\uffff\1\5\2\uffff\1\5\4\uffff\1\5\31\uffff"
+        "\1\5\2\uffff\2\5\3\uffff\1\5\3\uffff\1\5\7\uffff\2\5\1\uffff\2"
+        "\5\3\uffff\1\5\11\uffff\1\5\2\uffff\1\5\7\uffff\1\5\2\uffff\1\5"
+        "\31\uffff\1\5\56\uffff\1\4"),
+        DFA.unpack("\1\6"),
+        DFA.unpack("\1\10\130\uffff\1\7\14\uffff\1\3"),
+        DFA.unpack("\1\11"),
+        DFA.unpack("\1\12"),
+        DFA.unpack("\1\3"),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack("\1\13"),
+        DFA.unpack("\1\14"),
+        DFA.unpack("\1\15"),
+        DFA.unpack("\1\16"),
+        DFA.unpack("\1\17"),
+        DFA.unpack("\1\20"),
+        DFA.unpack("\1\21"),
+        DFA.unpack("\1\22"),
+        DFA.unpack("\1\2"),
+        DFA.unpack("\1\23"),
+        DFA.unpack("\1\24"),
+        DFA.unpack("\1\25"),
+        DFA.unpack("\1\26"),
+        DFA.unpack("\1\27"),
+        DFA.unpack("\1\30"),
+        DFA.unpack("\1\31"),
+        DFA.unpack("\1\2\u00cb\uffff\1\32"),
+        DFA.unpack("\1\4")
     ]
 
     # class definition for DFA #45
@@ -25945,63 +25945,63 @@ class sdl92Parser(Parser):
     # lookup tables for DFA #51
 
     DFA51_eot = DFA.unpack(
-        u"\30\uffff"
+        "\30\uffff"
         )
 
     DFA51_eof = DFA.unpack(
-        u"\1\3\27\uffff"
+        "\1\3\27\uffff"
         )
 
     DFA51_min = DFA.unpack(
-        u"\1\25\1\7\2\uffff\1\u008b\1\u00b1\1\u0080\1\u00b2\1\u008d\1\55"
-        u"\1\u0080\1\136\1\u008c\1\u00de\1\u008d\1\25\1\u008b\1\u0080\1\u008d"
-        u"\1\u0080\1\u008c\1\u00de\1\25\1\u00b0"
+        "\1\25\1\7\2\uffff\1\u008b\1\u00b1\1\u0080\1\u00b2\1\u008d\1\55"
+        "\1\u0080\1\136\1\u008c\1\u00de\1\u008d\1\25\1\u008b\1\u0080\1\u008d"
+        "\1\u0080\1\u008c\1\u00de\1\25\1\u00b0"
         )
 
     DFA51_max = DFA.unpack(
-        u"\1\u00dd\1\u00b0\2\uffff\1\u008b\1\u00b1\1\u0080\1\u00b2\1\u008d"
-        u"\1\55\1\u0080\1\136\1\u008c\1\u00de\1\u008d\1\u0081\1\u008b\1\u0080"
-        u"\1\u008d\1\u0080\1\u008c\1\u00de\1\u00dd\1\u00b0"
+        "\1\u00dd\1\u00b0\2\uffff\1\u008b\1\u00b1\1\u0080\1\u00b2\1\u008d"
+        "\1\55\1\u0080\1\136\1\u008c\1\u00de\1\u008d\1\u0081\1\u008b\1\u0080"
+        "\1\u008d\1\u0080\1\u008c\1\u00de\1\u00dd\1\u00b0"
         )
 
     DFA51_accept = DFA.unpack(
-        u"\2\uffff\1\1\1\2\24\uffff"
+        "\2\uffff\1\1\1\2\24\uffff"
         )
 
     DFA51_special = DFA.unpack(
-        u"\30\uffff"
+        "\30\uffff"
         )
 
             
     DFA51_transition = [
-        DFA.unpack(u"\1\3\103\uffff\1\3\44\uffff\2\3\1\uffff\1\2\133\uffff"
-        u"\1\1"),
-        DFA.unpack(u"\1\4\11\uffff\1\4\2\uffff\1\4\4\uffff\1\4\31\uffff"
-        u"\1\4\2\uffff\2\4\3\uffff\1\4\3\uffff\1\4\7\uffff\2\4\1\uffff\2"
-        u"\4\3\uffff\1\4\11\uffff\1\4\2\uffff\1\4\7\uffff\1\4\2\uffff\1\4"
-        u"\31\uffff\1\4\56\uffff\1\5"),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u"\1\6"),
-        DFA.unpack(u"\1\7"),
-        DFA.unpack(u"\1\10"),
-        DFA.unpack(u"\1\11"),
-        DFA.unpack(u"\1\12"),
-        DFA.unpack(u"\1\13"),
-        DFA.unpack(u"\1\14"),
-        DFA.unpack(u"\1\15"),
-        DFA.unpack(u"\1\16"),
-        DFA.unpack(u"\1\17"),
-        DFA.unpack(u"\1\20"),
-        DFA.unpack(u"\1\3\103\uffff\1\3\47\uffff\1\2"),
-        DFA.unpack(u"\1\21"),
-        DFA.unpack(u"\1\22"),
-        DFA.unpack(u"\1\23"),
-        DFA.unpack(u"\1\24"),
-        DFA.unpack(u"\1\25"),
-        DFA.unpack(u"\1\26"),
-        DFA.unpack(u"\1\3\103\uffff\1\3\47\uffff\1\2\133\uffff\1\27"),
-        DFA.unpack(u"\1\5")
+        DFA.unpack("\1\3\103\uffff\1\3\44\uffff\2\3\1\uffff\1\2\133\uffff"
+        "\1\1"),
+        DFA.unpack("\1\4\11\uffff\1\4\2\uffff\1\4\4\uffff\1\4\31\uffff"
+        "\1\4\2\uffff\2\4\3\uffff\1\4\3\uffff\1\4\7\uffff\2\4\1\uffff\2"
+        "\4\3\uffff\1\4\11\uffff\1\4\2\uffff\1\4\7\uffff\1\4\2\uffff\1\4"
+        "\31\uffff\1\4\56\uffff\1\5"),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack("\1\6"),
+        DFA.unpack("\1\7"),
+        DFA.unpack("\1\10"),
+        DFA.unpack("\1\11"),
+        DFA.unpack("\1\12"),
+        DFA.unpack("\1\13"),
+        DFA.unpack("\1\14"),
+        DFA.unpack("\1\15"),
+        DFA.unpack("\1\16"),
+        DFA.unpack("\1\17"),
+        DFA.unpack("\1\20"),
+        DFA.unpack("\1\3\103\uffff\1\3\47\uffff\1\2"),
+        DFA.unpack("\1\21"),
+        DFA.unpack("\1\22"),
+        DFA.unpack("\1\23"),
+        DFA.unpack("\1\24"),
+        DFA.unpack("\1\25"),
+        DFA.unpack("\1\26"),
+        DFA.unpack("\1\3\103\uffff\1\3\47\uffff\1\2\133\uffff\1\27"),
+        DFA.unpack("\1\5")
     ]
 
     # class definition for DFA #51
@@ -26013,63 +26013,63 @@ class sdl92Parser(Parser):
     # lookup tables for DFA #52
 
     DFA52_eot = DFA.unpack(
-        u"\31\uffff"
+        "\31\uffff"
         )
 
     DFA52_eof = DFA.unpack(
-        u"\1\1\30\uffff"
+        "\1\1\30\uffff"
         )
 
     DFA52_min = DFA.unpack(
-        u"\1\25\1\uffff\1\7\2\uffff\1\u00b1\1\u008b\1\u00b2\1\u0080\1\55"
-        u"\1\u008d\1\136\1\u0080\1\u00de\1\u008c\1\25\1\u008d\1\u008b\1\u0080"
-        u"\1\u008d\1\u0080\1\u008c\1\u00de\1\25\1\u00b0"
+        "\1\25\1\uffff\1\7\2\uffff\1\u00b1\1\u008b\1\u00b2\1\u0080\1\55"
+        "\1\u008d\1\136\1\u0080\1\u00de\1\u008c\1\25\1\u008d\1\u008b\1\u0080"
+        "\1\u008d\1\u0080\1\u008c\1\u00de\1\25\1\u00b0"
         )
 
     DFA52_max = DFA.unpack(
-        u"\1\u00dd\1\uffff\1\u00b0\2\uffff\1\u00b1\1\u008b\1\u00b2\1\u0080"
-        u"\1\55\1\u008d\1\136\1\u0080\1\u00de\1\u008c\1\131\1\u008d\1\u008b"
-        u"\1\u0080\1\u008d\1\u0080\1\u008c\1\u00de\1\u00dd\1\u00b0"
+        "\1\u00dd\1\uffff\1\u00b0\2\uffff\1\u00b1\1\u008b\1\u00b2\1\u0080"
+        "\1\55\1\u008d\1\136\1\u0080\1\u00de\1\u008c\1\131\1\u008d\1\u008b"
+        "\1\u0080\1\u008d\1\u0080\1\u008c\1\u00de\1\u00dd\1\u00b0"
         )
 
     DFA52_accept = DFA.unpack(
-        u"\1\uffff\1\3\1\uffff\1\1\1\2\24\uffff"
+        "\1\uffff\1\3\1\uffff\1\1\1\2\24\uffff"
         )
 
     DFA52_special = DFA.unpack(
-        u"\31\uffff"
+        "\31\uffff"
         )
 
             
     DFA52_transition = [
-        DFA.unpack(u"\1\4\103\uffff\1\3\44\uffff\2\1\135\uffff\1\2"),
-        DFA.unpack(u""),
-        DFA.unpack(u"\1\6\11\uffff\1\6\2\uffff\1\6\4\uffff\1\6\31\uffff"
-        u"\1\6\2\uffff\2\6\3\uffff\1\6\3\uffff\1\6\7\uffff\2\6\1\uffff\2"
-        u"\6\3\uffff\1\6\11\uffff\1\6\2\uffff\1\6\7\uffff\1\6\2\uffff\1\6"
-        u"\31\uffff\1\6\56\uffff\1\5"),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u"\1\7"),
-        DFA.unpack(u"\1\10"),
-        DFA.unpack(u"\1\11"),
-        DFA.unpack(u"\1\12"),
-        DFA.unpack(u"\1\13"),
-        DFA.unpack(u"\1\14"),
-        DFA.unpack(u"\1\15"),
-        DFA.unpack(u"\1\16"),
-        DFA.unpack(u"\1\17"),
-        DFA.unpack(u"\1\20"),
-        DFA.unpack(u"\1\4\103\uffff\1\3"),
-        DFA.unpack(u"\1\21"),
-        DFA.unpack(u"\1\22"),
-        DFA.unpack(u"\1\23"),
-        DFA.unpack(u"\1\24"),
-        DFA.unpack(u"\1\25"),
-        DFA.unpack(u"\1\26"),
-        DFA.unpack(u"\1\27"),
-        DFA.unpack(u"\1\4\103\uffff\1\3\u0083\uffff\1\30"),
-        DFA.unpack(u"\1\5")
+        DFA.unpack("\1\4\103\uffff\1\3\44\uffff\2\1\135\uffff\1\2"),
+        DFA.unpack(""),
+        DFA.unpack("\1\6\11\uffff\1\6\2\uffff\1\6\4\uffff\1\6\31\uffff"
+        "\1\6\2\uffff\2\6\3\uffff\1\6\3\uffff\1\6\7\uffff\2\6\1\uffff\2"
+        "\6\3\uffff\1\6\11\uffff\1\6\2\uffff\1\6\7\uffff\1\6\2\uffff\1\6"
+        "\31\uffff\1\6\56\uffff\1\5"),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack("\1\7"),
+        DFA.unpack("\1\10"),
+        DFA.unpack("\1\11"),
+        DFA.unpack("\1\12"),
+        DFA.unpack("\1\13"),
+        DFA.unpack("\1\14"),
+        DFA.unpack("\1\15"),
+        DFA.unpack("\1\16"),
+        DFA.unpack("\1\17"),
+        DFA.unpack("\1\20"),
+        DFA.unpack("\1\4\103\uffff\1\3"),
+        DFA.unpack("\1\21"),
+        DFA.unpack("\1\22"),
+        DFA.unpack("\1\23"),
+        DFA.unpack("\1\24"),
+        DFA.unpack("\1\25"),
+        DFA.unpack("\1\26"),
+        DFA.unpack("\1\27"),
+        DFA.unpack("\1\4\103\uffff\1\3\u0083\uffff\1\30"),
+        DFA.unpack("\1\5")
     ]
 
     # class definition for DFA #52
@@ -26081,70 +26081,70 @@ class sdl92Parser(Parser):
     # lookup tables for DFA #56
 
     DFA56_eot = DFA.unpack(
-        u"\30\uffff"
+        "\30\uffff"
         )
 
     DFA56_eof = DFA.unpack(
-        u"\1\3\27\uffff"
+        "\1\3\27\uffff"
         )
 
     DFA56_min = DFA.unpack(
-        u"\1\6\1\7\2\uffff\1\u00b1\1\u008b\1\u00b2\1\u0080\1\55\1\u008d\1"
-        u"\136\1\u0080\1\u00de\1\u008c\1\25\1\u008d\1\u008b\1\u0080\1\u008d"
-        u"\1\u0080\1\u008c\1\u00de\1\25\1\u00b0"
+        "\1\6\1\7\2\uffff\1\u00b1\1\u008b\1\u00b2\1\u0080\1\55\1\u008d\1"
+        "\136\1\u0080\1\u00de\1\u008c\1\25\1\u008d\1\u008b\1\u0080\1\u008d"
+        "\1\u0080\1\u008c\1\u00de\1\25\1\u00b0"
         )
 
     DFA56_max = DFA.unpack(
-        u"\1\u00dd\1\u00b0\2\uffff\1\u00b1\1\u008b\1\u00b2\1\u0080\1\55\1"
-        u"\u008d\1\136\1\u0080\1\u00de\1\u008c\1\u008e\1\u008d\1\u008b\1"
-        u"\u0080\1\u008d\1\u0080\1\u008c\1\u00de\1\u00dd\1\u00b0"
+        "\1\u00dd\1\u00b0\2\uffff\1\u00b1\1\u008b\1\u00b2\1\u0080\1\55\1"
+        "\u008d\1\136\1\u0080\1\u00de\1\u008c\1\u008e\1\u008d\1\u008b\1"
+        "\u0080\1\u008d\1\u0080\1\u008c\1\u00de\1\u00dd\1\u00b0"
         )
 
     DFA56_accept = DFA.unpack(
-        u"\2\uffff\1\1\1\2\24\uffff"
+        "\2\uffff\1\1\1\2\24\uffff"
         )
 
     DFA56_special = DFA.unpack(
-        u"\30\uffff"
+        "\30\uffff"
         )
 
             
     DFA56_transition = [
-        DFA.unpack(u"\1\2\16\uffff\1\3\3\uffff\1\2\6\uffff\1\2\11\uffff\1"
-        u"\2\13\uffff\1\2\4\uffff\1\2\3\uffff\1\2\16\uffff\2\2\5\uffff\1"
-        u"\2\3\uffff\1\3\2\uffff\1\2\1\uffff\1\2\5\uffff\1\2\21\uffff\1\2"
-        u"\7\uffff\2\3\1\uffff\1\3\5\uffff\1\3\6\uffff\1\2\11\uffff\1\2\104"
-        u"\uffff\1\1"),
-        DFA.unpack(u"\1\5\11\uffff\1\5\2\uffff\1\5\4\uffff\1\5\31\uffff"
-        u"\1\5\2\uffff\2\5\3\uffff\1\5\3\uffff\1\5\7\uffff\2\5\1\uffff\2"
-        u"\5\3\uffff\1\5\11\uffff\1\5\2\uffff\1\5\7\uffff\1\5\2\uffff\1\5"
-        u"\31\uffff\1\5\56\uffff\1\4"),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u"\1\6"),
-        DFA.unpack(u"\1\7"),
-        DFA.unpack(u"\1\10"),
-        DFA.unpack(u"\1\11"),
-        DFA.unpack(u"\1\12"),
-        DFA.unpack(u"\1\13"),
-        DFA.unpack(u"\1\14"),
-        DFA.unpack(u"\1\15"),
-        DFA.unpack(u"\1\16"),
-        DFA.unpack(u"\1\17"),
-        DFA.unpack(u"\1\3\3\uffff\1\2\34\uffff\1\2\4\uffff\1\2\3\uffff\1"
-        u"\2\17\uffff\1\2\11\uffff\1\3\2\uffff\1\2\7\uffff\1\2\34\uffff\1"
-        u"\3\14\uffff\1\2"),
-        DFA.unpack(u"\1\20"),
-        DFA.unpack(u"\1\21"),
-        DFA.unpack(u"\1\22"),
-        DFA.unpack(u"\1\23"),
-        DFA.unpack(u"\1\24"),
-        DFA.unpack(u"\1\25"),
-        DFA.unpack(u"\1\26"),
-        DFA.unpack(u"\1\3\3\uffff\1\2\34\uffff\1\2\4\uffff\1\2\3\uffff\1"
-        u"\2\17\uffff\1\2\11\uffff\1\3\2\uffff\1\2\7\uffff\1\2\21\uffff\1"
-        u"\2\12\uffff\1\3\14\uffff\1\2\116\uffff\1\27"),
-        DFA.unpack(u"\1\4")
+        DFA.unpack("\1\2\16\uffff\1\3\3\uffff\1\2\6\uffff\1\2\11\uffff\1"
+        "\2\13\uffff\1\2\4\uffff\1\2\3\uffff\1\2\16\uffff\2\2\5\uffff\1"
+        "\2\3\uffff\1\3\2\uffff\1\2\1\uffff\1\2\5\uffff\1\2\21\uffff\1\2"
+        "\7\uffff\2\3\1\uffff\1\3\5\uffff\1\3\6\uffff\1\2\11\uffff\1\2\104"
+        "\uffff\1\1"),
+        DFA.unpack("\1\5\11\uffff\1\5\2\uffff\1\5\4\uffff\1\5\31\uffff"
+        "\1\5\2\uffff\2\5\3\uffff\1\5\3\uffff\1\5\7\uffff\2\5\1\uffff\2"
+        "\5\3\uffff\1\5\11\uffff\1\5\2\uffff\1\5\7\uffff\1\5\2\uffff\1\5"
+        "\31\uffff\1\5\56\uffff\1\4"),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack("\1\6"),
+        DFA.unpack("\1\7"),
+        DFA.unpack("\1\10"),
+        DFA.unpack("\1\11"),
+        DFA.unpack("\1\12"),
+        DFA.unpack("\1\13"),
+        DFA.unpack("\1\14"),
+        DFA.unpack("\1\15"),
+        DFA.unpack("\1\16"),
+        DFA.unpack("\1\17"),
+        DFA.unpack("\1\3\3\uffff\1\2\34\uffff\1\2\4\uffff\1\2\3\uffff\1"
+        "\2\17\uffff\1\2\11\uffff\1\3\2\uffff\1\2\7\uffff\1\2\34\uffff\1"
+        "\3\14\uffff\1\2"),
+        DFA.unpack("\1\20"),
+        DFA.unpack("\1\21"),
+        DFA.unpack("\1\22"),
+        DFA.unpack("\1\23"),
+        DFA.unpack("\1\24"),
+        DFA.unpack("\1\25"),
+        DFA.unpack("\1\26"),
+        DFA.unpack("\1\3\3\uffff\1\2\34\uffff\1\2\4\uffff\1\2\3\uffff\1"
+        "\2\17\uffff\1\2\11\uffff\1\3\2\uffff\1\2\7\uffff\1\2\21\uffff\1"
+        "\2\12\uffff\1\3\14\uffff\1\2\116\uffff\1\27"),
+        DFA.unpack("\1\4")
     ]
 
     # class definition for DFA #56
@@ -26156,63 +26156,63 @@ class sdl92Parser(Parser):
     # lookup tables for DFA #74
 
     DFA74_eot = DFA.unpack(
-        u"\30\uffff"
+        "\30\uffff"
         )
 
     DFA74_eof = DFA.unpack(
-        u"\30\uffff"
+        "\30\uffff"
         )
 
     DFA74_min = DFA.unpack(
-        u"\1\25\1\7\2\uffff\1\u00b1\1\u008b\1\u00b2\1\u0080\1\55\1\u008d"
-        u"\1\136\1\u0080\1\u00de\1\u008c\1\25\1\u008d\1\u008b\1\u0080\1\u008d"
-        u"\1\u0080\1\u008c\1\u00de\1\25\1\u00b0"
+        "\1\25\1\7\2\uffff\1\u00b1\1\u008b\1\u00b2\1\u0080\1\55\1\u008d"
+        "\1\136\1\u0080\1\u00de\1\u008c\1\25\1\u008d\1\u008b\1\u0080\1\u008d"
+        "\1\u0080\1\u008c\1\u00de\1\25\1\u00b0"
         )
 
     DFA74_max = DFA.unpack(
-        u"\1\u00dd\1\u00b0\2\uffff\1\u00b1\1\u008b\1\u00b2\1\u0080\1\55\1"
-        u"\u008d\1\136\1\u0080\1\u00de\1\u008c\1\u0081\1\u008d\1\u008b\1"
-        u"\u0080\1\u008d\1\u0080\1\u008c\1\u00de\1\u00dd\1\u00b0"
+        "\1\u00dd\1\u00b0\2\uffff\1\u00b1\1\u008b\1\u00b2\1\u0080\1\55\1"
+        "\u008d\1\136\1\u0080\1\u00de\1\u008c\1\u0081\1\u008d\1\u008b\1"
+        "\u0080\1\u008d\1\u0080\1\u008c\1\u00de\1\u00dd\1\u00b0"
         )
 
     DFA74_accept = DFA.unpack(
-        u"\2\uffff\1\2\1\1\24\uffff"
+        "\2\uffff\1\2\1\1\24\uffff"
         )
 
     DFA74_special = DFA.unpack(
-        u"\30\uffff"
+        "\30\uffff"
         )
 
             
     DFA74_transition = [
-        DFA.unpack(u"\1\2\103\uffff\1\2\47\uffff\1\3\5\uffff\1\2\125\uffff"
-        u"\1\1"),
-        DFA.unpack(u"\1\5\11\uffff\1\5\2\uffff\1\5\4\uffff\1\5\31\uffff"
-        u"\1\5\2\uffff\2\5\3\uffff\1\5\3\uffff\1\5\7\uffff\2\5\1\uffff\2"
-        u"\5\3\uffff\1\5\11\uffff\1\5\2\uffff\1\5\7\uffff\1\5\2\uffff\1\5"
-        u"\31\uffff\1\5\56\uffff\1\4"),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u"\1\6"),
-        DFA.unpack(u"\1\7"),
-        DFA.unpack(u"\1\10"),
-        DFA.unpack(u"\1\11"),
-        DFA.unpack(u"\1\12"),
-        DFA.unpack(u"\1\13"),
-        DFA.unpack(u"\1\14"),
-        DFA.unpack(u"\1\15"),
-        DFA.unpack(u"\1\16"),
-        DFA.unpack(u"\1\17"),
-        DFA.unpack(u"\1\2\103\uffff\1\2\47\uffff\1\3"),
-        DFA.unpack(u"\1\20"),
-        DFA.unpack(u"\1\21"),
-        DFA.unpack(u"\1\22"),
-        DFA.unpack(u"\1\23"),
-        DFA.unpack(u"\1\24"),
-        DFA.unpack(u"\1\25"),
-        DFA.unpack(u"\1\26"),
-        DFA.unpack(u"\1\2\103\uffff\1\2\47\uffff\1\3\133\uffff\1\27"),
-        DFA.unpack(u"\1\4")
+        DFA.unpack("\1\2\103\uffff\1\2\47\uffff\1\3\5\uffff\1\2\125\uffff"
+        "\1\1"),
+        DFA.unpack("\1\5\11\uffff\1\5\2\uffff\1\5\4\uffff\1\5\31\uffff"
+        "\1\5\2\uffff\2\5\3\uffff\1\5\3\uffff\1\5\7\uffff\2\5\1\uffff\2"
+        "\5\3\uffff\1\5\11\uffff\1\5\2\uffff\1\5\7\uffff\1\5\2\uffff\1\5"
+        "\31\uffff\1\5\56\uffff\1\4"),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack("\1\6"),
+        DFA.unpack("\1\7"),
+        DFA.unpack("\1\10"),
+        DFA.unpack("\1\11"),
+        DFA.unpack("\1\12"),
+        DFA.unpack("\1\13"),
+        DFA.unpack("\1\14"),
+        DFA.unpack("\1\15"),
+        DFA.unpack("\1\16"),
+        DFA.unpack("\1\17"),
+        DFA.unpack("\1\2\103\uffff\1\2\47\uffff\1\3"),
+        DFA.unpack("\1\20"),
+        DFA.unpack("\1\21"),
+        DFA.unpack("\1\22"),
+        DFA.unpack("\1\23"),
+        DFA.unpack("\1\24"),
+        DFA.unpack("\1\25"),
+        DFA.unpack("\1\26"),
+        DFA.unpack("\1\2\103\uffff\1\2\47\uffff\1\3\133\uffff\1\27"),
+        DFA.unpack("\1\4")
     ]
 
     # class definition for DFA #74
@@ -26224,63 +26224,63 @@ class sdl92Parser(Parser):
     # lookup tables for DFA #75
 
     DFA75_eot = DFA.unpack(
-        u"\31\uffff"
+        "\31\uffff"
         )
 
     DFA75_eof = DFA.unpack(
-        u"\31\uffff"
+        "\31\uffff"
         )
 
     DFA75_min = DFA.unpack(
-        u"\1\25\1\uffff\1\7\2\uffff\1\u008b\1\u00b1\1\u0080\1\u00b2\1\u008d"
-        u"\1\55\1\u0080\1\136\1\u008c\1\u00de\1\u008d\1\25\1\u008b\1\u0080"
-        u"\1\u008d\1\u0080\1\u008c\1\u00de\1\25\1\u00b0"
+        "\1\25\1\uffff\1\7\2\uffff\1\u008b\1\u00b1\1\u0080\1\u00b2\1\u008d"
+        "\1\55\1\u0080\1\136\1\u008c\1\u00de\1\u008d\1\25\1\u008b\1\u0080"
+        "\1\u008d\1\u0080\1\u008c\1\u00de\1\25\1\u00b0"
         )
 
     DFA75_max = DFA.unpack(
-        u"\1\u00dd\1\uffff\1\u00b0\2\uffff\1\u008b\1\u00b1\1\u0080\1\u00b2"
-        u"\1\u008d\1\55\1\u0080\1\136\1\u008c\1\u00de\1\u008d\1\131\1\u008b"
-        u"\1\u0080\1\u008d\1\u0080\1\u008c\1\u00de\1\u00dd\1\u00b0"
+        "\1\u00dd\1\uffff\1\u00b0\2\uffff\1\u008b\1\u00b1\1\u0080\1\u00b2"
+        "\1\u008d\1\55\1\u0080\1\136\1\u008c\1\u00de\1\u008d\1\131\1\u008b"
+        "\1\u0080\1\u008d\1\u0080\1\u008c\1\u00de\1\u00dd\1\u00b0"
         )
 
     DFA75_accept = DFA.unpack(
-        u"\1\uffff\1\3\1\uffff\1\1\1\2\24\uffff"
+        "\1\uffff\1\3\1\uffff\1\1\1\2\24\uffff"
         )
 
     DFA75_special = DFA.unpack(
-        u"\31\uffff"
+        "\31\uffff"
         )
 
             
     DFA75_transition = [
-        DFA.unpack(u"\1\4\103\uffff\1\3\55\uffff\1\1\125\uffff\1\2"),
-        DFA.unpack(u""),
-        DFA.unpack(u"\1\5\11\uffff\1\5\2\uffff\1\5\4\uffff\1\5\31\uffff"
-        u"\1\5\2\uffff\2\5\3\uffff\1\5\3\uffff\1\5\7\uffff\2\5\1\uffff\2"
-        u"\5\3\uffff\1\5\11\uffff\1\5\2\uffff\1\5\7\uffff\1\5\2\uffff\1\5"
-        u"\31\uffff\1\5\56\uffff\1\6"),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u"\1\7"),
-        DFA.unpack(u"\1\10"),
-        DFA.unpack(u"\1\11"),
-        DFA.unpack(u"\1\12"),
-        DFA.unpack(u"\1\13"),
-        DFA.unpack(u"\1\14"),
-        DFA.unpack(u"\1\15"),
-        DFA.unpack(u"\1\16"),
-        DFA.unpack(u"\1\17"),
-        DFA.unpack(u"\1\20"),
-        DFA.unpack(u"\1\21"),
-        DFA.unpack(u"\1\4\103\uffff\1\3"),
-        DFA.unpack(u"\1\22"),
-        DFA.unpack(u"\1\23"),
-        DFA.unpack(u"\1\24"),
-        DFA.unpack(u"\1\25"),
-        DFA.unpack(u"\1\26"),
-        DFA.unpack(u"\1\27"),
-        DFA.unpack(u"\1\4\103\uffff\1\3\u0083\uffff\1\30"),
-        DFA.unpack(u"\1\6")
+        DFA.unpack("\1\4\103\uffff\1\3\55\uffff\1\1\125\uffff\1\2"),
+        DFA.unpack(""),
+        DFA.unpack("\1\5\11\uffff\1\5\2\uffff\1\5\4\uffff\1\5\31\uffff"
+        "\1\5\2\uffff\2\5\3\uffff\1\5\3\uffff\1\5\7\uffff\2\5\1\uffff\2"
+        "\5\3\uffff\1\5\11\uffff\1\5\2\uffff\1\5\7\uffff\1\5\2\uffff\1\5"
+        "\31\uffff\1\5\56\uffff\1\6"),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack("\1\7"),
+        DFA.unpack("\1\10"),
+        DFA.unpack("\1\11"),
+        DFA.unpack("\1\12"),
+        DFA.unpack("\1\13"),
+        DFA.unpack("\1\14"),
+        DFA.unpack("\1\15"),
+        DFA.unpack("\1\16"),
+        DFA.unpack("\1\17"),
+        DFA.unpack("\1\20"),
+        DFA.unpack("\1\21"),
+        DFA.unpack("\1\4\103\uffff\1\3"),
+        DFA.unpack("\1\22"),
+        DFA.unpack("\1\23"),
+        DFA.unpack("\1\24"),
+        DFA.unpack("\1\25"),
+        DFA.unpack("\1\26"),
+        DFA.unpack("\1\27"),
+        DFA.unpack("\1\4\103\uffff\1\3\u0083\uffff\1\30"),
+        DFA.unpack("\1\6")
     ]
 
     # class definition for DFA #75
@@ -26292,67 +26292,67 @@ class sdl92Parser(Parser):
     # lookup tables for DFA #76
 
     DFA76_eot = DFA.unpack(
-        u"\34\uffff"
+        "\34\uffff"
         )
 
     DFA76_eof = DFA.unpack(
-        u"\34\uffff"
+        "\34\uffff"
         )
 
     DFA76_min = DFA.unpack(
-        u"\1\24\1\7\1\166\3\uffff\1\u008b\1\u00b1\2\uffff\1\u0080\1\u00b2"
-        u"\1\u008d\1\55\1\u0080\1\136\1\u008c\1\u00de\1\u008d\1\24\1\u008b"
-        u"\1\u0080\1\u008d\1\u0080\1\u008c\1\u00de\1\24\1\u00b0"
+        "\1\24\1\7\1\166\3\uffff\1\u008b\1\u00b1\2\uffff\1\u0080\1\u00b2"
+        "\1\u008d\1\55\1\u0080\1\136\1\u008c\1\u00de\1\u008d\1\24\1\u008b"
+        "\1\u0080\1\u008d\1\u0080\1\u008c\1\u00de\1\24\1\u00b0"
         )
 
     DFA76_max = DFA.unpack(
-        u"\1\u00dd\1\u00b0\1\u0089\3\uffff\1\u008b\1\u00b1\2\uffff\1\u0080"
-        u"\1\u00b2\1\u008d\1\55\1\u0080\1\136\1\u008c\1\u00de\1\u008d\1\63"
-        u"\1\u008b\1\u0080\1\u008d\1\u0080\1\u008c\1\u00de\1\u00dd\1\u00b0"
+        "\1\u00dd\1\u00b0\1\u0089\3\uffff\1\u008b\1\u00b1\2\uffff\1\u0080"
+        "\1\u00b2\1\u008d\1\55\1\u0080\1\136\1\u008c\1\u00de\1\u008d\1\63"
+        "\1\u008b\1\u0080\1\u008d\1\u0080\1\u008c\1\u00de\1\u00dd\1\u00b0"
         )
 
     DFA76_accept = DFA.unpack(
-        u"\3\uffff\1\2\1\4\1\5\2\uffff\1\3\1\1\22\uffff"
+        "\3\uffff\1\2\1\4\1\5\2\uffff\1\3\1\1\22\uffff"
         )
 
     DFA76_special = DFA.unpack(
-        u"\34\uffff"
+        "\34\uffff"
         )
 
             
     DFA76_transition = [
-        DFA.unpack(u"\1\5\36\uffff\1\2\27\uffff\1\4\5\uffff\1\3\u008b\uffff"
-        u"\1\1"),
-        DFA.unpack(u"\1\6\11\uffff\1\6\2\uffff\1\6\4\uffff\1\6\31\uffff"
-        u"\1\6\2\uffff\2\6\3\uffff\1\6\3\uffff\1\6\7\uffff\2\6\1\uffff\2"
-        u"\6\3\uffff\1\6\11\uffff\1\6\2\uffff\1\6\7\uffff\1\6\2\uffff\1\6"
-        u"\31\uffff\1\6\56\uffff\1\7"),
-        DFA.unpack(u"\1\11\16\uffff\1\11\3\uffff\1\10"),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u"\1\12"),
-        DFA.unpack(u"\1\13"),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u"\1\14"),
-        DFA.unpack(u"\1\15"),
-        DFA.unpack(u"\1\16"),
-        DFA.unpack(u"\1\17"),
-        DFA.unpack(u"\1\20"),
-        DFA.unpack(u"\1\21"),
-        DFA.unpack(u"\1\22"),
-        DFA.unpack(u"\1\23"),
-        DFA.unpack(u"\1\24"),
-        DFA.unpack(u"\1\5\36\uffff\1\2"),
-        DFA.unpack(u"\1\25"),
-        DFA.unpack(u"\1\26"),
-        DFA.unpack(u"\1\27"),
-        DFA.unpack(u"\1\30"),
-        DFA.unpack(u"\1\31"),
-        DFA.unpack(u"\1\32"),
-        DFA.unpack(u"\1\5\36\uffff\1\2\u00a9\uffff\1\33"),
-        DFA.unpack(u"\1\7")
+        DFA.unpack("\1\5\36\uffff\1\2\27\uffff\1\4\5\uffff\1\3\u008b\uffff"
+        "\1\1"),
+        DFA.unpack("\1\6\11\uffff\1\6\2\uffff\1\6\4\uffff\1\6\31\uffff"
+        "\1\6\2\uffff\2\6\3\uffff\1\6\3\uffff\1\6\7\uffff\2\6\1\uffff\2"
+        "\6\3\uffff\1\6\11\uffff\1\6\2\uffff\1\6\7\uffff\1\6\2\uffff\1\6"
+        "\31\uffff\1\6\56\uffff\1\7"),
+        DFA.unpack("\1\11\16\uffff\1\11\3\uffff\1\10"),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack("\1\12"),
+        DFA.unpack("\1\13"),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack("\1\14"),
+        DFA.unpack("\1\15"),
+        DFA.unpack("\1\16"),
+        DFA.unpack("\1\17"),
+        DFA.unpack("\1\20"),
+        DFA.unpack("\1\21"),
+        DFA.unpack("\1\22"),
+        DFA.unpack("\1\23"),
+        DFA.unpack("\1\24"),
+        DFA.unpack("\1\5\36\uffff\1\2"),
+        DFA.unpack("\1\25"),
+        DFA.unpack("\1\26"),
+        DFA.unpack("\1\27"),
+        DFA.unpack("\1\30"),
+        DFA.unpack("\1\31"),
+        DFA.unpack("\1\32"),
+        DFA.unpack("\1\5\36\uffff\1\2\u00a9\uffff\1\33"),
+        DFA.unpack("\1\7")
     ]
 
     # class definition for DFA #76
@@ -26364,70 +26364,70 @@ class sdl92Parser(Parser):
     # lookup tables for DFA #80
 
     DFA80_eot = DFA.unpack(
-        u"\30\uffff"
+        "\30\uffff"
         )
 
     DFA80_eof = DFA.unpack(
-        u"\1\3\27\uffff"
+        "\1\3\27\uffff"
         )
 
     DFA80_min = DFA.unpack(
-        u"\1\6\1\7\2\uffff\1\u008b\1\u00b1\1\u0080\1\u00b2\1\u008d\1\55\1"
-        u"\u0080\1\136\1\u008c\1\u00de\1\u008d\1\24\1\u008b\1\u0080\1\u008d"
-        u"\1\u0080\1\u008c\1\u00de\1\24\1\u00b0"
+        "\1\6\1\7\2\uffff\1\u008b\1\u00b1\1\u0080\1\u00b2\1\u008d\1\55\1"
+        "\u0080\1\136\1\u008c\1\u00de\1\u008d\1\24\1\u008b\1\u0080\1\u008d"
+        "\1\u0080\1\u008c\1\u00de\1\24\1\u00b0"
         )
 
     DFA80_max = DFA.unpack(
-        u"\1\u00dd\1\u00b0\2\uffff\1\u008b\1\u00b1\1\u0080\1\u00b2\1\u008d"
-        u"\1\55\1\u0080\1\136\1\u008c\1\u00de\1\u008d\1\u008e\1\u008b\1\u0080"
-        u"\1\u008d\1\u0080\1\u008c\1\u00de\1\u00dd\1\u00b0"
+        "\1\u00dd\1\u00b0\2\uffff\1\u008b\1\u00b1\1\u0080\1\u00b2\1\u008d"
+        "\1\55\1\u0080\1\136\1\u008c\1\u00de\1\u008d\1\u008e\1\u008b\1\u0080"
+        "\1\u008d\1\u0080\1\u008c\1\u00de\1\u00dd\1\u00b0"
         )
 
     DFA80_accept = DFA.unpack(
-        u"\2\uffff\1\1\1\2\24\uffff"
+        "\2\uffff\1\1\1\2\24\uffff"
         )
 
     DFA80_special = DFA.unpack(
-        u"\30\uffff"
+        "\30\uffff"
         )
 
             
     DFA80_transition = [
-        DFA.unpack(u"\1\2\15\uffff\1\3\4\uffff\1\2\6\uffff\1\2\11\uffff\1"
-        u"\2\10\uffff\1\3\2\uffff\1\2\4\uffff\1\2\3\uffff\1\2\13\uffff\1"
-        u"\3\2\uffff\2\2\1\uffff\1\3\3\uffff\1\2\6\uffff\1\2\1\uffff\1\2"
-        u"\5\uffff\1\2\21\uffff\1\2\15\uffff\1\3\11\uffff\1\2\11\uffff\1"
-        u"\2\104\uffff\1\1"),
-        DFA.unpack(u"\1\4\11\uffff\1\4\2\uffff\1\4\4\uffff\1\4\31\uffff"
-        u"\1\4\2\uffff\2\4\3\uffff\1\4\3\uffff\1\4\7\uffff\2\4\1\uffff\2"
-        u"\4\3\uffff\1\4\11\uffff\1\4\2\uffff\1\4\7\uffff\1\4\2\uffff\1\4"
-        u"\31\uffff\1\4\56\uffff\1\5"),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u"\1\6"),
-        DFA.unpack(u"\1\7"),
-        DFA.unpack(u"\1\10"),
-        DFA.unpack(u"\1\11"),
-        DFA.unpack(u"\1\12"),
-        DFA.unpack(u"\1\13"),
-        DFA.unpack(u"\1\14"),
-        DFA.unpack(u"\1\15"),
-        DFA.unpack(u"\1\16"),
-        DFA.unpack(u"\1\17"),
-        DFA.unpack(u"\1\20"),
-        DFA.unpack(u"\1\3\4\uffff\1\2\31\uffff\1\3\2\uffff\1\2\4\uffff\1"
-        u"\2\3\uffff\1\2\17\uffff\1\2\14\uffff\1\2\7\uffff\1\2\51\uffff\1"
-        u"\2"),
-        DFA.unpack(u"\1\21"),
-        DFA.unpack(u"\1\22"),
-        DFA.unpack(u"\1\23"),
-        DFA.unpack(u"\1\24"),
-        DFA.unpack(u"\1\25"),
-        DFA.unpack(u"\1\26"),
-        DFA.unpack(u"\1\3\4\uffff\1\2\31\uffff\1\3\2\uffff\1\2\4\uffff\1"
-        u"\2\3\uffff\1\2\17\uffff\1\2\14\uffff\1\2\7\uffff\1\2\21\uffff\1"
-        u"\2\27\uffff\1\2\116\uffff\1\27"),
-        DFA.unpack(u"\1\5")
+        DFA.unpack("\1\2\15\uffff\1\3\4\uffff\1\2\6\uffff\1\2\11\uffff\1"
+        "\2\10\uffff\1\3\2\uffff\1\2\4\uffff\1\2\3\uffff\1\2\13\uffff\1"
+        "\3\2\uffff\2\2\1\uffff\1\3\3\uffff\1\2\6\uffff\1\2\1\uffff\1\2"
+        "\5\uffff\1\2\21\uffff\1\2\15\uffff\1\3\11\uffff\1\2\11\uffff\1"
+        "\2\104\uffff\1\1"),
+        DFA.unpack("\1\4\11\uffff\1\4\2\uffff\1\4\4\uffff\1\4\31\uffff"
+        "\1\4\2\uffff\2\4\3\uffff\1\4\3\uffff\1\4\7\uffff\2\4\1\uffff\2"
+        "\4\3\uffff\1\4\11\uffff\1\4\2\uffff\1\4\7\uffff\1\4\2\uffff\1\4"
+        "\31\uffff\1\4\56\uffff\1\5"),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack("\1\6"),
+        DFA.unpack("\1\7"),
+        DFA.unpack("\1\10"),
+        DFA.unpack("\1\11"),
+        DFA.unpack("\1\12"),
+        DFA.unpack("\1\13"),
+        DFA.unpack("\1\14"),
+        DFA.unpack("\1\15"),
+        DFA.unpack("\1\16"),
+        DFA.unpack("\1\17"),
+        DFA.unpack("\1\20"),
+        DFA.unpack("\1\3\4\uffff\1\2\31\uffff\1\3\2\uffff\1\2\4\uffff\1"
+        "\2\3\uffff\1\2\17\uffff\1\2\14\uffff\1\2\7\uffff\1\2\51\uffff\1"
+        "\2"),
+        DFA.unpack("\1\21"),
+        DFA.unpack("\1\22"),
+        DFA.unpack("\1\23"),
+        DFA.unpack("\1\24"),
+        DFA.unpack("\1\25"),
+        DFA.unpack("\1\26"),
+        DFA.unpack("\1\3\4\uffff\1\2\31\uffff\1\3\2\uffff\1\2\4\uffff\1"
+        "\2\3\uffff\1\2\17\uffff\1\2\14\uffff\1\2\7\uffff\1\2\21\uffff\1"
+        "\2\27\uffff\1\2\116\uffff\1\27"),
+        DFA.unpack("\1\5")
     ]
 
     # class definition for DFA #80
@@ -26439,60 +26439,60 @@ class sdl92Parser(Parser):
     # lookup tables for DFA #91
 
     DFA91_eot = DFA.unpack(
-        u"\31\uffff"
+        "\31\uffff"
         )
 
     DFA91_eof = DFA.unpack(
-        u"\1\2\30\uffff"
+        "\1\2\30\uffff"
         )
 
     DFA91_min = DFA.unpack(
-        u"\1\6\1\0\27\uffff"
+        "\1\6\1\0\27\uffff"
         )
 
     DFA91_max = DFA.unpack(
-        u"\1\u00dd\1\0\27\uffff"
+        "\1\u00dd\1\0\27\uffff"
         )
 
     DFA91_accept = DFA.unpack(
-        u"\2\uffff\1\2\25\uffff\1\1"
+        "\2\uffff\1\2\25\uffff\1\1"
         )
 
     DFA91_special = DFA.unpack(
-        u"\1\uffff\1\0\27\uffff"
+        "\1\uffff\1\0\27\uffff"
         )
 
             
     DFA91_transition = [
-        DFA.unpack(u"\1\2\15\uffff\1\2\4\uffff\1\2\6\uffff\1\2\11\uffff\1"
-        u"\2\10\uffff\1\2\2\uffff\1\2\4\uffff\1\2\3\uffff\1\2\13\uffff\1"
-        u"\1\2\uffff\2\2\1\uffff\1\2\3\uffff\1\2\6\uffff\1\2\1\uffff\1\2"
-        u"\5\uffff\1\2\21\uffff\1\2\15\uffff\1\2\11\uffff\1\2\11\uffff\1"
-        u"\2\104\uffff\1\2"),
-        DFA.unpack(u"\1\uffff"),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u"")
+        DFA.unpack("\1\2\15\uffff\1\2\4\uffff\1\2\6\uffff\1\2\11\uffff\1"
+        "\2\10\uffff\1\2\2\uffff\1\2\4\uffff\1\2\3\uffff\1\2\13\uffff\1"
+        "\1\2\uffff\2\2\1\uffff\1\2\3\uffff\1\2\6\uffff\1\2\1\uffff\1\2"
+        "\5\uffff\1\2\21\uffff\1\2\15\uffff\1\2\11\uffff\1\2\11\uffff\1"
+        "\2\104\uffff\1\2"),
+        DFA.unpack("\1\uffff"),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack("")
     ]
 
     # class definition for DFA #91
@@ -26537,70 +26537,70 @@ class sdl92Parser(Parser):
     # lookup tables for DFA #92
 
     DFA92_eot = DFA.unpack(
-        u"\30\uffff"
+        "\30\uffff"
         )
 
     DFA92_eof = DFA.unpack(
-        u"\1\3\27\uffff"
+        "\1\3\27\uffff"
         )
 
     DFA92_min = DFA.unpack(
-        u"\1\6\1\7\2\uffff\1\u008b\1\u00b1\1\u0080\1\u00b2\1\u008d\1\55\1"
-        u"\u0080\1\136\1\u008c\1\u00de\1\u008d\1\24\1\u008b\1\u0080\1\u008d"
-        u"\1\u0080\1\u008c\1\u00de\1\24\1\u00b0"
+        "\1\6\1\7\2\uffff\1\u008b\1\u00b1\1\u0080\1\u00b2\1\u008d\1\55\1"
+        "\u0080\1\136\1\u008c\1\u00de\1\u008d\1\24\1\u008b\1\u0080\1\u008d"
+        "\1\u0080\1\u008c\1\u00de\1\24\1\u00b0"
         )
 
     DFA92_max = DFA.unpack(
-        u"\1\u00dd\1\u00b0\2\uffff\1\u008b\1\u00b1\1\u0080\1\u00b2\1\u008d"
-        u"\1\55\1\u0080\1\136\1\u008c\1\u00de\1\u008d\1\u008e\1\u008b\1\u0080"
-        u"\1\u008d\1\u0080\1\u008c\1\u00de\1\u00dd\1\u00b0"
+        "\1\u00dd\1\u00b0\2\uffff\1\u008b\1\u00b1\1\u0080\1\u00b2\1\u008d"
+        "\1\55\1\u0080\1\136\1\u008c\1\u00de\1\u008d\1\u008e\1\u008b\1\u0080"
+        "\1\u008d\1\u0080\1\u008c\1\u00de\1\u00dd\1\u00b0"
         )
 
     DFA92_accept = DFA.unpack(
-        u"\2\uffff\1\1\1\2\24\uffff"
+        "\2\uffff\1\1\1\2\24\uffff"
         )
 
     DFA92_special = DFA.unpack(
-        u"\30\uffff"
+        "\30\uffff"
         )
 
             
     DFA92_transition = [
-        DFA.unpack(u"\1\2\15\uffff\1\3\4\uffff\1\2\6\uffff\1\2\11\uffff\1"
-        u"\2\10\uffff\1\3\2\uffff\1\2\4\uffff\1\2\3\uffff\1\2\13\uffff\1"
-        u"\3\2\uffff\2\2\1\uffff\1\3\3\uffff\1\2\6\uffff\1\2\1\uffff\1\2"
-        u"\5\uffff\1\2\21\uffff\1\2\15\uffff\1\3\11\uffff\1\2\11\uffff\1"
-        u"\2\104\uffff\1\1"),
-        DFA.unpack(u"\1\4\11\uffff\1\4\2\uffff\1\4\4\uffff\1\4\31\uffff"
-        u"\1\4\2\uffff\2\4\3\uffff\1\4\3\uffff\1\4\7\uffff\2\4\1\uffff\2"
-        u"\4\3\uffff\1\4\11\uffff\1\4\2\uffff\1\4\7\uffff\1\4\2\uffff\1\4"
-        u"\31\uffff\1\4\56\uffff\1\5"),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u"\1\6"),
-        DFA.unpack(u"\1\7"),
-        DFA.unpack(u"\1\10"),
-        DFA.unpack(u"\1\11"),
-        DFA.unpack(u"\1\12"),
-        DFA.unpack(u"\1\13"),
-        DFA.unpack(u"\1\14"),
-        DFA.unpack(u"\1\15"),
-        DFA.unpack(u"\1\16"),
-        DFA.unpack(u"\1\17"),
-        DFA.unpack(u"\1\20"),
-        DFA.unpack(u"\1\3\4\uffff\1\2\31\uffff\1\3\2\uffff\1\2\4\uffff\1"
-        u"\2\3\uffff\1\2\17\uffff\1\2\14\uffff\1\2\7\uffff\1\2\51\uffff\1"
-        u"\2"),
-        DFA.unpack(u"\1\21"),
-        DFA.unpack(u"\1\22"),
-        DFA.unpack(u"\1\23"),
-        DFA.unpack(u"\1\24"),
-        DFA.unpack(u"\1\25"),
-        DFA.unpack(u"\1\26"),
-        DFA.unpack(u"\1\3\4\uffff\1\2\31\uffff\1\3\2\uffff\1\2\4\uffff\1"
-        u"\2\3\uffff\1\2\17\uffff\1\2\14\uffff\1\2\7\uffff\1\2\21\uffff\1"
-        u"\2\27\uffff\1\2\116\uffff\1\27"),
-        DFA.unpack(u"\1\5")
+        DFA.unpack("\1\2\15\uffff\1\3\4\uffff\1\2\6\uffff\1\2\11\uffff\1"
+        "\2\10\uffff\1\3\2\uffff\1\2\4\uffff\1\2\3\uffff\1\2\13\uffff\1"
+        "\3\2\uffff\2\2\1\uffff\1\3\3\uffff\1\2\6\uffff\1\2\1\uffff\1\2"
+        "\5\uffff\1\2\21\uffff\1\2\15\uffff\1\3\11\uffff\1\2\11\uffff\1"
+        "\2\104\uffff\1\1"),
+        DFA.unpack("\1\4\11\uffff\1\4\2\uffff\1\4\4\uffff\1\4\31\uffff"
+        "\1\4\2\uffff\2\4\3\uffff\1\4\3\uffff\1\4\7\uffff\2\4\1\uffff\2"
+        "\4\3\uffff\1\4\11\uffff\1\4\2\uffff\1\4\7\uffff\1\4\2\uffff\1\4"
+        "\31\uffff\1\4\56\uffff\1\5"),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack("\1\6"),
+        DFA.unpack("\1\7"),
+        DFA.unpack("\1\10"),
+        DFA.unpack("\1\11"),
+        DFA.unpack("\1\12"),
+        DFA.unpack("\1\13"),
+        DFA.unpack("\1\14"),
+        DFA.unpack("\1\15"),
+        DFA.unpack("\1\16"),
+        DFA.unpack("\1\17"),
+        DFA.unpack("\1\20"),
+        DFA.unpack("\1\3\4\uffff\1\2\31\uffff\1\3\2\uffff\1\2\4\uffff\1"
+        "\2\3\uffff\1\2\17\uffff\1\2\14\uffff\1\2\7\uffff\1\2\51\uffff\1"
+        "\2"),
+        DFA.unpack("\1\21"),
+        DFA.unpack("\1\22"),
+        DFA.unpack("\1\23"),
+        DFA.unpack("\1\24"),
+        DFA.unpack("\1\25"),
+        DFA.unpack("\1\26"),
+        DFA.unpack("\1\3\4\uffff\1\2\31\uffff\1\3\2\uffff\1\2\4\uffff\1"
+        "\2\3\uffff\1\2\17\uffff\1\2\14\uffff\1\2\7\uffff\1\2\21\uffff\1"
+        "\2\27\uffff\1\2\116\uffff\1\27"),
+        DFA.unpack("\1\5")
     ]
 
     # class definition for DFA #92
@@ -26612,96 +26612,96 @@ class sdl92Parser(Parser):
     # lookup tables for DFA #100
 
     DFA100_eot = DFA.unpack(
-        u"\51\uffff"
+        "\51\uffff"
         )
 
     DFA100_eof = DFA.unpack(
-        u"\51\uffff"
+        "\51\uffff"
         )
 
     DFA100_min = DFA.unpack(
-        u"\1\6\1\7\1\u008b\2\uffff\1\u008b\1\u00b1\1\6\1\u0080\1\u00b2\1"
-        u"\7\1\u008d\1\55\1\u008b\1\u0080\1\136\1\u0080\1\u008c\1\u00de\2"
-        u"\u008d\1\31\1\u0080\1\u008b\1\u008c\1\u0080\2\u008d\1\u008b\2\u0080"
-        u"\1\u008c\1\u008d\1\u00de\1\u0080\1\31\1\u008c\1\u00d8\1\u00b0\1"
-        u"\u00de\1\31"
+        "\1\6\1\7\1\u008b\2\uffff\1\u008b\1\u00b1\1\6\1\u0080\1\u00b2\1"
+        "\7\1\u008d\1\55\1\u008b\1\u0080\1\136\1\u0080\1\u008c\1\u00de\2"
+        "\u008d\1\31\1\u0080\1\u008b\1\u008c\1\u0080\2\u008d\1\u008b\2\u0080"
+        "\1\u008c\1\u008d\1\u00de\1\u0080\1\31\1\u008c\1\u00d8\1\u00b0\1"
+        "\u00de\1\31"
         )
 
     DFA100_max = DFA.unpack(
-        u"\1\u00dd\1\u00b0\1\u00d9\2\uffff\1\u008b\1\u00b1\1\u00dd\1\u0080"
-        u"\1\u00b2\1\u00b0\1\u008d\1\55\1\u008b\1\u0080\1\136\1\u0080\1\u008c"
-        u"\1\u00de\2\u008d\1\u008e\1\u0080\1\u008b\1\u008c\1\u0080\2\u008d"
-        u"\1\u008b\2\u0080\1\u008c\1\u008d\1\u00de\1\u0080\1\u00dd\1\u008c"
-        u"\1\u00d8\1\u00b0\1\u00de\1\u00dd"
+        "\1\u00dd\1\u00b0\1\u00d9\2\uffff\1\u008b\1\u00b1\1\u00dd\1\u0080"
+        "\1\u00b2\1\u00b0\1\u008d\1\55\1\u008b\1\u0080\1\136\1\u0080\1\u008c"
+        "\1\u00de\2\u008d\1\u008e\1\u0080\1\u008b\1\u008c\1\u0080\2\u008d"
+        "\1\u008b\2\u0080\1\u008c\1\u008d\1\u00de\1\u0080\1\u00dd\1\u008c"
+        "\1\u00d8\1\u00b0\1\u00de\1\u00dd"
         )
 
     DFA100_accept = DFA.unpack(
-        u"\3\uffff\1\1\1\2\44\uffff"
+        "\3\uffff\1\1\1\2\44\uffff"
         )
 
     DFA100_special = DFA.unpack(
-        u"\51\uffff"
+        "\51\uffff"
         )
 
             
     DFA100_transition = [
-        DFA.unpack(u"\1\3\22\uffff\1\3\6\uffff\1\3\11\uffff\1\3\13\uffff"
-        u"\1\4\4\uffff\1\4\3\uffff\1\3\16\uffff\1\3\1\4\5\uffff\1\3\6\uffff"
-        u"\1\4\1\uffff\1\3\5\uffff\1\3\21\uffff\1\2\27\uffff\1\3\11\uffff"
-        u"\1\3\104\uffff\1\1"),
-        DFA.unpack(u"\1\5\11\uffff\1\5\2\uffff\1\5\4\uffff\1\5\31\uffff"
-        u"\1\5\2\uffff\2\5\3\uffff\1\5\3\uffff\1\5\7\uffff\2\5\1\uffff\2"
-        u"\5\3\uffff\1\5\11\uffff\1\5\2\uffff\1\5\7\uffff\1\5\2\uffff\1\5"
-        u"\31\uffff\1\5\56\uffff\1\6"),
-        DFA.unpack(u"\1\3\51\uffff\1\3\42\uffff\1\7\1\3"),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u"\1\10"),
-        DFA.unpack(u"\1\11"),
-        DFA.unpack(u"\1\3\22\uffff\1\3\6\uffff\1\3\11\uffff\1\3\13\uffff"
-        u"\1\4\4\uffff\1\4\3\uffff\1\3\16\uffff\1\3\1\4\5\uffff\1\3\6\uffff"
-        u"\1\4\1\uffff\1\3\5\uffff\1\3\21\uffff\1\3\27\uffff\1\3\11\uffff"
-        u"\1\3\104\uffff\1\12"),
-        DFA.unpack(u"\1\13"),
-        DFA.unpack(u"\1\14"),
-        DFA.unpack(u"\1\15\11\uffff\1\15\2\uffff\1\15\4\uffff\1\15\31\uffff"
-        u"\1\15\2\uffff\2\15\3\uffff\1\15\3\uffff\1\15\7\uffff\2\15\1\uffff"
-        u"\2\15\3\uffff\1\15\11\uffff\1\15\2\uffff\1\15\7\uffff\1\15\2\uffff"
-        u"\1\15\31\uffff\1\15\56\uffff\1\6"),
-        DFA.unpack(u"\1\16"),
-        DFA.unpack(u"\1\17"),
-        DFA.unpack(u"\1\20"),
-        DFA.unpack(u"\1\21"),
-        DFA.unpack(u"\1\22"),
-        DFA.unpack(u"\1\23"),
-        DFA.unpack(u"\1\24"),
-        DFA.unpack(u"\1\25"),
-        DFA.unpack(u"\1\26"),
-        DFA.unpack(u"\1\27"),
-        DFA.unpack(u"\1\3\34\uffff\1\4\4\uffff\1\4\3\uffff\1\3\17\uffff"
-        u"\1\4\14\uffff\1\4\7\uffff\1\3\51\uffff\1\3"),
-        DFA.unpack(u"\1\30"),
-        DFA.unpack(u"\1\31"),
-        DFA.unpack(u"\1\32"),
-        DFA.unpack(u"\1\33"),
-        DFA.unpack(u"\1\34"),
-        DFA.unpack(u"\1\35"),
-        DFA.unpack(u"\1\36"),
-        DFA.unpack(u"\1\37"),
-        DFA.unpack(u"\1\40"),
-        DFA.unpack(u"\1\41"),
-        DFA.unpack(u"\1\42"),
-        DFA.unpack(u"\1\43"),
-        DFA.unpack(u"\1\44"),
-        DFA.unpack(u"\1\3\34\uffff\1\4\4\uffff\1\4\3\uffff\1\3\17\uffff"
-        u"\1\4\14\uffff\1\4\7\uffff\1\3\21\uffff\1\45\27\uffff\1\3\116\uffff"
-        u"\1\46"),
-        DFA.unpack(u"\1\47"),
-        DFA.unpack(u"\1\7"),
-        DFA.unpack(u"\1\6"),
-        DFA.unpack(u"\1\50"),
-        DFA.unpack(u"\1\3\34\uffff\1\4\4\uffff\1\4\3\uffff\1\3\17\uffff"
-        u"\1\4\14\uffff\1\4\7\uffff\1\3\51\uffff\1\3\116\uffff\1\46")
+        DFA.unpack("\1\3\22\uffff\1\3\6\uffff\1\3\11\uffff\1\3\13\uffff"
+        "\1\4\4\uffff\1\4\3\uffff\1\3\16\uffff\1\3\1\4\5\uffff\1\3\6\uffff"
+        "\1\4\1\uffff\1\3\5\uffff\1\3\21\uffff\1\2\27\uffff\1\3\11\uffff"
+        "\1\3\104\uffff\1\1"),
+        DFA.unpack("\1\5\11\uffff\1\5\2\uffff\1\5\4\uffff\1\5\31\uffff"
+        "\1\5\2\uffff\2\5\3\uffff\1\5\3\uffff\1\5\7\uffff\2\5\1\uffff\2"
+        "\5\3\uffff\1\5\11\uffff\1\5\2\uffff\1\5\7\uffff\1\5\2\uffff\1\5"
+        "\31\uffff\1\5\56\uffff\1\6"),
+        DFA.unpack("\1\3\51\uffff\1\3\42\uffff\1\7\1\3"),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack("\1\10"),
+        DFA.unpack("\1\11"),
+        DFA.unpack("\1\3\22\uffff\1\3\6\uffff\1\3\11\uffff\1\3\13\uffff"
+        "\1\4\4\uffff\1\4\3\uffff\1\3\16\uffff\1\3\1\4\5\uffff\1\3\6\uffff"
+        "\1\4\1\uffff\1\3\5\uffff\1\3\21\uffff\1\3\27\uffff\1\3\11\uffff"
+        "\1\3\104\uffff\1\12"),
+        DFA.unpack("\1\13"),
+        DFA.unpack("\1\14"),
+        DFA.unpack("\1\15\11\uffff\1\15\2\uffff\1\15\4\uffff\1\15\31\uffff"
+        "\1\15\2\uffff\2\15\3\uffff\1\15\3\uffff\1\15\7\uffff\2\15\1\uffff"
+        "\2\15\3\uffff\1\15\11\uffff\1\15\2\uffff\1\15\7\uffff\1\15\2\uffff"
+        "\1\15\31\uffff\1\15\56\uffff\1\6"),
+        DFA.unpack("\1\16"),
+        DFA.unpack("\1\17"),
+        DFA.unpack("\1\20"),
+        DFA.unpack("\1\21"),
+        DFA.unpack("\1\22"),
+        DFA.unpack("\1\23"),
+        DFA.unpack("\1\24"),
+        DFA.unpack("\1\25"),
+        DFA.unpack("\1\26"),
+        DFA.unpack("\1\27"),
+        DFA.unpack("\1\3\34\uffff\1\4\4\uffff\1\4\3\uffff\1\3\17\uffff"
+        "\1\4\14\uffff\1\4\7\uffff\1\3\51\uffff\1\3"),
+        DFA.unpack("\1\30"),
+        DFA.unpack("\1\31"),
+        DFA.unpack("\1\32"),
+        DFA.unpack("\1\33"),
+        DFA.unpack("\1\34"),
+        DFA.unpack("\1\35"),
+        DFA.unpack("\1\36"),
+        DFA.unpack("\1\37"),
+        DFA.unpack("\1\40"),
+        DFA.unpack("\1\41"),
+        DFA.unpack("\1\42"),
+        DFA.unpack("\1\43"),
+        DFA.unpack("\1\44"),
+        DFA.unpack("\1\3\34\uffff\1\4\4\uffff\1\4\3\uffff\1\3\17\uffff"
+        "\1\4\14\uffff\1\4\7\uffff\1\3\21\uffff\1\45\27\uffff\1\3\116\uffff"
+        "\1\46"),
+        DFA.unpack("\1\47"),
+        DFA.unpack("\1\7"),
+        DFA.unpack("\1\6"),
+        DFA.unpack("\1\50"),
+        DFA.unpack("\1\3\34\uffff\1\4\4\uffff\1\4\3\uffff\1\3\17\uffff"
+        "\1\4\14\uffff\1\4\7\uffff\1\3\51\uffff\1\3\116\uffff\1\46")
     ]
 
     # class definition for DFA #100
@@ -26713,105 +26713,105 @@ class sdl92Parser(Parser):
     # lookup tables for DFA #97
 
     DFA97_eot = DFA.unpack(
-        u"\52\uffff"
+        "\52\uffff"
         )
 
     DFA97_eof = DFA.unpack(
-        u"\1\3\6\uffff\1\3\42\uffff"
+        "\1\3\6\uffff\1\3\42\uffff"
         )
 
     DFA97_min = DFA.unpack(
-        u"\1\6\1\7\1\u008b\2\uffff\1\u008b\1\u00b1\1\6\1\u0080\1\u00b2\1"
-        u"\7\1\u008b\1\u008d\1\55\1\u008b\1\u0080\1\136\1\u0080\1\u008c\1"
-        u"\u00de\2\u008d\1\24\1\u0080\1\u008b\1\u008c\1\u0080\2\u008d\1\u008b"
-        u"\2\u0080\1\u008c\1\u008d\1\u00de\1\u0080\1\24\1\u008c\1\u00b0\1"
-        u"\u00d8\1\u00de\1\24"
+        "\1\6\1\7\1\u008b\2\uffff\1\u008b\1\u00b1\1\6\1\u0080\1\u00b2\1"
+        "\7\1\u008b\1\u008d\1\55\1\u008b\1\u0080\1\136\1\u0080\1\u008c\1"
+        "\u00de\2\u008d\1\24\1\u0080\1\u008b\1\u008c\1\u0080\2\u008d\1\u008b"
+        "\2\u0080\1\u008c\1\u008d\1\u00de\1\u0080\1\24\1\u008c\1\u00b0\1"
+        "\u00d8\1\u00de\1\24"
         )
 
     DFA97_max = DFA.unpack(
-        u"\1\u00dd\1\u00b4\1\u00d9\2\uffff\1\u008b\1\u00b1\1\u00dd\1\u0080"
-        u"\1\u00b2\1\u00b4\1\u00d9\1\u008d\1\55\1\u008b\1\u0080\1\136\1\u0080"
-        u"\1\u008c\1\u00de\2\u008d\1\u008e\1\u0080\1\u008b\1\u008c\1\u0080"
-        u"\2\u008d\1\u008b\2\u0080\1\u008c\1\u008d\1\u00de\1\u0080\1\u00dd"
-        u"\1\u008c\1\u00b0\1\u00d8\1\u00de\1\u00dd"
+        "\1\u00dd\1\u00b4\1\u00d9\2\uffff\1\u008b\1\u00b1\1\u00dd\1\u0080"
+        "\1\u00b2\1\u00b4\1\u00d9\1\u008d\1\55\1\u008b\1\u0080\1\136\1\u0080"
+        "\1\u008c\1\u00de\2\u008d\1\u008e\1\u0080\1\u008b\1\u008c\1\u0080"
+        "\2\u008d\1\u008b\2\u0080\1\u008c\1\u008d\1\u00de\1\u0080\1\u00dd"
+        "\1\u008c\1\u00b0\1\u00d8\1\u00de\1\u00dd"
         )
 
     DFA97_accept = DFA.unpack(
-        u"\3\uffff\1\2\1\1\45\uffff"
+        "\3\uffff\1\2\1\1\45\uffff"
         )
 
     DFA97_special = DFA.unpack(
-        u"\52\uffff"
+        "\52\uffff"
         )
 
             
     DFA97_transition = [
-        DFA.unpack(u"\1\4\15\uffff\2\3\3\uffff\1\4\1\uffff\1\3\4\uffff\1"
-        u"\4\11\uffff\1\4\10\uffff\1\3\2\uffff\1\3\4\uffff\1\3\3\uffff\1"
-        u"\4\13\uffff\1\3\2\uffff\1\4\1\3\1\uffff\1\3\3\uffff\1\4\3\uffff"
-        u"\1\3\2\uffff\1\3\1\uffff\1\4\5\uffff\1\4\21\uffff\1\2\7\uffff\2"
-        u"\3\1\uffff\2\3\1\uffff\1\3\2\uffff\1\3\3\uffff\1\3\2\uffff\1\4"
-        u"\2\3\7\uffff\1\4\1\uffff\1\3\102\uffff\1\1"),
-        DFA.unpack(u"\1\5\11\uffff\1\5\2\uffff\1\5\4\uffff\1\5\31\uffff"
-        u"\1\5\2\uffff\2\5\3\uffff\1\5\3\uffff\1\5\7\uffff\2\5\1\uffff\2"
-        u"\5\3\uffff\1\5\11\uffff\1\5\2\uffff\1\5\7\uffff\1\5\2\uffff\1\5"
-        u"\31\uffff\1\5\56\uffff\1\6\3\uffff\1\3"),
-        DFA.unpack(u"\1\4\51\uffff\1\4\42\uffff\1\7\1\4"),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u"\1\10"),
-        DFA.unpack(u"\1\11"),
-        DFA.unpack(u"\1\4\15\uffff\2\3\3\uffff\1\4\1\uffff\1\3\4\uffff\1"
-        u"\4\11\uffff\1\4\10\uffff\1\3\2\uffff\1\3\4\uffff\1\3\3\uffff\1"
-        u"\4\13\uffff\1\3\2\uffff\1\4\1\3\1\uffff\1\3\3\uffff\1\4\3\uffff"
-        u"\1\3\2\uffff\1\3\1\uffff\1\4\5\uffff\1\4\21\uffff\1\13\7\uffff"
-        u"\2\3\1\uffff\2\3\1\uffff\1\3\2\uffff\1\3\3\uffff\1\3\2\uffff\1"
-        u"\4\2\3\7\uffff\1\4\1\uffff\1\3\102\uffff\1\12"),
-        DFA.unpack(u"\1\14"),
-        DFA.unpack(u"\1\15"),
-        DFA.unpack(u"\1\16\11\uffff\1\16\2\uffff\1\16\4\uffff\1\16\31\uffff"
-        u"\1\16\2\uffff\2\16\3\uffff\1\16\3\uffff\1\16\7\uffff\2\16\1\uffff"
-        u"\2\16\3\uffff\1\16\11\uffff\1\16\2\uffff\1\16\7\uffff\1\16\2\uffff"
-        u"\1\16\31\uffff\1\16\56\uffff\1\6\3\uffff\1\3"),
-        DFA.unpack(u"\1\4\51\uffff\1\4\42\uffff\1\3\1\4"),
-        DFA.unpack(u"\1\17"),
-        DFA.unpack(u"\1\20"),
-        DFA.unpack(u"\1\21"),
-        DFA.unpack(u"\1\22"),
-        DFA.unpack(u"\1\23"),
-        DFA.unpack(u"\1\24"),
-        DFA.unpack(u"\1\25"),
-        DFA.unpack(u"\1\26"),
-        DFA.unpack(u"\1\27"),
-        DFA.unpack(u"\1\30"),
-        DFA.unpack(u"\2\3\3\uffff\1\4\1\uffff\1\3\27\uffff\1\3\2\uffff\1"
-        u"\3\4\uffff\1\3\3\uffff\1\4\17\uffff\1\3\11\uffff\1\3\2\uffff\1"
-        u"\3\7\uffff\1\4\34\uffff\1\3\11\uffff\1\3\2\uffff\1\4"),
-        DFA.unpack(u"\1\31"),
-        DFA.unpack(u"\1\32"),
-        DFA.unpack(u"\1\33"),
-        DFA.unpack(u"\1\34"),
-        DFA.unpack(u"\1\35"),
-        DFA.unpack(u"\1\36"),
-        DFA.unpack(u"\1\37"),
-        DFA.unpack(u"\1\40"),
-        DFA.unpack(u"\1\41"),
-        DFA.unpack(u"\1\42"),
-        DFA.unpack(u"\1\43"),
-        DFA.unpack(u"\1\44"),
-        DFA.unpack(u"\1\45"),
-        DFA.unpack(u"\2\3\3\uffff\1\4\1\uffff\1\3\27\uffff\1\3\2\uffff\1"
-        u"\3\4\uffff\1\3\3\uffff\1\4\17\uffff\1\3\11\uffff\1\3\2\uffff\1"
-        u"\3\7\uffff\1\4\21\uffff\1\47\12\uffff\1\3\11\uffff\1\3\2\uffff"
-        u"\1\4\116\uffff\1\46"),
-        DFA.unpack(u"\1\50"),
-        DFA.unpack(u"\1\6"),
-        DFA.unpack(u"\1\7"),
-        DFA.unpack(u"\1\51"),
-        DFA.unpack(u"\2\3\3\uffff\1\4\1\uffff\1\3\27\uffff\1\3\2\uffff\1"
-        u"\3\4\uffff\1\3\3\uffff\1\4\17\uffff\1\3\11\uffff\1\3\2\uffff\1"
-        u"\3\7\uffff\1\4\21\uffff\1\3\12\uffff\1\3\11\uffff\1\3\2\uffff\1"
-        u"\4\116\uffff\1\46")
+        DFA.unpack("\1\4\15\uffff\2\3\3\uffff\1\4\1\uffff\1\3\4\uffff\1"
+        "\4\11\uffff\1\4\10\uffff\1\3\2\uffff\1\3\4\uffff\1\3\3\uffff\1"
+        "\4\13\uffff\1\3\2\uffff\1\4\1\3\1\uffff\1\3\3\uffff\1\4\3\uffff"
+        "\1\3\2\uffff\1\3\1\uffff\1\4\5\uffff\1\4\21\uffff\1\2\7\uffff\2"
+        "\3\1\uffff\2\3\1\uffff\1\3\2\uffff\1\3\3\uffff\1\3\2\uffff\1\4"
+        "\2\3\7\uffff\1\4\1\uffff\1\3\102\uffff\1\1"),
+        DFA.unpack("\1\5\11\uffff\1\5\2\uffff\1\5\4\uffff\1\5\31\uffff"
+        "\1\5\2\uffff\2\5\3\uffff\1\5\3\uffff\1\5\7\uffff\2\5\1\uffff\2"
+        "\5\3\uffff\1\5\11\uffff\1\5\2\uffff\1\5\7\uffff\1\5\2\uffff\1\5"
+        "\31\uffff\1\5\56\uffff\1\6\3\uffff\1\3"),
+        DFA.unpack("\1\4\51\uffff\1\4\42\uffff\1\7\1\4"),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack("\1\10"),
+        DFA.unpack("\1\11"),
+        DFA.unpack("\1\4\15\uffff\2\3\3\uffff\1\4\1\uffff\1\3\4\uffff\1"
+        "\4\11\uffff\1\4\10\uffff\1\3\2\uffff\1\3\4\uffff\1\3\3\uffff\1"
+        "\4\13\uffff\1\3\2\uffff\1\4\1\3\1\uffff\1\3\3\uffff\1\4\3\uffff"
+        "\1\3\2\uffff\1\3\1\uffff\1\4\5\uffff\1\4\21\uffff\1\13\7\uffff"
+        "\2\3\1\uffff\2\3\1\uffff\1\3\2\uffff\1\3\3\uffff\1\3\2\uffff\1"
+        "\4\2\3\7\uffff\1\4\1\uffff\1\3\102\uffff\1\12"),
+        DFA.unpack("\1\14"),
+        DFA.unpack("\1\15"),
+        DFA.unpack("\1\16\11\uffff\1\16\2\uffff\1\16\4\uffff\1\16\31\uffff"
+        "\1\16\2\uffff\2\16\3\uffff\1\16\3\uffff\1\16\7\uffff\2\16\1\uffff"
+        "\2\16\3\uffff\1\16\11\uffff\1\16\2\uffff\1\16\7\uffff\1\16\2\uffff"
+        "\1\16\31\uffff\1\16\56\uffff\1\6\3\uffff\1\3"),
+        DFA.unpack("\1\4\51\uffff\1\4\42\uffff\1\3\1\4"),
+        DFA.unpack("\1\17"),
+        DFA.unpack("\1\20"),
+        DFA.unpack("\1\21"),
+        DFA.unpack("\1\22"),
+        DFA.unpack("\1\23"),
+        DFA.unpack("\1\24"),
+        DFA.unpack("\1\25"),
+        DFA.unpack("\1\26"),
+        DFA.unpack("\1\27"),
+        DFA.unpack("\1\30"),
+        DFA.unpack("\2\3\3\uffff\1\4\1\uffff\1\3\27\uffff\1\3\2\uffff\1"
+        "\3\4\uffff\1\3\3\uffff\1\4\17\uffff\1\3\11\uffff\1\3\2\uffff\1"
+        "\3\7\uffff\1\4\34\uffff\1\3\11\uffff\1\3\2\uffff\1\4"),
+        DFA.unpack("\1\31"),
+        DFA.unpack("\1\32"),
+        DFA.unpack("\1\33"),
+        DFA.unpack("\1\34"),
+        DFA.unpack("\1\35"),
+        DFA.unpack("\1\36"),
+        DFA.unpack("\1\37"),
+        DFA.unpack("\1\40"),
+        DFA.unpack("\1\41"),
+        DFA.unpack("\1\42"),
+        DFA.unpack("\1\43"),
+        DFA.unpack("\1\44"),
+        DFA.unpack("\1\45"),
+        DFA.unpack("\2\3\3\uffff\1\4\1\uffff\1\3\27\uffff\1\3\2\uffff\1"
+        "\3\4\uffff\1\3\3\uffff\1\4\17\uffff\1\3\11\uffff\1\3\2\uffff\1"
+        "\3\7\uffff\1\4\21\uffff\1\47\12\uffff\1\3\11\uffff\1\3\2\uffff"
+        "\1\4\116\uffff\1\46"),
+        DFA.unpack("\1\50"),
+        DFA.unpack("\1\6"),
+        DFA.unpack("\1\7"),
+        DFA.unpack("\1\51"),
+        DFA.unpack("\2\3\3\uffff\1\4\1\uffff\1\3\27\uffff\1\3\2\uffff\1"
+        "\3\4\uffff\1\3\3\uffff\1\4\17\uffff\1\3\11\uffff\1\3\2\uffff\1"
+        "\3\7\uffff\1\4\21\uffff\1\3\12\uffff\1\3\11\uffff\1\3\2\uffff\1"
+        "\4\116\uffff\1\46")
     ]
 
     # class definition for DFA #97
@@ -26823,62 +26823,62 @@ class sdl92Parser(Parser):
     # lookup tables for DFA #98
 
     DFA98_eot = DFA.unpack(
-        u"\23\uffff"
+        "\23\uffff"
         )
 
     DFA98_eof = DFA.unpack(
-        u"\1\3\22\uffff"
+        "\1\3\22\uffff"
         )
 
     DFA98_min = DFA.unpack(
-        u"\1\24\1\7\1\u00d8\1\uffff\1\u008b\1\0\1\u0080\1\uffff\1\u008d\1"
-        u"\u0080\1\u008c\1\u008d\1\u008b\1\u0080\1\u008d\1\u0080\1\u008c"
-        u"\1\u00de\1\24"
+        "\1\24\1\7\1\u00d8\1\uffff\1\u008b\1\0\1\u0080\1\uffff\1\u008d\1"
+        "\u0080\1\u008c\1\u008d\1\u008b\1\u0080\1\u008d\1\u0080\1\u008c"
+        "\1\u00de\1\24"
         )
 
     DFA98_max = DFA.unpack(
-        u"\1\u00dd\1\u00b4\1\u00d8\1\uffff\1\u008b\1\0\1\u0080\1\uffff\1"
-        u"\u008d\1\u0080\1\u008c\1\u008d\1\u008b\1\u0080\1\u008d\1\u0080"
-        u"\1\u008c\1\u00de\1\u00dd"
+        "\1\u00dd\1\u00b4\1\u00d8\1\uffff\1\u008b\1\0\1\u0080\1\uffff\1"
+        "\u008d\1\u0080\1\u008c\1\u008d\1\u008b\1\u0080\1\u008d\1\u0080"
+        "\1\u008c\1\u00de\1\u00dd"
         )
 
     DFA98_accept = DFA.unpack(
-        u"\3\uffff\1\2\3\uffff\1\1\13\uffff"
+        "\3\uffff\1\2\3\uffff\1\1\13\uffff"
         )
 
     DFA98_special = DFA.unpack(
-        u"\5\uffff\1\0\15\uffff"
+        "\5\uffff\1\0\15\uffff"
         )
 
             
     DFA98_transition = [
-        DFA.unpack(u"\2\3\5\uffff\1\3\27\uffff\1\3\2\uffff\1\3\4\uffff\1"
-        u"\3\17\uffff\1\3\3\uffff\1\3\1\uffff\1\3\7\uffff\1\3\2\uffff\1\3"
-        u"\31\uffff\1\2\7\uffff\2\3\1\uffff\2\3\1\uffff\1\3\2\uffff\1\3\3"
-        u"\uffff\1\3\3\uffff\2\3\11\uffff\1\3\102\uffff\1\1"),
-        DFA.unpack(u"\1\4\11\uffff\1\4\2\uffff\1\4\4\uffff\1\4\31\uffff"
-        u"\1\4\2\uffff\2\4\3\uffff\1\4\3\uffff\1\4\7\uffff\2\4\1\uffff\2"
-        u"\4\3\uffff\1\4\11\uffff\1\4\2\uffff\1\4\7\uffff\1\4\2\uffff\1\4"
-        u"\31\uffff\1\4\56\uffff\1\3\3\uffff\1\3"),
-        DFA.unpack(u"\1\5"),
-        DFA.unpack(u""),
-        DFA.unpack(u"\1\6"),
-        DFA.unpack(u"\1\uffff"),
-        DFA.unpack(u"\1\10"),
-        DFA.unpack(u""),
-        DFA.unpack(u"\1\11"),
-        DFA.unpack(u"\1\12"),
-        DFA.unpack(u"\1\13"),
-        DFA.unpack(u"\1\14"),
-        DFA.unpack(u"\1\15"),
-        DFA.unpack(u"\1\16"),
-        DFA.unpack(u"\1\17"),
-        DFA.unpack(u"\1\20"),
-        DFA.unpack(u"\1\21"),
-        DFA.unpack(u"\1\22"),
-        DFA.unpack(u"\2\3\5\uffff\1\3\27\uffff\1\3\2\uffff\1\3\4\uffff\1"
-        u"\3\23\uffff\1\3\11\uffff\1\3\2\uffff\1\3\31\uffff\1\2\12\uffff"
-        u"\1\3\11\uffff\1\3\121\uffff\1\3")
+        DFA.unpack("\2\3\5\uffff\1\3\27\uffff\1\3\2\uffff\1\3\4\uffff\1"
+        "\3\17\uffff\1\3\3\uffff\1\3\1\uffff\1\3\7\uffff\1\3\2\uffff\1\3"
+        "\31\uffff\1\2\7\uffff\2\3\1\uffff\2\3\1\uffff\1\3\2\uffff\1\3\3"
+        "\uffff\1\3\3\uffff\2\3\11\uffff\1\3\102\uffff\1\1"),
+        DFA.unpack("\1\4\11\uffff\1\4\2\uffff\1\4\4\uffff\1\4\31\uffff"
+        "\1\4\2\uffff\2\4\3\uffff\1\4\3\uffff\1\4\7\uffff\2\4\1\uffff\2"
+        "\4\3\uffff\1\4\11\uffff\1\4\2\uffff\1\4\7\uffff\1\4\2\uffff\1\4"
+        "\31\uffff\1\4\56\uffff\1\3\3\uffff\1\3"),
+        DFA.unpack("\1\5"),
+        DFA.unpack(""),
+        DFA.unpack("\1\6"),
+        DFA.unpack("\1\uffff"),
+        DFA.unpack("\1\10"),
+        DFA.unpack(""),
+        DFA.unpack("\1\11"),
+        DFA.unpack("\1\12"),
+        DFA.unpack("\1\13"),
+        DFA.unpack("\1\14"),
+        DFA.unpack("\1\15"),
+        DFA.unpack("\1\16"),
+        DFA.unpack("\1\17"),
+        DFA.unpack("\1\20"),
+        DFA.unpack("\1\21"),
+        DFA.unpack("\1\22"),
+        DFA.unpack("\2\3\5\uffff\1\3\27\uffff\1\3\2\uffff\1\3\4\uffff\1"
+        "\3\23\uffff\1\3\11\uffff\1\3\2\uffff\1\3\31\uffff\1\2\12\uffff"
+        "\1\3\11\uffff\1\3\121\uffff\1\3")
     ]
 
     # class definition for DFA #98
@@ -26923,69 +26923,69 @@ class sdl92Parser(Parser):
     # lookup tables for DFA #99
 
     DFA99_eot = DFA.unpack(
-        u"\30\uffff"
+        "\30\uffff"
         )
 
     DFA99_eof = DFA.unpack(
-        u"\1\3\27\uffff"
+        "\1\3\27\uffff"
         )
 
     DFA99_min = DFA.unpack(
-        u"\1\24\1\7\2\uffff\1\u008b\1\u00b1\1\u0080\1\u00b2\1\u008d\1\55"
-        u"\1\u0080\1\136\1\u008c\1\u00de\1\u008d\1\24\1\u008b\1\u0080\1\u008d"
-        u"\1\u0080\1\u008c\1\u00de\1\24\1\u00b0"
+        "\1\24\1\7\2\uffff\1\u008b\1\u00b1\1\u0080\1\u00b2\1\u008d\1\55"
+        "\1\u0080\1\136\1\u008c\1\u00de\1\u008d\1\24\1\u008b\1\u0080\1\u008d"
+        "\1\u0080\1\u008c\1\u00de\1\24\1\u00b0"
         )
 
     DFA99_max = DFA.unpack(
-        u"\1\u00dd\1\u00b4\2\uffff\1\u008b\1\u00b1\1\u0080\1\u00b2\1\u008d"
-        u"\1\55\1\u0080\1\136\1\u008c\1\u00de\1\u008d\2\u008b\1\u0080\1\u008d"
-        u"\1\u0080\1\u008c\1\u00de\1\u00dd\1\u00b0"
+        "\1\u00dd\1\u00b4\2\uffff\1\u008b\1\u00b1\1\u0080\1\u00b2\1\u008d"
+        "\1\55\1\u0080\1\136\1\u008c\1\u00de\1\u008d\2\u008b\1\u0080\1\u008d"
+        "\1\u0080\1\u008c\1\u00de\1\u00dd\1\u00b0"
         )
 
     DFA99_accept = DFA.unpack(
-        u"\2\uffff\1\1\1\2\24\uffff"
+        "\2\uffff\1\1\1\2\24\uffff"
         )
 
     DFA99_special = DFA.unpack(
-        u"\30\uffff"
+        "\30\uffff"
         )
 
             
     DFA99_transition = [
-        DFA.unpack(u"\2\3\5\uffff\1\3\27\uffff\1\3\2\uffff\1\2\4\uffff\1"
-        u"\2\17\uffff\1\3\3\uffff\1\2\1\uffff\1\3\7\uffff\1\3\2\uffff\1\2"
-        u"\31\uffff\1\2\7\uffff\2\3\1\uffff\2\3\1\uffff\1\3\2\uffff\1\3\3"
-        u"\uffff\1\3\3\uffff\2\3\11\uffff\1\3\102\uffff\1\1"),
-        DFA.unpack(u"\1\4\11\uffff\1\4\2\uffff\1\4\4\uffff\1\4\31\uffff"
-        u"\1\4\2\uffff\2\4\3\uffff\1\4\3\uffff\1\4\7\uffff\2\4\1\uffff\2"
-        u"\4\3\uffff\1\4\11\uffff\1\4\2\uffff\1\4\7\uffff\1\4\2\uffff\1\4"
-        u"\31\uffff\1\4\56\uffff\1\5\3\uffff\1\3"),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u"\1\6"),
-        DFA.unpack(u"\1\7"),
-        DFA.unpack(u"\1\10"),
-        DFA.unpack(u"\1\11"),
-        DFA.unpack(u"\1\12"),
-        DFA.unpack(u"\1\13"),
-        DFA.unpack(u"\1\14"),
-        DFA.unpack(u"\1\15"),
-        DFA.unpack(u"\1\16"),
-        DFA.unpack(u"\1\17"),
-        DFA.unpack(u"\1\20"),
-        DFA.unpack(u"\2\3\5\uffff\1\3\27\uffff\1\3\2\uffff\1\2\4\uffff\1"
-        u"\2\23\uffff\1\2\11\uffff\1\3\2\uffff\1\2\44\uffff\1\3\11\uffff"
-        u"\1\3"),
-        DFA.unpack(u"\1\21"),
-        DFA.unpack(u"\1\22"),
-        DFA.unpack(u"\1\23"),
-        DFA.unpack(u"\1\24"),
-        DFA.unpack(u"\1\25"),
-        DFA.unpack(u"\1\26"),
-        DFA.unpack(u"\2\3\5\uffff\1\3\27\uffff\1\3\2\uffff\1\2\4\uffff\1"
-        u"\2\23\uffff\1\2\11\uffff\1\3\2\uffff\1\2\31\uffff\1\2\12\uffff"
-        u"\1\3\11\uffff\1\3\121\uffff\1\27"),
-        DFA.unpack(u"\1\5")
+        DFA.unpack("\2\3\5\uffff\1\3\27\uffff\1\3\2\uffff\1\2\4\uffff\1"
+        "\2\17\uffff\1\3\3\uffff\1\2\1\uffff\1\3\7\uffff\1\3\2\uffff\1\2"
+        "\31\uffff\1\2\7\uffff\2\3\1\uffff\2\3\1\uffff\1\3\2\uffff\1\3\3"
+        "\uffff\1\3\3\uffff\2\3\11\uffff\1\3\102\uffff\1\1"),
+        DFA.unpack("\1\4\11\uffff\1\4\2\uffff\1\4\4\uffff\1\4\31\uffff"
+        "\1\4\2\uffff\2\4\3\uffff\1\4\3\uffff\1\4\7\uffff\2\4\1\uffff\2"
+        "\4\3\uffff\1\4\11\uffff\1\4\2\uffff\1\4\7\uffff\1\4\2\uffff\1\4"
+        "\31\uffff\1\4\56\uffff\1\5\3\uffff\1\3"),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack("\1\6"),
+        DFA.unpack("\1\7"),
+        DFA.unpack("\1\10"),
+        DFA.unpack("\1\11"),
+        DFA.unpack("\1\12"),
+        DFA.unpack("\1\13"),
+        DFA.unpack("\1\14"),
+        DFA.unpack("\1\15"),
+        DFA.unpack("\1\16"),
+        DFA.unpack("\1\17"),
+        DFA.unpack("\1\20"),
+        DFA.unpack("\2\3\5\uffff\1\3\27\uffff\1\3\2\uffff\1\2\4\uffff\1"
+        "\2\23\uffff\1\2\11\uffff\1\3\2\uffff\1\2\44\uffff\1\3\11\uffff"
+        "\1\3"),
+        DFA.unpack("\1\21"),
+        DFA.unpack("\1\22"),
+        DFA.unpack("\1\23"),
+        DFA.unpack("\1\24"),
+        DFA.unpack("\1\25"),
+        DFA.unpack("\1\26"),
+        DFA.unpack("\2\3\5\uffff\1\3\27\uffff\1\3\2\uffff\1\2\4\uffff\1"
+        "\2\23\uffff\1\2\11\uffff\1\3\2\uffff\1\2\31\uffff\1\2\12\uffff"
+        "\1\3\11\uffff\1\3\121\uffff\1\27"),
+        DFA.unpack("\1\5")
     ]
 
     # class definition for DFA #99
@@ -26997,59 +26997,59 @@ class sdl92Parser(Parser):
     # lookup tables for DFA #101
 
     DFA101_eot = DFA.unpack(
-        u"\22\uffff"
+        "\22\uffff"
         )
 
     DFA101_eof = DFA.unpack(
-        u"\22\uffff"
+        "\22\uffff"
         )
 
     DFA101_min = DFA.unpack(
-        u"\1\6\1\7\1\u008b\1\uffff\1\u008b\1\uffff\1\u0080\1\u008d\1\u0080"
-        u"\1\u008c\1\u008d\1\u008b\1\u0080\1\u008d\1\u0080\1\u008c\1\u00de"
-        u"\1\31"
+        "\1\6\1\7\1\u008b\1\uffff\1\u008b\1\uffff\1\u0080\1\u008d\1\u0080"
+        "\1\u008c\1\u008d\1\u008b\1\u0080\1\u008d\1\u0080\1\u008c\1\u00de"
+        "\1\31"
         )
 
     DFA101_max = DFA.unpack(
-        u"\1\u00dd\1\u00b0\1\u00d9\1\uffff\1\u008b\1\uffff\1\u0080\1\u008d"
-        u"\1\u0080\1\u008c\1\u008d\1\u008b\1\u0080\1\u008d\1\u0080\1\u008c"
-        u"\1\u00de\1\u00dd"
+        "\1\u00dd\1\u00b0\1\u00d9\1\uffff\1\u008b\1\uffff\1\u0080\1\u008d"
+        "\1\u0080\1\u008c\1\u008d\1\u008b\1\u0080\1\u008d\1\u0080\1\u008c"
+        "\1\u00de\1\u00dd"
         )
 
     DFA101_accept = DFA.unpack(
-        u"\3\uffff\1\2\1\uffff\1\1\14\uffff"
+        "\3\uffff\1\2\1\uffff\1\1\14\uffff"
         )
 
     DFA101_special = DFA.unpack(
-        u"\22\uffff"
+        "\22\uffff"
         )
 
             
     DFA101_transition = [
-        DFA.unpack(u"\1\3\22\uffff\1\3\6\uffff\1\3\11\uffff\1\3\24\uffff"
-        u"\1\3\16\uffff\1\3\6\uffff\1\3\10\uffff\1\3\5\uffff\1\3\21\uffff"
-        u"\1\2\27\uffff\1\3\11\uffff\1\3\104\uffff\1\1"),
-        DFA.unpack(u"\1\4\11\uffff\1\4\2\uffff\1\4\4\uffff\1\4\31\uffff"
-        u"\1\4\2\uffff\2\4\3\uffff\1\4\3\uffff\1\4\7\uffff\2\4\1\uffff\2"
-        u"\4\3\uffff\1\4\11\uffff\1\4\2\uffff\1\4\7\uffff\1\4\2\uffff\1\4"
-        u"\31\uffff\1\4\56\uffff\1\3"),
-        DFA.unpack(u"\1\3\51\uffff\1\3\42\uffff\1\5\1\3"),
-        DFA.unpack(u""),
-        DFA.unpack(u"\1\6"),
-        DFA.unpack(u""),
-        DFA.unpack(u"\1\7"),
-        DFA.unpack(u"\1\10"),
-        DFA.unpack(u"\1\11"),
-        DFA.unpack(u"\1\12"),
-        DFA.unpack(u"\1\13"),
-        DFA.unpack(u"\1\14"),
-        DFA.unpack(u"\1\15"),
-        DFA.unpack(u"\1\16"),
-        DFA.unpack(u"\1\17"),
-        DFA.unpack(u"\1\20"),
-        DFA.unpack(u"\1\21"),
-        DFA.unpack(u"\1\3\45\uffff\1\3\44\uffff\1\3\21\uffff\1\5\27\uffff"
-        u"\1\3\116\uffff\1\3")
+        DFA.unpack("\1\3\22\uffff\1\3\6\uffff\1\3\11\uffff\1\3\24\uffff"
+        "\1\3\16\uffff\1\3\6\uffff\1\3\10\uffff\1\3\5\uffff\1\3\21\uffff"
+        "\1\2\27\uffff\1\3\11\uffff\1\3\104\uffff\1\1"),
+        DFA.unpack("\1\4\11\uffff\1\4\2\uffff\1\4\4\uffff\1\4\31\uffff"
+        "\1\4\2\uffff\2\4\3\uffff\1\4\3\uffff\1\4\7\uffff\2\4\1\uffff\2"
+        "\4\3\uffff\1\4\11\uffff\1\4\2\uffff\1\4\7\uffff\1\4\2\uffff\1\4"
+        "\31\uffff\1\4\56\uffff\1\3"),
+        DFA.unpack("\1\3\51\uffff\1\3\42\uffff\1\5\1\3"),
+        DFA.unpack(""),
+        DFA.unpack("\1\6"),
+        DFA.unpack(""),
+        DFA.unpack("\1\7"),
+        DFA.unpack("\1\10"),
+        DFA.unpack("\1\11"),
+        DFA.unpack("\1\12"),
+        DFA.unpack("\1\13"),
+        DFA.unpack("\1\14"),
+        DFA.unpack("\1\15"),
+        DFA.unpack("\1\16"),
+        DFA.unpack("\1\17"),
+        DFA.unpack("\1\20"),
+        DFA.unpack("\1\21"),
+        DFA.unpack("\1\3\45\uffff\1\3\44\uffff\1\3\21\uffff\1\5\27\uffff"
+        "\1\3\116\uffff\1\3")
     ]
 
     # class definition for DFA #101
@@ -27061,73 +27061,73 @@ class sdl92Parser(Parser):
     # lookup tables for DFA #102
 
     DFA102_eot = DFA.unpack(
-        u"\40\uffff"
+        "\40\uffff"
         )
 
     DFA102_eof = DFA.unpack(
-        u"\40\uffff"
+        "\40\uffff"
         )
 
     DFA102_min = DFA.unpack(
-        u"\1\6\1\7\12\uffff\1\u008b\1\u00b1\1\u0080\1\u00b2\1\u008d\1\55"
-        u"\1\u0080\1\136\1\u008c\1\u00de\1\u008d\1\31\1\u008b\1\u0080\1\u008d"
-        u"\1\u0080\1\u008c\1\u00de\1\31\1\u00b0"
+        "\1\6\1\7\12\uffff\1\u008b\1\u00b1\1\u0080\1\u00b2\1\u008d\1\55"
+        "\1\u0080\1\136\1\u008c\1\u00de\1\u008d\1\31\1\u008b\1\u0080\1\u008d"
+        "\1\u0080\1\u008c\1\u00de\1\31\1\u00b0"
         )
 
     DFA102_max = DFA.unpack(
-        u"\1\u00dd\1\u00b0\12\uffff\1\u008b\1\u00b1\1\u0080\1\u00b2\1\u008d"
-        u"\1\55\1\u0080\1\136\1\u008c\1\u00de\1\u008d\1\u008e\1\u008b\1\u0080"
-        u"\1\u008d\1\u0080\1\u008c\1\u00de\1\u00dd\1\u00b0"
+        "\1\u00dd\1\u00b0\12\uffff\1\u008b\1\u00b1\1\u0080\1\u00b2\1\u008d"
+        "\1\55\1\u0080\1\136\1\u008c\1\u00de\1\u008d\1\u008e\1\u008b\1\u0080"
+        "\1\u008d\1\u0080\1\u008c\1\u00de\1\u00dd\1\u00b0"
         )
 
     DFA102_accept = DFA.unpack(
-        u"\2\uffff\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\24\uffff"
+        "\2\uffff\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\24\uffff"
         )
 
     DFA102_special = DFA.unpack(
-        u"\40\uffff"
+        "\40\uffff"
         )
 
             
     DFA102_transition = [
-        DFA.unpack(u"\1\7\22\uffff\1\6\6\uffff\1\12\11\uffff\1\3\24\uffff"
-        u"\1\4\16\uffff\1\11\6\uffff\1\10\10\uffff\1\3\5\uffff\1\2\21\uffff"
-        u"\1\3\27\uffff\1\13\11\uffff\1\5\104\uffff\1\1"),
-        DFA.unpack(u"\1\14\11\uffff\1\14\2\uffff\1\14\4\uffff\1\14\31\uffff"
-        u"\1\14\2\uffff\2\14\3\uffff\1\14\3\uffff\1\14\7\uffff\2\14\1\uffff"
-        u"\2\14\3\uffff\1\14\11\uffff\1\14\2\uffff\1\14\7\uffff\1\14\2\uffff"
-        u"\1\14\31\uffff\1\14\56\uffff\1\15"),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u"\1\16"),
-        DFA.unpack(u"\1\17"),
-        DFA.unpack(u"\1\20"),
-        DFA.unpack(u"\1\21"),
-        DFA.unpack(u"\1\22"),
-        DFA.unpack(u"\1\23"),
-        DFA.unpack(u"\1\24"),
-        DFA.unpack(u"\1\25"),
-        DFA.unpack(u"\1\26"),
-        DFA.unpack(u"\1\27"),
-        DFA.unpack(u"\1\30"),
-        DFA.unpack(u"\1\6\45\uffff\1\4\44\uffff\1\2\51\uffff\1\13"),
-        DFA.unpack(u"\1\31"),
-        DFA.unpack(u"\1\32"),
-        DFA.unpack(u"\1\33"),
-        DFA.unpack(u"\1\34"),
-        DFA.unpack(u"\1\35"),
-        DFA.unpack(u"\1\36"),
-        DFA.unpack(u"\1\6\45\uffff\1\4\44\uffff\1\2\51\uffff\1\13\116\uffff"
-        u"\1\37"),
-        DFA.unpack(u"\1\15")
+        DFA.unpack("\1\7\22\uffff\1\6\6\uffff\1\12\11\uffff\1\3\24\uffff"
+        "\1\4\16\uffff\1\11\6\uffff\1\10\10\uffff\1\3\5\uffff\1\2\21\uffff"
+        "\1\3\27\uffff\1\13\11\uffff\1\5\104\uffff\1\1"),
+        DFA.unpack("\1\14\11\uffff\1\14\2\uffff\1\14\4\uffff\1\14\31\uffff"
+        "\1\14\2\uffff\2\14\3\uffff\1\14\3\uffff\1\14\7\uffff\2\14\1\uffff"
+        "\2\14\3\uffff\1\14\11\uffff\1\14\2\uffff\1\14\7\uffff\1\14\2\uffff"
+        "\1\14\31\uffff\1\14\56\uffff\1\15"),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack("\1\16"),
+        DFA.unpack("\1\17"),
+        DFA.unpack("\1\20"),
+        DFA.unpack("\1\21"),
+        DFA.unpack("\1\22"),
+        DFA.unpack("\1\23"),
+        DFA.unpack("\1\24"),
+        DFA.unpack("\1\25"),
+        DFA.unpack("\1\26"),
+        DFA.unpack("\1\27"),
+        DFA.unpack("\1\30"),
+        DFA.unpack("\1\6\45\uffff\1\4\44\uffff\1\2\51\uffff\1\13"),
+        DFA.unpack("\1\31"),
+        DFA.unpack("\1\32"),
+        DFA.unpack("\1\33"),
+        DFA.unpack("\1\34"),
+        DFA.unpack("\1\35"),
+        DFA.unpack("\1\36"),
+        DFA.unpack("\1\6\45\uffff\1\4\44\uffff\1\2\51\uffff\1\13\116\uffff"
+        "\1\37"),
+        DFA.unpack("\1\15")
     ]
 
     # class definition for DFA #102
@@ -27139,62 +27139,62 @@ class sdl92Parser(Parser):
     # lookup tables for DFA #113
 
     DFA113_eot = DFA.unpack(
-        u"\30\uffff"
+        "\30\uffff"
         )
 
     DFA113_eof = DFA.unpack(
-        u"\30\uffff"
+        "\30\uffff"
         )
 
     DFA113_min = DFA.unpack(
-        u"\1\33\1\7\2\uffff\1\u008b\1\u00b1\1\u0080\1\u00b2\1\u008d\1\55"
-        u"\1\u0080\1\136\1\u008c\1\u00de\1\u008d\1\33\1\u008b\1\u0080\1\u008d"
-        u"\1\u0080\1\u008c\1\u00de\1\33\1\u00b0"
+        "\1\33\1\7\2\uffff\1\u008b\1\u00b1\1\u0080\1\u00b2\1\u008d\1\55"
+        "\1\u0080\1\136\1\u008c\1\u00de\1\u008d\1\33\1\u008b\1\u0080\1\u008d"
+        "\1\u0080\1\u008c\1\u00de\1\33\1\u00b0"
         )
 
     DFA113_max = DFA.unpack(
-        u"\1\u00dd\1\u00b0\2\uffff\1\u008b\1\u00b1\1\u0080\1\u00b2\1\u008d"
-        u"\1\55\1\u0080\1\136\1\u008c\1\u00de\1\u008d\2\u008b\1\u0080\1\u008d"
-        u"\1\u0080\1\u008c\1\u00de\1\u00dd\1\u00b0"
+        "\1\u00dd\1\u00b0\2\uffff\1\u008b\1\u00b1\1\u0080\1\u00b2\1\u008d"
+        "\1\55\1\u0080\1\136\1\u008c\1\u00de\1\u008d\2\u008b\1\u0080\1\u008d"
+        "\1\u0080\1\u008c\1\u00de\1\u00dd\1\u00b0"
         )
 
     DFA113_accept = DFA.unpack(
-        u"\2\uffff\1\1\1\2\24\uffff"
+        "\2\uffff\1\1\1\2\24\uffff"
         )
 
     DFA113_special = DFA.unpack(
-        u"\30\uffff"
+        "\30\uffff"
         )
 
             
     DFA113_transition = [
-        DFA.unpack(u"\1\3\157\uffff\1\2\121\uffff\1\1"),
-        DFA.unpack(u"\1\4\11\uffff\1\4\2\uffff\1\4\4\uffff\1\4\31\uffff"
-        u"\1\4\2\uffff\2\4\3\uffff\1\4\3\uffff\1\4\7\uffff\2\4\1\uffff\2"
-        u"\4\3\uffff\1\4\11\uffff\1\4\2\uffff\1\4\7\uffff\1\4\2\uffff\1\4"
-        u"\31\uffff\1\4\56\uffff\1\5"),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u"\1\6"),
-        DFA.unpack(u"\1\7"),
-        DFA.unpack(u"\1\10"),
-        DFA.unpack(u"\1\11"),
-        DFA.unpack(u"\1\12"),
-        DFA.unpack(u"\1\13"),
-        DFA.unpack(u"\1\14"),
-        DFA.unpack(u"\1\15"),
-        DFA.unpack(u"\1\16"),
-        DFA.unpack(u"\1\17"),
-        DFA.unpack(u"\1\20"),
-        DFA.unpack(u"\1\3\157\uffff\1\2"),
-        DFA.unpack(u"\1\21"),
-        DFA.unpack(u"\1\22"),
-        DFA.unpack(u"\1\23"),
-        DFA.unpack(u"\1\24"),
-        DFA.unpack(u"\1\25"),
-        DFA.unpack(u"\1\26"),
-        DFA.unpack(u"\1\3\157\uffff\1\2\121\uffff\1\27"),
-        DFA.unpack(u"\1\5")
+        DFA.unpack("\1\3\157\uffff\1\2\121\uffff\1\1"),
+        DFA.unpack("\1\4\11\uffff\1\4\2\uffff\1\4\4\uffff\1\4\31\uffff"
+        "\1\4\2\uffff\2\4\3\uffff\1\4\3\uffff\1\4\7\uffff\2\4\1\uffff\2"
+        "\4\3\uffff\1\4\11\uffff\1\4\2\uffff\1\4\7\uffff\1\4\2\uffff\1\4"
+        "\31\uffff\1\4\56\uffff\1\5"),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack("\1\6"),
+        DFA.unpack("\1\7"),
+        DFA.unpack("\1\10"),
+        DFA.unpack("\1\11"),
+        DFA.unpack("\1\12"),
+        DFA.unpack("\1\13"),
+        DFA.unpack("\1\14"),
+        DFA.unpack("\1\15"),
+        DFA.unpack("\1\16"),
+        DFA.unpack("\1\17"),
+        DFA.unpack("\1\20"),
+        DFA.unpack("\1\3\157\uffff\1\2"),
+        DFA.unpack("\1\21"),
+        DFA.unpack("\1\22"),
+        DFA.unpack("\1\23"),
+        DFA.unpack("\1\24"),
+        DFA.unpack("\1\25"),
+        DFA.unpack("\1\26"),
+        DFA.unpack("\1\3\157\uffff\1\2\121\uffff\1\27"),
+        DFA.unpack("\1\5")
     ]
 
     # class definition for DFA #113
@@ -27206,62 +27206,62 @@ class sdl92Parser(Parser):
     # lookup tables for DFA #111
 
     DFA111_eot = DFA.unpack(
-        u"\30\uffff"
+        "\30\uffff"
         )
 
     DFA111_eof = DFA.unpack(
-        u"\1\2\27\uffff"
+        "\1\2\27\uffff"
         )
 
     DFA111_min = DFA.unpack(
-        u"\1\33\1\7\2\uffff\1\u008b\1\u00b1\1\u0080\1\u00b2\1\u008d\1\55"
-        u"\1\u0080\1\136\1\u008c\1\u00de\1\u008d\1\33\1\u008b\1\u0080\1\u008d"
-        u"\1\u0080\1\u008c\1\u00de\1\33\1\u00b0"
+        "\1\33\1\7\2\uffff\1\u008b\1\u00b1\1\u0080\1\u00b2\1\u008d\1\55"
+        "\1\u0080\1\136\1\u008c\1\u00de\1\u008d\1\33\1\u008b\1\u0080\1\u008d"
+        "\1\u0080\1\u008c\1\u00de\1\33\1\u00b0"
         )
 
     DFA111_max = DFA.unpack(
-        u"\1\u00dd\1\u00b0\2\uffff\1\u008b\1\u00b1\1\u0080\1\u00b2\1\u008d"
-        u"\1\55\1\u0080\1\136\1\u008c\1\u00de\1\u008d\2\u008b\1\u0080\1\u008d"
-        u"\1\u0080\1\u008c\1\u00de\1\u00dd\1\u00b0"
+        "\1\u00dd\1\u00b0\2\uffff\1\u008b\1\u00b1\1\u0080\1\u00b2\1\u008d"
+        "\1\55\1\u0080\1\136\1\u008c\1\u00de\1\u008d\2\u008b\1\u0080\1\u008d"
+        "\1\u0080\1\u008c\1\u00de\1\u00dd\1\u00b0"
         )
 
     DFA111_accept = DFA.unpack(
-        u"\2\uffff\1\2\1\1\24\uffff"
+        "\2\uffff\1\2\1\1\24\uffff"
         )
 
     DFA111_special = DFA.unpack(
-        u"\30\uffff"
+        "\30\uffff"
         )
 
             
     DFA111_transition = [
-        DFA.unpack(u"\1\2\157\uffff\1\3\3\uffff\2\2\114\uffff\1\1"),
-        DFA.unpack(u"\1\4\11\uffff\1\4\2\uffff\1\4\4\uffff\1\4\31\uffff"
-        u"\1\4\2\uffff\2\4\3\uffff\1\4\3\uffff\1\4\7\uffff\2\4\1\uffff\2"
-        u"\4\3\uffff\1\4\11\uffff\1\4\2\uffff\1\4\7\uffff\1\4\2\uffff\1\4"
-        u"\31\uffff\1\4\56\uffff\1\5"),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u"\1\6"),
-        DFA.unpack(u"\1\7"),
-        DFA.unpack(u"\1\10"),
-        DFA.unpack(u"\1\11"),
-        DFA.unpack(u"\1\12"),
-        DFA.unpack(u"\1\13"),
-        DFA.unpack(u"\1\14"),
-        DFA.unpack(u"\1\15"),
-        DFA.unpack(u"\1\16"),
-        DFA.unpack(u"\1\17"),
-        DFA.unpack(u"\1\20"),
-        DFA.unpack(u"\1\2\157\uffff\1\3"),
-        DFA.unpack(u"\1\21"),
-        DFA.unpack(u"\1\22"),
-        DFA.unpack(u"\1\23"),
-        DFA.unpack(u"\1\24"),
-        DFA.unpack(u"\1\25"),
-        DFA.unpack(u"\1\26"),
-        DFA.unpack(u"\1\2\157\uffff\1\3\121\uffff\1\27"),
-        DFA.unpack(u"\1\5")
+        DFA.unpack("\1\2\157\uffff\1\3\3\uffff\2\2\114\uffff\1\1"),
+        DFA.unpack("\1\4\11\uffff\1\4\2\uffff\1\4\4\uffff\1\4\31\uffff"
+        "\1\4\2\uffff\2\4\3\uffff\1\4\3\uffff\1\4\7\uffff\2\4\1\uffff\2"
+        "\4\3\uffff\1\4\11\uffff\1\4\2\uffff\1\4\7\uffff\1\4\2\uffff\1\4"
+        "\31\uffff\1\4\56\uffff\1\5"),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack("\1\6"),
+        DFA.unpack("\1\7"),
+        DFA.unpack("\1\10"),
+        DFA.unpack("\1\11"),
+        DFA.unpack("\1\12"),
+        DFA.unpack("\1\13"),
+        DFA.unpack("\1\14"),
+        DFA.unpack("\1\15"),
+        DFA.unpack("\1\16"),
+        DFA.unpack("\1\17"),
+        DFA.unpack("\1\20"),
+        DFA.unpack("\1\2\157\uffff\1\3"),
+        DFA.unpack("\1\21"),
+        DFA.unpack("\1\22"),
+        DFA.unpack("\1\23"),
+        DFA.unpack("\1\24"),
+        DFA.unpack("\1\25"),
+        DFA.unpack("\1\26"),
+        DFA.unpack("\1\2\157\uffff\1\3\121\uffff\1\27"),
+        DFA.unpack("\1\5")
     ]
 
     # class definition for DFA #111
@@ -27273,69 +27273,69 @@ class sdl92Parser(Parser):
     # lookup tables for DFA #121
 
     DFA121_eot = DFA.unpack(
-        u"\30\uffff"
+        "\30\uffff"
         )
 
     DFA121_eof = DFA.unpack(
-        u"\1\3\27\uffff"
+        "\1\3\27\uffff"
         )
 
     DFA121_min = DFA.unpack(
-        u"\1\6\1\7\2\uffff\1\u008b\1\u00b1\1\u0080\1\u00b2\1\u008d\1\55\1"
-        u"\u0080\1\136\1\u008c\1\u00de\1\u008d\1\31\1\u008b\1\u0080\1\u008d"
-        u"\1\u0080\1\u008c\1\u00de\1\31\1\u00b0"
+        "\1\6\1\7\2\uffff\1\u008b\1\u00b1\1\u0080\1\u00b2\1\u008d\1\55\1"
+        "\u0080\1\136\1\u008c\1\u00de\1\u008d\1\31\1\u008b\1\u0080\1\u008d"
+        "\1\u0080\1\u008c\1\u00de\1\31\1\u00b0"
         )
 
     DFA121_max = DFA.unpack(
-        u"\1\u00dd\1\u00b0\2\uffff\1\u008b\1\u00b1\1\u0080\1\u00b2\1\u008d"
-        u"\1\55\1\u0080\1\136\1\u008c\1\u00de\1\u008d\1\u008e\1\u008b\1\u0080"
-        u"\1\u008d\1\u0080\1\u008c\1\u00de\1\u00dd\1\u00b0"
+        "\1\u00dd\1\u00b0\2\uffff\1\u008b\1\u00b1\1\u0080\1\u00b2\1\u008d"
+        "\1\55\1\u0080\1\136\1\u008c\1\u00de\1\u008d\1\u008e\1\u008b\1\u0080"
+        "\1\u008d\1\u0080\1\u008c\1\u00de\1\u00dd\1\u00b0"
         )
 
     DFA121_accept = DFA.unpack(
-        u"\2\uffff\1\1\1\2\24\uffff"
+        "\2\uffff\1\1\1\2\24\uffff"
         )
 
     DFA121_special = DFA.unpack(
-        u"\30\uffff"
+        "\30\uffff"
         )
 
             
     DFA121_transition = [
-        DFA.unpack(u"\1\2\22\uffff\1\2\1\uffff\1\3\4\uffff\1\2\11\uffff\1"
-        u"\2\13\uffff\1\2\4\uffff\1\2\3\uffff\1\2\16\uffff\2\2\5\uffff\1"
-        u"\2\6\uffff\1\2\1\uffff\1\2\5\uffff\1\2\21\uffff\1\2\24\uffff\1"
-        u"\3\2\uffff\1\2\2\3\7\uffff\1\2\104\uffff\1\1"),
-        DFA.unpack(u"\1\4\11\uffff\1\4\2\uffff\1\4\4\uffff\1\4\31\uffff"
-        u"\1\4\2\uffff\2\4\3\uffff\1\4\3\uffff\1\4\7\uffff\2\4\1\uffff\2"
-        u"\4\3\uffff\1\4\11\uffff\1\4\2\uffff\1\4\7\uffff\1\4\2\uffff\1\4"
-        u"\31\uffff\1\4\56\uffff\1\5"),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u"\1\6"),
-        DFA.unpack(u"\1\7"),
-        DFA.unpack(u"\1\10"),
-        DFA.unpack(u"\1\11"),
-        DFA.unpack(u"\1\12"),
-        DFA.unpack(u"\1\13"),
-        DFA.unpack(u"\1\14"),
-        DFA.unpack(u"\1\15"),
-        DFA.unpack(u"\1\16"),
-        DFA.unpack(u"\1\17"),
-        DFA.unpack(u"\1\20"),
-        DFA.unpack(u"\1\2\1\uffff\1\3\32\uffff\1\2\4\uffff\1\2\3\uffff\1"
-        u"\2\17\uffff\1\2\14\uffff\1\2\7\uffff\1\2\46\uffff\1\3\2\uffff\1"
-        u"\2"),
-        DFA.unpack(u"\1\21"),
-        DFA.unpack(u"\1\22"),
-        DFA.unpack(u"\1\23"),
-        DFA.unpack(u"\1\24"),
-        DFA.unpack(u"\1\25"),
-        DFA.unpack(u"\1\26"),
-        DFA.unpack(u"\1\2\1\uffff\1\3\32\uffff\1\2\4\uffff\1\2\3\uffff\1"
-        u"\2\17\uffff\1\2\14\uffff\1\2\7\uffff\1\2\21\uffff\1\2\24\uffff"
-        u"\1\3\2\uffff\1\2\116\uffff\1\27"),
-        DFA.unpack(u"\1\5")
+        DFA.unpack("\1\2\22\uffff\1\2\1\uffff\1\3\4\uffff\1\2\11\uffff\1"
+        "\2\13\uffff\1\2\4\uffff\1\2\3\uffff\1\2\16\uffff\2\2\5\uffff\1"
+        "\2\6\uffff\1\2\1\uffff\1\2\5\uffff\1\2\21\uffff\1\2\24\uffff\1"
+        "\3\2\uffff\1\2\2\3\7\uffff\1\2\104\uffff\1\1"),
+        DFA.unpack("\1\4\11\uffff\1\4\2\uffff\1\4\4\uffff\1\4\31\uffff"
+        "\1\4\2\uffff\2\4\3\uffff\1\4\3\uffff\1\4\7\uffff\2\4\1\uffff\2"
+        "\4\3\uffff\1\4\11\uffff\1\4\2\uffff\1\4\7\uffff\1\4\2\uffff\1\4"
+        "\31\uffff\1\4\56\uffff\1\5"),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack("\1\6"),
+        DFA.unpack("\1\7"),
+        DFA.unpack("\1\10"),
+        DFA.unpack("\1\11"),
+        DFA.unpack("\1\12"),
+        DFA.unpack("\1\13"),
+        DFA.unpack("\1\14"),
+        DFA.unpack("\1\15"),
+        DFA.unpack("\1\16"),
+        DFA.unpack("\1\17"),
+        DFA.unpack("\1\20"),
+        DFA.unpack("\1\2\1\uffff\1\3\32\uffff\1\2\4\uffff\1\2\3\uffff\1"
+        "\2\17\uffff\1\2\14\uffff\1\2\7\uffff\1\2\46\uffff\1\3\2\uffff\1"
+        "\2"),
+        DFA.unpack("\1\21"),
+        DFA.unpack("\1\22"),
+        DFA.unpack("\1\23"),
+        DFA.unpack("\1\24"),
+        DFA.unpack("\1\25"),
+        DFA.unpack("\1\26"),
+        DFA.unpack("\1\2\1\uffff\1\3\32\uffff\1\2\4\uffff\1\2\3\uffff\1"
+        "\2\17\uffff\1\2\14\uffff\1\2\7\uffff\1\2\21\uffff\1\2\24\uffff"
+        "\1\3\2\uffff\1\2\116\uffff\1\27"),
+        DFA.unpack("\1\5")
     ]
 
     # class definition for DFA #121
@@ -27347,60 +27347,60 @@ class sdl92Parser(Parser):
     # lookup tables for DFA #127
 
     DFA127_eot = DFA.unpack(
-        u"\31\uffff"
+        "\31\uffff"
         )
 
     DFA127_eof = DFA.unpack(
-        u"\31\uffff"
+        "\31\uffff"
         )
 
     DFA127_min = DFA.unpack(
-        u"\1\13\21\0\7\uffff"
+        "\1\13\21\0\7\uffff"
         )
 
     DFA127_max = DFA.unpack(
-        u"\1\u00b6\21\0\7\uffff"
+        "\1\u00b6\21\0\7\uffff"
         )
 
     DFA127_accept = DFA.unpack(
-        u"\22\uffff\1\2\5\uffff\1\1"
+        "\22\uffff\1\2\5\uffff\1\1"
         )
 
     DFA127_special = DFA.unpack(
-        u"\1\uffff\1\0\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1"
-        u"\14\1\15\1\16\1\17\1\20\7\uffff"
+        "\1\uffff\1\0\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1"
+        "\14\1\15\1\16\1\17\1\20\7\uffff"
         )
 
             
     DFA127_transition = [
-        DFA.unpack(u"\1\2\34\uffff\1\13\5\uffff\1\17\16\uffff\1\3\33\uffff"
-        u"\1\15\4\uffff\1\6\27\uffff\1\1\11\uffff\1\12\12\uffff\1\16\6\uffff"
-        u"\6\22\7\uffff\1\21\4\uffff\1\20\1\4\1\5\1\7\1\10\1\11\14\uffff"
-        u"\1\14"),
-        DFA.unpack(u"\1\uffff"),
-        DFA.unpack(u"\1\uffff"),
-        DFA.unpack(u"\1\uffff"),
-        DFA.unpack(u"\1\uffff"),
-        DFA.unpack(u"\1\uffff"),
-        DFA.unpack(u"\1\uffff"),
-        DFA.unpack(u"\1\uffff"),
-        DFA.unpack(u"\1\uffff"),
-        DFA.unpack(u"\1\uffff"),
-        DFA.unpack(u"\1\uffff"),
-        DFA.unpack(u"\1\uffff"),
-        DFA.unpack(u"\1\uffff"),
-        DFA.unpack(u"\1\uffff"),
-        DFA.unpack(u"\1\uffff"),
-        DFA.unpack(u"\1\uffff"),
-        DFA.unpack(u"\1\uffff"),
-        DFA.unpack(u"\1\uffff"),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u"")
+        DFA.unpack("\1\2\34\uffff\1\13\5\uffff\1\17\16\uffff\1\3\33\uffff"
+        "\1\15\4\uffff\1\6\27\uffff\1\1\11\uffff\1\12\12\uffff\1\16\6\uffff"
+        "\6\22\7\uffff\1\21\4\uffff\1\20\1\4\1\5\1\7\1\10\1\11\14\uffff"
+        "\1\14"),
+        DFA.unpack("\1\uffff"),
+        DFA.unpack("\1\uffff"),
+        DFA.unpack("\1\uffff"),
+        DFA.unpack("\1\uffff"),
+        DFA.unpack("\1\uffff"),
+        DFA.unpack("\1\uffff"),
+        DFA.unpack("\1\uffff"),
+        DFA.unpack("\1\uffff"),
+        DFA.unpack("\1\uffff"),
+        DFA.unpack("\1\uffff"),
+        DFA.unpack("\1\uffff"),
+        DFA.unpack("\1\uffff"),
+        DFA.unpack("\1\uffff"),
+        DFA.unpack("\1\uffff"),
+        DFA.unpack("\1\uffff"),
+        DFA.unpack("\1\uffff"),
+        DFA.unpack("\1\uffff"),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack("")
     ]
 
     # class definition for DFA #127
@@ -27717,48 +27717,48 @@ class sdl92Parser(Parser):
     # lookup tables for DFA #160
 
     DFA160_eot = DFA.unpack(
-        u"\12\uffff"
+        "\12\uffff"
         )
 
     DFA160_eof = DFA.unpack(
-        u"\1\1\11\uffff"
+        "\1\1\11\uffff"
         )
 
     DFA160_min = DFA.unpack(
-        u"\1\6\1\uffff\7\0\1\uffff"
+        "\1\6\1\uffff\7\0\1\uffff"
         )
 
     DFA160_max = DFA.unpack(
-        u"\1\u00dd\1\uffff\7\0\1\uffff"
+        "\1\u00dd\1\uffff\7\0\1\uffff"
         )
 
     DFA160_accept = DFA.unpack(
-        u"\1\uffff\1\2\7\uffff\1\1"
+        "\1\uffff\1\2\7\uffff\1\1"
         )
 
     DFA160_special = DFA.unpack(
-        u"\2\uffff\1\3\1\1\1\4\1\6\1\2\1\5\1\0\1\uffff"
+        "\2\uffff\1\3\1\1\1\4\1\6\1\2\1\5\1\0\1\uffff"
         )
 
             
     DFA160_transition = [
-        DFA.unpack(u"\1\1\12\uffff\1\1\2\uffff\2\1\3\uffff\1\1\1\uffff\1"
-        u"\1\2\uffff\1\1\1\uffff\1\1\2\uffff\1\1\6\uffff\1\1\5\uffff\1\10"
-        u"\2\uffff\1\1\2\uffff\1\1\4\uffff\1\1\3\uffff\1\1\13\uffff\1\1\2"
-        u"\uffff\2\1\1\uffff\1\1\3\uffff\1\1\3\uffff\1\1\2\uffff\1\1\1\uffff"
-        u"\1\1\5\uffff\1\1\5\uffff\1\1\13\uffff\1\1\5\uffff\1\1\1\uffff\2"
-        u"\1\1\uffff\5\1\1\uffff\1\1\3\uffff\6\1\1\uffff\1\2\1\3\1\4\1\6"
-        u"\1\7\1\5\1\1\1\uffff\12\1\23\uffff\1\1\30\uffff\1\1\7\uffff\2\1"
-        u"\1\uffff\1\1\1\uffff\1\1"),
-        DFA.unpack(u""),
-        DFA.unpack(u"\1\uffff"),
-        DFA.unpack(u"\1\uffff"),
-        DFA.unpack(u"\1\uffff"),
-        DFA.unpack(u"\1\uffff"),
-        DFA.unpack(u"\1\uffff"),
-        DFA.unpack(u"\1\uffff"),
-        DFA.unpack(u"\1\uffff"),
-        DFA.unpack(u"")
+        DFA.unpack("\1\1\12\uffff\1\1\2\uffff\2\1\3\uffff\1\1\1\uffff\1"
+        "\1\2\uffff\1\1\1\uffff\1\1\2\uffff\1\1\6\uffff\1\1\5\uffff\1\10"
+        "\2\uffff\1\1\2\uffff\1\1\4\uffff\1\1\3\uffff\1\1\13\uffff\1\1\2"
+        "\uffff\2\1\1\uffff\1\1\3\uffff\1\1\3\uffff\1\1\2\uffff\1\1\1\uffff"
+        "\1\1\5\uffff\1\1\5\uffff\1\1\13\uffff\1\1\5\uffff\1\1\1\uffff\2"
+        "\1\1\uffff\5\1\1\uffff\1\1\3\uffff\6\1\1\uffff\1\2\1\3\1\4\1\6"
+        "\1\7\1\5\1\1\1\uffff\12\1\23\uffff\1\1\30\uffff\1\1\7\uffff\2\1"
+        "\1\uffff\1\1\1\uffff\1\1"),
+        DFA.unpack(""),
+        DFA.unpack("\1\uffff"),
+        DFA.unpack("\1\uffff"),
+        DFA.unpack("\1\uffff"),
+        DFA.unpack("\1\uffff"),
+        DFA.unpack("\1\uffff"),
+        DFA.unpack("\1\uffff"),
+        DFA.unpack("\1\uffff"),
+        DFA.unpack("")
     ]
 
     # class definition for DFA #160
@@ -27905,52 +27905,52 @@ class sdl92Parser(Parser):
     # lookup tables for DFA #165
 
     DFA165_eot = DFA.unpack(
-        u"\23\uffff"
+        "\23\uffff"
         )
 
     DFA165_eof = DFA.unpack(
-        u"\23\uffff"
+        "\23\uffff"
         )
 
     DFA165_min = DFA.unpack(
-        u"\1\13\1\0\21\uffff"
+        "\1\13\1\0\21\uffff"
         )
 
     DFA165_max = DFA.unpack(
-        u"\1\u00b6\1\0\21\uffff"
+        "\1\u00b6\1\0\21\uffff"
         )
 
     DFA165_accept = DFA.unpack(
-        u"\2\uffff\1\2\15\uffff\1\3\1\4\1\1"
+        "\2\uffff\1\2\15\uffff\1\3\1\4\1\1"
         )
 
     DFA165_special = DFA.unpack(
-        u"\1\uffff\1\0\21\uffff"
+        "\1\uffff\1\0\21\uffff"
         )
 
             
     DFA165_transition = [
-        DFA.unpack(u"\1\2\34\uffff\1\2\5\uffff\1\2\16\uffff\1\2\33\uffff"
-        u"\1\2\4\uffff\1\2\27\uffff\1\1\11\uffff\1\2\12\uffff\1\2\23\uffff"
-        u"\1\21\4\uffff\1\20\5\2\14\uffff\1\2"),
-        DFA.unpack(u"\1\uffff"),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u"")
+        DFA.unpack("\1\2\34\uffff\1\2\5\uffff\1\2\16\uffff\1\2\33\uffff"
+        "\1\2\4\uffff\1\2\27\uffff\1\1\11\uffff\1\2\12\uffff\1\2\23\uffff"
+        "\1\21\4\uffff\1\20\5\2\14\uffff\1\2"),
+        DFA.unpack("\1\uffff"),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack("")
     ]
 
     # class definition for DFA #165
@@ -27995,107 +27995,107 @@ class sdl92Parser(Parser):
     # lookup tables for DFA #166
 
     DFA166_eot = DFA.unpack(
-        u"\105\uffff"
+        "\105\uffff"
         )
 
     DFA166_eof = DFA.unpack(
-        u"\1\1\104\uffff"
+        "\1\1\104\uffff"
         )
 
     DFA166_min = DFA.unpack(
-        u"\1\6\54\uffff\1\0\20\uffff\1\0\6\uffff"
+        "\1\6\54\uffff\1\0\20\uffff\1\0\6\uffff"
         )
 
     DFA166_max = DFA.unpack(
-        u"\1\u00dd\54\uffff\1\0\20\uffff\1\0\6\uffff"
+        "\1\u00dd\54\uffff\1\0\20\uffff\1\0\6\uffff"
         )
 
     DFA166_accept = DFA.unpack(
-        u"\1\uffff\1\3\101\uffff\1\1\1\2"
+        "\1\uffff\1\3\101\uffff\1\1\1\2"
         )
 
     DFA166_special = DFA.unpack(
-        u"\55\uffff\1\0\20\uffff\1\1\6\uffff"
+        "\55\uffff\1\0\20\uffff\1\1\6\uffff"
         )
 
             
     DFA166_transition = [
-        DFA.unpack(u"\1\1\12\uffff\1\1\2\uffff\2\1\3\uffff\1\1\1\uffff\1"
-        u"\1\2\uffff\1\1\1\uffff\1\1\2\uffff\1\1\6\uffff\1\1\5\uffff\1\1"
-        u"\2\uffff\1\1\2\uffff\1\1\4\uffff\1\1\3\uffff\1\1\13\uffff\1\1\2"
-        u"\uffff\2\1\1\uffff\1\1\3\uffff\1\1\3\uffff\1\1\2\uffff\1\1\1\uffff"
-        u"\1\1\5\uffff\1\1\5\uffff\1\1\13\uffff\1\1\5\uffff\1\1\1\uffff\2"
-        u"\1\1\uffff\5\1\1\uffff\1\1\3\uffff\1\55\5\1\1\uffff\7\1\1\uffff"
-        u"\12\1\21\uffff\1\1\1\uffff\1\1\30\uffff\1\1\7\uffff\1\1\1\76\1"
-        u"\uffff\1\1\1\uffff\1\1"),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u"\1\uffff"),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u"\1\uffff"),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u"")
+        DFA.unpack("\1\1\12\uffff\1\1\2\uffff\2\1\3\uffff\1\1\1\uffff\1"
+        "\1\2\uffff\1\1\1\uffff\1\1\2\uffff\1\1\6\uffff\1\1\5\uffff\1\1"
+        "\2\uffff\1\1\2\uffff\1\1\4\uffff\1\1\3\uffff\1\1\13\uffff\1\1\2"
+        "\uffff\2\1\1\uffff\1\1\3\uffff\1\1\3\uffff\1\1\2\uffff\1\1\1\uffff"
+        "\1\1\5\uffff\1\1\5\uffff\1\1\13\uffff\1\1\5\uffff\1\1\1\uffff\2"
+        "\1\1\uffff\5\1\1\uffff\1\1\3\uffff\1\55\5\1\1\uffff\7\1\1\uffff"
+        "\12\1\21\uffff\1\1\1\uffff\1\1\30\uffff\1\1\7\uffff\1\1\1\76\1"
+        "\uffff\1\1\1\uffff\1\1"),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack("\1\uffff"),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack("\1\uffff"),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack("")
     ]
 
     # class definition for DFA #166
@@ -28157,54 +28157,54 @@ class sdl92Parser(Parser):
     # lookup tables for DFA #170
 
     DFA170_eot = DFA.unpack(
-        u"\24\uffff"
+        "\24\uffff"
         )
 
     DFA170_eof = DFA.unpack(
-        u"\24\uffff"
+        "\24\uffff"
         )
 
     DFA170_min = DFA.unpack(
-        u"\1\13\12\uffff\2\0\7\uffff"
+        "\1\13\12\uffff\2\0\7\uffff"
         )
 
     DFA170_max = DFA.unpack(
-        u"\1\u00b6\12\uffff\2\0\7\uffff"
+        "\1\u00b6\12\uffff\2\0\7\uffff"
         )
 
     DFA170_accept = DFA.unpack(
-        u"\1\uffff\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\2\uffff\1\21"
-        u"\1\13\1\14\1\15\1\16\1\17\1\20"
+        "\1\uffff\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\2\uffff\1\21"
+        "\1\13\1\14\1\15\1\16\1\17\1\20"
         )
 
     DFA170_special = DFA.unpack(
-        u"\13\uffff\1\0\1\1\7\uffff"
+        "\13\uffff\1\0\1\1\7\uffff"
         )
 
             
     DFA170_transition = [
-        DFA.unpack(u"\1\1\34\uffff\1\12\24\uffff\1\2\33\uffff\1\15\4\uffff"
-        u"\1\5\27\uffff\1\13\11\uffff\1\11\44\uffff\1\3\1\4\1\6\1\7\1\10"
-        u"\14\uffff\1\14"),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u"\1\uffff"),
-        DFA.unpack(u"\1\uffff"),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u"")
+        DFA.unpack("\1\1\34\uffff\1\12\24\uffff\1\2\33\uffff\1\15\4\uffff"
+        "\1\5\27\uffff\1\13\11\uffff\1\11\44\uffff\1\3\1\4\1\6\1\7\1\10"
+        "\14\uffff\1\14"),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack("\1\uffff"),
+        DFA.unpack("\1\uffff"),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack("")
     ]
 
     # class definition for DFA #170
@@ -28272,55 +28272,55 @@ class sdl92Parser(Parser):
     # lookup tables for DFA #179
 
     DFA179_eot = DFA.unpack(
-        u"\21\uffff"
+        "\21\uffff"
         )
 
     DFA179_eof = DFA.unpack(
-        u"\21\uffff"
+        "\21\uffff"
         )
 
     DFA179_min = DFA.unpack(
-        u"\1\66\1\7\2\uffff\1\u008b\1\u0080\1\u008d\1\u0080\1\u008c\1\u008d"
-        u"\1\u008b\1\u0080\1\u008d\1\u0080\1\u008c\1\u00de\1\66"
+        "\1\66\1\7\2\uffff\1\u008b\1\u0080\1\u008d\1\u0080\1\u008c\1\u008d"
+        "\1\u008b\1\u0080\1\u008d\1\u0080\1\u008c\1\u00de\1\66"
         )
 
     DFA179_max = DFA.unpack(
-        u"\1\u00dd\1\u00b0\2\uffff\1\u008b\1\u0080\1\u008d\1\u0080\1\u008c"
-        u"\1\u008d\1\u008b\1\u0080\1\u008d\1\u0080\1\u008c\1\u00de\1\u00dd"
+        "\1\u00dd\1\u00b0\2\uffff\1\u008b\1\u0080\1\u008d\1\u0080\1\u008c"
+        "\1\u008d\1\u008b\1\u0080\1\u008d\1\u0080\1\u008c\1\u00de\1\u00dd"
         )
 
     DFA179_accept = DFA.unpack(
-        u"\2\uffff\1\1\1\2\15\uffff"
+        "\2\uffff\1\1\1\2\15\uffff"
         )
 
     DFA179_special = DFA.unpack(
-        u"\21\uffff"
+        "\21\uffff"
         )
 
             
     DFA179_transition = [
-        DFA.unpack(u"\1\3\4\uffff\1\3\23\uffff\1\3\14\uffff\1\3\31\uffff"
-        u"\1\2\146\uffff\1\1"),
-        DFA.unpack(u"\1\4\11\uffff\1\4\2\uffff\1\4\4\uffff\1\4\31\uffff"
-        u"\1\4\2\uffff\2\4\3\uffff\1\4\3\uffff\1\4\7\uffff\2\4\1\uffff\2"
-        u"\4\3\uffff\1\4\11\uffff\1\4\2\uffff\1\4\7\uffff\1\4\2\uffff\1\4"
-        u"\31\uffff\1\4\56\uffff\1\3"),
-        DFA.unpack(u""),
-        DFA.unpack(u""),
-        DFA.unpack(u"\1\5"),
-        DFA.unpack(u"\1\6"),
-        DFA.unpack(u"\1\7"),
-        DFA.unpack(u"\1\10"),
-        DFA.unpack(u"\1\11"),
-        DFA.unpack(u"\1\12"),
-        DFA.unpack(u"\1\13"),
-        DFA.unpack(u"\1\14"),
-        DFA.unpack(u"\1\15"),
-        DFA.unpack(u"\1\16"),
-        DFA.unpack(u"\1\17"),
-        DFA.unpack(u"\1\20"),
-        DFA.unpack(u"\1\3\4\uffff\1\3\23\uffff\1\3\14\uffff\1\3\31\uffff"
-        u"\1\2\146\uffff\1\3")
+        DFA.unpack("\1\3\4\uffff\1\3\23\uffff\1\3\14\uffff\1\3\31\uffff"
+        "\1\2\146\uffff\1\1"),
+        DFA.unpack("\1\4\11\uffff\1\4\2\uffff\1\4\4\uffff\1\4\31\uffff"
+        "\1\4\2\uffff\2\4\3\uffff\1\4\3\uffff\1\4\7\uffff\2\4\1\uffff\2"
+        "\4\3\uffff\1\4\11\uffff\1\4\2\uffff\1\4\7\uffff\1\4\2\uffff\1\4"
+        "\31\uffff\1\4\56\uffff\1\3"),
+        DFA.unpack(""),
+        DFA.unpack(""),
+        DFA.unpack("\1\5"),
+        DFA.unpack("\1\6"),
+        DFA.unpack("\1\7"),
+        DFA.unpack("\1\10"),
+        DFA.unpack("\1\11"),
+        DFA.unpack("\1\12"),
+        DFA.unpack("\1\13"),
+        DFA.unpack("\1\14"),
+        DFA.unpack("\1\15"),
+        DFA.unpack("\1\16"),
+        DFA.unpack("\1\17"),
+        DFA.unpack("\1\20"),
+        DFA.unpack("\1\3\4\uffff\1\3\23\uffff\1\3\14\uffff\1\3\31\uffff"
+        "\1\2\146\uffff\1\3")
     ]
 
     # class definition for DFA #179
