@@ -24,7 +24,7 @@ from PySide.QtGui import(QGraphicsTextItem, QGraphicsProxyWidget, QListWidget,
                          QTextCursor, QSyntaxHighlighter, QTextCharFormat,
                          QTextBlockFormat, QStringListModel)
 
-import undoCommands
+from . import undoCommands
 
 __all__ = ['EditableText']
 
@@ -65,7 +65,7 @@ class Completer(QGraphicsProxyWidget, object):
         self._completer.setCompletionPrefix(completion_prefix)
         self.widget().clear()
         count = self._completer.completionCount()
-        for i in xrange(count):
+        for i in range(count):
             self._completer.setCurrentRow(i)
             self.widget().addItem(self._completer.currentCompletion())
         self.prepareGeometryChange()
@@ -261,7 +261,7 @@ class EditableText(QGraphicsTextItem, object):
         context = self.context
         try:
             # If not the first line of the text, Qt adds u+2029 as 1st char
-            line = cursor.selectedText().replace(u'\u2029', '')
+            line = cursor.selectedText().replace('\u2029', '')
             if line[pos] in string.ascii_letters + '!' + '.' + '_':
                 self.context = line[slice(0, pos + 1)].split()[-1]
             else:
@@ -353,7 +353,7 @@ class EditableText(QGraphicsTextItem, object):
                 self.setTextCursor(text_cursor)
             # If something has changed, check syntax and create undo command
             if(self.oldSize != self.parentItem().boundingRect() or
-                                                self.oldText != unicode(self)):
+                                                self.oldText != str(self)):
                 # Call syntax checker from item containing the text (if any)
                 self.scene().check_syntax(self.parentItem())
                 # Update class completion list
@@ -372,7 +372,7 @@ class EditableText(QGraphicsTextItem, object):
                         pass
 
                     undo_cmd = undoCommands.ReplaceText(self, self.oldText,
-                                                        unicode(self))
+                                                        str(self))
                     self.scene().undo_stack.push(undo_cmd)
         self.set_text_alignment()
         # Reset Z-Values that were increased when getting focus
@@ -407,7 +407,7 @@ class EditableText(QGraphicsTextItem, object):
         # Set width to auto-expand, and disables alignment, while editing:
         self.setTextWidth(-1)
         if not self.editing:
-            self.oldText = unicode(self)
+            self.oldText = str(self)
             self.oldSize = parent.boundingRect()
             self.editing = True
 
