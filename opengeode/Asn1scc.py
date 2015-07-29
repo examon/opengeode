@@ -108,7 +108,7 @@ def parse_asn1(*files, **options):
         raise TypeError('ASN.1 Compiler Error (exit code = {}) - {}'
                         .format(exitcode, str(result)))
     else:
-        if filename in AST.viewkeys():
+        if filename in AST.keys():
             # Re-import module if it was already loaded
             ast = AST[filename]
             reload(ast)
@@ -123,8 +123,8 @@ if __name__ == '__main__':
         ast = parse_asn1('dataview-uniq.asn',
                           ast_version=ASN1.NoParameterizedTypes,
                           flags=[ASN1.AstOnly])
-        print ast.types.keys()
+        print(list(ast.types.keys()))
         sys.exit(0)
     except TypeError as err:
-        print(str(err))
+        print((str(err)))
         sys.exit(1)
