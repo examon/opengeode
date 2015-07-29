@@ -28,7 +28,7 @@ from collections import defaultdict
 
 from singledispatch import singledispatch
 
-import ogAST
+from . import ogAST
 
 LOG = logging.getLogger(__name__)
 
@@ -43,7 +43,7 @@ def map_input_state(process):
     # Add timers to the mapping
     input_signals.extend(process.timers)
     for input_signal in input_signals:
-        for state_name, input_symbols in process.mapping.viewitems():
+        for state_name, input_symbols in process.mapping.items():
             if isinstance(input_symbols, list):
                 # Start symbols have no list of inputs
                 for i in input_symbols:
@@ -60,7 +60,7 @@ def inner_labels_to_floating(process):
         section of code, where they are in the scope of everybody
         Works with processes, procedures and nested states
     '''
-    for idx in xrange(len(process.content.floating_labels)):
+    for idx in range(len(process.content.floating_labels)):
         for new_floating in find_labels(
                       process.content.floating_labels[idx].transition):
             process.content.floating_labels.append(new_floating)
@@ -75,7 +75,7 @@ def inner_labels_to_floating(process):
             process.content.floating_labels.append(new_floating)
 
 
-def flatten(process, sep=u'_'):
+def flatten(process, sep='_'):
     ''' In-place update of the AST: flatten a model with nested states
         Rename inner states, procedures, etc. and move them to process level
     '''
@@ -84,19 +84,19 @@ def flatten(process, sep=u'_'):
         if term.inputString.lower() in (st.statename.lower()
                                 for st in context.composite_states):
             if not term.via:
-                term.next_id = term.inputString.lower() + sep + u'START'
+                term.next_id = term.inputString.lower() + sep + 'START'
             else:
-                term.next_id = u'{term}{sep}{entry}_START'.format(
+                term.next_id = '{term}{sep}{entry}_START'.format(
                         term=term.inputString, entry=term.entrypoint, sep=sep)
         elif term.inputString.strip() == '-':
             term.candidate_id = defaultdict(list)
             for each in term.possible_states:
                 if each.lower() in (st.statename.lower()
                             for st in context.composite_states):
-                    term.candidate_id[each + sep + u'START'] = \
-                                       [st for st in process.mapping.viewkeys()
+                    term.candidate_id[each + sep + 'START'] = \
+                                       [st for st in process.mapping.keys()
                                         if st.startswith(each)
-                                        and not st.endswith(u'START')]
+                                        and not st.endswith('START')]
                 else:
                     term.candidate_id[-1].append(each)
 
@@ -110,14 +110,14 @@ def flatten(process, sep=u'_'):
         set_transition_states(state, prefix)
 
         state.mapping = {prefix + key: state.mapping.pop(key)
-                         for key in state.mapping.keys()}
+                         for key in list(state.mapping.keys())}
         process.transitions.extend(state.transitions)
 
         # Add prefix to local variable names and push them at process level
-        for dcl in state.variables.viewkeys():
+        for dcl in state.variables.keys():
             rename_everything(state.content, dcl, prefix + dcl)
         state.variables = {prefix + key: state.variables.pop(key)
-                           for key in state.variables.keys()}
+                           for key in list(state.variables.keys())}
         process.variables.update(state.variables)
 
         # Update return transition indices
@@ -129,7 +129,7 @@ def flatten(process, sep=u'_'):
                         break
 
         values = []
-        for key, value in state.mapping.viewitems():
+        for key, value in state.mapping.items():
             # Update transition indices
             if isinstance(value, int):
                 state.mapping[key] = value + trans_idx
@@ -146,11 +146,11 @@ def flatten(process, sep=u'_'):
 
         # If composite state has entry procedures, add the call
         if state.entry_procedure:
-            for each in (trans for trans in state.mapping.viewvalues()
+            for each in (trans for trans in state.mapping.values()
                          if isinstance(trans, int)):
                 call_entry = ogAST.ProcedureCall()
                 call_entry.inputString = 'entry'
-                entryproc = u'{pre}entry'.format(pre=prefix)
+                entryproc = '{pre}entry'.format(pre=prefix)
                 call_entry.output = [{'outputName': entryproc,
                                      'params': [], 'tmpVars': []}]
                 process.transitions[each].actions.insert(0, call_entry)
@@ -162,7 +162,7 @@ def flatten(process, sep=u'_'):
                 if each.terminator.kind == 'return':
                     call_exit = ogAST.ProcedureCall()
                     call_exit.inputString = 'exit'
-                    exitproc = u'{pre}exit'.format(pre=prefix)
+                    exitproc = '{pre}exit'.format(pre=prefix)
                     call_exit.output = [{'outputName': exitproc,
                                          'params': [], 'tmpVars': []}]
                     each.actions.append(call_exit)
@@ -206,7 +206,7 @@ def flatten(process, sep=u'_'):
             to exit the composite state from the outer scope) must be
             processed by each of the substates.
         '''
-        for _, val in nested_state.mapping.viewitems():
+        for _, val in nested_state.mapping.items():
             try:
                 val.extend(inputlist)
             except AttributeError:
@@ -278,7 +278,7 @@ def _rename_automaton(ast, from_name, to_name):
             rename_everything(each.composite.content, from_name, to_name)
     for each in ast.inner_procedures:
         # Check that from_name is not a redefined variable in the procedure
-        for varname in each.variables.viewkeys():
+        for varname in each.variables.keys():
             if varname.lower() == from_name:
                 break
         else:
@@ -448,5 +448,5 @@ def sorted_fields(atype):
     if atype.kind not in ('SequenceType', 'ChoiceType'):
         raise TypeError('Not a SEQUENCE nor a CHOICE')
     tmp = ([k, val.Line, val.CharPositionInLine]
-             for k, val in atype.Children.viewitems())
+             for k, val in atype.Children.items())
     return (x[0] for x in sorted(tmp, key=operator.itemgetter(1,2)))
