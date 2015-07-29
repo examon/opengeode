@@ -57,7 +57,7 @@ class Expression(object):
 
     def trace(self):
         ''' Debug output for an expression '''
-        return u'{exp} ({l},{c})'.format(exp=self.inputString,
+        return '{exp} ({l},{c})'.format(exp=self.inputString,
                                         l=self.line,
                                         c=self.charPositionInLine)
 
@@ -176,7 +176,7 @@ class Primary(Expression):
 
     def trace(self):
         ''' Debug output for a primary '''
-        return u'PRIMARY : {exp} ({l},{c})'.format(exp=self.inputString,
+        return 'PRIMARY : {exp} ({l},{c})'.format(exp=self.inputString,
                 l=self.line, c=self.charPositionInLine)
 
 
@@ -320,7 +320,7 @@ class Decision(object):
 
     def trace(self):
         ''' Debug output for a decision '''
-        return u'DECISION {exp} ({l},{c})'.format(exp=self.inputString,
+        return 'DECISION {exp} ({l},{c})'.format(exp=self.inputString,
                 l=self.line, c=self.charPositionInLine)
 
 
@@ -354,7 +354,7 @@ class Answer(object):
 
     def trace(self):
         ''' Debug output for an answer '''
-        return u'ANSWER {exp} ({l},{c})'.format(exp=self.inputString,
+        return 'ANSWER {exp} ({l},{c})'.format(exp=self.inputString,
                 l=self.line, c=self.charPositionInLine)
 
 
@@ -376,7 +376,7 @@ class Task(object):
 
     def trace(self):
         ''' Debug output for a task '''
-        return u'TASK {exp} ({l},{c})'.format(exp=self.inputString,
+        return 'TASK {exp} ({l},{c})'.format(exp=self.inputString,
                 l=self.line, c=self.charPositionInLine)
 
 
@@ -418,7 +418,7 @@ class Output(object):
 
     def trace(self):
         ''' Debug output for an Output symbol '''
-        return u'{exp} ({l},{c})'.format(exp=self.inputString,
+        return '{exp} ({l},{c})'.format(exp=self.inputString,
                 l=self.line, c=self.charPositionInLine)
 
 
@@ -466,7 +466,7 @@ class Terminator(object):
 
     def trace(self):
         ''' Debug output for terminators '''
-        return u'{kind} {exp} ({l},{c}) at {x}, {y}'.format(
+        return '{kind} {exp} ({l},{c}) at {x}, {y}'.format(
                 exp=self.inputString,
                 kind=self.kind.upper(), l=self.line, c=self.charPositionInLine,
                 x=self.pos_x, y=self.pos_y)
@@ -495,7 +495,7 @@ class Label(object):
 
     def trace(self):
         ''' Debug output for a label '''
-        return u'LABEL {label} ({l},{c})'.format(label=self.inputString,
+        return 'LABEL {label} ({l},{c})'.format(label=self.inputString,
                 l=self.line, c=self.charPositionInLine)
 
 
@@ -517,7 +517,7 @@ class Floating_label(Label):
 
     def trace(self):
         ''' Debug output for a label (used by code generator) '''
-        return u'CONNECTION {label} ({l},{c})'.format(label=self.inputString,
+        return 'CONNECTION {label} ({l},{c})'.format(label=self.inputString,
                 l=self.line, c=self.charPositionInLine)
 
 
@@ -543,7 +543,7 @@ class Transition(object):
         data = [action.trace() for action in self.actions]
         if self.terminator:
             data.append(self.terminator.trace())
-        return u'\n'.join(data)
+        return '\n'.join(data)
 
 
 class Input(object):
@@ -577,7 +577,7 @@ class Input(object):
 
     def trace(self):
         ''' Debug output for an INPUT symbol '''
-        return u'INPUT {exp} ({l},{c})'.format(exp=self.inputString,
+        return 'INPUT {exp} ({l},{c})'.format(exp=self.inputString,
                 l=self.line, c=self.charPositionInLine)
 
 
@@ -592,7 +592,7 @@ class Connect(Input):
 
     def trace(self):
         ''' Debug output for a CONNECT symbol '''
-        return u'CONNECT {exp} ({l},{c})'.format(exp=self.inputString,
+        return 'CONNECT {exp} ({l},{c})'.format(exp=self.inputString,
                 l=self.line, c=self.charPositionInLine)
 
 
@@ -615,7 +615,7 @@ class Start(object):
 
     def trace(self):
         ''' Debug output for a START symbol '''
-        return u'START {}'.format(self.inputString)
+        return 'START {}'.format(self.inputString)
 
 
 class Procedure_start(Start):
@@ -645,7 +645,7 @@ class Comment(object):
 
     def trace(self):
         ''' Debug output for a COMMENT symbol '''
-        return u'COMMENT {exp} ({l},{c})'.format(
+        return 'COMMENT {exp} ({l},{c})'.format(
                 exp=self.inputString,
                 l=self.line, c=self.charPositionInLine)
 
@@ -677,7 +677,7 @@ class State(object):
 
     def trace(self):
         ''' Debug output for a STATE symbol '''
-        return u'STATE {exp} ({l},{c}) at {x},{y}'.format(exp=self.inputString,
+        return 'STATE {exp} ({l},{c}) at {x},{y}'.format(exp=self.inputString,
                 l=self.line, c=self.charPositionInLine,
                 x=self.pos_x, y=self.pos_y)
 
@@ -711,7 +711,7 @@ class TextArea(object):
 
     def trace(self):
         ''' Debug output for a text area '''
-        return u'TEXTAREA {exp} ({l},{c})'.format(exp=self.inputString,
+        return 'TEXTAREA {exp} ({l},{c})'.format(exp=self.inputString,
                 l=self.line, c=self.charPositionInLine)
 
 
@@ -873,7 +873,7 @@ class CompositeState(Process):
 
     def trace(self):
         ''' Debug output for composite state '''
-        return u'COMPOSITE STATE {exp} ({l},{c})'.format(exp=self.statename,
+        return 'COMPOSITE STATE {exp} ({l},{c})'.format(exp=self.statename,
                 l=self.line, c=self.charPositionInLine)
 
 
