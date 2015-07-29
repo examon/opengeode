@@ -17,8 +17,8 @@
 import logging
 from singledispatch import singledispatch
 
-import ogAST
-import Helper
+from . import ogAST
+from . import Helper
 
 try:
     import stringtemplate3
@@ -41,7 +41,7 @@ PROCEDURES = []
 # Specify that the target is a shared library
 SHARED_LIB = False
 
-UNICODE_SEP = u'\u00dc'
+UNICODE_SEP = '\u00dc'
 
 # STG group file, avoid passing a parameter as it is a module-level shared var
 STG = None
@@ -107,13 +107,13 @@ def _process(process, simu=False, stgfile='ada_source.st', **kwargs):
 
 
     # Set the list of SDL states
-    process_template['states'] = (name for name in process.mapping.iterkeys()
-                                  if not name.endswith(u'START'))
+    process_template['states'] = (name for name in process.mapping.keys()
+                                  if not name.endswith('START'))
 
     # Set constants corresponding to substate start transitions
     constants = []
-    for name, val in process.mapping.viewitems():
-        if name.endswith(u'START') and name != u'START':
+    for name, val in process.mapping.items():
+        if name.endswith('START') and name != 'START':
             const_template = STG.getInstanceOf("constant")
             const_template['var'] = name
             const_template['val'] = str(val)
@@ -145,7 +145,7 @@ def _process(process, simu=False, stgfile='ada_source.st', **kwargs):
     for signal in process.input_signals + [
                         {'name': timer.lower()} for timer in process.timers]:
         sig_template = STG.getInstanceOf('pi_signature')
-        if signal.get('name', u'START') == u'START':
+        if signal.get('name', 'START') == 'START':
             continue
         sig_template['name'] = signal['name']
         # Add (optional) PI parameter (only one is possible in TASTE PI)
@@ -161,8 +161,8 @@ def _process(process, simu=False, stgfile='ada_source.st', **kwargs):
         # For each input signal, define the possible transition based on the
         # current state.
         cases = []
-        for state in process.mapping.viewkeys():
-            if state.endswith(u'START'):
+        for state in process.mapping.keys():
+            if state.endswith('START'):
                 continue
             case_template = STG.getInstanceOf('case_state')
             case_template['name'] = state
@@ -296,7 +296,7 @@ def _process(process, simu=False, stgfile='ada_source.st', **kwargs):
     for idx, val in enumerate(code_transitions):
         tr_template = STG.getInstanceOf("transition_code")
         tr_template['idx'] = idx
-        val = [u'{line}'.format(line=l) for l in val]
+        val = ['{line}'.format(line=l) for l in val]
         tr_template['code'] = val
         tr_code.append(str(tr_template))
 
@@ -333,30 +333,30 @@ def write_statement(param, newline):
     elif type_kind.endswith('StringType'):
         if isinstance(param, ogAST.PrimStringLiteral):
             # Raw string
-            code.append(u'Put("{}");'
+            code.append('Put("{}");'
                         .format(param.value[1:-1].replace('"', "'")))
         else:
             code, string, local = expression(param)
             if type_kind == 'OctetStringType':
                 # Octet string -> convert to Ada string
                 sep = UNICODE_SEP
-                last_it = u""
+                last_it = ""
                 if isinstance(param, ogAST.PrimSubstring):
-                    range_str = u"{}'Range".format(string)
-                    iterator = u"i - {}'First + 1".format(string)
+                    range_str = "{}'Range".format(string)
+                    iterator = "i - {}'First + 1".format(string)
                 elif basic_type.Min == basic_type.Max:
-                    range_str = u"{}.Data'Range".format(string)
-                    string += u".Data"
-                    iterator = u"i"
+                    range_str = "{}.Data'Range".format(string)
+                    string += ".Data"
+                    iterator = "i"
                 else:
-                    range_str = u"1 .. {}.Length".format(string)
-                    string += u".Data"
-                    iterator = u"i"
-                    last_it = u"({})".format(range_str)
-                code.extend([u"for i in {} loop".format(range_str),
-                             u"Put(Character'Val({st}(i)));"
+                    range_str = "1 .. {}.Length".format(string)
+                    string += ".Data"
+                    iterator = "i"
+                    last_it = "({})".format(range_str)
+                code.extend(["for i in {} loop".format(range_str),
+                             "Put(Character'Val({st}(i)));"
                              .format(st=string, sep=sep, it=iterator),
-                             u"end loop;"])
+                             "end loop;"])
             else:
                 code.append("Put({});".format(string))
     elif type_kind in ('IntegerType', 'RealType',
@@ -368,14 +368,14 @@ def write_statement(param, newline):
             cast = 'Long_Float'
         elif type_kind == 'BooleanType':
             cast = 'Boolean'
-        code.append(u"Put({cast}'Image({s}));".format(cast=cast, s=string))
+        code.append("Put({cast}'Image({s}));".format(cast=cast, s=string))
     else:
-        error = (u'Unsupported parameter in write call ' +
+        error = ('Unsupported parameter in write call ' +
                 param.inputString)
         LOG.error(error)
         raise TypeError(error)
     if newline:
-        code.append(u"New_Line;")
+        code.append("New_Line;")
     return code, string, local
 
 
@@ -454,7 +454,7 @@ def _call_external_function(output, **kwargs):
                     out_sig = proc
             except ValueError:
                 # Not there? Impossible, the parser would have barked
-                raise ValueError(u'Probably a bug - please report')
+                raise ValueError('Probably a bug - please report')
         if out_sig:
             list_of_params = []
             for idx, param in enumerate(out.get('params') or []):
@@ -492,19 +492,19 @@ def _call_external_function(output, **kwargs):
                                                      if is_out_sig else ""))
                 else:
                     # Output parameters/local variables
-                    list_of_params.append(u"{var}'access{shared}"
+                    list_of_params.append("{var}'access{shared}"
                                          .format(var=p_id,
                                                 shared=", {}'Size".format(p_id)
                                                   if is_out_sig else ""))
             if list_of_params:
-                code.append(u'{RI}({params});'
+                code.append('{RI}({params});'
                             .format(RI=out['outputName'],
                                     params=', '.join(list_of_params)))
             else:
                 if not SHARED_LIB:
-                    code.append(u'{RI};'.format(RI=out['outputName']))
+                    code.append('{RI};'.format(RI=out['outputName']))
                 else:
-                    code.append(u'{RI}(New_String("{RI}"));'
+                    code.append('{RI}(New_String("{RI}"));'
                                 .format(RI=out['outputName']))
         else:
             # inner procedure call
@@ -516,12 +516,12 @@ def _call_external_function(output, **kwargs):
                 # no need to use temporary variables, we are in pure Ada
                 list_of_params.append(p_id)
             if list_of_params:
-                code.append(u'p{sep}{proc}({params});'.format(
+                code.append('p{sep}{proc}({params});'.format(
                     sep=UNICODE_SEP,
                     proc=proc.inputString,
                     params=', '.join(list_of_params)))
             else:
-                code.append(u'p{}{};'.format(UNICODE_SEP, proc.inputString))
+                code.append('p{}{};'.format(UNICODE_SEP, proc.inputString))
     return code, local_decl
 
 
@@ -575,22 +575,22 @@ def _task_forloop(task, **kwargs):
             local_decl.extend(stop_local)
             stmt.extend(stop_stmt)
             if loop['range']['step'] == 1:
-                if unicode.isnumeric(stop_str):
-                    stop_str = unicode(int(stop_str) - 1)
+                if str.isnumeric(stop_str):
+                    stop_str = str(int(stop_str) - 1)
                 else:
-                    stop_str = u'{} - 1'.format(stop_str)
+                    stop_str = '{} - 1'.format(stop_str)
                 stmt.append(
-                        u'for {it} in {start}{stop} loop'
+                        'for {it} in {start}{stop} loop'
                         .format(it=loop['var'], start=start_str, stop=stop_str))
             else:
                 # Step is not directly supported in Ada, we need to use 'while'
                 stmt.extend(['declare',
-                             u'{it} : Integer := {start};'
+                             '{it} : Integer := {start};'
                              .format(it=loop['var'],
                              start=start_str),
                              '',
                              'begin',
-                             u'while {it} < {stop} loop'.format(it=loop['var'],
+                             'while {it} < {stop} loop'.format(it=loop['var'],
                                                                stop=stop_str)])
         else:
             # case of form: FOR x in SEQUENCE OF
@@ -599,9 +599,9 @@ def _task_forloop(task, **kwargs):
             list_payload = list_str + string_payload(loop['list'], list_str)
             if isinstance(loop['list'], ogAST.PrimSubstring) or \
                     basic_type.Min == basic_type.Max:
-                range_str = u"{}'Range".format(list_payload)
+                range_str = "{}'Range".format(list_payload)
             else:
-                range_str = u"1 .. {}.Length".format(list_str)
+                range_str = "1 .. {}.Length".format(list_str)
             stmt.extend(list_stmt)
             local_decl.extend(list_local)
             stmt.extend(['declare',
@@ -648,14 +648,14 @@ def expression(expr):
 @expression.register(ogAST.PrimVariable)
 def _primary_variable(prim):
     ''' Single variable reference '''
-    sep = u'l_' if find_var(prim.value[0]) else u''
+    sep = 'l_' if find_var(prim.value[0]) else ''
 
-    ada_string = u'{sep}{name}'.format(sep=sep, name=prim.value[0])
+    ada_string = '{sep}{name}'.format(sep=sep, name=prim.value[0])
 
     if prim.exprType.__name__ == 'for_range':
         # Ada iterator in FOR loops is an Integer - we must cast to 64 bits
-        ada_string = u'Asn1Int({})'.format(ada_string)
-    return [], unicode(ada_string), []
+        ada_string = 'Asn1Int({})'.format(ada_string)
+    return [], str(ada_string), []
 
 
 @expression.register(ogAST.PrimCall)
@@ -701,9 +701,9 @@ def _prim_call(prim):
             ada_string += min_length
         else:
             if isinstance(exp, ogAST.PrimSubstring):
-                range_str = u"{}'Length".format(param_str)
+                range_str = "{}'Length".format(param_str)
             else:
-                range_str = u"{}.Length".format(param_str)
+                range_str = "{}.Length".format(param_str)
             ada_string += ('Asn1Int({})'.format(range_str))
     elif ident == 'present':
         # User wants to know what CHOICE element is present
@@ -806,7 +806,7 @@ def _prim_call(prim):
         ada_string += ', '.join(list_of_params)
         ada_string += ')'
 
-    return stmts, unicode(ada_string), local_decl
+    return stmts, str(ada_string), local_decl
 
 
 @expression.register(ogAST.PrimIndex)
@@ -821,7 +821,7 @@ def _prim_index(prim):
     local_decl.extend(receiver_decl)
 
     idx_stmts, idx_string, idx_var = expression(prim.value[1]['index'][0])
-    if unicode.isnumeric(idx_string):
+    if str.isnumeric(idx_string):
         idx_string = int(idx_string) + 1
     else:
         idx_string = '1+Integer({idx})'.format(idx=idx_string)
@@ -831,7 +831,7 @@ def _prim_index(prim):
     stmts.extend(idx_stmts)
     local_decl.extend(idx_var)
 
-    return stmts, unicode(ada_string), local_decl
+    return stmts, str(ada_string), local_decl
 
 
 @expression.register(ogAST.PrimSubstring)
@@ -850,12 +850,12 @@ def _prim_substring(prim):
     r2_stmts, r2_string, r2_local = expression(prim.value[1]['substring'][1])
 
     # Adding 1 because SDL starts indexes at 0, ASN1 Ada types at 1
-    if unicode.isnumeric(r1_string):
-        r1_string = unicode(int(r1_string) + 1)
+    if str.isnumeric(r1_string):
+        r1_string = str(int(r1_string) + 1)
     else:
         r1_string += ' + 1'
-    if unicode.isnumeric(r2_string):
-        r2_string = unicode(int(r2_string) + 1)
+    if str.isnumeric(r2_string):
+        r2_string = str(int(r2_string) + 1)
     else:
         r2_string += ' + 1'
 
@@ -867,7 +867,7 @@ def _prim_substring(prim):
     local_decl.extend(r1_local)
     local_decl.extend(r2_local)
 
-    return stmts, unicode(ada_string), local_decl
+    return stmts, str(ada_string), local_decl
 
 
 @expression.register(ogAST.PrimSelector)
@@ -893,7 +893,7 @@ def _prim_selector(prim):
     else:
         ada_string += '.' + field_name
 
-    return stmts, unicode(ada_string), local_decl
+    return stmts, str(ada_string), local_decl
 
 
 @expression.register(ogAST.ExprPlus)
@@ -911,13 +911,13 @@ def _basic_operators(expr):
     code, local_decl = [], []
     left_stmts, left_str, left_local = expression(expr.left)
     right_stmts, right_str, right_local = expression(expr.right)
-    ada_string = u'({left} {op} {right})'.format(
+    ada_string = '({left} {op} {right})'.format(
             left=left_str, op=expr.operand, right=right_str)
     code.extend(left_stmts)
     code.extend(right_stmts)
     local_decl.extend(left_local)
     local_decl.extend(right_local)
-    return code, unicode(ada_string), local_decl
+    return code, str(ada_string), local_decl
 
 
 @expression.register(ogAST.ExprEq)
@@ -933,22 +933,22 @@ def _equality(expr):
     basic = lbty.kind in ('IntegerType', 'Integer32Type', 'BooleanType',
                           'RealType', 'EnumeratedType', 'ChoiceEnumeratedType')
     if basic:
-        ada_string = u'({left} {op} {right})'.format(
+        ada_string = '({left} {op} {right})'.format(
                 left=left_str, op=expr.operand, right=right_str)
     else:
         if asn1_type in TYPES:
             if isinstance(expr.right,
                           (ogAST.PrimSequenceOf, ogAST.PrimStringLiteral)):
                 right_str = array_content(expr.right, right_str, lbty)
-            ada_string = u'{sort}_Equal({left}, {right})'.format(
+            ada_string = '{sort}_Equal({left}, {right})'.format(
                            sort=actual_type, left=left_str, right=right_str)
         else:
             # Raw types on both left and right.... use simple operator
-            ada_string = u"({left}) {op} ({right})".format(left=left_str,
+            ada_string = "({left}) {op} ({right})".format(left=left_str,
                     op=expr.operand, right=right_str)
         if isinstance(expr, ogAST.ExprNeq):
-            ada_string = u'not {}'.format(ada_string)
-    return code, unicode(ada_string), local_decl
+            ada_string = 'not {}'.format(ada_string)
+    return code, str(ada_string), local_decl
 
 
 @expression.register(ogAST.ExprAssign)
@@ -964,18 +964,18 @@ def _assign_expression(expr):
     if basic_left.kind in ('SequenceOfType', 'OctetStringType'):
         rlen = "{}'Length".format(right_str)
         if isinstance(expr.right, ogAST.PrimSubstring):
-            strings.append(u"{lvar}.Data(1..{rvar}'Length) := {rvar};"
+            strings.append("{lvar}.Data(1..{rvar}'Length) := {rvar};"
                        .format(lvar=left_str, rvar=right_str))
         elif isinstance(expr.right, ogAST.ExprAppend):
             basic_right = find_basic_type(expr.right.exprType)
             rlen = append_size(expr.right)
-            strings.append(u"{lvar}.Data(1..{lstr}) := {rvar};"
+            strings.append("{lvar}.Data(1..{lstr}) := {rvar};"
                            .format(lvar=left_str,
                                    rvar=right_str,
                                    lstr=rlen))
         elif isinstance(expr.right, (ogAST.PrimSequenceOf,
                                     ogAST.PrimStringLiteral)):
-            strings.append(u"{lvar} := {value};"
+            strings.append("{lvar} := {value};"
                            .format(lvar=left_str,
                                    value=array_content(expr.right,
                                                        right_str,
@@ -983,13 +983,13 @@ def _assign_expression(expr):
             rlen = None
         else:
             # Right part is a variable
-            strings.append(u"{} := {};".format(left_str, right_str))
+            strings.append("{} := {};".format(left_str, right_str))
             rlen = None
         if rlen and basic_left.Min != basic_left.Max:
-            strings.append(u"{lvar}.Length := {rlen};"
+            strings.append("{lvar}.Length := {rlen};"
                            .format(lvar=left_str, rlen=rlen))
     else:
-        strings.append(u"{} := {};".format(left_str, right_str))
+        strings.append("{} := {};".format(left_str, right_str))
     code.extend(left_stmts)
     code.extend(right_stmts)
     code.extend(strings)
@@ -1012,11 +1012,11 @@ def _bitwise_operators(expr):
         # Sequence of boolean or bit string
         if expr.right.is_raw:
             # Declare a temporary variable to store the raw value
-            tmp_string = u'tmp{}'.format(expr.right.tmpVar)
-            local_decl.append(u'{tmp} : aliased {sort};'.format(
+            tmp_string = 'tmp{}'.format(expr.right.tmpVar)
+            local_decl.append('{tmp} : aliased {sort};'.format(
                         tmp=tmp_string,
                         sort=type_name(expr.right.exprType)))
-            code.append(u'{tmp} := {right};'.format(tmp=tmp_string,
+            code.append('{tmp} := {right};'.format(tmp=tmp_string,
                                                   right=right_str))
             right_str = tmp_string
             right_payload = right_str + '.Data'
@@ -1025,19 +1025,19 @@ def _bitwise_operators(expr):
         left_payload = left_str + string_payload(expr.left, left_str)
 
         if isinstance(expr, ogAST.ExprImplies):
-            ada_string = u'(Data => (({left} and {right}) or not {left}))'\
+            ada_string = '(Data => (({left} and {right}) or not {left}))'\
                 .format(left=left_payload, right=right_payload)
         else:
-            ada_string = u'(Data => ({left} {op} {right}))'.format(
+            ada_string = '(Data => ({left} {op} {right}))'.format(
                 left=left_payload, op=expr.operand, right=right_payload)
 
     elif isinstance(expr, ogAST.ExprImplies):
-        ada_string = u'(({left} and {right}) or not {left})'.format(
+        ada_string = '(({left} and {right}) or not {left})'.format(
                                 left=left_str,
                                 right=right_str)
 
     else:
-        ada_string = u'({left} {op}{short} {right})'.format(
+        ada_string = '({left} {op}{short} {right})'.format(
                                 left=left_str,
                                 op=expr.operand,
                                 short=expr.shortcircuit,
@@ -1046,7 +1046,7 @@ def _bitwise_operators(expr):
     code.extend(right_stmts)
     local_decl.extend(left_local)
     local_decl.extend(right_local)
-    return code, unicode(ada_string), local_decl
+    return code, str(ada_string), local_decl
 
 
 @expression.register(ogAST.ExprNot)
@@ -1071,14 +1071,14 @@ def _not_expression(expr):
         if isinstance(expr.expr, ogAST.PrimSequenceOf):
             ada_string = array_content(expr.expr, expr_str, bty_outer)
         else:
-            ada_string = u'(Data => (not {}.Data){})'.format(expr_str,
+            ada_string = '(Data => (not {}.Data){})'.format(expr_str,
                                                              size_expr)
     else:
-        ada_string = u'(not {expr})'.format(expr=expr_str)
+        ada_string = '(not {expr})'.format(expr=expr_str)
 
     code.extend(expr_stmts)
     local_decl.extend(expr_local)
-    return code, unicode(ada_string), local_decl
+    return code, str(ada_string), local_decl
 
 
 @expression.register(ogAST.ExprNeg)
@@ -1086,10 +1086,10 @@ def _neg_expression(expr):
     ''' Generate the code for a negative expression '''
     code, local_decl = [], []
     expr_stmts, expr_str, expr_local = expression(expr.expr)
-    ada_string = u'(-{expr})'.format(op=expr.operand, expr=expr_str)
+    ada_string = '(-{expr})'.format(op=expr.operand, expr=expr_str)
     code.extend(expr_stmts)
     local_decl.extend(expr_local)
-    return code, unicode(ada_string), local_decl
+    return code, str(ada_string), local_decl
 
 
 @expression.register(ogAST.ExprAppend)
@@ -1113,7 +1113,7 @@ def _append(expr):
 
     ada_string = '(({}) & ({}))'.format(left, right)
 
-    return stmts, unicode(ada_string), local_decl
+    return stmts, str(ada_string), local_decl
 
 
 @expression.register(ogAST.ExprIn)
@@ -1133,10 +1133,10 @@ def _expr_in(expr):
     stmts.append("in_loop_{}:".format(ada_string))
     left_type = find_basic_type(expr.left.exprType)
     if isinstance(expr.left, ogAST.PrimSubstring):
-        len_str = u"{}'Length".format(left_str)
+        len_str = "{}'Length".format(left_str)
     else:
-        len_str = u"{}.Length".format(left_str)
-        left_str += u".Data"
+        len_str = "{}.Length".format(left_str)
+        left_str += ".Data"
     if left_type.Min != left_type.Max:
         stmts.append("for elem in 1..{} loop".format(len_str))
     else:
@@ -1148,7 +1148,7 @@ def _expr_in(expr):
     stmts.append("exit in_loop_{tmp} when {tmp} = True;"
                   .format(tmp=ada_string))
     stmts.append("end loop in_loop_{};".format(ada_string))
-    return stmts, unicode(ada_string), local_decl
+    return stmts, str(ada_string), local_decl
 
 
 @expression.register(ogAST.PrimEnumeratedValue)
@@ -1159,8 +1159,8 @@ def _enumerated_value(primary):
     for each in basic.EnumValues:
         if each.lower() == enumerant:
             break
-    ada_string = (u'asn1Scc' + basic.EnumValues[each].EnumID)
-    return [], unicode(ada_string), []
+    ada_string = ('asn1Scc' + basic.EnumValues[each].EnumID)
+    return [], str(ada_string), []
 
 
 @expression.register(ogAST.PrimChoiceDeterminant)
@@ -1171,7 +1171,7 @@ def _choice_determinant(primary):
         if each.lower() == enumerant:
             break
     ada_string = primary.exprType.EnumValues[each].EnumID
-    return [], unicode(ada_string), []
+    return [], str(ada_string), []
 
 
 @expression.register(ogAST.PrimInteger)
@@ -1181,24 +1181,24 @@ def _integer(primary):
     if float(primary.value[0]) < 0:
         # Parentesize negative integers for maintaining
         # the precedence in the generated code
-        ada_string = u'({})'.format(primary.value[0])
+        ada_string = '({})'.format(primary.value[0])
     else:
         ada_string = primary.value[0]
-    return [], unicode(ada_string), []
+    return [], str(ada_string), []
 
 
 @expression.register(ogAST.PrimBoolean)
 def _boolean(primary):
     ''' Generate code for a raw boolean value  '''
     ada_string = primary.value[0]
-    return [], unicode(ada_string), []
+    return [], str(ada_string), []
 
 
 @expression.register(ogAST.PrimEmptyString)
 def _empty_string(primary):
     ''' Generate code for an empty SEQUENCE OF: {} '''
-    ada_string = u'{}_Init'.format(type_name(primary.exprType))
-    return [], unicode(ada_string), []
+    ada_string = '{}_Init'.format(type_name(primary.exprType))
+    return [], str(ada_string), []
 
 
 @expression.register(ogAST.PrimStringLiteral)
@@ -1210,21 +1210,21 @@ def _string_literal(primary):
     # as expected by the Ada type corresponding to Octet String
     unsigned_8 = [str(ord(val)) for val in primary.value[1:-1]]
 
-    ada_string = u', '.join(unsigned_8)
-    return [], unicode(ada_string), []
+    ada_string = ', '.join(unsigned_8)
+    return [], str(ada_string), []
 
 
 @expression.register(ogAST.PrimConstant)
 def _constant(primary):
     ''' Generate code for a reference to an ASN.1 constant '''
-    return [], unicode(primary.value[0]), []
+    return [], str(primary.value[0]), []
 
 
 @expression.register(ogAST.PrimMantissaBaseExp)
 def _mantissa_base_exp(primary):
     ''' Generate code for a Real with Mantissa-base-Exponent representation '''
     # TODO
-    return [], u'', []
+    return [], '', []
 
 
 @expression.register(ogAST.PrimConditional)
@@ -1257,33 +1257,33 @@ def _conditional(cond):
         stmts.extend(else_stmts)
         local_decl.extend(then_local)
         local_decl.extend(else_local)
-    stmts.append(u'if {if_str} then'.format(if_str=if_str))
-    stmts.append(u'tmp{idx} := {then_str};'.format(
+    stmts.append('if {if_str} then'.format(if_str=if_str))
+    stmts.append('tmp{idx} := {then_str};'.format(
                                                 idx=cond.value['tmpVar'],
                                                 then_str=then_str))
     stmts.append('else')
-    stmts.append(u'tmp{idx} := {else_str};'.format(
+    stmts.append('tmp{idx} := {else_str};'.format(
                                                 idx=cond.value['tmpVar'],
                                                 else_str=else_str))
     stmts.append('end if;')
-    ada_string = u'tmp{idx}'.format(idx=cond.value['tmpVar'])
-    return stmts, unicode(ada_string), local_decl
+    ada_string = 'tmp{idx}'.format(idx=cond.value['tmpVar'])
+    return stmts, str(ada_string), local_decl
 
 
 @expression.register(ogAST.PrimSequence)
 def _sequence(seq):
     ''' Return Ada string for an ASN.1 SEQUENCE '''
     stmts, local_decl = [], []
-    ada_string = u"{}'(".format(type_name(seq.exprType))
+    ada_string = "{}'(".format(type_name(seq.exprType))
     sep = ''
     type_children = find_basic_type(seq.exprType).Children
     optional_fields = {field.lower().replace('-', '_'): {'present': False,
                                                          'ref': (field, val)}
-                       for field, val in type_children.viewitems()
+                       for field, val in type_children.items()
                        if val.Optional == 'True'}
     present_fields = []
     absent_fields = []
-    for elem, value in seq.value.viewitems():
+    for elem, value in seq.value.items():
         # Set the type of the field - easy thanks to ASN.1 flattened AST
         delem = elem.replace('_', '-')
         for each in type_children:
@@ -1295,38 +1295,38 @@ def _sequence(seq):
         if isinstance(value, (ogAST.PrimSequenceOf, ogAST.PrimStringLiteral)):
             value_str = array_content(value, value_str,
                                       find_basic_type(elem_specty))
-        ada_string += u"{} {} => {}".format(sep, elem, value_str)
+        ada_string += "{} {} => {}".format(sep, elem, value_str)
         if elem.lower() in optional_fields:
             # Set optional field presence
             optional_fields[elem.lower()]['present'] = True
-        sep = u', '
+        sep = ', '
         stmts.extend(value_stmts)
         local_decl.extend(local_var)
     # Process optional fields
     if optional_fields:
         absent_fields = ((fd_name, fd_data['ref'])
-                          for fd_name, fd_data in optional_fields.viewitems()
+                          for fd_name, fd_data in optional_fields.items()
                           if not fd_data['present'])
         for fd_name, fd_data in absent_fields:
             fd_type = fd_data[1].type
             if fd_type.kind == 'ReferenceType':
-                value = u'{}_Init'.format(type_name(fd_type))
+                value = '{}_Init'.format(type_name(fd_type))
             elif fd_type.kind == 'BooleanType':
-                value = u'False'
+                value = 'False'
             elif fd_type in ('IntegerType', 'RealType'):
                 value = fd_type.Min
-            ada_string += u'{}{} => {}'.format(sep, fd_name, value)
-            sep = u', '
-        ada_string += u', Exist => ('
+            ada_string += '{}{} => {}'.format(sep, fd_name, value)
+            sep = ', '
+        ada_string += ', Exist => ('
         sep = ''
-        for fd_name, fd_data in optional_fields.viewitems():
-            ada_string += u'{}{} => {}'.format(sep, fd_name,
+        for fd_name, fd_data in optional_fields.items():
+            ada_string += '{}{} => {}'.format(sep, fd_name,
                                             '1' if fd_data['present'] else '0')
-            sep = u', '
-        ada_string += u')'
+            sep = ', '
+        ada_string += ')'
 
     ada_string += ')'
-    return stmts, unicode(ada_string), local_decl
+    return stmts, str(ada_string), local_decl
 
 
 @expression.register(ogAST.PrimSequenceOf)
@@ -1350,7 +1350,7 @@ def _sequence_of(seqof):
                 pass
 
     tab = []
-    for i in xrange(len(seqof.value)):
+    for i in range(len(seqof.value)):
         item_stmts, item_str, local_var = expression(seqof.value[i])
         if isinstance(seqof.value[i],
                               (ogAST.PrimSequenceOf, ogAST.PrimStringLiteral)):
@@ -1358,20 +1358,20 @@ def _sequence_of(seqof):
                     find_basic_type(seqof.value[i].exprType))
         stmts.extend(item_stmts)
         local_decl.extend(local_var)
-        tab.append(u'{i} => {value}'.format(i=i + 1, value=item_str))
-    ada_string = u', '.join(tab)
-    return stmts, unicode(ada_string), local_decl
+        tab.append('{i} => {value}'.format(i=i + 1, value=item_str))
+    ada_string = ', '.join(tab)
+    return stmts, str(ada_string), local_decl
 
 
 @expression.register(ogAST.PrimChoiceItem)
 def _choiceitem(choice):
     ''' Return the Ada code for a CHOICE expression '''
     stmts, choice_str, local_decl = expression(choice.value['value'])
-    ada_string = u'{cType}_{opt}_set({expr})'.format(
+    ada_string = '{cType}_{opt}_set({expr})'.format(
                         cType=type_name(choice.exprType),
                         opt=choice.value['choice'],
                         expr=choice_str)
-    return stmts, unicode(ada_string), local_decl
+    return stmts, str(ada_string), local_decl
 
 
 @generate.register(ogAST.Decision)
@@ -1420,15 +1420,15 @@ def _decision(dec, **kwargs):
                                                ogAST.PrimStringLiteral)):
                         ans_str = array_content(a.constant, ans_str,
                                                 find_basic_type(question_type))
-                    exp = u'{actType}_Equal(tmp{idx}, {ans})'.format(
+                    exp = '{actType}_Equal(tmp{idx}, {ans})'.format(
                             actType=actual_type, idx=dec.tmpVar, ans=ans_str)
                     if a.openRangeOp == ogAST.ExprNeq:
-                        exp = u'not {}'.format(exp)
+                        exp = 'not {}'.format(exp)
                 else:
-                    exp = u'tmp{idx} {op} {ans}'.format(idx=dec.tmpVar,
+                    exp = 'tmp{idx} {op} {ans}'.format(idx=dec.tmpVar,
                             op=a.openRangeOp.operand, ans=ans_str)
             else:
-                exp = u'({q}) {op} {ans}'.format(q=q_str,
+                exp = '({q}) {op} {ans}'.format(q=q_str,
                                                  op=a.openRangeOp.operand,
                                                  ans=ans_str)
             code.append(sep + exp + ' then')
@@ -1510,21 +1510,21 @@ def _transition(tr, **kwargs):
                     label=tr.terminator.label.inputString))
             if tr.terminator.kind == 'next_state':
                 if tr.terminator.inputString.strip() != '-':
-                    code.append(u'trId := ' +
-                                unicode(tr.terminator.next_id) + u';')
+                    code.append('trId := ' +
+                                str(tr.terminator.next_id) + ';')
                     if tr.terminator.next_id == -1:
-                        code.append(u'state := {nextState};'.format(
+                        code.append('state := {nextState};'.format(
                                 nextState=tr.terminator.inputString))
                 else:
                     if any(next_id
-                           for next_id in tr.terminator.candidate_id.viewkeys()
+                           for next_id in tr.terminator.candidate_id.keys()
                            if next_id != -1):
                         code.append('case state is')
-                        for nid, sta in tr.terminator.candidate_id.viewitems():
+                        for nid, sta in tr.terminator.candidate_id.items():
                             if nid != -1:
                                 for each in sta:
-                                    code.extend([u'when {} =>'.format(each),
-                                                 u'trId := {};'.format(nid)])
+                                    code.extend(['when {} =>'.format(each),
+                                                 'trId := {};'.format(nid)])
 
                         code.extend(['when others =>',
                                         'trId := -1;',
@@ -1533,7 +1533,7 @@ def _transition(tr, **kwargs):
                         code.append('trId := -1;')
                 code.append('goto next_transition;')
             elif tr.terminator.kind == 'join':
-                code.append(u'goto {label};'.format(
+                code.append('goto {label};'.format(
                     label=tr.terminator.inputString))
             elif tr.terminator.kind == 'stop':
                 pass
@@ -1632,7 +1632,7 @@ def _inner_procedure(proc, **kwargs):
 def dcl(entity, simu):
     ''' Generate the code to declare variables '''
     decl, arr_vars = [], []
-    for var_name, (var_type, def_value) in entity.variables.viewitems():
+    for var_name, (var_type, def_value) in entity.variables.items():
         dcl_template = STG.getInstanceOf("dcl")
         dcl_template['simu'] = simu
         if def_value:
@@ -1660,9 +1660,9 @@ def string_payload(prim, ada_string):
     payload = ''
     if prim_basic.kind in ('SequenceOfType', 'OctetStringType'):
         if int(prim_basic.Min) != int(prim_basic.Max):
-            payload = u'.Data(1..{}.Length)'.format(ada_string)
+            payload = '.Data(1..{}.Length)'.format(ada_string)
         else:
-            payload = u'.Data'
+            payload = '.Data'
     return payload
 
 
@@ -1676,9 +1676,9 @@ def array_content(prim, values, asnty):
     rtype = find_basic_type(prim.exprType)
     if asnty.Min != asnty.Max:
         # Reference type can vary -> there is a Length field
-        rlen = u", Length => {}".format(rtype.Min)
+        rlen = ", Length => {}".format(rtype.Min)
     else:
-        rlen = u""
+        rlen = ""
     if isinstance(prim, ogAST.PrimStringLiteral):
         df = '0'
     else:
@@ -1687,7 +1687,7 @@ def array_content(prim, values, asnty):
         if isinstance(prim.value[0], (ogAST.PrimSequenceOf,
                                       ogAST.PrimStringLiteral)):
             df = array_content(prim.value[0], df, asnty)
-    return u"(Data => ({}{}others => {}){})".format(values,
+    return "(Data => ({}{}others => {}){})".format(values,
                                                     ', ' if values else '',
                                                     df, rlen)
 
@@ -1724,7 +1724,7 @@ def find_basic_type(a_type):
     basic_type = a_type
     while basic_type.kind == 'ReferenceType':
         # Find type with proper case in the data view
-        for typename in TYPES.viewkeys():
+        for typename in TYPES.keys():
             if typename.lower() == basic_type.ReferencedTypeName.lower():
                 basic_type = TYPES[typename].type
                 break
@@ -1734,25 +1734,25 @@ def find_basic_type(a_type):
 def type_name(a_type, use_prefix=True):
     ''' Check the type kind and return an Ada usable type name '''
     if a_type.kind == 'ReferenceType':
-        return u'{}{}'.format('asn1Scc' if use_prefix else '',
+        return '{}{}'.format('asn1Scc' if use_prefix else '',
                                a_type.ReferencedTypeName.replace('-', '_'))
     elif a_type.kind == 'BooleanType':
-        return u'Boolean'
+        return 'Boolean'
     elif a_type.kind.startswith('Integer'):
-        return u'Asn1Int'
+        return 'Asn1Int'
     elif a_type.kind == 'RealType':
-        return u'Asn1Real'
+        return 'Asn1Real'
     elif a_type.kind.endswith('StringType'):
-        return u'String'
+        return 'String'
     elif a_type.kind == 'ChoiceEnumeratedType':
-        return u'Asn1Int'
+        return 'Asn1Int'
     else:
         raise NotImplementedError('Type name for {}'.format(a_type.kind))
 
 
 def find_var(var):
     ''' Return a variable from the scope, with proper case '''
-    for visible_var in VARIABLES.viewkeys():
+    for visible_var in VARIABLES.keys():
         if var.lower() == visible_var.lower():
             return visible_var
     return None
