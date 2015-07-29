@@ -44,16 +44,16 @@ import PySide  # NOQA
 import PySide.QtCore  # NOQA
 import PySide.QtGui  # NOQA
 import PySide.QtUiTools  # NOQA
-import undoCommands  # NOQA
-import sdl92Lexer  # NOQA
-import sdl92Parser  # NOQA
-import genericSymbols  # NOQA
-import sdlSymbols
+from . import undoCommands  # NOQA
+from . import sdl92Lexer  # NOQA
+from . import sdl92Parser  # NOQA
+from . import genericSymbols  # NOQA
+from . import sdlSymbols
 import PySide.QtXml  # NOQA
 import singledispatch  # NOQA
-import Asn1scc  # NOQA
-import Connectors  # NOQA
-import TextInteraction  # NOQA
+from . import Asn1scc  # NOQA
+from . import Connectors  # NOQA
+from . import TextInteraction  # NOQA
 try:
     import stringtemplate3  # NOQA
 except ImportError:
@@ -67,26 +67,26 @@ from PySide.QtCore import Qt, QSize, QFile, QIODevice, QRectF, QTimer, QPoint
 from PySide.QtUiTools import QUiLoader
 from PySide import QtSvg
 
-from genericSymbols import(Symbol, Comment, Cornergrabber, Connection)
-from sdlSymbols import(Input, Output, Decision, DecisionAnswer, Task,
+from .genericSymbols import(Symbol, Comment, Cornergrabber, Connection)
+from .sdlSymbols import(Input, Output, Decision, DecisionAnswer, Task,
         ProcedureCall, TextSymbol, State, Start, Join, Label, Procedure,
         ProcedureStart, ProcedureStop, StateStart, Connect, Process)
-from TextInteraction import EditableText
+from .TextInteraction import EditableText
 
 # Icons and png files generated from the resource file:
-import icons  # NOQA
+from . import icons  # NOQA
 
 LOG = logging.getLogger(__name__)
 
-import AdaGenerator
-import ogParser
-import ogAST
-import Renderer
-import Clipboard
-import Statechart
-import Lander
-import Helper
-import Pr
+from . import AdaGenerator
+from . import ogParser
+from . import ogAST
+from . import Renderer
+from . import Clipboard
+from . import Statechart
+from . import Lander
+from . import Helper
+from . import Pr
 
 
 # Try importing graphviz for the SDL to Statechart converter
@@ -99,12 +99,12 @@ except ImportError:
     graphviz = False
 
 try:
-    import LlvmGenerator
+    from . import LlvmGenerator
 except ImportError:
     LlvmGenerator = None
 
 try:
-    import StgBackend
+    from . import StgBackend
 except ImportError:
     StgBackend = False
 
@@ -115,7 +115,7 @@ __version__ = '1.0.1'
 if hasattr(sys, 'frozen'):
     # Detect if we are running on Windows (py2exe-generated)
     try:
-        CUR_DIR = os.path.dirname(unicode
+        CUR_DIR = os.path.dirname(str
                 (sys.executable, sys.getfilesystemencoding()))
     except TypeError:
         CUR_DIR = os.path.dirname(os.path.realpath(__file__))
@@ -251,13 +251,13 @@ class Sdl_toolbar(QtGui.QToolBar, object):
                 pass
         if len(selection) > 1:
             # When several items are selected, disable all menu entries
-            for _, action in self.actions.viewitems():
+            for _, action in self.actions.items():
                 action.setEnabled(False)
         elif not selection:
             # When nothing is selected:
             # activate everything, and when user selects an icon,
             # keep the action on hold until he clicks on the scene
-            for action in self.actions.viewkeys():
+            for action in self.actions.keys():
                 self.actions[action].setEnabled(True)
 
             # Check for singletons (e.g. START symbol)
@@ -274,7 +274,7 @@ class Sdl_toolbar(QtGui.QToolBar, object):
         else:
             # Only one selected item
             selection, = selection
-            for action in self.actions.viewkeys():
+            for action in self.actions.keys():
                 self.actions[action].setEnabled(False)
             for action in getattr(selection, 'allowed_followers', []):
                 try:
@@ -301,7 +301,7 @@ class SDL_Scene(QtGui.QGraphicsScene, object):
         self.allowed_symbols = ACTIONS[context]
         # Configure the action menu
         all_possible_actions = set()
-        for action in ACTIONS.viewvalues():
+        for action in ACTIONS.values():
             all_possible_actions |= set(action)
         self.actions = {action.__name__: partial(self.add_symbol, action)
                 for action in all_possible_actions}
@@ -333,13 +333,13 @@ class SDL_Scene(QtGui.QGraphicsScene, object):
     @property
     def visible_symb(self):
         ''' Return the visible items of a scene '''
-        return (it for it in self.items() if it.isVisible() and
+        return (it for it in list(self.items()) if it.isVisible() and
                 isinstance(it, Symbol))
 
     @property
     def editable_texts(self):
         ''' Return all EditableText areas of a scene '''
-        return (it for it in self.items() if it.isVisible() and
+        return (it for it in list(self.items()) if it.isVisible() and
                 isinstance(it, EditableText))
 
     @property
@@ -395,8 +395,8 @@ class SDL_Scene(QtGui.QGraphicsScene, object):
         # Update the list first
         for each in self.states:
             if each.is_composite() and \
-                  each.nested_scene not in self._composite_states.viewvalues():
-                self._composite_states[unicode(each).split()[0].lower()] = \
+                  each.nested_scene not in self._composite_states.values():
+                self._composite_states[str(each).split()[0].lower()] = \
                                                             each.nested_scene
         return self._composite_states
 
@@ -489,7 +489,7 @@ class SDL_Scene(QtGui.QGraphicsScene, object):
                 subscene = \
                         self.create_subscene(each.__class__.__name__.lower())
                 already_created.append(each.nested_scene)
-                subscene.name = unicode(each)
+                subscene.name = str(each)
                 LOG.debug('Created scene: {}'.format(subscene.name))
                 recursive_render(each.nested_scene.content, subscene)
                 each.nested_scene = subscene
@@ -497,10 +497,10 @@ class SDL_Scene(QtGui.QGraphicsScene, object):
             # Make sure all composite states are initially up to date
             # (Needed for the symbol shape to have dashed lines)
             for each in dest_scene.states:
-                if unicode(each).lower() in \
-                        dest_scene.composite_states.viewkeys():
+                if str(each).lower() in \
+                        dest_scene.composite_states.keys():
                     each.nested_scene = dest_scene.composite_states[
-                                                         unicode(each).lower()]
+                                                         str(each).lower()]
 
         recursive_render(ast, self)
 
@@ -536,7 +536,7 @@ class SDL_Scene(QtGui.QGraphicsScene, object):
 
     def set_cursor(self, follower):
         ''' Set the cursor shape depending on the selected menu item '''
-        for item in self.items():
+        for item in list(self.items()):
             try:
                 if follower.__name__ not in item.allowed_followers:
                     item.setCursor(Qt.ForbiddenCursor)
@@ -548,7 +548,7 @@ class SDL_Scene(QtGui.QGraphicsScene, object):
 
     def reset_cursor(self):
         ''' Reset the default cursor of an item '''
-        for item in self.items():
+        for item in list(self.items()):
             try:
                 item.setCursor(item.default_cursor)
             except AttributeError:
@@ -644,16 +644,16 @@ class SDL_Scene(QtGui.QGraphicsScene, object):
         if item in self.highlighted:
             self.setBrush(self.highlighted.pop(item))
         if reset:
-            for item, brush in self.highlighted.viewitems():
+            for item, brush in self.highlighted.items():
                 item.setBrush(brush)
             self.highlighted = {}
 
     def find_text(self, pattern):
         ''' Return all symbols with matching text '''
-        for item in (symbol for symbol in self.items()
+        for item in (symbol for symbol in list(self.items())
                      if isinstance(symbol, EditableText)
                      and symbol.isVisible()):
-            if re.search(pattern, unicode(item), flags=re.IGNORECASE):
+            if re.search(pattern, str(item), flags=re.IGNORECASE):
                 yield item.parentItem()
 
     def search(self, pattern, replace_with=None):
@@ -670,16 +670,16 @@ class SDL_Scene(QtGui.QGraphicsScene, object):
                 for item in self.search_item:
                     new_string = re.sub(pattern,
                                         replace_with,
-                                        unicode(item.text),
+                                        str(item.text),
                                         flags=re.IGNORECASE)
                     undo_cmd = undoCommands.ReplaceText(
-                                     item.text, unicode(item.text), new_string)
+                                     item.text, str(item.text), new_string)
                     self.undo_stack.push(undo_cmd)
                     item.select()
             self.refresh()
         else:
             try:
-                item = self.search_item.next()
+                item = next(self.search_item)
                 item.select()
                 item.ensureVisible()
             except StopIteration:
@@ -714,9 +714,9 @@ class SDL_Scene(QtGui.QGraphicsScene, object):
             Clipboard.copy(self.selected_symbols())
         except TypeError as error_msg:
             try:
-                self.messages_window.addItem(unicode(error_msg))
+                self.messages_window.addItem(str(error_msg))
             except AttributeError:
-                LOG.error(unicode(error_msg))
+                LOG.error(str(error_msg))
             raise
 
     def cut_selected_symbols(self):
@@ -773,7 +773,7 @@ class SDL_Scene(QtGui.QGraphicsScene, object):
     def sdl_to_statechart(self, basic=False):
         ''' Create a graphviz representation of the SDL model '''
         pr_raw = Pr.parse_scene(self)
-        pr_data = unicode('\n'.join(pr_raw))
+        pr_data = str('\n'.join(pr_raw))
         ast, _, _ = ogParser.parse_pr(string=pr_data)
         try:
             process_ast, = ast.processes
@@ -932,7 +932,7 @@ class SDL_Scene(QtGui.QGraphicsScene, object):
                         QRectF(self.orig_pos, self.orig_pos))
                 if self.context == 'statechart' and not connection_selected:
                     # Specific treatment for statecharts - should subclass
-                    for item in self.items():
+                    for item in list(self.items()):
                         # Remove all Edges control points from the scene
                         try:
                             item.bezier_set_visible(False)
@@ -1033,7 +1033,7 @@ class SDL_Scene(QtGui.QGraphicsScene, object):
                 return
             try:
                 self.clearSelection()
-                item = self.search_item.next()
+                item = next(self.search_item)
                 item.select()
                 item.ensureVisible()
             except StopIteration:
@@ -1045,7 +1045,7 @@ class SDL_Scene(QtGui.QGraphicsScene, object):
                 event.modifiers() == Qt.ControlModifier):
             # Debug mode
             for selection in self.selected_symbols():
-                LOG.info(unicode(selection))
+                LOG.info(str(selection))
                 LOG.info('Position: ' + str(selection.pos()))
                 LOG.info('ScenePos: ' + str(selection.scenePos()))
                 LOG.info('BoundingRect: ' + str(selection.boundingRect()))
@@ -1066,7 +1066,7 @@ class SDL_Scene(QtGui.QGraphicsScene, object):
         ''' Draw a symbol on the scene '''
         item = item_type()
         # Add the item to the scene
-        if item not in self.items():
+        if item not in list(self.items()):
             self.addItem(item)
         # Create Undo command (makes the call to the insertSymbol function):
         undo_cmd = undoCommands.InsertSymbol(item=item, parent=parent, pos=pos)
@@ -1162,7 +1162,7 @@ class SDL_View(QtGui.QGraphicsView, object):
         # Connect toolbar actions
         self.scene().selectionChanged.connect(partial(
                                     self.scene().set_selection, self.toolbar))
-        for item in self.toolbar.actions.viewkeys():
+        for item in self.toolbar.actions.keys():
             self.toolbar.actions[item].triggered.connect(
                                                    self.scene().actions[item])
         self.toolbar.update_menu(self.scene())
@@ -1228,7 +1228,7 @@ class SDL_View(QtGui.QGraphicsView, object):
         view_size = self.size()
         scene_rect.setWidth(max(scene_rect.width(), view_size.width()))
         scene_rect.setHeight(max(scene_rect.height(), view_size.height()))
-        if self.phantom_rect and self.phantom_rect in self.scene().items():
+        if self.phantom_rect and self.phantom_rect in list(self.scene().items()):
             #self.scene().removeItem(self.phantom_rect)
             # XXX stop with removeItem, it provokes segfault
             self.phantom_rect.hide()
@@ -1364,12 +1364,12 @@ class SDL_View(QtGui.QGraphicsView, object):
             try:
                 if item.allow_nesting:
                     item.double_click()
-                    ctx = unicode(item.__class__.__name__.lower())
+                    ctx = str(item.__class__.__name__.lower())
                     if not isinstance(item.nested_scene, SDL_Scene):
                         item.nested_scene = \
                                 self.scene().create_subscene(context=ctx)
                     self.go_down(item.nested_scene,
-                                 name=ctx + u' ' + unicode(item))
+                                 name=ctx + ' ' + str(item))
                 else:
                     # Otherwise, double-click edits the item text
                     item.edit_text(self.mapToScene(evt.pos()))
@@ -1454,7 +1454,7 @@ class SDL_View(QtGui.QGraphicsView, object):
             item.pos_x -= delta_x
             item.pos_y -= delta_y
 
-        pr_data = unicode('\n'.join(pr_raw))
+        pr_data = str('\n'.join(pr_raw))
         try:
             pr_file.write(pr_data.encode('utf-8'))
             pr_file.close()
@@ -1595,7 +1595,7 @@ class SDL_View(QtGui.QGraphicsView, object):
                 # problem is in decision answers branches
                 error[0] = 'Internal error - ' + str(error[0])
             LOG.error(error[0])
-            item = QtGui.QListWidgetItem(u'[ERROR] ' + error[0])
+            item = QtGui.QListWidgetItem('[ERROR] ' + error[0])
             if len(error) == 3:
                 item.setData(Qt.UserRole, error[1])
                 #found = self.scene().symbol_near(QPoint(*error[1]), 1)
@@ -1606,7 +1606,7 @@ class SDL_View(QtGui.QGraphicsView, object):
                 self.messages_window.addItem(item)
         for warning in warnings:
             LOG.warning(warning[0])
-            item = QtGui.QListWidgetItem(u'[WARNING] ' + str(warning[0]))
+            item = QtGui.QListWidgetItem('[WARNING] ' + str(warning[0]))
             if len(warning) == 3:
                 item.setData(Qt.UserRole, warning[1])
                 item.setData(Qt.UserRole + 1, warning[2])
@@ -1629,7 +1629,7 @@ class SDL_View(QtGui.QGraphicsView, object):
             return
         pr_raw = Pr.parse_scene(scene, full_model=True
                                        if not self.readonly_pr else False)
-        pr_data = unicode('\n'.join(pr_raw))
+        pr_data = str('\n'.join(pr_raw))
         if pr_data:
             ast, warnings, errors = ogParser.parse_pr(files=self.readonly_pr,
                                                       string=pr_data)
@@ -1653,28 +1653,28 @@ class SDL_View(QtGui.QGraphicsView, object):
 
         for each in path:
             kind, name = each.split()
-            name = unicode(name).lower()
+            name = str(name).lower()
             if kind == 'PROCESS':
                 for process in self.scene().processes:
-                    if unicode(process).lower() == name:
+                    if str(process).lower() == name:
                         self.go_down(process.nested_scene,
-                                     name=u'process {}'.format(name))
+                                     name='process {}'.format(name))
                         break
                 else:
                     LOG.error('Process {} not found'.format(name))
             elif kind == 'STATE':
                 for state in self.scene().states:
-                    if unicode(state).lower() == name:
+                    if str(state).lower() == name:
                         self.go_down(state.nested_scene,
-                                     name=u'state {}'.format(name))
+                                     name='state {}'.format(name))
                         break
                 else:
                     LOG.error('Composite state {} not found'.format(name))
             elif kind == 'PROCEDURE':
                 for proc in self.scene().procedures:
-                    if unicode(proc).lower() == name:
+                    if str(proc).lower() == name:
                         self.go_down(proc.nested_scene,
-                                     name=u'procedure {}'.format(name))
+                                     name='procedure {}'.format(name))
                         break
                 else:
                     LOG.error('Procedure {} not found'.format(name))
@@ -1698,7 +1698,7 @@ class SDL_View(QtGui.QGraphicsView, object):
             scene = self.scene()
         pr_raw = Pr.parse_scene(scene, full_model=True
                                        if not self.readonly_pr else False)
-        pr_data = unicode('\n'.join(pr_raw))
+        pr_data = str('\n'.join(pr_raw))
         if pr_data:
             ast, warnings, errors = ogParser.parse_pr(files=self.readonly_pr,
                                                       string=pr_data)
