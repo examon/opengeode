@@ -36,12 +36,12 @@ from collections import defaultdict, Counter
 import antlr3
 import antlr3.tree
 
-import sdl92Lexer as lexer
-from sdl92Parser import sdl92Parser
+from . import sdl92Lexer as lexer
+from .sdl92Parser import sdl92Parser
 
-import samnmax
-import ogAST
-from Asn1scc import parse_asn1, ASN1
+from . import samnmax
+from . import ogAST
+from .Asn1scc import parse_asn1, ASN1
 
 LOG = logging.getLogger(__name__)
 
@@ -132,7 +132,7 @@ SPECIAL_OPERATORS = {
 # Container to keep a list of types mapped from ANTLR Tokens
 # (Used with singledispatch/visitor pattern)
 ANTLR_TOKEN_TYPES = {a: type(a, (antlr3.tree.CommonTree,), {})
-                    for a, b in lexer.__dict__.viewitems() if type(b) == int}
+                    for a, b in lexer.__dict__.items() if type(b) == int}
 
 
 # Shortcut to create a new referenced ASN.1 type
@@ -244,7 +244,7 @@ def sdl_to_asn1(sort):
         Convert case insensitive type reference to the actual type as found
         in the ASN.1 datamodel
     '''
-    for asn1_type in types().viewkeys():
+    for asn1_type in types().keys():
         if sort.replace('_', '-').lower() == asn1_type.lower():
             break
     else:
@@ -421,7 +421,7 @@ def find_basic_type(a_type, pool=None):
     pool = pool or types()
     while basic_type.kind == 'ReferenceType':
         # Find type with proper case in the data view
-        for typename in pool.viewkeys():
+        for typename in pool.keys():
             if typename.lower() == basic_type.ReferencedTypeName.lower():
                 basic_type = pool[typename].type
                 break
@@ -547,7 +547,7 @@ def check_call(name, params, context):
 
     elif name == 'num':
         enum_values = [int(each.IntValue)
-                       for each in param_btys[0].EnumValues.viewvalues()]
+                       for each in param_btys[0].EnumValues.values()]
 
         return type('Num', (INTEGER,), {
             'Min': str(min(enum_values)),
@@ -630,14 +630,14 @@ def check_type_compatibility(primary, type_ref, context):
         # Note, when using the "present" operator of a CHOICE type, the
         # resulting value is actually an EnumeratedType
         enumerant = primary.inputString.replace('_', '-').lower()
-        for each in basic_type.EnumValues.keys():
+        for each in list(basic_type.EnumValues.keys()):
             if each.lower() == enumerant:
                 # Found -> all OK
                 return
         else:
             err = ('Value "' + primary.inputString +
                    '" not in this enumeration: ' +
-                   str(basic_type.EnumValues.keys()))
+                   str(list(basic_type.EnumValues.keys())))
             raise TypeError(err)
     elif isinstance(primary, ogAST.PrimConditional):
         then_expr = primary.value['then']
@@ -692,13 +692,13 @@ def check_type_compatibility(primary, type_ref, context):
         return
     elif isinstance(primary, ogAST.PrimSequence) \
             and basic_type.kind == 'SequenceType':
-        user_nb_elem = len(primary.value.keys())
-        type_nb_elem = len(basic_type.Children.keys())
+        user_nb_elem = len(list(primary.value.keys()))
+        type_nb_elem = len(list(basic_type.Children.keys()))
         optional_fields = [field.lower().replace('-', '_')
-                           for field, val in basic_type.Children.viewitems()
+                           for field, val in basic_type.Children.items()
                            if val.Optional == 'True']
-        user_fields = [field.lower() for field in primary.value.keys()]
-        for field, fd_data in basic_type.Children.viewitems():
+        user_fields = [field.lower() for field in list(primary.value.keys())]
+        for field, fd_data in basic_type.Children.items():
             ufield = field.replace('-', '_')
             if ufield.lower() not in optional_fields \
                     and ufield.lower() not in user_fields:
@@ -732,7 +732,7 @@ def check_type_compatibility(primary, type_ref, context):
         return
     elif isinstance(primary, ogAST.PrimChoiceItem) \
                               and basic_type.kind.startswith('Choice'):
-        for choicekey, choice in basic_type.Children.viewitems():
+        for choicekey, choice in basic_type.Children.items():
             if choicekey.lower().replace('-', '_') == \
                     primary.value['choice'].lower().replace('-', '_'):
                 break
@@ -761,7 +761,7 @@ def check_type_compatibility(primary, type_ref, context):
         return
     elif isinstance(primary, ogAST.PrimChoiceDeterminant) \
                 and basic_type.kind.startswith('Choice'):
-        for choicekey, choice in basic_type.EnumValues.viewitems():
+        for choicekey, choice in basic_type.EnumValues.items():
             if choicekey.replace('-', '_').lower() == \
                     primary.inputString.lower():
                 break
@@ -867,7 +867,7 @@ def find_variable_type(var, context):
         # No FPAR section
         pass
 
-    for varname, (vartype, _) in all_visible_variables.viewitems():
+    for varname, (vartype, _) in all_visible_variables.items():
         # Case insensitive comparison with variables
         if var.lower() == varname.lower():
             return vartype
@@ -877,7 +877,7 @@ def find_variable_type(var, context):
             return TIMER
 
     # check if is a ASN.1 constant
-    for varname, vartype in DV.variables.viewitems():
+    for varname, vartype in DV.variables.items():
         if var.lower() == varname.lower().replace('-', '_'):
             return vartype.type
 
@@ -940,7 +940,7 @@ def fix_expression_types(expr, context):
         return
 
     if not expr.right.is_raw and not expr.left.is_raw:
-        unknown = [uk_expr for uk_expr in expr.right, expr.left
+        unknown = [uk_expr for uk_expr in (expr.right, expr.left)
                    if uk_expr.exprType == UNKNOWN_TYPE]
         if unknown:
             #print traceback.print_stack()
@@ -955,7 +955,7 @@ def fix_expression_types(expr, context):
         asn_type = find_basic_type(expr.left.exprType)
         if asn_type.kind != 'SequenceType':
             raise TypeError('left side must be a SEQUENCE type')
-        for field, fd_expr in expr.right.value.viewitems():
+        for field, fd_expr in expr.right.value.items():
             if fd_expr.exprType == UNKNOWN_TYPE:
                 try:
                     expected_type = asn_type.Children.get(
@@ -974,9 +974,9 @@ def fix_expression_types(expr, context):
         field = expr.right.value['choice'].replace('_', '-')
         if asn_type.kind != 'ChoiceType' \
                 or field.lower() not in [key.lower()
-                                  for key in asn_type.Children.viewkeys()]:
+                                  for key in asn_type.Children.keys()]:
             raise TypeError('Field is not valid in CHOICE:' + field)
-        key, = [key for key in asn_type.Children.viewkeys()
+        key, = [key for key in asn_type.Children.keys()
                 if key.lower() == field.lower()]
         if expr.right.value['value'].exprType == UNKNOWN_TYPE:
             try:
@@ -1067,7 +1067,7 @@ def is_fpar(name, context):
 def is_asn1constant(name):
     name = name.lower().replace('-', '_')
     try:
-        for varname, vartype in DV.variables.viewitems():
+        for varname, vartype in DV.variables.items():
             if varname.lower().replace('-', '_') == name:
                 return True
     except AttributeError:
@@ -1446,7 +1446,7 @@ def call_expression(root, context):
             ident = variable.children[0].text.lower()
             proc_list = [proc.inputString.lower()
                          for proc in context.procedures]
-            if ident in (SPECIAL_OPERATORS.keys() + proc_list):
+            if ident in (list(SPECIAL_OPERATORS.keys()) + proc_list):
                 return primary_call(root, context)
 
     num_params = len(root.children[1].children)
@@ -1611,7 +1611,7 @@ def selector_expression(root, context):
                                       'use "var := {field}: value" instead of '
                                       '"var!{field} := value"'
                                       .format(field=field_name)))
-        for n, f in receiver_bty.Children.viewitems():
+        for n, f in receiver_bty.Children.items():
             if n.lower() == field_name:
                 node.exprType = f.type
                 break
@@ -1735,7 +1735,7 @@ def primary(root, context):
         prim.exprType.kind = 'StateEnumeratedType'
         prim.exprType.EnumValues = {value: type('', (object,),
                                                {'EnumID': value})
-                                    for value in context.mapping.viewkeys()}
+                                    for value in context.mapping.keys()}
     else:
         errors.append('Parsing error (token {}, line {}, "{}")'
                       .format(sdl92Parser.tokenNames[root.type],
@@ -1984,7 +1984,7 @@ def composite_state(root, parent=None, context=None):
     for ns in [t.inputString.lower() for t in comp.terminators
             if t.kind == 'next_state']:
         if not ns in [s.lower() for s in
-                comp.mapping.viewkeys()] + ['-']:
+                comp.mapping.keys()] + ['-']:
             errors.append(['In composite state "{}": missing definition '
                            'of substate "{}"'
                            .format(comp.statename, ns.upper()),
@@ -2839,7 +2839,7 @@ def state(root, parent, context):
                     for each in inp.inputlist:
                         for ex_input in (name for i in existing
                                          for name in i.inputlist):
-                            if unicode(each) == unicode(ex_input):
+                            if str(each) == str(ex_input):
                                 dupl.add(each)
                     for each in dupl:
                         sterr.append('Input "{}" is defined more '
@@ -3403,7 +3403,7 @@ def decision(root, parent, context):
 
     q_ranges = [(qmin, qmax)] if dec.question \
                               and is_numeric(dec.question.exprType) else []
-    for each in combinations(covered_ranges.viewitems(), 2):
+    for each in combinations(covered_ranges.items(), 2):
         if not q_ranges:
             continue
         for comb in combinations(
@@ -3421,7 +3421,7 @@ def decision(root, parent, context):
                                       o2=comb_overlap[1]))
     new_q_ranges = []
     # (2) Check that decision range is fully covered
-    for ans_ref, ranges in covered_ranges.viewitems():
+    for ans_ref, ranges in covered_ranges.items():
         if is_enum:
             continue
         for mina, maxa in ranges:
@@ -3455,13 +3455,13 @@ def decision(root, parent, context):
     if is_enum:
         # check duplicate answers
         answers = [a.lower()
-                   for a in chain.from_iterable(covered_ranges.viewvalues())]
-        dupl = [a for a, v in Counter(answers).items() if v > 1]
+                   for a in chain.from_iterable(covered_ranges.values())]
+        dupl = [a for a, v in list(Counter(answers).items()) if v > 1]
         if dupl:
             qerr.append('Decision "{}": duplicate answers "{}"'
                           .format(dec.inputString, '", "'.join(dupl)))
         enumerants = [en.replace('-', '_').lower()
-                      for en in q_basic.EnumValues.keys()]
+                      for en in list(q_basic.EnumValues.keys())]
         # check for missing answers
         if set(answers) != set(enumerants) and not has_else:
             #print set(answers)
@@ -3661,7 +3661,7 @@ def transition(root, parent, context):
     # level (we counted the number of terminators before parsing the item)
     trans.terminators = list(context.terminators[terminators.pop('trans'):])
     # Also update the list of terminators of each label in the transition
-    for lab, term_count in terminators.viewitems():
+    for lab, term_count in terminators.items():
         lab.terminators = list(context.terminators[term_count:])
     return trans, errors, warnings
 
@@ -3704,7 +3704,7 @@ def assign(root, context):
         if basic.kind.startswith(('Integer', 'Real')):
             check_range(basic, find_basic_type(expr.right.exprType))
     except(AttributeError, TypeError) as err:
-        errors.append(u'In "{exp}": Type mismatch ({lty} vs {rty} - {errstr})'
+        errors.append('In "{exp}": Type mismatch ({lty} vs {rty} - {errstr})'
                       .format(exp=expr.inputString,
                               lty=type_name(expr.left.exprType) if
                                 expr.left and expr.left.exprType
@@ -4117,7 +4117,7 @@ def parse_pr(files=None, string=None):
             for ns in [t.inputString.lower() for t in process.terminators
                     if t.kind == 'next_state']:
                 if not ns in [s.lower() for s in
-                        process.mapping.viewkeys()] + ['-']:
+                        process.mapping.keys()] + ['-']:
                     t_x, t_y = t.pos_x or 0, t.pos_y or 0
                     errors.append(['State definition missing: ' + ns.upper(),
                                   [t_x, t_y],
@@ -4200,4 +4200,4 @@ def parser_init(filename=None, string=None):
 
 
 if __name__ == '__main__':
-    print 'This module is not callable'
+    print('This module is not callable')
