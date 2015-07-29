@@ -31,8 +31,8 @@ except ImportError:
     # In some distributions, phonon cannot be installed properly
     # Discard - but sound will not work.
     pass
-import genericSymbols
-import icons
+from . import genericSymbols
+from . import icons
 
 LOG = logging.getLogger(__name__)
 
@@ -252,7 +252,7 @@ class Lander(object):
             self.animation.setDuration(abs(self.rocket.y()) * 500)
             self.animation.start()
         else:
-            print 'GAME OVER'
+            print('GAME OVER')
 
     def quit_scene(self):
         ''' Redefinition of the quit_scene: Stop the game and the music '''
