@@ -107,7 +107,7 @@ class InsertSymbol(QUndoCommand):
 
     def redo(self):
         try:
-            if self.item not in self.scene.items():
+            if self.item not in list(self.scene.items()):
                 self.scene.addItem(self.item)
         except AttributeError:
             pass
@@ -133,7 +133,7 @@ class DeleteSymbol(QUndoCommand):
 
     def undo(self):
         self.item.insert_symbol(self.parent, self.pos_x, self.pos_y)
-        if self.item not in self.scene.items():
+        if self.item not in list(self.scene.items()):
             self.scene.addItem(self.item)
         # Replaced removeItem with hide/show to avoid exit crash
         self.item.show()
