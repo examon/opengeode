@@ -29,11 +29,11 @@ from itertools import chain
 from PySide.QtCore import Qt, QPoint, QRect, QRectF, QPointF
 from PySide.QtGui import(QPainterPath, QBrush, QColor, QRadialGradient, QPen)
 
-from genericSymbols import HorizontalSymbol, VerticalSymbol, Comment
-from Connectors import Connection, JoinConnection, Signalroute
+from .genericSymbols import HorizontalSymbol, VerticalSymbol, Comment
+from .Connectors import Connection, JoinConnection, Signalroute
 
-import ogParser
-import ogAST
+from . import ogParser
+from . import ogAST
 
 
 LOG = logging.getLogger('sdlSymbols')
@@ -76,18 +76,18 @@ def variables_autocompletion(symbol, type_filter=None):
             fpar = {}
         # Return the list of variables, possibly filterd by type
         if not type_filter:
-            res = set(CONTEXT.variables.keys()
-                      + CONTEXT.global_variables.keys()
-                      + AST.asn1_constants.keys()
-                      + fpar.keys())
+            res = set(list(CONTEXT.variables.keys())
+                      + list(CONTEXT.global_variables.keys())
+                      + list(AST.asn1_constants.keys())
+                      + list(fpar.keys()))
         else:
             constants = {name: (cty.type, None)
-                         for name, cty in AST.asn1_constants.viewitems()}
+                         for name, cty in AST.asn1_constants.items()}
             type_filter_names = [ogParser.type_name(ty) for ty in type_filter]
-            for name, (asn1type, _) in chain(CONTEXT.variables.viewitems(),
-                                          CONTEXT.global_variables.viewitems(),
-                                          constants.viewitems(),
-                                          fpar.viewitems()):
+            for name, (asn1type, _) in chain(CONTEXT.variables.items(),
+                                          CONTEXT.global_variables.items(),
+                                          constants.items(),
+                                          fpar.items()):
                 if ogParser.type_name(asn1type) in type_filter_names:
                     res.add(name)
     else:
@@ -95,13 +95,13 @@ def variables_autocompletion(symbol, type_filter=None):
         try:
             var_t = ogParser.find_variable_type(var, CONTEXT)
             basic = ogParser.find_basic_type(var_t, AST.dataview)
-            res = (field.replace('-', '_') for field in basic.Children.keys())
+            res = (field.replace('-', '_') for field in list(basic.Children.keys()))
         except (AttributeError, TypeError):
             res = []
         else:
             for each in parts[1:-1]:
                 try:
-                    for child, childtype in basic.Children.viewitems():
+                    for child, childtype in basic.Children.items():
                         if child.lower() == each.lower().replace('_', '-'):
                             basic = ogParser.find_basic_type(childtype.type,
                                                              AST.dataview)
@@ -115,7 +115,7 @@ def variables_autocompletion(symbol, type_filter=None):
             else:
                 try:
                     res = (field.replace('-', '_')
-                           for field in basic.Children.keys())
+                           for field in list(basic.Children.keys()))
                 except AttributeError:
                     res = ()
     return res
@@ -178,9 +178,9 @@ class Input(HorizontalSymbol):
     @property
     def completion_list(self):
         ''' Set auto-completion list '''
-        if '(' in unicode(self):
+        if '(' in str(self):
             # Input parameter: return the list of variables of this type
-            input_name = unicode(self).split('(')[0].strip().lower()
+            input_name = str(self).split('(')[0].strip().lower()
             asn1_filter = [sig.get('type') for sig in CONTEXT.input_signals if
                            sig['name'] == input_name]
             return variables_autocompletion(self, asn1_filter)
@@ -217,7 +217,7 @@ class Connect(Input):
     @property
     def completion_list(self):
         ''' Set auto-completion list: list of exit points of nested state '''
-        parent_state = unicode(self.parentItem()).lower()
+        parent_state = str(self.parentItem()).lower()
         for each in CONTEXT.composite_states:
             if each.statename == parent_state:
                 return each.state_exitpoints
@@ -265,9 +265,9 @@ class Output(VerticalSymbol):
     @property
     def completion_list(self):
         ''' Set auto-completion list '''
-        if '(' in unicode(self):
+        if '(' in str(self):
             # Output parameter: return the list of variables of this type
-            output_name = unicode(self).split('(')[0].strip().lower()
+            output_name = str(self).split('(')[0].strip().lower()
             asn1_filter = [sig['type'] for sig in CONTEXT.output_signals if
                            hasattr(sig, 'type') and sig['name'] == output_name]
             return variables_autocompletion(self, asn1_filter)
@@ -516,7 +516,7 @@ class Join(VerticalSymbol):
         ast, _, _, _, _ = self.parser.parseSingleElement(self.common_name,
                                                          pr_text)
         for each in (t for t in CONTEXT.terminators if t.kind == 'join'):
-            if each.inputString == unicode(self):
+            if each.inputString == str(self):
                 # Ignore if already defined
                 break
         else:
@@ -570,7 +570,7 @@ class ProcedureStop(Join):
                                                          pr_text)
         try:
             CONTEXT.state_exitpoints = \
-                    set(CONTEXT.state_exitpoints) | set(unicode(self))
+                    set(CONTEXT.state_exitpoints) | set(str(self))
         except AttributeError:
             # No state exit points in a procedure
             pass
@@ -636,7 +636,7 @@ class Label(VerticalSymbol):
         ast, _, _, _, _ = self.parser.parseSingleElement(self.common_name,
                                                          pr_text)
         for each in CONTEXT.labels:
-            if each.inputString == unicode(self):
+            if each.inputString == str(self):
                 # Ignore if already defined
                 break
         else:
@@ -684,7 +684,7 @@ class Task(VerticalSymbol):
     @property
     def completion_list(self):
         ''' Set auto-completion list '''
-        elems = unicode(self).lower().strip().split()
+        elems = str(self).lower().strip().split()
         asn1_filter = []
         if len(elems) == 2 and elems[1] == ':=':
             # Find type of variable on the left and filter accordingly
@@ -695,16 +695,16 @@ class Task(VerticalSymbol):
                 # not in the context of a procedure
                 fpar = {}
             constants = {name: (cty.type, None)
-                         for name, cty in AST.asn1_constants.viewitems()}
-            for name, (asn1ty, _) in chain (CONTEXT.variables.viewitems(),
-                                          CONTEXT.global_variables.viewitems(),
-                                          constants.viewitems(),
-                                          fpar.viewitems()):
+                         for name, cty in AST.asn1_constants.items()}
+            for name, (asn1ty, _) in chain (CONTEXT.variables.items(),
+                                          CONTEXT.global_variables.items(),
+                                          constants.items(),
+                                          fpar.items()):
                 if name == varname:
                     asn1_filter = [asn1ty]
                     break
         return chain(variables_autocompletion(self, asn1_filter),
-                     ogParser.SPECIAL_OPERATORS.viewkeys())
+                     ogParser.SPECIAL_OPERATORS.keys())
 
 # pylint: disable=R0904
 class ProcedureCall(VerticalSymbol):
@@ -748,10 +748,10 @@ class ProcedureCall(VerticalSymbol):
     @property
     def completion_list(self):
         ''' Set auto-completion list '''
-        if '(' in unicode(self):
+        if '(' in str(self):
             # Get the variables of the type of the current parameter
-            count = unicode(self).count(',')
-            procname = unicode(self).split('(')[0].strip().lower()
+            count = str(self).count(',')
+            procname = str(self).split('(')[0].strip().lower()
             for each in (proc for proc in CONTEXT.procedures
                          if proc.inputString.lower() == procname):
                 param_types = [p['type'] for p in each.fpar]
@@ -908,7 +908,7 @@ class State(VerticalSymbol):
     @property
     def allow_nesting(self):
         ''' Redefinition - must be checked according to context '''
-        result = not any(elem in unicode(self).lower().strip()
+        result = not any(elem in str(self).lower().strip()
                        for elem in ('-', ',', '*'))
         return result
 
@@ -919,8 +919,8 @@ class State(VerticalSymbol):
 
     def double_click(self):
         ''' Catch a double click - Set nested scene '''
-        for each, value in self.scene().composite_states.viewitems():
-            if unicode(self).split()[0].lower() == unicode(each):
+        for each, value in self.scene().composite_states.items():
+            if str(self).split()[0].lower() == str(each):
                 self.nested_scene = value
                 break
         else:
@@ -941,7 +941,7 @@ class State(VerticalSymbol):
     @property
     def completion_list(self):
         ''' Set auto-completion list '''
-        elems = unicode(self).lower().strip().split()
+        elems = str(self).lower().strip().split()
         if len(elems) == 2 and elems[1] == 'via':
             # Get list of entry point of the nested state
             statename = elems[0]
@@ -1085,11 +1085,11 @@ class Procedure(Process):
     def update_completion_list(self, **kwargs):
         ''' When text was entered, update completion list of ProcedureCall '''
         for each in CONTEXT.procedures:
-            if unicode(self.text).lower() == each.inputString:
+            if str(self.text).lower() == each.inputString:
                 break
         else:
             new_proc = ogAST.Procedure()
-            new_proc.inputString = unicode(self.text).lower()
+            new_proc.inputString = str(self.text).lower()
             CONTEXT.procedures.append(new_proc)
 
 
@@ -1130,7 +1130,7 @@ class Start(HorizontalSymbol):
 
     def __unicode__(self):
         ''' User cannot enter text in the START symbol - Return dummy text '''
-        return u'START'
+        return 'START'
 
     def set_shape(self, width, height):
         ''' Compute the polygon to fit in width, height '''
@@ -1167,9 +1167,9 @@ class StateStart(Start):
 
     def __unicode__(self):
         ''' Return the state entry point '''
-        return unicode(self.text)
+        return str(self.text)
 
     def update_completion_list(self, pr_text):
         ''' Update nested state entry points '''
         CONTEXT.state_entrypoints = set(CONTEXT.state_entrypoints
-                                       + [unicode(self)])
+                                       + [str(self)])
