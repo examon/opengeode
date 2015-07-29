@@ -60,13 +60,13 @@ from PySide.QtGui import(QGraphicsPathItem, QGraphicsPolygonItem, QPainterPath,
 
 from PySide.QtUiTools import QUiLoader
 
-import undoCommands
-import ogAST
-import ogParser
-from Connectors import Connection, VerticalConnection, CommentConnection, \
+from . import undoCommands
+from . import ogAST
+from . import ogParser
+from .Connectors import Connection, VerticalConnection, CommentConnection, \
                        RakeConnection, JoinConnection
 
-from TextInteraction import EditableText
+from .TextInteraction import EditableText
 
 LOG = logging.getLogger(__name__)
 
@@ -257,12 +257,12 @@ class Symbol(QObject, QGraphicsPathItem, object):
     def __str__(self):
         ''' Print the text inside the symbol '''
         import traceback
-        print traceback.print_stack()
+        print(traceback.print_stack())
         raise TypeError('Use unicode() not str()')
 
     def __unicode__(self):
         ''' Return the text inside the symbol '''
-        return unicode(self.text) or u'no_name'
+        return str(self.text) or 'no_name'
 
     def get_ast(self, pr_text):
         ''' Return the symbol in the AST form, as returned by the parser '''
@@ -423,11 +423,11 @@ class Symbol(QObject, QGraphicsPathItem, object):
         hlink = self.hlink_field.text()
         if hlink:
             self.text.setHtml('<a href="{hlink}">{text}</a>'.format
-                  (hlink=hlink, text=unicode(self.text).replace('\n', '<br>')))
+                  (hlink=hlink, text=str(self.text).replace('\n', '<br>')))
             self.text.hyperlink = hlink
         else:
             self.text.hyperlink = None
-            self.text.setPlainText(unicode(self.text))
+            self.text.setPlainText(str(self.text))
 
     def contextMenuEvent(self, event):
         ''' When user right-clicks: display context menu '''
@@ -861,7 +861,7 @@ class Cornergrabber(QGraphicsPolygonItem, object):
 
     def __repr__(self):
         ''' Pretty string for the print function '''
-        return u'Cornergrabber of ' + unicode(self.parentItem())
+        return 'Cornergrabber of ' + str(self.parentItem())
 
     def display(self):
         ''' Polygon is a rectangle of the size of the parent item '''
