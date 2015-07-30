@@ -43,17 +43,17 @@ def summarize(results, elapsed):
         if errcode == 0:
             continue
         failed += 1
-        print "======================================================================"
-        print "ERROR: %s %s" % (path, rule)
+        print("======================================================================")
+        print("ERROR: %s %s" % (path, rule))
         if stdout:
-            print "- stdout -------------------------------------------------------------"
-            print stdout
+            print("- stdout -------------------------------------------------------------")
+            print(stdout)
         if stderr:
-            print "- stderr -------------------------------------------------------------"
-            print stderr
-            print "----------------------------------------------------------------------"
-    print "Finished in %.3fs" % elapsed
-    print "%s tests, %s errors" % (len(results), failed)
+            print("- stderr -------------------------------------------------------------")
+            print(stderr)
+            print("----------------------------------------------------------------------")
+    print("Finished in %.3fs" % elapsed)
+    print("%s tests, %s errors" % (len(results), failed))
 
     return 0 if not failed else 1
 
