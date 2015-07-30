@@ -24,8 +24,8 @@ from PySide.QtGui import(QGraphicsPathItem, QPainterPath, QGraphicsItem, QPen,
                          QPainter, QFont, QGraphicsTextItem, QColor,
                          QFontMetrics, QTextBlockFormat, QTextCursor)
 
-from . import ogParser
-from .TextInteraction import EditableText
+import ogParser
+from TextInteraction import EditableText
 
 LOG = logging.getLogger(__name__)
 

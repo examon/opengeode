@@ -31,8 +31,8 @@ except ImportError:
     # In some distributions, phonon cannot be installed properly
     # Discard - but sound will not work.
     pass
-from . import genericSymbols
-from . import icons
+import genericSymbols
+import icons
 
 LOG = logging.getLogger(__name__)
 

@@ -44,16 +44,16 @@ import PySide  # NOQA
 import PySide.QtCore  # NOQA
 import PySide.QtGui  # NOQA
 import PySide.QtUiTools  # NOQA
-from . import undoCommands  # NOQA
-from . import sdl92Lexer  # NOQA
-from . import sdl92Parser  # NOQA
-from . import genericSymbols  # NOQA
-from . import sdlSymbols
+import undoCommands  # NOQA
+import sdl92Lexer  # NOQA
+import sdl92Parser  # NOQA
+import genericSymbols  # NOQA
+import sdlSymbols
 import PySide.QtXml  # NOQA
 import singledispatch  # NOQA
-from . import Asn1scc  # NOQA
-from . import Connectors  # NOQA
-from . import TextInteraction  # NOQA
+import Asn1scc  # NOQA
+import Connectors  # NOQA
+import TextInteraction  # NOQA
 try:
     import stringtemplate3  # NOQA
 except ImportError:
@@ -67,26 +67,26 @@ from PySide.QtCore import Qt, QSize, QFile, QIODevice, QRectF, QTimer, QPoint
 from PySide.QtUiTools import QUiLoader
 from PySide import QtSvg
 
-from .genericSymbols import(Symbol, Comment, Cornergrabber, Connection)
-from .sdlSymbols import(Input, Output, Decision, DecisionAnswer, Task,
+from genericSymbols import(Symbol, Comment, Cornergrabber, Connection)
+from sdlSymbols import(Input, Output, Decision, DecisionAnswer, Task,
         ProcedureCall, TextSymbol, State, Start, Join, Label, Procedure,
         ProcedureStart, ProcedureStop, StateStart, Connect, Process)
-from .TextInteraction import EditableText
+from TextInteraction import EditableText
 
 # Icons and png files generated from the resource file:
-from . import icons  # NOQA
+import icons  # NOQA
 
 LOG = logging.getLogger(__name__)
 
-from . import AdaGenerator
-from . import ogParser
-from . import ogAST
-from . import Renderer
-from . import Clipboard
-from . import Statechart
-from . import Lander
-from . import Helper
-from . import Pr
+import AdaGenerator
+import ogParser
+import ogAST
+import Renderer
+import Clipboard
+import Statechart
+import Lander
+import Helper
+import Pr
 
 
 # Try importing graphviz for the SDL to Statechart converter
@@ -99,12 +99,12 @@ except ImportError:
     graphviz = False
 
 try:
-    from . import LlvmGenerator
+    import LlvmGenerator
 except ImportError:
     LlvmGenerator = None
 
 try:
-    from . import StgBackend
+    import StgBackend
 except ImportError:
     StgBackend = False
 

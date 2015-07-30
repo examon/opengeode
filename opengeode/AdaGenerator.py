@@ -73,8 +73,8 @@ import logging
 import traceback
 from singledispatch import singledispatch
 
-from . import ogAST
-from . import Helper
+import ogAST
+import Helper
 
 LOG = logging.getLogger(__name__)
 

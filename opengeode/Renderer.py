@@ -30,13 +30,13 @@
     When rendering a (set of) symbol(s), update text autocompletion list(s).
 """
 
-from . import ogAST
-from . import sdlSymbols
-from . import genericSymbols
+import ogAST
+import sdlSymbols
+import genericSymbols
 import logging
 from itertools import chain
 from singledispatch import singledispatch
-from .ogParser import type_name
+from ogParser import type_name
 
 LOG = logging.getLogger(__name__)
 

@@ -20,7 +20,7 @@ from collections import deque
 from itertools import chain
 from singledispatch import singledispatch
 
-from . import genericSymbols, sdlSymbols, Connectors
+import genericSymbols, sdlSymbols, Connectors
 
 LOG = logging.getLogger(__name__)
 

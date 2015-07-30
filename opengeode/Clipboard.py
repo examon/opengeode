@@ -20,11 +20,11 @@ import logging
 from itertools import chain
 import PySide
 
-from . import ogAST
-from . import sdlSymbols
-from . import genericSymbols
-from . import Renderer
-from . import Pr
+import ogAST
+import sdlSymbols
+import genericSymbols
+import Renderer
+import Pr
 
 __all__ = ['copy', 'paste']
 

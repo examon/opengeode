@@ -24,7 +24,7 @@ from PySide.QtGui import(QGraphicsTextItem, QGraphicsProxyWidget, QListWidget,
                          QTextCursor, QSyntaxHighlighter, QTextCharFormat,
                          QTextBlockFormat, QStringListModel)
 
-from . import undoCommands
+import undoCommands
 
 __all__ = ['EditableText']
 

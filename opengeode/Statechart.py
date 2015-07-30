@@ -32,8 +32,8 @@ except ImportError:
           'If you are using Debian (or Ubuntu) you can install it from\n'
           'the official repos: sudo apt-get install python-pygraphviz')
 
-from . import genericSymbols
-from .Connectors import Edge
+import genericSymbols
+from Connectors import Edge
 
 RENDER_DPI = {'X': 93.0, 'Y': 95.0}
 G_SYMBOLS = set()

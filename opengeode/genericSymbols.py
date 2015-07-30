@@ -60,13 +60,13 @@ from PySide.QtGui import(QGraphicsPathItem, QGraphicsPolygonItem, QPainterPath,
 
 from PySide.QtUiTools import QUiLoader
 
-from . import undoCommands
-from . import ogAST
-from . import ogParser
-from .Connectors import Connection, VerticalConnection, CommentConnection, \
-                       RakeConnection, JoinConnection
+import undoCommands
+import ogAST
+import ogParser
+from Connectors import (Connection, VerticalConnection, CommentConnection,
+                       RakeConnection, JoinConnection)
 
-from .TextInteraction import EditableText
+from TextInteraction import EditableText
 
 LOG = logging.getLogger(__name__)
 

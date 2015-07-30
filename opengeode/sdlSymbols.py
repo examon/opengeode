@@ -29,11 +29,11 @@ from itertools import chain
 from PySide.QtCore import Qt, QPoint, QRect, QRectF, QPointF
 from PySide.QtGui import(QPainterPath, QBrush, QColor, QRadialGradient, QPen)
 
-from .genericSymbols import HorizontalSymbol, VerticalSymbol, Comment
-from .Connectors import Connection, JoinConnection, Signalroute
+from genericSymbols import HorizontalSymbol, VerticalSymbol, Comment
+from Connectors import Connection, JoinConnection, Signalroute
 
-from . import ogParser
-from . import ogAST
+import ogParser
+import ogAST
 
 
 LOG = logging.getLogger('sdlSymbols')

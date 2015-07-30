@@ -36,12 +36,12 @@ from collections import defaultdict, Counter
 import antlr3
 import antlr3.tree
 
-from . import sdl92Lexer as lexer
-from .sdl92Parser import sdl92Parser
+import sdl92Lexer as lexer
+from sdl92Parser import sdl92Parser
 
-from . import samnmax
-from . import ogAST
-from .Asn1scc import parse_asn1, ASN1
+import samnmax
+import ogAST
+from Asn1scc import parse_asn1, ASN1
 
 LOG = logging.getLogger(__name__)
 

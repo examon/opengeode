@@ -28,7 +28,7 @@ from collections import defaultdict
 
 from singledispatch import singledispatch
 
-from . import ogAST
+import ogAST
 
 LOG = logging.getLogger(__name__)
 

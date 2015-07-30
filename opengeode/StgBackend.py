@@ -17,8 +17,8 @@
 import logging
 from singledispatch import singledispatch
 
-from . import ogAST
-from . import Helper
+import ogAST
+import Helper
 
 try:
     import stringtemplate3
