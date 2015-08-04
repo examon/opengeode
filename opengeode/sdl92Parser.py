@@ -2,7 +2,7 @@
 
 import sys
 from antlr3 import *
-from antlr3.compat import set, frozenset
+#from antlr3.compat import set, frozenset
 
 from antlr3.tree import *
 
@@ -235,37 +235,37 @@ LE=150
 
 # token names
 tokenNames = [
-    "<invalid>", "<EOR>", "<DOWN>", "<UP>", 
-    "ACTION", "ALL", "ALTERNATIVE", "ANSWER", "ARRAY", "ASN1", "ASSIGN", 
-    "BITSTR", "BLOCK", "CHANNEL", "CHOICE", "CIF", "CLOSED_RANGE", "COMMENT", 
-    "COMPOSITE_STATE", "CONDITIONAL", "CONNECT", "CONNECTION", "CONSTANT", 
-    "CONSTANTS", "DCL", "DECISION", "DIGITS", "ELSE", "EMPTYSTR", "ENDNEWTYPE", 
-    "ENDSYNTYPE", "ENDTEXT", "EXPORT", "EXPRESSION", "EXTERNAL", "FI", "FIELD", 
-    "FIELD_NAME", "FIELDS", "FLOAT2", "FLOAT", "FLOATING_LABEL", "FOR", 
-    "FPAR", "GROUND", "HYPERLINK", "IF", "IFTHENELSE", "IN", "INFORMAL_TEXT", 
-    "INOUT", "INPUT", "INPUT_NONE", "INPUTLIST", "JOIN", "LABEL", "LITERAL", 
-    "NEG", "NEWTYPE", "NEXTSTATE", "NUMBER_OF_INSTANCES", "OCTSTR", "OPEN_RANGE", 
-    "OUTPUT", "OUTPUT_BODY", "PARAM", "PARAMNAMES", "PARAMS", "PAREN", "PFPAR", 
-    "PRIMARY", "PROCEDURE", "PROCEDURE_CALL", "PROCEDURE_NAME", "PROCESS", 
-    "PROVIDED", "QUESTION", "RANGE", "RESET", "RETURN", "ROUTE", "SAVE", 
-    "SELECTOR", "SEQOF", "SEQUENCE", "SET", "SIGNAL", "SIGNAL_LIST", "SORT", 
-    "STATE", "STATELIST", "STIMULUS", "STOP", "STOPIF", "STRING", "STRUCT", 
-    "SYNONYM", "SYNONYM_LIST", "SYNTYPE", "SYSTEM", "TASK", "TASK_BODY", 
-    "TERMINATOR", "TEXT", "TEXTAREA", "TEXTAREA_CONTENT", "THEN", "TIMER", 
-    "TO", "TRANSITION", "TYPE_INSTANCE", "USE", "VALUE", "VARIABLE", "VARIABLES", 
-    "VIA", "VIAPATH", "ENDSYSTEM", "ID", "ENDCHANNEL", "FROM", "WITH", "ENDBLOCK", 
-    "SIGNALROUTE", "AND", "REFERENCED", "ENDPROCESS", "ENDPROCEDURE", "INT", 
-    "START", "ENDCONNECTION", "SEMI", "ENDSTATE", "ASTERISK", "SUBSTRUCTURE", 
-    "ENDSUBSTRUCTURE", "OUT", "NONE", "PRIORITY", "L_PAREN", "R_PAREN", 
-    "COMMA", "CALL", "ENDALTERNATIVE", "ENDDECISION", "ANY", "EQ", "NEQ", 
-    "GT", "LT", "LE", "GE", "CREATE", "THIS", "ENDFOR", "IMPLIES", "OR", 
-    "XOR", "PLUS", "DASH", "APPEND", "DIV", "MOD", "REM", "NOT", "TRUE", 
-    "FALSE", "NULL", "PLUS_INFINITY", "MINUS_INFINITY", "MANTISSA", "BASE", 
-    "EXPONENT", "ACTIVE", "IMPORT", "VIEW", "KEEP", "SPECIFIC", "GEODE", 
-    "ASNFILENAME", "END", "ASSIG_OP", "L_BRACKET", "R_BRACKET", "A", "N", 
-    "Y", "D", "C", "L", "E", "K", "P", "R", "M", "S", "I", "F", "G", "O", 
-    "H", "T", "X", "U", "V", "W", "B", "J", "DOT", "STR", "ALPHA", "Exponent", 
-    "WS", "COMMENT2", "Q", "Z", "':'", "'!'", "'(.'", "'.)'", "'ERROR'", 
+    "<invalid>", "<EOR>", "<DOWN>", "<UP>",
+    "ACTION", "ALL", "ALTERNATIVE", "ANSWER", "ARRAY", "ASN1", "ASSIGN",
+    "BITSTR", "BLOCK", "CHANNEL", "CHOICE", "CIF", "CLOSED_RANGE", "COMMENT",
+    "COMPOSITE_STATE", "CONDITIONAL", "CONNECT", "CONNECTION", "CONSTANT",
+    "CONSTANTS", "DCL", "DECISION", "DIGITS", "ELSE", "EMPTYSTR", "ENDNEWTYPE",
+    "ENDSYNTYPE", "ENDTEXT", "EXPORT", "EXPRESSION", "EXTERNAL", "FI", "FIELD",
+    "FIELD_NAME", "FIELDS", "FLOAT2", "FLOAT", "FLOATING_LABEL", "FOR",
+    "FPAR", "GROUND", "HYPERLINK", "IF", "IFTHENELSE", "IN", "INFORMAL_TEXT",
+    "INOUT", "INPUT", "INPUT_NONE", "INPUTLIST", "JOIN", "LABEL", "LITERAL",
+    "NEG", "NEWTYPE", "NEXTSTATE", "NUMBER_OF_INSTANCES", "OCTSTR", "OPEN_RANGE",
+    "OUTPUT", "OUTPUT_BODY", "PARAM", "PARAMNAMES", "PARAMS", "PAREN", "PFPAR",
+    "PRIMARY", "PROCEDURE", "PROCEDURE_CALL", "PROCEDURE_NAME", "PROCESS",
+    "PROVIDED", "QUESTION", "RANGE", "RESET", "RETURN", "ROUTE", "SAVE",
+    "SELECTOR", "SEQOF", "SEQUENCE", "SET", "SIGNAL", "SIGNAL_LIST", "SORT",
+    "STATE", "STATELIST", "STIMULUS", "STOP", "STOPIF", "STRING", "STRUCT",
+    "SYNONYM", "SYNONYM_LIST", "SYNTYPE", "SYSTEM", "TASK", "TASK_BODY",
+    "TERMINATOR", "TEXT", "TEXTAREA", "TEXTAREA_CONTENT", "THEN", "TIMER",
+    "TO", "TRANSITION", "TYPE_INSTANCE", "USE", "VALUE", "VARIABLE", "VARIABLES",
+    "VIA", "VIAPATH", "ENDSYSTEM", "ID", "ENDCHANNEL", "FROM", "WITH", "ENDBLOCK",
+    "SIGNALROUTE", "AND", "REFERENCED", "ENDPROCESS", "ENDPROCEDURE", "INT",
+    "START", "ENDCONNECTION", "SEMI", "ENDSTATE", "ASTERISK", "SUBSTRUCTURE",
+    "ENDSUBSTRUCTURE", "OUT", "NONE", "PRIORITY", "L_PAREN", "R_PAREN",
+    "COMMA", "CALL", "ENDALTERNATIVE", "ENDDECISION", "ANY", "EQ", "NEQ",
+    "GT", "LT", "LE", "GE", "CREATE", "THIS", "ENDFOR", "IMPLIES", "OR",
+    "XOR", "PLUS", "DASH", "APPEND", "DIV", "MOD", "REM", "NOT", "TRUE",
+    "FALSE", "NULL", "PLUS_INFINITY", "MINUS_INFINITY", "MANTISSA", "BASE",
+    "EXPONENT", "ACTIVE", "IMPORT", "VIEW", "KEEP", "SPECIFIC", "GEODE",
+    "ASNFILENAME", "END", "ASSIG_OP", "L_BRACKET", "R_BRACKET", "A", "N",
+    "Y", "D", "C", "L", "E", "K", "P", "R", "M", "S", "I", "F", "G", "O",
+    "H", "T", "X", "U", "V", "W", "B", "J", "DOT", "STR", "ALPHA", "Exponent",
+    "WS", "COMMENT2", "Q", "Z", "':'", "'!'", "'(.'", "'.)'", "'ERROR'",
     "'/* CIF'", "'*/'"
 ]
 
@@ -274,7 +274,7 @@ tokenNames = [
 
 class sdl92Parser(Parser):
     grammarFileName = "sdl92.g"
-    antlr_version = version_str_to_tuple("3.1.3 Mar 17, 2009 19:23:44")
+    #antlr_version = version_str_to_tuple("3.1.3 Mar 17, 2009 19:23:44")
     antlr_version_str = "3.1.3 Mar 17, 2009 19:23:44"
     tokenNames = tokenNames
 
@@ -588,10 +588,10 @@ class sdl92Parser(Parser):
 
         self._adaptor = None
         self.adaptor = CommonTreeAdaptor()
-                
 
 
-        
+
+
     def getTreeAdaptor(self):
         return self._adaptor
 
@@ -631,7 +631,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:142:9: ( ( use_clause | system_definition | process_definition )+ )
                 # sdl92.g:142:17: ( use_clause | system_definition | process_definition )+
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 # sdl92.g:142:17: ( use_clause | system_definition | process_definition )+
@@ -657,7 +657,7 @@ class sdl92Parser(Parser):
 
                     if alt1 == 1:
                         # sdl92.g:142:18: use_clause
-                        pass 
+                        pass
                         self._state.following.append(self.FOLLOW_use_clause_in_pr_file1321)
                         use_clause1 = self.use_clause()
 
@@ -668,7 +668,7 @@ class sdl92Parser(Parser):
 
                     elif alt1 == 2:
                         # sdl92.g:143:19: system_definition
-                        pass 
+                        pass
                         self._state.following.append(self.FOLLOW_system_definition_in_pr_file1341)
                         system_definition2 = self.system_definition()
 
@@ -679,7 +679,7 @@ class sdl92Parser(Parser):
 
                     elif alt1 == 3:
                         # sdl92.g:144:19: process_definition
-                        pass 
+                        pass
                         self._state.following.append(self.FOLLOW_process_definition_in_pr_file1361)
                         process_definition3 = self.process_definition()
 
@@ -763,8 +763,8 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:148:9: ( SYSTEM system_name end ( entity_in_system )* ENDSYSTEM ( system_name )? end -> ^( SYSTEM system_name ( entity_in_system )* ) )
                 # sdl92.g:148:17: SYSTEM system_name end ( entity_in_system )* ENDSYSTEM ( system_name )? end
-                pass 
-                SYSTEM4=self.match(self.input, SYSTEM, self.FOLLOW_SYSTEM_in_system_definition1386) 
+                pass
+                SYSTEM4=self.match(self.input, SYSTEM, self.FOLLOW_SYSTEM_in_system_definition1386)
                 if self._state.backtracking == 0:
                     stream_SYSTEM.add(SYSTEM4)
                 self._state.following.append(self.FOLLOW_system_name_in_system_definition1388)
@@ -790,7 +790,7 @@ class sdl92Parser(Parser):
 
                     if alt2 == 1:
                         # sdl92.g:0:0: entity_in_system
-                        pass 
+                        pass
                         self._state.following.append(self.FOLLOW_entity_in_system_in_system_definition1408)
                         entity_in_system7 = self.entity_in_system()
 
@@ -801,7 +801,7 @@ class sdl92Parser(Parser):
 
                     else:
                         break #loop2
-                ENDSYSTEM8=self.match(self.input, ENDSYSTEM, self.FOLLOW_ENDSYSTEM_in_system_definition1427) 
+                ENDSYSTEM8=self.match(self.input, ENDSYSTEM, self.FOLLOW_ENDSYSTEM_in_system_definition1427)
                 if self._state.backtracking == 0:
                     stream_ENDSYSTEM.add(ENDSYSTEM8)
                 # sdl92.g:150:27: ( system_name )?
@@ -812,7 +812,7 @@ class sdl92Parser(Parser):
                     alt3 = 1
                 if alt3 == 1:
                     # sdl92.g:0:0: system_name
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_system_name_in_system_definition1429)
                     system_name9 = self.system_name()
 
@@ -831,11 +831,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: system_name, SYSTEM, entity_in_system
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -928,7 +928,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:155:9: ( ( use_asn1 )? USE package_name ( '/' def_selection_list )? end -> ^( USE ( use_asn1 )? ( end )? package_name ( def_selection_list )? ) )
                 # sdl92.g:155:17: ( use_asn1 )? USE package_name ( '/' def_selection_list )? end
-                pass 
+                pass
                 # sdl92.g:155:17: ( use_asn1 )?
                 alt4 = 2
                 LA4_0 = self.input.LA(1)
@@ -937,7 +937,7 @@ class sdl92Parser(Parser):
                     alt4 = 1
                 if alt4 == 1:
                     # sdl92.g:0:0: use_asn1
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_use_asn1_in_use_clause1479)
                     use_asn111 = self.use_asn1()
 
@@ -947,7 +947,7 @@ class sdl92Parser(Parser):
 
 
 
-                USE12=self.match(self.input, USE, self.FOLLOW_USE_in_use_clause1498) 
+                USE12=self.match(self.input, USE, self.FOLLOW_USE_in_use_clause1498)
                 if self._state.backtracking == 0:
                     stream_USE.add(USE12)
                 self._state.following.append(self.FOLLOW_package_name_in_use_clause1500)
@@ -964,8 +964,8 @@ class sdl92Parser(Parser):
                     alt5 = 1
                 if alt5 == 1:
                     # sdl92.g:157:18: '/' def_selection_list
-                    pass 
-                    char_literal14=self.match(self.input, DIV, self.FOLLOW_DIV_in_use_clause1519) 
+                    pass
+                    char_literal14=self.match(self.input, DIV, self.FOLLOW_DIV_in_use_clause1519)
                     if self._state.backtracking == 0:
                         stream_DIV.add(char_literal14)
                     self._state.following.append(self.FOLLOW_def_selection_list_in_use_clause1521)
@@ -986,11 +986,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: use_asn1, def_selection_list, USE, package_name, end
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -1084,7 +1084,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:165:9: ( ID ( ',' ID )* )
                 # sdl92.g:165:17: ID ( ',' ID )*
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 ID17=self.match(self.input, ID, self.FOLLOW_ID_in_def_selection_list1596)
@@ -1104,7 +1104,7 @@ class sdl92Parser(Parser):
 
                     if alt6 == 1:
                         # sdl92.g:165:21: ',' ID
-                        pass 
+                        pass
                         char_literal18=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_def_selection_list1599)
                         ID19=self.match(self.input, ID, self.FOLLOW_ID_in_def_selection_list1602)
                         if self._state.backtracking == 0:
@@ -1208,7 +1208,7 @@ class sdl92Parser(Parser):
 
                 if alt7 == 1:
                     # sdl92.g:171:17: signal_declaration
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     self._state.following.append(self.FOLLOW_signal_declaration_in_entity_in_system1628)
@@ -1221,7 +1221,7 @@ class sdl92Parser(Parser):
 
                 elif alt7 == 2:
                     # sdl92.g:172:19: text_area
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     self._state.following.append(self.FOLLOW_text_area_in_entity_in_system1648)
@@ -1234,7 +1234,7 @@ class sdl92Parser(Parser):
 
                 elif alt7 == 3:
                     # sdl92.g:173:19: procedure
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     self._state.following.append(self.FOLLOW_procedure_in_entity_in_system1668)
@@ -1247,7 +1247,7 @@ class sdl92Parser(Parser):
 
                 elif alt7 == 4:
                     # sdl92.g:174:19: channel
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     self._state.following.append(self.FOLLOW_channel_in_entity_in_system1688)
@@ -1260,7 +1260,7 @@ class sdl92Parser(Parser):
 
                 elif alt7 == 5:
                     # sdl92.g:175:19: block_definition
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     self._state.following.append(self.FOLLOW_block_definition_in_entity_in_system1708)
@@ -1328,7 +1328,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:181:9: ( ( paramnames )? SIGNAL signal_id ( input_params )? end -> ^( SIGNAL ( paramnames )? signal_id ( input_params )? ) )
                 # sdl92.g:181:17: ( paramnames )? SIGNAL signal_id ( input_params )? end
-                pass 
+                pass
                 # sdl92.g:181:17: ( paramnames )?
                 alt8 = 2
                 LA8_0 = self.input.LA(1)
@@ -1337,7 +1337,7 @@ class sdl92Parser(Parser):
                     alt8 = 1
                 if alt8 == 1:
                     # sdl92.g:0:0: paramnames
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_paramnames_in_signal_declaration1732)
                     paramnames25 = self.paramnames()
 
@@ -1347,7 +1347,7 @@ class sdl92Parser(Parser):
 
 
 
-                SIGNAL26=self.match(self.input, SIGNAL, self.FOLLOW_SIGNAL_in_signal_declaration1751) 
+                SIGNAL26=self.match(self.input, SIGNAL, self.FOLLOW_SIGNAL_in_signal_declaration1751)
                 if self._state.backtracking == 0:
                     stream_SIGNAL.add(SIGNAL26)
                 self._state.following.append(self.FOLLOW_signal_id_in_signal_declaration1753)
@@ -1364,7 +1364,7 @@ class sdl92Parser(Parser):
                     alt9 = 1
                 if alt9 == 1:
                     # sdl92.g:0:0: input_params
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_input_params_in_signal_declaration1755)
                     input_params28 = self.input_params()
 
@@ -1383,11 +1383,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: signal_id, SIGNAL, paramnames, input_params
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -1483,8 +1483,8 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:187:9: ( CHANNEL channel_id ( route )+ ENDCHANNEL end -> ^( CHANNEL channel_id ( route )+ ) )
                 # sdl92.g:187:17: CHANNEL channel_id ( route )+ ENDCHANNEL end
-                pass 
-                CHANNEL30=self.match(self.input, CHANNEL, self.FOLLOW_CHANNEL_in_channel1808) 
+                pass
+                CHANNEL30=self.match(self.input, CHANNEL, self.FOLLOW_CHANNEL_in_channel1808)
                 if self._state.backtracking == 0:
                     stream_CHANNEL.add(CHANNEL30)
                 self._state.following.append(self.FOLLOW_channel_id_in_channel1810)
@@ -1505,7 +1505,7 @@ class sdl92Parser(Parser):
 
                     if alt10 == 1:
                         # sdl92.g:0:0: route
-                        pass 
+                        pass
                         self._state.following.append(self.FOLLOW_route_in_channel1828)
                         route32 = self.route()
 
@@ -1525,7 +1525,7 @@ class sdl92Parser(Parser):
                         raise eee
 
                     cnt10 += 1
-                ENDCHANNEL33=self.match(self.input, ENDCHANNEL, self.FOLLOW_ENDCHANNEL_in_channel1847) 
+                ENDCHANNEL33=self.match(self.input, ENDCHANNEL, self.FOLLOW_ENDCHANNEL_in_channel1847)
                 if self._state.backtracking == 0:
                     stream_ENDCHANNEL.add(ENDCHANNEL33)
                 self._state.following.append(self.FOLLOW_end_in_channel1849)
@@ -1537,11 +1537,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: route, CHANNEL, channel_id
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -1645,8 +1645,8 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:194:9: ( FROM source_id TO dest_id WITH signal_id ( ',' signal_id )* end -> ^( ROUTE source_id dest_id ( signal_id )+ ) )
                 # sdl92.g:194:17: FROM source_id TO dest_id WITH signal_id ( ',' signal_id )* end
-                pass 
-                FROM35=self.match(self.input, FROM, self.FOLLOW_FROM_in_route1896) 
+                pass
+                FROM35=self.match(self.input, FROM, self.FOLLOW_FROM_in_route1896)
                 if self._state.backtracking == 0:
                     stream_FROM.add(FROM35)
                 self._state.following.append(self.FOLLOW_source_id_in_route1898)
@@ -1655,7 +1655,7 @@ class sdl92Parser(Parser):
                 self._state.following.pop()
                 if self._state.backtracking == 0:
                     stream_source_id.add(source_id36.tree)
-                TO37=self.match(self.input, TO, self.FOLLOW_TO_in_route1900) 
+                TO37=self.match(self.input, TO, self.FOLLOW_TO_in_route1900)
                 if self._state.backtracking == 0:
                     stream_TO.add(TO37)
                 self._state.following.append(self.FOLLOW_dest_id_in_route1902)
@@ -1664,7 +1664,7 @@ class sdl92Parser(Parser):
                 self._state.following.pop()
                 if self._state.backtracking == 0:
                     stream_dest_id.add(dest_id38.tree)
-                WITH39=self.match(self.input, WITH, self.FOLLOW_WITH_in_route1904) 
+                WITH39=self.match(self.input, WITH, self.FOLLOW_WITH_in_route1904)
                 if self._state.backtracking == 0:
                     stream_WITH.add(WITH39)
                 self._state.following.append(self.FOLLOW_signal_id_in_route1906)
@@ -1684,8 +1684,8 @@ class sdl92Parser(Parser):
 
                     if alt11 == 1:
                         # sdl92.g:194:59: ',' signal_id
-                        pass 
-                        char_literal41=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_route1909) 
+                        pass
+                        char_literal41=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_route1909)
                         if self._state.backtracking == 0:
                             stream_COMMA.add(char_literal41)
                         self._state.following.append(self.FOLLOW_signal_id_in_route1911)
@@ -1707,11 +1707,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: source_id, dest_id, signal_id
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -1807,8 +1807,8 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:199:9: ( BLOCK block_id end ( entity_in_block )* ENDBLOCK end -> ^( BLOCK block_id ( entity_in_block )* ) )
                 # sdl92.g:199:17: BLOCK block_id end ( entity_in_block )* ENDBLOCK end
-                pass 
-                BLOCK44=self.match(self.input, BLOCK, self.FOLLOW_BLOCK_in_block_definition1964) 
+                pass
+                BLOCK44=self.match(self.input, BLOCK, self.FOLLOW_BLOCK_in_block_definition1964)
                 if self._state.backtracking == 0:
                     stream_BLOCK.add(BLOCK44)
                 self._state.following.append(self.FOLLOW_block_id_in_block_definition1966)
@@ -1834,7 +1834,7 @@ class sdl92Parser(Parser):
 
                     if alt12 == 1:
                         # sdl92.g:0:0: entity_in_block
-                        pass 
+                        pass
                         self._state.following.append(self.FOLLOW_entity_in_block_in_block_definition1986)
                         entity_in_block47 = self.entity_in_block()
 
@@ -1845,7 +1845,7 @@ class sdl92Parser(Parser):
 
                     else:
                         break #loop12
-                ENDBLOCK48=self.match(self.input, ENDBLOCK, self.FOLLOW_ENDBLOCK_in_block_definition2005) 
+                ENDBLOCK48=self.match(self.input, ENDBLOCK, self.FOLLOW_ENDBLOCK_in_block_definition2005)
                 if self._state.backtracking == 0:
                     stream_ENDBLOCK.add(ENDBLOCK48)
                 self._state.following.append(self.FOLLOW_end_in_block_definition2007)
@@ -1857,11 +1857,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: block_id, entity_in_block, BLOCK
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -1983,7 +1983,7 @@ class sdl92Parser(Parser):
 
                 if alt13 == 1:
                     # sdl92.g:210:17: signal_declaration
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     self._state.following.append(self.FOLLOW_signal_declaration_in_entity_in_block2056)
@@ -1996,7 +1996,7 @@ class sdl92Parser(Parser):
 
                 elif alt13 == 2:
                     # sdl92.g:211:19: signalroute
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     self._state.following.append(self.FOLLOW_signalroute_in_entity_in_block2076)
@@ -2009,7 +2009,7 @@ class sdl92Parser(Parser):
 
                 elif alt13 == 3:
                     # sdl92.g:212:19: connection
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     self._state.following.append(self.FOLLOW_connection_in_entity_in_block2096)
@@ -2022,7 +2022,7 @@ class sdl92Parser(Parser):
 
                 elif alt13 == 4:
                     # sdl92.g:213:19: block_definition
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     self._state.following.append(self.FOLLOW_block_definition_in_entity_in_block2116)
@@ -2035,7 +2035,7 @@ class sdl92Parser(Parser):
 
                 elif alt13 == 5:
                     # sdl92.g:214:19: process_definition
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     self._state.following.append(self.FOLLOW_process_definition_in_entity_in_block2136)
@@ -2097,8 +2097,8 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:218:9: ( SIGNALROUTE route_id ( route )+ -> ^( SIGNALROUTE route_id ( route )+ ) )
                 # sdl92.g:218:17: SIGNALROUTE route_id ( route )+
-                pass 
-                SIGNALROUTE55=self.match(self.input, SIGNALROUTE, self.FOLLOW_SIGNALROUTE_in_signalroute2159) 
+                pass
+                SIGNALROUTE55=self.match(self.input, SIGNALROUTE, self.FOLLOW_SIGNALROUTE_in_signalroute2159)
                 if self._state.backtracking == 0:
                     stream_SIGNALROUTE.add(SIGNALROUTE55)
                 self._state.following.append(self.FOLLOW_route_id_in_signalroute2161)
@@ -2119,7 +2119,7 @@ class sdl92Parser(Parser):
 
                     if alt14 == 1:
                         # sdl92.g:0:0: route
-                        pass 
+                        pass
                         self._state.following.append(self.FOLLOW_route_in_signalroute2179)
                         route57 = self.route()
 
@@ -2142,11 +2142,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: route, SIGNALROUTE, route_id
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -2239,8 +2239,8 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:224:9: ( CONNECT channel_id AND route_id end -> ^( CONNECTION channel_id route_id ) )
                 # sdl92.g:224:17: CONNECT channel_id AND route_id end
-                pass 
-                CONNECT58=self.match(self.input, CONNECT, self.FOLLOW_CONNECT_in_connection2227) 
+                pass
+                CONNECT58=self.match(self.input, CONNECT, self.FOLLOW_CONNECT_in_connection2227)
                 if self._state.backtracking == 0:
                     stream_CONNECT.add(CONNECT58)
                 self._state.following.append(self.FOLLOW_channel_id_in_connection2229)
@@ -2249,7 +2249,7 @@ class sdl92Parser(Parser):
                 self._state.following.pop()
                 if self._state.backtracking == 0:
                     stream_channel_id.add(channel_id59.tree)
-                AND60=self.match(self.input, AND, self.FOLLOW_AND_in_connection2231) 
+                AND60=self.match(self.input, AND, self.FOLLOW_AND_in_connection2231)
                 if self._state.backtracking == 0:
                     stream_AND.add(AND60)
                 self._state.following.append(self.FOLLOW_route_id_in_connection2233)
@@ -2267,11 +2267,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: route_id, channel_id
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -2408,8 +2408,8 @@ class sdl92Parser(Parser):
                 alt25 = self.dfa25.predict(self.input)
                 if alt25 == 1:
                     # sdl92.g:229:17: PROCESS process_id ( number_of_instances )? REFERENCED end
-                    pass 
-                    PROCESS63=self.match(self.input, PROCESS, self.FOLLOW_PROCESS_in_process_definition2281) 
+                    pass
+                    PROCESS63=self.match(self.input, PROCESS, self.FOLLOW_PROCESS_in_process_definition2281)
                     if self._state.backtracking == 0:
                         stream_PROCESS.add(PROCESS63)
                     self._state.following.append(self.FOLLOW_process_id_in_process_definition2283)
@@ -2426,7 +2426,7 @@ class sdl92Parser(Parser):
                         alt15 = 1
                     if alt15 == 1:
                         # sdl92.g:0:0: number_of_instances
-                        pass 
+                        pass
                         self._state.following.append(self.FOLLOW_number_of_instances_in_process_definition2285)
                         number_of_instances65 = self.number_of_instances()
 
@@ -2436,7 +2436,7 @@ class sdl92Parser(Parser):
 
 
 
-                    REFERENCED66=self.match(self.input, REFERENCED, self.FOLLOW_REFERENCED_in_process_definition2288) 
+                    REFERENCED66=self.match(self.input, REFERENCED, self.FOLLOW_REFERENCED_in_process_definition2288)
                     if self._state.backtracking == 0:
                         stream_REFERENCED.add(REFERENCED66)
                     self._state.following.append(self.FOLLOW_end_in_process_definition2290)
@@ -2448,11 +2448,11 @@ class sdl92Parser(Parser):
 
                     # AST Rewrite
                     # elements: PROCESS, number_of_instances, REFERENCED, process_id
-                    # token labels: 
+                    # token labels:
                     # rule labels: retval
-                    # token list labels: 
-                    # rule list labels: 
-                    # wildcard labels: 
+                    # token list labels:
+                    # rule list labels:
+                    # wildcard labels:
                     if self._state.backtracking == 0:
 
                         retval.tree = root_0
@@ -2487,7 +2487,7 @@ class sdl92Parser(Parser):
 
                 elif alt25 == 2:
                     # sdl92.g:231:19: ( cif )? PROCESS process_id ( number_of_instances )? end ( pfpar )? ( text_area | procedure | composite_state )* ( processBody )? ENDPROCESS ( process_id )? end
-                    pass 
+                    pass
                     # sdl92.g:231:19: ( cif )?
                     alt16 = 2
                     LA16_0 = self.input.LA(1)
@@ -2496,7 +2496,7 @@ class sdl92Parser(Parser):
                         alt16 = 1
                     if alt16 == 1:
                         # sdl92.g:0:0: cif
-                        pass 
+                        pass
                         self._state.following.append(self.FOLLOW_cif_in_process_definition2336)
                         cif68 = self.cif()
 
@@ -2506,7 +2506,7 @@ class sdl92Parser(Parser):
 
 
 
-                    PROCESS69=self.match(self.input, PROCESS, self.FOLLOW_PROCESS_in_process_definition2339) 
+                    PROCESS69=self.match(self.input, PROCESS, self.FOLLOW_PROCESS_in_process_definition2339)
                     if self._state.backtracking == 0:
                         stream_PROCESS.add(PROCESS69)
                     self._state.following.append(self.FOLLOW_process_id_in_process_definition2341)
@@ -2523,7 +2523,7 @@ class sdl92Parser(Parser):
                         alt17 = 1
                     if alt17 == 1:
                         # sdl92.g:0:0: number_of_instances
-                        pass 
+                        pass
                         self._state.following.append(self.FOLLOW_number_of_instances_in_process_definition2343)
                         number_of_instances71 = self.number_of_instances()
 
@@ -2547,7 +2547,7 @@ class sdl92Parser(Parser):
                         alt18 = 1
                     if alt18 == 1:
                         # sdl92.g:0:0: pfpar
-                        pass 
+                        pass
                         self._state.following.append(self.FOLLOW_pfpar_in_process_definition2364)
                         pfpar73 = self.pfpar()
 
@@ -2582,7 +2582,7 @@ class sdl92Parser(Parser):
 
                         if alt19 == 1:
                             # sdl92.g:233:18: text_area
-                            pass 
+                            pass
                             self._state.following.append(self.FOLLOW_text_area_in_process_definition2384)
                             text_area74 = self.text_area()
 
@@ -2593,7 +2593,7 @@ class sdl92Parser(Parser):
 
                         elif alt19 == 2:
                             # sdl92.g:233:30: procedure
-                            pass 
+                            pass
                             self._state.following.append(self.FOLLOW_procedure_in_process_definition2388)
                             procedure75 = self.procedure()
 
@@ -2604,7 +2604,7 @@ class sdl92Parser(Parser):
 
                         elif alt19 == 3:
                             # sdl92.g:233:42: composite_state
-                            pass 
+                            pass
                             self._state.following.append(self.FOLLOW_composite_state_in_process_definition2392)
                             composite_state76 = self.composite_state()
 
@@ -2628,7 +2628,7 @@ class sdl92Parser(Parser):
                             alt20 = 1
                     if alt20 == 1:
                         # sdl92.g:0:0: processBody
-                        pass 
+                        pass
                         self._state.following.append(self.FOLLOW_processBody_in_process_definition2412)
                         processBody77 = self.processBody()
 
@@ -2638,7 +2638,7 @@ class sdl92Parser(Parser):
 
 
 
-                    ENDPROCESS78=self.match(self.input, ENDPROCESS, self.FOLLOW_ENDPROCESS_in_process_definition2415) 
+                    ENDPROCESS78=self.match(self.input, ENDPROCESS, self.FOLLOW_ENDPROCESS_in_process_definition2415)
                     if self._state.backtracking == 0:
                         stream_ENDPROCESS.add(ENDPROCESS78)
                     # sdl92.g:234:41: ( process_id )?
@@ -2649,7 +2649,7 @@ class sdl92Parser(Parser):
                         alt21 = 1
                     if alt21 == 1:
                         # sdl92.g:0:0: process_id
-                        pass 
+                        pass
                         self._state.following.append(self.FOLLOW_process_id_in_process_definition2417)
                         process_id79 = self.process_id()
 
@@ -2668,11 +2668,11 @@ class sdl92Parser(Parser):
 
                     # AST Rewrite
                     # elements: process_id, processBody, text_area, procedure, cif, number_of_instances, end, PROCESS, composite_state, pfpar
-                    # token labels: 
+                    # token labels:
                     # rule labels: retval
-                    # token list labels: 
-                    # rule list labels: 
-                    # wildcard labels: 
+                    # token list labels:
+                    # rule list labels:
+                    # wildcard labels:
                     if self._state.backtracking == 0:
 
                         retval.tree = root_0
@@ -2748,7 +2748,7 @@ class sdl92Parser(Parser):
 
                 elif alt25 == 3:
                     # sdl92.g:238:19: ( cif )? PROCESS process_id ( number_of_instances )? ( ':' type_inst )? end
-                    pass 
+                    pass
                     # sdl92.g:238:19: ( cif )?
                     alt22 = 2
                     LA22_0 = self.input.LA(1)
@@ -2757,7 +2757,7 @@ class sdl92Parser(Parser):
                         alt22 = 1
                     if alt22 == 1:
                         # sdl92.g:0:0: cif
-                        pass 
+                        pass
                         self._state.following.append(self.FOLLOW_cif_in_process_definition2517)
                         cif81 = self.cif()
 
@@ -2767,7 +2767,7 @@ class sdl92Parser(Parser):
 
 
 
-                    PROCESS82=self.match(self.input, PROCESS, self.FOLLOW_PROCESS_in_process_definition2520) 
+                    PROCESS82=self.match(self.input, PROCESS, self.FOLLOW_PROCESS_in_process_definition2520)
                     if self._state.backtracking == 0:
                         stream_PROCESS.add(PROCESS82)
                     self._state.following.append(self.FOLLOW_process_id_in_process_definition2522)
@@ -2784,7 +2784,7 @@ class sdl92Parser(Parser):
                         alt23 = 1
                     if alt23 == 1:
                         # sdl92.g:0:0: number_of_instances
-                        pass 
+                        pass
                         self._state.following.append(self.FOLLOW_number_of_instances_in_process_definition2524)
                         number_of_instances84 = self.number_of_instances()
 
@@ -2802,8 +2802,8 @@ class sdl92Parser(Parser):
                         alt24 = 1
                     if alt24 == 1:
                         # sdl92.g:238:65: ':' type_inst
-                        pass 
-                        char_literal85=self.match(self.input, 216, self.FOLLOW_216_in_process_definition2528) 
+                        pass
+                        char_literal85=self.match(self.input, 216, self.FOLLOW_216_in_process_definition2528)
                         if self._state.backtracking == 0:
                             stream_216.add(char_literal85)
                         self._state.following.append(self.FOLLOW_type_inst_in_process_definition2530)
@@ -2824,11 +2824,11 @@ class sdl92Parser(Parser):
 
                     # AST Rewrite
                     # elements: type_inst, number_of_instances, process_id, cif, PROCESS, end
-                    # token labels: 
+                    # token labels:
                     # rule labels: retval
-                    # token list labels: 
-                    # rule list labels: 
-                    # wildcard labels: 
+                    # token list labels:
+                    # rule list labels:
+                    # wildcard labels:
                     if self._state.backtracking == 0:
 
                         retval.tree = root_0
@@ -2934,8 +2934,8 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:245:9: ( FPAR parameters_of_sort ( ',' parameters_of_sort )* end -> ^( PFPAR ( parameters_of_sort )+ ) )
                 # sdl92.g:245:17: FPAR parameters_of_sort ( ',' parameters_of_sort )* end
-                pass 
-                FPAR88=self.match(self.input, FPAR, self.FOLLOW_FPAR_in_pfpar2615) 
+                pass
+                FPAR88=self.match(self.input, FPAR, self.FOLLOW_FPAR_in_pfpar2615)
                 if self._state.backtracking == 0:
                     stream_FPAR.add(FPAR88)
                 self._state.following.append(self.FOLLOW_parameters_of_sort_in_pfpar2617)
@@ -2955,8 +2955,8 @@ class sdl92Parser(Parser):
 
                     if alt26 == 1:
                         # sdl92.g:246:18: ',' parameters_of_sort
-                        pass 
-                        char_literal90=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_pfpar2636) 
+                        pass
+                        char_literal90=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_pfpar2636)
                         if self._state.backtracking == 0:
                             stream_COMMA.add(char_literal90)
                         self._state.following.append(self.FOLLOW_parameters_of_sort_in_pfpar2638)
@@ -2978,11 +2978,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: parameters_of_sort
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -3070,7 +3070,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:251:9: ( variable_id ( ',' variable_id )* sort -> ^( PARAM ( variable_id )+ sort ) )
                 # sdl92.g:251:17: variable_id ( ',' variable_id )* sort
-                pass 
+                pass
                 self._state.following.append(self.FOLLOW_variable_id_in_parameters_of_sort2702)
                 variable_id93 = self.variable_id()
 
@@ -3088,8 +3088,8 @@ class sdl92Parser(Parser):
 
                     if alt27 == 1:
                         # sdl92.g:251:30: ',' variable_id
-                        pass 
-                        char_literal94=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_parameters_of_sort2705) 
+                        pass
+                        char_literal94=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_parameters_of_sort2705)
                         if self._state.backtracking == 0:
                             stream_COMMA.add(char_literal94)
                         self._state.following.append(self.FOLLOW_variable_id_in_parameters_of_sort2707)
@@ -3111,11 +3111,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: variable_id, sort
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -3227,7 +3227,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:258:9: ( ( cif )? PROCEDURE procedure_id end ( fpar )? ( text_area | procedure )* ( ( ( processBody )? ENDPROCEDURE ( procedure_id )? ) | EXTERNAL ) end -> ^( PROCEDURE ( cif )? procedure_id ( end )? ( fpar )? ( text_area )* ( procedure )* ( processBody )? ( EXTERNAL )? ) )
                 # sdl92.g:258:17: ( cif )? PROCEDURE procedure_id end ( fpar )? ( text_area | procedure )* ( ( ( processBody )? ENDPROCEDURE ( procedure_id )? ) | EXTERNAL ) end
-                pass 
+                pass
                 # sdl92.g:258:17: ( cif )?
                 alt28 = 2
                 LA28_0 = self.input.LA(1)
@@ -3236,7 +3236,7 @@ class sdl92Parser(Parser):
                     alt28 = 1
                 if alt28 == 1:
                     # sdl92.g:0:0: cif
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_cif_in_procedure2760)
                     cif97 = self.cif()
 
@@ -3246,7 +3246,7 @@ class sdl92Parser(Parser):
 
 
 
-                PROCEDURE98=self.match(self.input, PROCEDURE, self.FOLLOW_PROCEDURE_in_procedure2779) 
+                PROCEDURE98=self.match(self.input, PROCEDURE, self.FOLLOW_PROCEDURE_in_procedure2779)
                 if self._state.backtracking == 0:
                     stream_PROCEDURE.add(PROCEDURE98)
                 self._state.following.append(self.FOLLOW_procedure_id_in_procedure2781)
@@ -3269,7 +3269,7 @@ class sdl92Parser(Parser):
                     alt29 = 1
                 if alt29 == 1:
                     # sdl92.g:0:0: fpar
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_fpar_in_procedure2801)
                     fpar101 = self.fpar()
 
@@ -3299,7 +3299,7 @@ class sdl92Parser(Parser):
 
                     if alt30 == 1:
                         # sdl92.g:261:18: text_area
-                        pass 
+                        pass
                         self._state.following.append(self.FOLLOW_text_area_in_procedure2821)
                         text_area102 = self.text_area()
 
@@ -3310,7 +3310,7 @@ class sdl92Parser(Parser):
 
                     elif alt30 == 2:
                         # sdl92.g:261:30: procedure
-                        pass 
+                        pass
                         self._state.following.append(self.FOLLOW_procedure_in_procedure2825)
                         procedure103 = self.procedure()
 
@@ -3339,10 +3339,10 @@ class sdl92Parser(Parser):
 
                 if alt33 == 1:
                     # sdl92.g:262:18: ( ( processBody )? ENDPROCEDURE ( procedure_id )? )
-                    pass 
+                    pass
                     # sdl92.g:262:18: ( ( processBody )? ENDPROCEDURE ( procedure_id )? )
                     # sdl92.g:262:19: ( processBody )? ENDPROCEDURE ( procedure_id )?
-                    pass 
+                    pass
                     # sdl92.g:262:19: ( processBody )?
                     alt31 = 2
                     LA31_0 = self.input.LA(1)
@@ -3356,7 +3356,7 @@ class sdl92Parser(Parser):
                             alt31 = 1
                     if alt31 == 1:
                         # sdl92.g:0:0: processBody
-                        pass 
+                        pass
                         self._state.following.append(self.FOLLOW_processBody_in_procedure2847)
                         processBody104 = self.processBody()
 
@@ -3366,7 +3366,7 @@ class sdl92Parser(Parser):
 
 
 
-                    ENDPROCEDURE105=self.match(self.input, ENDPROCEDURE, self.FOLLOW_ENDPROCEDURE_in_procedure2850) 
+                    ENDPROCEDURE105=self.match(self.input, ENDPROCEDURE, self.FOLLOW_ENDPROCEDURE_in_procedure2850)
                     if self._state.backtracking == 0:
                         stream_ENDPROCEDURE.add(ENDPROCEDURE105)
                     # sdl92.g:262:45: ( procedure_id )?
@@ -3377,7 +3377,7 @@ class sdl92Parser(Parser):
                         alt32 = 1
                     if alt32 == 1:
                         # sdl92.g:0:0: procedure_id
-                        pass 
+                        pass
                         self._state.following.append(self.FOLLOW_procedure_id_in_procedure2852)
                         procedure_id106 = self.procedure_id()
 
@@ -3394,8 +3394,8 @@ class sdl92Parser(Parser):
 
                 elif alt33 == 2:
                     # sdl92.g:262:62: EXTERNAL
-                    pass 
-                    EXTERNAL107=self.match(self.input, EXTERNAL, self.FOLLOW_EXTERNAL_in_procedure2858) 
+                    pass
+                    EXTERNAL107=self.match(self.input, EXTERNAL, self.FOLLOW_EXTERNAL_in_procedure2858)
                     if self._state.backtracking == 0:
                         stream_EXTERNAL.add(EXTERNAL107)
 
@@ -3410,11 +3410,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: processBody, end, text_area, procedure_id, cif, fpar, PROCEDURE, EXTERNAL, procedure
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -3539,8 +3539,8 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:270:9: ( FPAR formal_variable_param ( ',' formal_variable_param )* end -> ^( FPAR ( formal_variable_param )+ ) )
                 # sdl92.g:270:17: FPAR formal_variable_param ( ',' formal_variable_param )* end
-                pass 
-                FPAR109=self.match(self.input, FPAR, self.FOLLOW_FPAR_in_fpar2959) 
+                pass
+                FPAR109=self.match(self.input, FPAR, self.FOLLOW_FPAR_in_fpar2959)
                 if self._state.backtracking == 0:
                     stream_FPAR.add(FPAR109)
                 self._state.following.append(self.FOLLOW_formal_variable_param_in_fpar2961)
@@ -3560,8 +3560,8 @@ class sdl92Parser(Parser):
 
                     if alt34 == 1:
                         # sdl92.g:271:18: ',' formal_variable_param
-                        pass 
-                        char_literal111=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_fpar2980) 
+                        pass
+                        char_literal111=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_fpar2980)
                         if self._state.backtracking == 0:
                             stream_COMMA.add(char_literal111)
                         self._state.following.append(self.FOLLOW_formal_variable_param_in_fpar2982)
@@ -3583,11 +3583,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: formal_variable_param, FPAR
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -3681,7 +3681,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:277:9: ( ( INOUT | IN )? variable_id ( ',' variable_id )* sort -> ^( PARAM ( INOUT )? ( IN )? ( variable_id )+ sort ) )
                 # sdl92.g:277:17: ( INOUT | IN )? variable_id ( ',' variable_id )* sort
-                pass 
+                pass
                 # sdl92.g:277:17: ( INOUT | IN )?
                 alt35 = 3
                 LA35_0 = self.input.LA(1)
@@ -3692,16 +3692,16 @@ class sdl92Parser(Parser):
                     alt35 = 2
                 if alt35 == 1:
                     # sdl92.g:277:18: INOUT
-                    pass 
-                    INOUT114=self.match(self.input, INOUT, self.FOLLOW_INOUT_in_formal_variable_param3048) 
+                    pass
+                    INOUT114=self.match(self.input, INOUT, self.FOLLOW_INOUT_in_formal_variable_param3048)
                     if self._state.backtracking == 0:
                         stream_INOUT.add(INOUT114)
 
 
                 elif alt35 == 2:
                     # sdl92.g:277:26: IN
-                    pass 
-                    IN115=self.match(self.input, IN, self.FOLLOW_IN_in_formal_variable_param3052) 
+                    pass
+                    IN115=self.match(self.input, IN, self.FOLLOW_IN_in_formal_variable_param3052)
                     if self._state.backtracking == 0:
                         stream_IN.add(IN115)
 
@@ -3724,8 +3724,8 @@ class sdl92Parser(Parser):
 
                     if alt36 == 1:
                         # sdl92.g:278:30: ',' variable_id
-                        pass 
-                        char_literal117=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_formal_variable_param3075) 
+                        pass
+                        char_literal117=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_formal_variable_param3075)
                         if self._state.backtracking == 0:
                             stream_COMMA.add(char_literal117)
                         self._state.following.append(self.FOLLOW_variable_id_in_formal_variable_param3077)
@@ -3747,11 +3747,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: IN, sort, variable_id, INOUT
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -3850,7 +3850,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:284:9: ( cif ( content )? cif_end_text -> ^( TEXTAREA cif ( content )? cif_end_text ) )
                 # sdl92.g:284:17: cif ( content )? cif_end_text
-                pass 
+                pass
                 self._state.following.append(self.FOLLOW_cif_in_text_area3135)
                 cif120 = self.cif()
 
@@ -3870,7 +3870,7 @@ class sdl92Parser(Parser):
                     alt37 = 1
                 if alt37 == 1:
                     # sdl92.g:0:0: content
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_content_in_text_area3153)
                     content121 = self.content()
 
@@ -3889,11 +3889,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: cif_end_text, content, cif
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -3996,14 +3996,14 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:293:9: ( ( procedure | use_clause | signal_declaration | fpar | timer_declaration | syntype_definition | newtype_definition | variable_definition | synonym_definition )* -> ^( TEXTAREA_CONTENT ( fpar )* ( procedure )* ( variable_definition )* ( syntype_definition )* ( newtype_definition )* ( timer_declaration )* ( signal_declaration )* ( use_clause )* ( synonym_definition )* ) )
                 # sdl92.g:293:18: ( procedure | use_clause | signal_declaration | fpar | timer_declaration | syntype_definition | newtype_definition | variable_definition | synonym_definition )*
-                pass 
+                pass
                 # sdl92.g:293:18: ( procedure | use_clause | signal_declaration | fpar | timer_declaration | syntype_definition | newtype_definition | variable_definition | synonym_definition )*
                 while True: #loop38
                     alt38 = 10
                     alt38 = self.dfa38.predict(self.input)
                     if alt38 == 1:
                         # sdl92.g:293:19: procedure
-                        pass 
+                        pass
                         self._state.following.append(self.FOLLOW_procedure_in_content3225)
                         procedure123 = self.procedure()
 
@@ -4014,7 +4014,7 @@ class sdl92Parser(Parser):
 
                     elif alt38 == 2:
                         # sdl92.g:294:20: use_clause
-                        pass 
+                        pass
                         self._state.following.append(self.FOLLOW_use_clause_in_content3246)
                         use_clause124 = self.use_clause()
 
@@ -4025,7 +4025,7 @@ class sdl92Parser(Parser):
 
                     elif alt38 == 3:
                         # sdl92.g:295:20: signal_declaration
-                        pass 
+                        pass
                         self._state.following.append(self.FOLLOW_signal_declaration_in_content3267)
                         signal_declaration125 = self.signal_declaration()
 
@@ -4036,7 +4036,7 @@ class sdl92Parser(Parser):
 
                     elif alt38 == 4:
                         # sdl92.g:296:20: fpar
-                        pass 
+                        pass
                         self._state.following.append(self.FOLLOW_fpar_in_content3288)
                         fpar126 = self.fpar()
 
@@ -4047,7 +4047,7 @@ class sdl92Parser(Parser):
 
                     elif alt38 == 5:
                         # sdl92.g:297:20: timer_declaration
-                        pass 
+                        pass
                         self._state.following.append(self.FOLLOW_timer_declaration_in_content3309)
                         timer_declaration127 = self.timer_declaration()
 
@@ -4058,7 +4058,7 @@ class sdl92Parser(Parser):
 
                     elif alt38 == 6:
                         # sdl92.g:298:20: syntype_definition
-                        pass 
+                        pass
                         self._state.following.append(self.FOLLOW_syntype_definition_in_content3330)
                         syntype_definition128 = self.syntype_definition()
 
@@ -4069,7 +4069,7 @@ class sdl92Parser(Parser):
 
                     elif alt38 == 7:
                         # sdl92.g:299:20: newtype_definition
-                        pass 
+                        pass
                         self._state.following.append(self.FOLLOW_newtype_definition_in_content3351)
                         newtype_definition129 = self.newtype_definition()
 
@@ -4080,7 +4080,7 @@ class sdl92Parser(Parser):
 
                     elif alt38 == 8:
                         # sdl92.g:300:20: variable_definition
-                        pass 
+                        pass
                         self._state.following.append(self.FOLLOW_variable_definition_in_content3372)
                         variable_definition130 = self.variable_definition()
 
@@ -4091,7 +4091,7 @@ class sdl92Parser(Parser):
 
                     elif alt38 == 9:
                         # sdl92.g:301:20: synonym_definition
-                        pass 
+                        pass
                         self._state.following.append(self.FOLLOW_synonym_definition_in_content3393)
                         synonym_definition131 = self.synonym_definition()
 
@@ -4105,11 +4105,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: synonym_definition, timer_declaration, fpar, procedure, newtype_definition, signal_declaration, use_clause, variable_definition, syntype_definition
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -4245,8 +4245,8 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:308:9: ( TIMER timer_id ( ',' timer_id )* end -> ^( TIMER ( timer_id )+ ) )
                 # sdl92.g:308:17: TIMER timer_id ( ',' timer_id )* end
-                pass 
-                TIMER132=self.match(self.input, TIMER, self.FOLLOW_TIMER_in_timer_declaration3503) 
+                pass
+                TIMER132=self.match(self.input, TIMER, self.FOLLOW_TIMER_in_timer_declaration3503)
                 if self._state.backtracking == 0:
                     stream_TIMER.add(TIMER132)
                 self._state.following.append(self.FOLLOW_timer_id_in_timer_declaration3505)
@@ -4266,8 +4266,8 @@ class sdl92Parser(Parser):
 
                     if alt39 == 1:
                         # sdl92.g:309:18: ',' timer_id
-                        pass 
-                        char_literal134=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_timer_declaration3524) 
+                        pass
+                        char_literal134=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_timer_declaration3524)
                         if self._state.backtracking == 0:
                             stream_COMMA.add(char_literal134)
                         self._state.following.append(self.FOLLOW_timer_id_in_timer_declaration3526)
@@ -4289,11 +4289,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: TIMER, timer_id
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -4401,8 +4401,8 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:314:9: ( SYNTYPE syntype_name '=' parent_sort ( CONSTANTS ( range_condition ( ',' range_condition )* ) )? ENDSYNTYPE ( syntype_name )? end -> ^( SYNTYPE syntype_name parent_sort ( range_condition )* ) )
                 # sdl92.g:314:17: SYNTYPE syntype_name '=' parent_sort ( CONSTANTS ( range_condition ( ',' range_condition )* ) )? ENDSYNTYPE ( syntype_name )? end
-                pass 
-                SYNTYPE137=self.match(self.input, SYNTYPE, self.FOLLOW_SYNTYPE_in_syntype_definition3590) 
+                pass
+                SYNTYPE137=self.match(self.input, SYNTYPE, self.FOLLOW_SYNTYPE_in_syntype_definition3590)
                 if self._state.backtracking == 0:
                     stream_SYNTYPE.add(SYNTYPE137)
                 self._state.following.append(self.FOLLOW_syntype_name_in_syntype_definition3592)
@@ -4411,7 +4411,7 @@ class sdl92Parser(Parser):
                 self._state.following.pop()
                 if self._state.backtracking == 0:
                     stream_syntype_name.add(syntype_name138.tree)
-                char_literal139=self.match(self.input, EQ, self.FOLLOW_EQ_in_syntype_definition3594) 
+                char_literal139=self.match(self.input, EQ, self.FOLLOW_EQ_in_syntype_definition3594)
                 if self._state.backtracking == 0:
                     stream_EQ.add(char_literal139)
                 self._state.following.append(self.FOLLOW_parent_sort_in_syntype_definition3596)
@@ -4428,13 +4428,13 @@ class sdl92Parser(Parser):
                     alt41 = 1
                 if alt41 == 1:
                     # sdl92.g:315:18: CONSTANTS ( range_condition ( ',' range_condition )* )
-                    pass 
-                    CONSTANTS141=self.match(self.input, CONSTANTS, self.FOLLOW_CONSTANTS_in_syntype_definition3615) 
+                    pass
+                    CONSTANTS141=self.match(self.input, CONSTANTS, self.FOLLOW_CONSTANTS_in_syntype_definition3615)
                     if self._state.backtracking == 0:
                         stream_CONSTANTS.add(CONSTANTS141)
                     # sdl92.g:315:28: ( range_condition ( ',' range_condition )* )
                     # sdl92.g:315:29: range_condition ( ',' range_condition )*
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_range_condition_in_syntype_definition3618)
                     range_condition142 = self.range_condition()
 
@@ -4452,8 +4452,8 @@ class sdl92Parser(Parser):
 
                         if alt40 == 1:
                             # sdl92.g:315:46: ',' range_condition
-                            pass 
-                            char_literal143=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_syntype_definition3621) 
+                            pass
+                            char_literal143=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_syntype_definition3621)
                             if self._state.backtracking == 0:
                                 stream_COMMA.add(char_literal143)
                             self._state.following.append(self.FOLLOW_range_condition_in_syntype_definition3623)
@@ -4472,7 +4472,7 @@ class sdl92Parser(Parser):
 
 
 
-                ENDSYNTYPE145=self.match(self.input, ENDSYNTYPE, self.FOLLOW_ENDSYNTYPE_in_syntype_definition3647) 
+                ENDSYNTYPE145=self.match(self.input, ENDSYNTYPE, self.FOLLOW_ENDSYNTYPE_in_syntype_definition3647)
                 if self._state.backtracking == 0:
                     stream_ENDSYNTYPE.add(ENDSYNTYPE145)
                 # sdl92.g:316:28: ( syntype_name )?
@@ -4483,7 +4483,7 @@ class sdl92Parser(Parser):
                     alt42 = 1
                 if alt42 == 1:
                     # sdl92.g:0:0: syntype_name
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_syntype_name_in_syntype_definition3649)
                     syntype_name146 = self.syntype_name()
 
@@ -4502,11 +4502,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: parent_sort, SYNTYPE, range_condition, syntype_name
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -4585,7 +4585,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:320:9: ( sort )
                 # sdl92.g:320:17: sort
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 self._state.following.append(self.FOLLOW_sort_in_syntype_name3700)
@@ -4642,7 +4642,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:323:9: ( sort )
                 # sdl92.g:323:17: sort
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 self._state.following.append(self.FOLLOW_sort_in_parent_sort3722)
@@ -4716,8 +4716,8 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:326:9: ( NEWTYPE type_name ( array_definition | structure_definition )? ENDNEWTYPE ( type_name )? end -> ^( NEWTYPE type_name ( array_definition )* ( structure_definition )* ) )
                 # sdl92.g:326:17: NEWTYPE type_name ( array_definition | structure_definition )? ENDNEWTYPE ( type_name )? end
-                pass 
-                NEWTYPE150=self.match(self.input, NEWTYPE, self.FOLLOW_NEWTYPE_in_newtype_definition3744) 
+                pass
+                NEWTYPE150=self.match(self.input, NEWTYPE, self.FOLLOW_NEWTYPE_in_newtype_definition3744)
                 if self._state.backtracking == 0:
                     stream_NEWTYPE.add(NEWTYPE150)
                 self._state.following.append(self.FOLLOW_type_name_in_newtype_definition3746)
@@ -4736,7 +4736,7 @@ class sdl92Parser(Parser):
                     alt43 = 2
                 if alt43 == 1:
                     # sdl92.g:326:36: array_definition
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_array_definition_in_newtype_definition3749)
                     array_definition152 = self.array_definition()
 
@@ -4747,7 +4747,7 @@ class sdl92Parser(Parser):
 
                 elif alt43 == 2:
                     # sdl92.g:326:53: structure_definition
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_structure_definition_in_newtype_definition3751)
                     structure_definition153 = self.structure_definition()
 
@@ -4757,7 +4757,7 @@ class sdl92Parser(Parser):
 
 
 
-                ENDNEWTYPE154=self.match(self.input, ENDNEWTYPE, self.FOLLOW_ENDNEWTYPE_in_newtype_definition3771) 
+                ENDNEWTYPE154=self.match(self.input, ENDNEWTYPE, self.FOLLOW_ENDNEWTYPE_in_newtype_definition3771)
                 if self._state.backtracking == 0:
                     stream_ENDNEWTYPE.add(ENDNEWTYPE154)
                 # sdl92.g:327:28: ( type_name )?
@@ -4768,7 +4768,7 @@ class sdl92Parser(Parser):
                     alt44 = 1
                 if alt44 == 1:
                     # sdl92.g:0:0: type_name
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_type_name_in_newtype_definition3773)
                     type_name155 = self.type_name()
 
@@ -4787,11 +4787,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: type_name, structure_definition, array_definition, NEWTYPE
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -4875,7 +4875,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:332:9: ( sort )
                 # sdl92.g:332:17: sort
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 self._state.following.append(self.FOLLOW_sort_in_type_name3826)
@@ -4946,11 +4946,11 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:335:9: ( ARRAY '(' sort ',' sort ')' -> ^( ARRAY sort sort ) )
                 # sdl92.g:335:17: ARRAY '(' sort ',' sort ')'
-                pass 
-                ARRAY158=self.match(self.input, ARRAY, self.FOLLOW_ARRAY_in_array_definition3848) 
+                pass
+                ARRAY158=self.match(self.input, ARRAY, self.FOLLOW_ARRAY_in_array_definition3848)
                 if self._state.backtracking == 0:
                     stream_ARRAY.add(ARRAY158)
-                char_literal159=self.match(self.input, L_PAREN, self.FOLLOW_L_PAREN_in_array_definition3850) 
+                char_literal159=self.match(self.input, L_PAREN, self.FOLLOW_L_PAREN_in_array_definition3850)
                 if self._state.backtracking == 0:
                     stream_L_PAREN.add(char_literal159)
                 self._state.following.append(self.FOLLOW_sort_in_array_definition3852)
@@ -4959,7 +4959,7 @@ class sdl92Parser(Parser):
                 self._state.following.pop()
                 if self._state.backtracking == 0:
                     stream_sort.add(sort160.tree)
-                char_literal161=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_array_definition3854) 
+                char_literal161=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_array_definition3854)
                 if self._state.backtracking == 0:
                     stream_COMMA.add(char_literal161)
                 self._state.following.append(self.FOLLOW_sort_in_array_definition3856)
@@ -4968,17 +4968,17 @@ class sdl92Parser(Parser):
                 self._state.following.pop()
                 if self._state.backtracking == 0:
                     stream_sort.add(sort162.tree)
-                char_literal163=self.match(self.input, R_PAREN, self.FOLLOW_R_PAREN_in_array_definition3858) 
+                char_literal163=self.match(self.input, R_PAREN, self.FOLLOW_R_PAREN_in_array_definition3858)
                 if self._state.backtracking == 0:
                     stream_R_PAREN.add(char_literal163)
 
                 # AST Rewrite
                 # elements: sort, ARRAY, sort
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -5057,8 +5057,8 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:339:9: ( STRUCT field_list end -> ^( STRUCT field_list ) )
                 # sdl92.g:339:17: STRUCT field_list end
-                pass 
-                STRUCT164=self.match(self.input, STRUCT, self.FOLLOW_STRUCT_in_structure_definition3903) 
+                pass
+                STRUCT164=self.match(self.input, STRUCT, self.FOLLOW_STRUCT_in_structure_definition3903)
                 if self._state.backtracking == 0:
                     stream_STRUCT.add(STRUCT164)
                 self._state.following.append(self.FOLLOW_field_list_in_structure_definition3905)
@@ -5076,11 +5076,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: STRUCT, field_list
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -5157,7 +5157,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:343:9: ( field_definition ( end field_definition )* -> ^( FIELDS ( field_definition )+ ) )
                 # sdl92.g:343:17: field_definition ( end field_definition )*
-                pass 
+                pass
                 self._state.following.append(self.FOLLOW_field_definition_in_field_list3950)
                 field_definition167 = self.field_definition()
 
@@ -5170,7 +5170,7 @@ class sdl92Parser(Parser):
                     alt45 = self.dfa45.predict(self.input)
                     if alt45 == 1:
                         # sdl92.g:343:35: end field_definition
-                        pass 
+                        pass
                         self._state.following.append(self.FOLLOW_end_in_field_list3953)
                         end168 = self.end()
 
@@ -5190,11 +5190,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: field_definition
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -5282,7 +5282,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:347:9: ( field_name ( ',' field_name )* sort -> ^( FIELD ( field_name )+ sort ) )
                 # sdl92.g:347:17: field_name ( ',' field_name )* sort
-                pass 
+                pass
                 self._state.following.append(self.FOLLOW_field_name_in_field_definition4001)
                 field_name170 = self.field_name()
 
@@ -5300,8 +5300,8 @@ class sdl92Parser(Parser):
 
                     if alt46 == 1:
                         # sdl92.g:347:29: ',' field_name
-                        pass 
-                        char_literal171=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_field_definition4004) 
+                        pass
+                        char_literal171=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_field_definition4004)
                         if self._state.backtracking == 0:
                             stream_COMMA.add(char_literal171)
                         self._state.following.append(self.FOLLOW_field_name_in_field_definition4006)
@@ -5323,11 +5323,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: field_name, sort
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -5419,8 +5419,8 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:351:9: ( DCL variables_of_sort ( ',' variables_of_sort )* end -> ^( DCL ( variables_of_sort )+ ) )
                 # sdl92.g:351:17: DCL variables_of_sort ( ',' variables_of_sort )* end
-                pass 
-                DCL174=self.match(self.input, DCL, self.FOLLOW_DCL_in_variable_definition4056) 
+                pass
+                DCL174=self.match(self.input, DCL, self.FOLLOW_DCL_in_variable_definition4056)
                 if self._state.backtracking == 0:
                     stream_DCL.add(DCL174)
                 self._state.following.append(self.FOLLOW_variables_of_sort_in_variable_definition4058)
@@ -5440,8 +5440,8 @@ class sdl92Parser(Parser):
 
                     if alt47 == 1:
                         # sdl92.g:352:18: ',' variables_of_sort
-                        pass 
-                        char_literal176=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_variable_definition4077) 
+                        pass
+                        char_literal176=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_variable_definition4077)
                         if self._state.backtracking == 0:
                             stream_COMMA.add(char_literal176)
                         self._state.following.append(self.FOLLOW_variables_of_sort_in_variable_definition4079)
@@ -5463,11 +5463,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: variables_of_sort, DCL
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -5547,7 +5547,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:357:9: ( internal_synonym_definition )
                 # sdl92.g:357:17: internal_synonym_definition
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 self._state.following.append(self.FOLLOW_internal_synonym_definition_in_synonym_definition4143)
@@ -5615,8 +5615,8 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:360:9: ( SYNONYM synonym_definition_item ( ',' synonym_definition_item )* end -> ^( SYNONYM_LIST ( synonym_definition_item )+ ) )
                 # sdl92.g:360:17: SYNONYM synonym_definition_item ( ',' synonym_definition_item )* end
-                pass 
-                SYNONYM180=self.match(self.input, SYNONYM, self.FOLLOW_SYNONYM_in_internal_synonym_definition4165) 
+                pass
+                SYNONYM180=self.match(self.input, SYNONYM, self.FOLLOW_SYNONYM_in_internal_synonym_definition4165)
                 if self._state.backtracking == 0:
                     stream_SYNONYM.add(SYNONYM180)
                 self._state.following.append(self.FOLLOW_synonym_definition_item_in_internal_synonym_definition4167)
@@ -5636,8 +5636,8 @@ class sdl92Parser(Parser):
 
                     if alt48 == 1:
                         # sdl92.g:360:50: ',' synonym_definition_item
-                        pass 
-                        char_literal182=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_internal_synonym_definition4170) 
+                        pass
+                        char_literal182=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_internal_synonym_definition4170)
                         if self._state.backtracking == 0:
                             stream_COMMA.add(char_literal182)
                         self._state.following.append(self.FOLLOW_synonym_definition_item_in_internal_synonym_definition4172)
@@ -5659,11 +5659,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: synonym_definition_item
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -5751,7 +5751,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:365:9: ( sort sort '=' ground_expression -> ^( SYNONYM sort sort ground_expression ) )
                 # sdl92.g:365:17: sort sort '=' ground_expression
-                pass 
+                pass
                 self._state.following.append(self.FOLLOW_sort_in_synonym_definition_item4236)
                 sort185 = self.sort()
 
@@ -5764,7 +5764,7 @@ class sdl92Parser(Parser):
                 self._state.following.pop()
                 if self._state.backtracking == 0:
                     stream_sort.add(sort186.tree)
-                char_literal187=self.match(self.input, EQ, self.FOLLOW_EQ_in_synonym_definition_item4240) 
+                char_literal187=self.match(self.input, EQ, self.FOLLOW_EQ_in_synonym_definition_item4240)
                 if self._state.backtracking == 0:
                     stream_EQ.add(char_literal187)
                 self._state.following.append(self.FOLLOW_ground_expression_in_synonym_definition_item4242)
@@ -5776,11 +5776,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: ground_expression, sort, sort
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -5868,7 +5868,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:369:9: ( variable_id ( ',' variable_id )* sort ( ':=' ground_expression )? -> ^( VARIABLES ( variable_id )+ sort ( ground_expression )? ) )
                 # sdl92.g:369:17: variable_id ( ',' variable_id )* sort ( ':=' ground_expression )?
-                pass 
+                pass
                 self._state.following.append(self.FOLLOW_variable_id_in_variables_of_sort4289)
                 variable_id189 = self.variable_id()
 
@@ -5886,8 +5886,8 @@ class sdl92Parser(Parser):
 
                     if alt49 == 1:
                         # sdl92.g:369:30: ',' variable_id
-                        pass 
-                        char_literal190=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_variables_of_sort4292) 
+                        pass
+                        char_literal190=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_variables_of_sort4292)
                         if self._state.backtracking == 0:
                             stream_COMMA.add(char_literal190)
                         self._state.following.append(self.FOLLOW_variable_id_in_variables_of_sort4294)
@@ -5914,8 +5914,8 @@ class sdl92Parser(Parser):
                     alt50 = 1
                 if alt50 == 1:
                     # sdl92.g:369:54: ':=' ground_expression
-                    pass 
-                    string_literal193=self.match(self.input, ASSIG_OP, self.FOLLOW_ASSIG_OP_in_variables_of_sort4301) 
+                    pass
+                    string_literal193=self.match(self.input, ASSIG_OP, self.FOLLOW_ASSIG_OP_in_variables_of_sort4301)
                     if self._state.backtracking == 0:
                         stream_ASSIG_OP.add(string_literal193)
                     self._state.following.append(self.FOLLOW_ground_expression_in_variables_of_sort4303)
@@ -5930,11 +5930,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: variable_id, ground_expression, sort
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -6021,7 +6021,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:374:9: ( expression -> ^( GROUND expression ) )
                 # sdl92.g:374:17: expression
-                pass 
+                pass
                 self._state.following.append(self.FOLLOW_expression_in_ground_expression4355)
                 expression195 = self.expression()
 
@@ -6031,11 +6031,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: expression
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -6119,20 +6119,20 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:379:9: ( '(' initial_number= INT ',' maximum_number= INT ')' -> ^( NUMBER_OF_INSTANCES $initial_number $maximum_number) )
                 # sdl92.g:379:17: '(' initial_number= INT ',' maximum_number= INT ')'
-                pass 
-                char_literal196=self.match(self.input, L_PAREN, self.FOLLOW_L_PAREN_in_number_of_instances4399) 
+                pass
+                char_literal196=self.match(self.input, L_PAREN, self.FOLLOW_L_PAREN_in_number_of_instances4399)
                 if self._state.backtracking == 0:
                     stream_L_PAREN.add(char_literal196)
-                initial_number=self.match(self.input, INT, self.FOLLOW_INT_in_number_of_instances4403) 
+                initial_number=self.match(self.input, INT, self.FOLLOW_INT_in_number_of_instances4403)
                 if self._state.backtracking == 0:
                     stream_INT.add(initial_number)
-                char_literal197=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_number_of_instances4405) 
+                char_literal197=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_number_of_instances4405)
                 if self._state.backtracking == 0:
                     stream_COMMA.add(char_literal197)
-                maximum_number=self.match(self.input, INT, self.FOLLOW_INT_in_number_of_instances4409) 
+                maximum_number=self.match(self.input, INT, self.FOLLOW_INT_in_number_of_instances4409)
                 if self._state.backtracking == 0:
                     stream_INT.add(maximum_number)
-                char_literal198=self.match(self.input, R_PAREN, self.FOLLOW_R_PAREN_in_number_of_instances4411) 
+                char_literal198=self.match(self.input, R_PAREN, self.FOLLOW_R_PAREN_in_number_of_instances4411)
                 if self._state.backtracking == 0:
                     stream_R_PAREN.add(char_literal198)
 
@@ -6140,9 +6140,9 @@ class sdl92Parser(Parser):
                 # elements: maximum_number, initial_number
                 # token labels: maximum_number, initial_number
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -6221,7 +6221,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:384:9: ( ( start )? ( state | floating_label )* )
                 # sdl92.g:384:17: ( start )? ( state | floating_label )*
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 # sdl92.g:384:17: ( start )?
@@ -6229,7 +6229,7 @@ class sdl92Parser(Parser):
                 alt51 = self.dfa51.predict(self.input)
                 if alt51 == 1:
                     # sdl92.g:0:0: start
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_start_in_processBody4459)
                     start199 = self.start()
 
@@ -6245,7 +6245,7 @@ class sdl92Parser(Parser):
                     alt52 = self.dfa52.predict(self.input)
                     if alt52 == 1:
                         # sdl92.g:384:25: state
-                        pass 
+                        pass
                         self._state.following.append(self.FOLLOW_state_in_processBody4463)
                         state200 = self.state()
 
@@ -6256,7 +6256,7 @@ class sdl92Parser(Parser):
 
                     elif alt52 == 2:
                         # sdl92.g:384:33: floating_label
-                        pass 
+                        pass
                         self._state.following.append(self.FOLLOW_floating_label_in_processBody4467)
                         floating_label201 = self.floating_label()
 
@@ -6330,7 +6330,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:388:9: ( ( cif )? ( hyperlink )? START (name= state_entry_point_name )? end ( transition )? -> ^( START ( cif )? ( hyperlink )? ( $name)? ( end )? ( transition )? ) )
                 # sdl92.g:388:17: ( cif )? ( hyperlink )? START (name= state_entry_point_name )? end ( transition )?
-                pass 
+                pass
                 # sdl92.g:388:17: ( cif )?
                 alt53 = 2
                 LA53_0 = self.input.LA(1)
@@ -6342,7 +6342,7 @@ class sdl92Parser(Parser):
                         alt53 = 1
                 if alt53 == 1:
                     # sdl92.g:0:0: cif
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_cif_in_start4492)
                     cif202 = self.cif()
 
@@ -6360,7 +6360,7 @@ class sdl92Parser(Parser):
                     alt54 = 1
                 if alt54 == 1:
                     # sdl92.g:0:0: hyperlink
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_hyperlink_in_start4511)
                     hyperlink203 = self.hyperlink()
 
@@ -6370,7 +6370,7 @@ class sdl92Parser(Parser):
 
 
 
-                START204=self.match(self.input, START, self.FOLLOW_START_in_start4530) 
+                START204=self.match(self.input, START, self.FOLLOW_START_in_start4530)
                 if self._state.backtracking == 0:
                     stream_START.add(START204)
                 # sdl92.g:390:27: (name= state_entry_point_name )?
@@ -6381,7 +6381,7 @@ class sdl92Parser(Parser):
                     alt55 = 1
                 if alt55 == 1:
                     # sdl92.g:0:0: name= state_entry_point_name
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_state_entry_point_name_in_start4534)
                     name = self.state_entry_point_name()
 
@@ -6402,7 +6402,7 @@ class sdl92Parser(Parser):
                 alt56 = self.dfa56.predict(self.input)
                 if alt56 == 1:
                     # sdl92.g:0:0: transition
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_transition_in_start4555)
                     transition206 = self.transition()
 
@@ -6415,11 +6415,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: name, cif, hyperlink, transition, START, end
-                # token labels: 
+                # token labels:
                 # rule labels: retval, name
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -6550,7 +6550,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:396:9: ( ( cif )? ( hyperlink )? CONNECTION connector_name ':' ( transition )? ( cif_end_label )? ENDCONNECTION SEMI -> ^( FLOATING_LABEL ( cif )? ( hyperlink )? connector_name ( transition )? ) )
                 # sdl92.g:396:17: ( cif )? ( hyperlink )? CONNECTION connector_name ':' ( transition )? ( cif_end_label )? ENDCONNECTION SEMI
-                pass 
+                pass
                 # sdl92.g:396:17: ( cif )?
                 alt57 = 2
                 LA57_0 = self.input.LA(1)
@@ -6562,7 +6562,7 @@ class sdl92Parser(Parser):
                         alt57 = 1
                 if alt57 == 1:
                     # sdl92.g:0:0: cif
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_cif_in_floating_label4614)
                     cif207 = self.cif()
 
@@ -6580,7 +6580,7 @@ class sdl92Parser(Parser):
                     alt58 = 1
                 if alt58 == 1:
                     # sdl92.g:0:0: hyperlink
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_hyperlink_in_floating_label4633)
                     hyperlink208 = self.hyperlink()
 
@@ -6590,7 +6590,7 @@ class sdl92Parser(Parser):
 
 
 
-                CONNECTION209=self.match(self.input, CONNECTION, self.FOLLOW_CONNECTION_in_floating_label4652) 
+                CONNECTION209=self.match(self.input, CONNECTION, self.FOLLOW_CONNECTION_in_floating_label4652)
                 if self._state.backtracking == 0:
                     stream_CONNECTION.add(CONNECTION209)
                 self._state.following.append(self.FOLLOW_connector_name_in_floating_label4654)
@@ -6599,7 +6599,7 @@ class sdl92Parser(Parser):
                 self._state.following.pop()
                 if self._state.backtracking == 0:
                     stream_connector_name.add(connector_name210.tree)
-                char_literal211=self.match(self.input, 216, self.FOLLOW_216_in_floating_label4656) 
+                char_literal211=self.match(self.input, 216, self.FOLLOW_216_in_floating_label4656)
                 if self._state.backtracking == 0:
                     stream_216.add(char_literal211)
                 # sdl92.g:399:17: ( transition )?
@@ -6615,7 +6615,7 @@ class sdl92Parser(Parser):
                     alt59 = 1
                 if alt59 == 1:
                     # sdl92.g:0:0: transition
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_transition_in_floating_label4674)
                     transition212 = self.transition()
 
@@ -6633,7 +6633,7 @@ class sdl92Parser(Parser):
                     alt60 = 1
                 if alt60 == 1:
                     # sdl92.g:0:0: cif_end_label
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_cif_end_label_in_floating_label4693)
                     cif_end_label213 = self.cif_end_label()
 
@@ -6643,20 +6643,20 @@ class sdl92Parser(Parser):
 
 
 
-                ENDCONNECTION214=self.match(self.input, ENDCONNECTION, self.FOLLOW_ENDCONNECTION_in_floating_label4712) 
+                ENDCONNECTION214=self.match(self.input, ENDCONNECTION, self.FOLLOW_ENDCONNECTION_in_floating_label4712)
                 if self._state.backtracking == 0:
                     stream_ENDCONNECTION.add(ENDCONNECTION214)
-                SEMI215=self.match(self.input, SEMI, self.FOLLOW_SEMI_in_floating_label4714) 
+                SEMI215=self.match(self.input, SEMI, self.FOLLOW_SEMI_in_floating_label4714)
                 if self._state.backtracking == 0:
                     stream_SEMI.add(SEMI215)
 
                 # AST Rewrite
                 # elements: cif, connector_name, hyperlink, transition
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -6769,7 +6769,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:406:9: ( ( cif )? ( hyperlink )? STATE statelist e= end ( state_part )* ENDSTATE ( statename )? f= end -> ^( STATE ( cif )? ( hyperlink )? ( $e)? statelist ( state_part )* ) )
                 # sdl92.g:406:17: ( cif )? ( hyperlink )? STATE statelist e= end ( state_part )* ENDSTATE ( statename )? f= end
-                pass 
+                pass
                 # sdl92.g:406:17: ( cif )?
                 alt61 = 2
                 LA61_0 = self.input.LA(1)
@@ -6781,7 +6781,7 @@ class sdl92Parser(Parser):
                         alt61 = 1
                 if alt61 == 1:
                     # sdl92.g:0:0: cif
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_cif_in_state4767)
                     cif216 = self.cif()
 
@@ -6799,7 +6799,7 @@ class sdl92Parser(Parser):
                     alt62 = 1
                 if alt62 == 1:
                     # sdl92.g:0:0: hyperlink
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_hyperlink_in_state4786)
                     hyperlink217 = self.hyperlink()
 
@@ -6809,7 +6809,7 @@ class sdl92Parser(Parser):
 
 
 
-                STATE218=self.match(self.input, STATE, self.FOLLOW_STATE_in_state4805) 
+                STATE218=self.match(self.input, STATE, self.FOLLOW_STATE_in_state4805)
                 if self._state.backtracking == 0:
                     stream_STATE.add(STATE218)
                 self._state.following.append(self.FOLLOW_statelist_in_state4807)
@@ -6835,7 +6835,7 @@ class sdl92Parser(Parser):
 
                     if alt63 == 1:
                         # sdl92.g:409:18: state_part
-                        pass 
+                        pass
                         self._state.following.append(self.FOLLOW_state_part_in_state4830)
                         state_part220 = self.state_part()
 
@@ -6846,7 +6846,7 @@ class sdl92Parser(Parser):
 
                     else:
                         break #loop63
-                ENDSTATE221=self.match(self.input, ENDSTATE, self.FOLLOW_ENDSTATE_in_state4850) 
+                ENDSTATE221=self.match(self.input, ENDSTATE, self.FOLLOW_ENDSTATE_in_state4850)
                 if self._state.backtracking == 0:
                     stream_ENDSTATE.add(ENDSTATE221)
                 # sdl92.g:410:26: ( statename )?
@@ -6857,7 +6857,7 @@ class sdl92Parser(Parser):
                     alt64 = 1
                 if alt64 == 1:
                     # sdl92.g:0:0: statename
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_statename_in_state4852)
                     statename222 = self.statename()
 
@@ -6876,11 +6876,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: e, statelist, state_part, STATE, cif, hyperlink
-                # token labels: 
+                # token labels:
                 # rule labels: retval, e
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -7009,13 +7009,13 @@ class sdl92Parser(Parser):
 
                 if alt67 == 1:
                     # sdl92.g:415:17: ( ( statename ) ( ',' statename )* )
-                    pass 
+                    pass
                     # sdl92.g:415:17: ( ( statename ) ( ',' statename )* )
                     # sdl92.g:415:18: ( statename ) ( ',' statename )*
-                    pass 
+                    pass
                     # sdl92.g:415:18: ( statename )
                     # sdl92.g:415:19: statename
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_statename_in_statelist4916)
                     statename223 = self.statename()
 
@@ -7036,8 +7036,8 @@ class sdl92Parser(Parser):
 
                         if alt65 == 1:
                             # sdl92.g:415:30: ',' statename
-                            pass 
-                            char_literal224=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_statelist4919) 
+                            pass
+                            char_literal224=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_statelist4919)
                             if self._state.backtracking == 0:
                                 stream_COMMA.add(char_literal224)
                             self._state.following.append(self.FOLLOW_statename_in_statelist4921)
@@ -7056,11 +7056,11 @@ class sdl92Parser(Parser):
 
                     # AST Rewrite
                     # elements: statename
-                    # token labels: 
+                    # token labels:
                     # rule labels: retval
-                    # token list labels: 
-                    # rule list labels: 
-                    # wildcard labels: 
+                    # token list labels:
+                    # rule list labels:
+                    # wildcard labels:
                     if self._state.backtracking == 0:
 
                         retval.tree = root_0
@@ -7096,8 +7096,8 @@ class sdl92Parser(Parser):
 
                 elif alt67 == 2:
                     # sdl92.g:417:19: ASTERISK ( exception_state )?
-                    pass 
-                    ASTERISK226=self.match(self.input, ASTERISK, self.FOLLOW_ASTERISK_in_statelist4966) 
+                    pass
+                    ASTERISK226=self.match(self.input, ASTERISK, self.FOLLOW_ASTERISK_in_statelist4966)
                     if self._state.backtracking == 0:
                         stream_ASTERISK.add(ASTERISK226)
                     # sdl92.g:417:28: ( exception_state )?
@@ -7108,7 +7108,7 @@ class sdl92Parser(Parser):
                         alt66 = 1
                     if alt66 == 1:
                         # sdl92.g:0:0: exception_state
-                        pass 
+                        pass
                         self._state.following.append(self.FOLLOW_exception_state_in_statelist4968)
                         exception_state227 = self.exception_state()
 
@@ -7121,11 +7121,11 @@ class sdl92Parser(Parser):
 
                     # AST Rewrite
                     # elements: ASTERISK, exception_state
-                    # token labels: 
+                    # token labels:
                     # rule labels: retval
-                    # token list labels: 
-                    # rule list labels: 
-                    # wildcard labels: 
+                    # token list labels:
+                    # rule list labels:
+                    # wildcard labels:
                     if self._state.backtracking == 0:
 
                         retval.tree = root_0
@@ -7212,8 +7212,8 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:422:9: ( '(' statename ( ',' statename )* ')' -> ( statename )+ )
                 # sdl92.g:422:17: '(' statename ( ',' statename )* ')'
-                pass 
-                char_literal228=self.match(self.input, L_PAREN, self.FOLLOW_L_PAREN_in_exception_state5014) 
+                pass
+                char_literal228=self.match(self.input, L_PAREN, self.FOLLOW_L_PAREN_in_exception_state5014)
                 if self._state.backtracking == 0:
                     stream_L_PAREN.add(char_literal228)
                 self._state.following.append(self.FOLLOW_statename_in_exception_state5016)
@@ -7233,8 +7233,8 @@ class sdl92Parser(Parser):
 
                     if alt68 == 1:
                         # sdl92.g:422:32: ',' statename
-                        pass 
-                        char_literal230=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_exception_state5019) 
+                        pass
+                        char_literal230=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_exception_state5019)
                         if self._state.backtracking == 0:
                             stream_COMMA.add(char_literal230)
                         self._state.following.append(self.FOLLOW_statename_in_exception_state5021)
@@ -7247,17 +7247,17 @@ class sdl92Parser(Parser):
 
                     else:
                         break #loop68
-                char_literal232=self.match(self.input, R_PAREN, self.FOLLOW_R_PAREN_in_exception_state5025) 
+                char_literal232=self.match(self.input, R_PAREN, self.FOLLOW_R_PAREN_in_exception_state5025)
                 if self._state.backtracking == 0:
                     stream_R_PAREN.add(char_literal232)
 
                 # AST Rewrite
                 # elements: statename
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -7353,8 +7353,8 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:427:9: ( STATE statename e= end SUBSTRUCTURE ( connection_points )* body= composite_state_body ENDSUBSTRUCTURE ( statename )? f= end -> ^( COMPOSITE_STATE statename ( connection_points )* $body ( $e)? ) )
                 # sdl92.g:427:17: STATE statename e= end SUBSTRUCTURE ( connection_points )* body= composite_state_body ENDSUBSTRUCTURE ( statename )? f= end
-                pass 
-                STATE233=self.match(self.input, STATE, self.FOLLOW_STATE_in_composite_state5066) 
+                pass
+                STATE233=self.match(self.input, STATE, self.FOLLOW_STATE_in_composite_state5066)
                 if self._state.backtracking == 0:
                     stream_STATE.add(STATE233)
                 self._state.following.append(self.FOLLOW_statename_in_composite_state5068)
@@ -7369,7 +7369,7 @@ class sdl92Parser(Parser):
                 self._state.following.pop()
                 if self._state.backtracking == 0:
                     stream_end.add(e.tree)
-                SUBSTRUCTURE235=self.match(self.input, SUBSTRUCTURE, self.FOLLOW_SUBSTRUCTURE_in_composite_state5090) 
+                SUBSTRUCTURE235=self.match(self.input, SUBSTRUCTURE, self.FOLLOW_SUBSTRUCTURE_in_composite_state5090)
                 if self._state.backtracking == 0:
                     stream_SUBSTRUCTURE.add(SUBSTRUCTURE235)
                 # sdl92.g:429:17: ( connection_points )*
@@ -7383,7 +7383,7 @@ class sdl92Parser(Parser):
 
                     if alt69 == 1:
                         # sdl92.g:0:0: connection_points
-                        pass 
+                        pass
                         self._state.following.append(self.FOLLOW_connection_points_in_composite_state5108)
                         connection_points236 = self.connection_points()
 
@@ -7400,7 +7400,7 @@ class sdl92Parser(Parser):
                 self._state.following.pop()
                 if self._state.backtracking == 0:
                     stream_composite_state_body.add(body.tree)
-                ENDSUBSTRUCTURE237=self.match(self.input, ENDSUBSTRUCTURE, self.FOLLOW_ENDSUBSTRUCTURE_in_composite_state5147) 
+                ENDSUBSTRUCTURE237=self.match(self.input, ENDSUBSTRUCTURE, self.FOLLOW_ENDSUBSTRUCTURE_in_composite_state5147)
                 if self._state.backtracking == 0:
                     stream_ENDSUBSTRUCTURE.add(ENDSUBSTRUCTURE237)
                 # sdl92.g:431:33: ( statename )?
@@ -7411,7 +7411,7 @@ class sdl92Parser(Parser):
                     alt70 = 1
                 if alt70 == 1:
                     # sdl92.g:0:0: statename
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_statename_in_composite_state5149)
                     statename238 = self.statename()
 
@@ -7430,11 +7430,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: e, connection_points, statename, body
-                # token labels: 
+                # token labels:
                 # rule labels: body, retval, e
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -7560,8 +7560,8 @@ class sdl92Parser(Parser):
 
                 if alt71 == 1:
                     # sdl92.g:436:17: IN state_entry_exit_points end
-                    pass 
-                    IN239=self.match(self.input, IN, self.FOLLOW_IN_in_connection_points5208) 
+                    pass
+                    IN239=self.match(self.input, IN, self.FOLLOW_IN_in_connection_points5208)
                     if self._state.backtracking == 0:
                         stream_IN.add(IN239)
                     self._state.following.append(self.FOLLOW_state_entry_exit_points_in_connection_points5210)
@@ -7579,11 +7579,11 @@ class sdl92Parser(Parser):
 
                     # AST Rewrite
                     # elements: end, IN, state_entry_exit_points
-                    # token labels: 
+                    # token labels:
                     # rule labels: retval
-                    # token list labels: 
-                    # rule list labels: 
-                    # wildcard labels: 
+                    # token list labels:
+                    # rule list labels:
+                    # wildcard labels:
                     if self._state.backtracking == 0:
 
                         retval.tree = root_0
@@ -7617,8 +7617,8 @@ class sdl92Parser(Parser):
 
                 elif alt71 == 2:
                     # sdl92.g:438:19: OUT state_entry_exit_points end
-                    pass 
-                    OUT242=self.match(self.input, OUT, self.FOLLOW_OUT_in_connection_points5256) 
+                    pass
+                    OUT242=self.match(self.input, OUT, self.FOLLOW_OUT_in_connection_points5256)
                     if self._state.backtracking == 0:
                         stream_OUT.add(OUT242)
                     self._state.following.append(self.FOLLOW_state_entry_exit_points_in_connection_points5258)
@@ -7636,11 +7636,11 @@ class sdl92Parser(Parser):
 
                     # AST Rewrite
                     # elements: end, state_entry_exit_points, OUT
-                    # token labels: 
+                    # token labels:
                     # rule labels: retval
-                    # token list labels: 
-                    # rule list labels: 
-                    # wildcard labels: 
+                    # token list labels:
+                    # rule list labels:
+                    # wildcard labels:
                     if self._state.backtracking == 0:
 
                         retval.tree = root_0
@@ -7728,8 +7728,8 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:443:9: ( '(' statename ( ',' statename )* ')' -> ( statename )+ )
                 # sdl92.g:443:17: '(' statename ( ',' statename )* ')'
-                pass 
-                char_literal245=self.match(self.input, L_PAREN, self.FOLLOW_L_PAREN_in_state_entry_exit_points5307) 
+                pass
+                char_literal245=self.match(self.input, L_PAREN, self.FOLLOW_L_PAREN_in_state_entry_exit_points5307)
                 if self._state.backtracking == 0:
                     stream_L_PAREN.add(char_literal245)
                 self._state.following.append(self.FOLLOW_statename_in_state_entry_exit_points5309)
@@ -7749,8 +7749,8 @@ class sdl92Parser(Parser):
 
                     if alt72 == 1:
                         # sdl92.g:443:32: ',' statename
-                        pass 
-                        char_literal247=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_state_entry_exit_points5312) 
+                        pass
+                        char_literal247=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_state_entry_exit_points5312)
                         if self._state.backtracking == 0:
                             stream_COMMA.add(char_literal247)
                         self._state.following.append(self.FOLLOW_statename_in_state_entry_exit_points5314)
@@ -7763,17 +7763,17 @@ class sdl92Parser(Parser):
 
                     else:
                         break #loop72
-                char_literal249=self.match(self.input, R_PAREN, self.FOLLOW_R_PAREN_in_state_entry_exit_points5318) 
+                char_literal249=self.match(self.input, R_PAREN, self.FOLLOW_R_PAREN_in_state_entry_exit_points5318)
                 if self._state.backtracking == 0:
                     stream_R_PAREN.add(char_literal249)
 
                 # AST Rewrite
                 # elements: statename
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -7857,7 +7857,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:448:9: ( ( text_area | procedure | composite_state )* ( start )* ( state | floating_label )* )
                 # sdl92.g:448:17: ( text_area | procedure | composite_state )* ( start )* ( state | floating_label )*
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 # sdl92.g:448:17: ( text_area | procedure | composite_state )*
@@ -7885,7 +7885,7 @@ class sdl92Parser(Parser):
 
                     if alt73 == 1:
                         # sdl92.g:448:18: text_area
-                        pass 
+                        pass
                         self._state.following.append(self.FOLLOW_text_area_in_composite_state_body5360)
                         text_area250 = self.text_area()
 
@@ -7896,7 +7896,7 @@ class sdl92Parser(Parser):
 
                     elif alt73 == 2:
                         # sdl92.g:448:30: procedure
-                        pass 
+                        pass
                         self._state.following.append(self.FOLLOW_procedure_in_composite_state_body5364)
                         procedure251 = self.procedure()
 
@@ -7907,7 +7907,7 @@ class sdl92Parser(Parser):
 
                     elif alt73 == 3:
                         # sdl92.g:448:42: composite_state
-                        pass 
+                        pass
                         self._state.following.append(self.FOLLOW_composite_state_in_composite_state_body5368)
                         composite_state252 = self.composite_state()
 
@@ -7924,7 +7924,7 @@ class sdl92Parser(Parser):
                     alt74 = self.dfa74.predict(self.input)
                     if alt74 == 1:
                         # sdl92.g:0:0: start
-                        pass 
+                        pass
                         self._state.following.append(self.FOLLOW_start_in_composite_state_body5388)
                         start253 = self.start()
 
@@ -7941,7 +7941,7 @@ class sdl92Parser(Parser):
                     alt75 = self.dfa75.predict(self.input)
                     if alt75 == 1:
                         # sdl92.g:449:25: state
-                        pass 
+                        pass
                         self._state.following.append(self.FOLLOW_state_in_composite_state_body5392)
                         state254 = self.state()
 
@@ -7952,7 +7952,7 @@ class sdl92Parser(Parser):
 
                     elif alt75 == 2:
                         # sdl92.g:449:33: floating_label
-                        pass 
+                        pass
                         self._state.following.append(self.FOLLOW_floating_label_in_composite_state_body5396)
                         floating_label255 = self.floating_label()
 
@@ -8022,7 +8022,7 @@ class sdl92Parser(Parser):
                 alt76 = self.dfa76.predict(self.input)
                 if alt76 == 1:
                     # sdl92.g:453:17: input_part
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     self._state.following.append(self.FOLLOW_input_part_in_state_part5421)
@@ -8035,7 +8035,7 @@ class sdl92Parser(Parser):
 
                 elif alt76 == 2:
                     # sdl92.g:455:19: save_part
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     self._state.following.append(self.FOLLOW_save_part_in_state_part5458)
@@ -8048,7 +8048,7 @@ class sdl92Parser(Parser):
 
                 elif alt76 == 3:
                     # sdl92.g:456:19: spontaneous_transition
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     self._state.following.append(self.FOLLOW_spontaneous_transition_in_state_part5493)
@@ -8061,7 +8061,7 @@ class sdl92Parser(Parser):
 
                 elif alt76 == 4:
                     # sdl92.g:457:19: continuous_signal
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     self._state.following.append(self.FOLLOW_continuous_signal_in_state_part5513)
@@ -8074,7 +8074,7 @@ class sdl92Parser(Parser):
 
                 elif alt76 == 5:
                     # sdl92.g:458:19: connect_part
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     self._state.following.append(self.FOLLOW_connect_part_in_state_part5540)
@@ -8145,7 +8145,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:463:9: ( ( cif )? ( hyperlink )? CONNECT ( connect_list )? end ( transition )? -> ^( CONNECT ( cif )? ( hyperlink )? ( connect_list )? ( end )? ( transition )? ) )
                 # sdl92.g:463:17: ( cif )? ( hyperlink )? CONNECT ( connect_list )? end ( transition )?
-                pass 
+                pass
                 # sdl92.g:463:17: ( cif )?
                 alt77 = 2
                 LA77_0 = self.input.LA(1)
@@ -8157,7 +8157,7 @@ class sdl92Parser(Parser):
                         alt77 = 1
                 if alt77 == 1:
                     # sdl92.g:0:0: cif
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_cif_in_connect_part5564)
                     cif261 = self.cif()
 
@@ -8175,7 +8175,7 @@ class sdl92Parser(Parser):
                     alt78 = 1
                 if alt78 == 1:
                     # sdl92.g:0:0: hyperlink
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_hyperlink_in_connect_part5583)
                     hyperlink262 = self.hyperlink()
 
@@ -8185,7 +8185,7 @@ class sdl92Parser(Parser):
 
 
 
-                CONNECT263=self.match(self.input, CONNECT, self.FOLLOW_CONNECT_in_connect_part5602) 
+                CONNECT263=self.match(self.input, CONNECT, self.FOLLOW_CONNECT_in_connect_part5602)
                 if self._state.backtracking == 0:
                     stream_CONNECT.add(CONNECT263)
                 # sdl92.g:465:25: ( connect_list )?
@@ -8196,7 +8196,7 @@ class sdl92Parser(Parser):
                     alt79 = 1
                 if alt79 == 1:
                     # sdl92.g:0:0: connect_list
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_connect_list_in_connect_part5604)
                     connect_list264 = self.connect_list()
 
@@ -8217,7 +8217,7 @@ class sdl92Parser(Parser):
                 alt80 = self.dfa80.predict(self.input)
                 if alt80 == 1:
                     # sdl92.g:0:0: transition
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_transition_in_connect_part5625)
                     transition266 = self.transition()
 
@@ -8230,11 +8230,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: CONNECT, end, connect_list, transition, cif, hyperlink
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -8358,7 +8358,7 @@ class sdl92Parser(Parser):
 
                 if alt82 == 1:
                     # sdl92.g:471:17: state_exit_point_name ( ',' state_exit_point_name )*
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_state_exit_point_name_in_connect_list5683)
                     state_exit_point_name267 = self.state_exit_point_name()
 
@@ -8376,8 +8376,8 @@ class sdl92Parser(Parser):
 
                         if alt81 == 1:
                             # sdl92.g:471:40: ',' state_exit_point_name
-                            pass 
-                            char_literal268=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_connect_list5686) 
+                            pass
+                            char_literal268=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_connect_list5686)
                             if self._state.backtracking == 0:
                                 stream_COMMA.add(char_literal268)
                             self._state.following.append(self.FOLLOW_state_exit_point_name_in_connect_list5688)
@@ -8393,11 +8393,11 @@ class sdl92Parser(Parser):
 
                     # AST Rewrite
                     # elements: state_exit_point_name
-                    # token labels: 
+                    # token labels:
                     # rule labels: retval
-                    # token list labels: 
-                    # rule list labels: 
-                    # wildcard labels: 
+                    # token list labels:
+                    # rule list labels:
+                    # wildcard labels:
                     if self._state.backtracking == 0:
 
                         retval.tree = root_0
@@ -8427,7 +8427,7 @@ class sdl92Parser(Parser):
 
                 elif alt82 == 2:
                     # sdl92.g:473:19: ASTERISK
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     ASTERISK270=self.match(self.input, ASTERISK, self.FOLLOW_ASTERISK_in_connect_list5731)
@@ -8501,7 +8501,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:477:9: ( ( cif )? ( hyperlink )? INPUT NONE end ( enabling_condition )? transition -> ^( INPUT_NONE ( cif )? ( hyperlink )? transition ) )
                 # sdl92.g:477:17: ( cif )? ( hyperlink )? INPUT NONE end ( enabling_condition )? transition
-                pass 
+                pass
                 # sdl92.g:477:17: ( cif )?
                 alt83 = 2
                 LA83_0 = self.input.LA(1)
@@ -8513,7 +8513,7 @@ class sdl92Parser(Parser):
                         alt83 = 1
                 if alt83 == 1:
                     # sdl92.g:0:0: cif
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_cif_in_spontaneous_transition5754)
                     cif271 = self.cif()
 
@@ -8531,7 +8531,7 @@ class sdl92Parser(Parser):
                     alt84 = 1
                 if alt84 == 1:
                     # sdl92.g:0:0: hyperlink
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_hyperlink_in_spontaneous_transition5773)
                     hyperlink272 = self.hyperlink()
 
@@ -8541,10 +8541,10 @@ class sdl92Parser(Parser):
 
 
 
-                INPUT273=self.match(self.input, INPUT, self.FOLLOW_INPUT_in_spontaneous_transition5792) 
+                INPUT273=self.match(self.input, INPUT, self.FOLLOW_INPUT_in_spontaneous_transition5792)
                 if self._state.backtracking == 0:
                     stream_INPUT.add(INPUT273)
-                NONE274=self.match(self.input, NONE, self.FOLLOW_NONE_in_spontaneous_transition5794) 
+                NONE274=self.match(self.input, NONE, self.FOLLOW_NONE_in_spontaneous_transition5794)
                 if self._state.backtracking == 0:
                     stream_NONE.add(NONE274)
                 self._state.following.append(self.FOLLOW_end_in_spontaneous_transition5796)
@@ -8561,7 +8561,7 @@ class sdl92Parser(Parser):
                     alt85 = 1
                 if alt85 == 1:
                     # sdl92.g:0:0: enabling_condition
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_enabling_condition_in_spontaneous_transition5814)
                     enabling_condition276 = self.enabling_condition()
 
@@ -8580,11 +8580,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: cif, hyperlink, transition
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -8674,8 +8674,8 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:486:9: ( PROVIDED expression end -> ^( PROVIDED expression ) )
                 # sdl92.g:486:17: PROVIDED expression end
-                pass 
-                PROVIDED278=self.match(self.input, PROVIDED, self.FOLLOW_PROVIDED_in_enabling_condition5883) 
+                pass
+                PROVIDED278=self.match(self.input, PROVIDED, self.FOLLOW_PROVIDED_in_enabling_condition5883)
                 if self._state.backtracking == 0:
                     stream_PROVIDED.add(PROVIDED278)
                 self._state.following.append(self.FOLLOW_expression_in_enabling_condition5885)
@@ -8693,11 +8693,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: expression, PROVIDED
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -8786,8 +8786,8 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:491:9: ( PROVIDED expression end ( PRIORITY integer_literal_name= INT end )? transition -> ^( PROVIDED expression ( $integer_literal_name)? transition ) )
                 # sdl92.g:491:17: PROVIDED expression end ( PRIORITY integer_literal_name= INT end )? transition
-                pass 
-                PROVIDED281=self.match(self.input, PROVIDED, self.FOLLOW_PROVIDED_in_continuous_signal5931) 
+                pass
+                PROVIDED281=self.match(self.input, PROVIDED, self.FOLLOW_PROVIDED_in_continuous_signal5931)
                 if self._state.backtracking == 0:
                     stream_PROVIDED.add(PROVIDED281)
                 self._state.following.append(self.FOLLOW_expression_in_continuous_signal5933)
@@ -8810,11 +8810,11 @@ class sdl92Parser(Parser):
                     alt86 = 1
                 if alt86 == 1:
                     # sdl92.g:492:18: PRIORITY integer_literal_name= INT end
-                    pass 
-                    PRIORITY284=self.match(self.input, PRIORITY, self.FOLLOW_PRIORITY_in_continuous_signal5954) 
+                    pass
+                    PRIORITY284=self.match(self.input, PRIORITY, self.FOLLOW_PRIORITY_in_continuous_signal5954)
                     if self._state.backtracking == 0:
                         stream_PRIORITY.add(PRIORITY284)
-                    integer_literal_name=self.match(self.input, INT, self.FOLLOW_INT_in_continuous_signal5958) 
+                    integer_literal_name=self.match(self.input, INT, self.FOLLOW_INT_in_continuous_signal5958)
                     if self._state.backtracking == 0:
                         stream_INT.add(integer_literal_name)
                     self._state.following.append(self.FOLLOW_end_in_continuous_signal5960)
@@ -8837,9 +8837,9 @@ class sdl92Parser(Parser):
                 # elements: integer_literal_name, PROVIDED, transition, expression
                 # token labels: integer_literal_name
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -8925,8 +8925,8 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:498:9: ( SAVE save_list end -> ^( SAVE save_list ) )
                 # sdl92.g:498:17: SAVE save_list end
-                pass 
-                SAVE287=self.match(self.input, SAVE, self.FOLLOW_SAVE_in_save_part6030) 
+                pass
+                SAVE287=self.match(self.input, SAVE, self.FOLLOW_SAVE_in_save_part6030)
                 if self._state.backtracking == 0:
                     stream_SAVE.add(SAVE287)
                 self._state.following.append(self.FOLLOW_save_list_in_save_part6032)
@@ -8944,11 +8944,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: save_list, SAVE
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -9038,7 +9038,7 @@ class sdl92Parser(Parser):
 
                 if alt87 == 1:
                     # sdl92.g:504:17: signal_list
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     self._state.following.append(self.FOLLOW_signal_list_in_save_list6094)
@@ -9051,7 +9051,7 @@ class sdl92Parser(Parser):
 
                 elif alt87 == 2:
                     # sdl92.g:505:19: asterisk_save_list
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     self._state.following.append(self.FOLLOW_asterisk_save_list_in_save_list6114)
@@ -9107,7 +9107,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:509:9: ( ASTERISK )
                 # sdl92.g:509:17: ASTERISK
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 ASTERISK292=self.match(self.input, ASTERISK, self.FOLLOW_ASTERISK_in_asterisk_save_list6137)
@@ -9169,7 +9169,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:513:9: ( signal_item ( ',' signal_item )* -> ^( SIGNAL_LIST ( signal_item )+ ) )
                 # sdl92.g:513:17: signal_item ( ',' signal_item )*
-                pass 
+                pass
                 self._state.following.append(self.FOLLOW_signal_item_in_signal_list6160)
                 signal_item293 = self.signal_item()
 
@@ -9187,8 +9187,8 @@ class sdl92Parser(Parser):
 
                     if alt88 == 1:
                         # sdl92.g:513:30: ',' signal_item
-                        pass 
-                        char_literal294=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_signal_list6163) 
+                        pass
+                        char_literal294=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_signal_list6163)
                         if self._state.backtracking == 0:
                             stream_COMMA.add(char_literal294)
                         self._state.following.append(self.FOLLOW_signal_item_in_signal_list6165)
@@ -9204,11 +9204,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: signal_item
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -9288,7 +9288,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:521:9: ( signal_id )
                 # sdl92.g:521:17: signal_id
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 self._state.following.append(self.FOLLOW_signal_id_in_signal_item6215)
@@ -9363,7 +9363,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:542:9: ( ( cif )? ( hyperlink )? INPUT inputlist end ( enabling_condition )? ( transition )? -> ^( INPUT ( cif )? ( hyperlink )? ( end )? inputlist ( enabling_condition )? ( transition )? ) )
                 # sdl92.g:542:17: ( cif )? ( hyperlink )? INPUT inputlist end ( enabling_condition )? ( transition )?
-                pass 
+                pass
                 # sdl92.g:542:17: ( cif )?
                 alt89 = 2
                 LA89_0 = self.input.LA(1)
@@ -9375,7 +9375,7 @@ class sdl92Parser(Parser):
                         alt89 = 1
                 if alt89 == 1:
                     # sdl92.g:0:0: cif
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_cif_in_input_part6244)
                     cif297 = self.cif()
 
@@ -9393,7 +9393,7 @@ class sdl92Parser(Parser):
                     alt90 = 1
                 if alt90 == 1:
                     # sdl92.g:0:0: hyperlink
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_hyperlink_in_input_part6263)
                     hyperlink298 = self.hyperlink()
 
@@ -9403,7 +9403,7 @@ class sdl92Parser(Parser):
 
 
 
-                INPUT299=self.match(self.input, INPUT, self.FOLLOW_INPUT_in_input_part6282) 
+                INPUT299=self.match(self.input, INPUT, self.FOLLOW_INPUT_in_input_part6282)
                 if self._state.backtracking == 0:
                     stream_INPUT.add(INPUT299)
                 self._state.following.append(self.FOLLOW_inputlist_in_input_part6284)
@@ -9423,7 +9423,7 @@ class sdl92Parser(Parser):
                 alt91 = self.dfa91.predict(self.input)
                 if alt91 == 1:
                     # sdl92.g:0:0: enabling_condition
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_enabling_condition_in_input_part6304)
                     enabling_condition302 = self.enabling_condition()
 
@@ -9438,7 +9438,7 @@ class sdl92Parser(Parser):
                 alt92 = self.dfa92.predict(self.input)
                 if alt92 == 1:
                     # sdl92.g:0:0: transition
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_transition_in_input_part6323)
                     transition303 = self.transition()
 
@@ -9451,11 +9451,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: inputlist, enabling_condition, hyperlink, end, INPUT, transition, cif
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -9580,7 +9580,7 @@ class sdl92Parser(Parser):
 
                 if alt94 == 1:
                     # sdl92.g:554:17: ASTERISK
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     ASTERISK304=self.match(self.input, ASTERISK, self.FOLLOW_ASTERISK_in_inputlist6401)
@@ -9593,10 +9593,10 @@ class sdl92Parser(Parser):
 
                 elif alt94 == 2:
                     # sdl92.g:555:19: ( stimulus ( ',' stimulus )* )
-                    pass 
+                    pass
                     # sdl92.g:555:19: ( stimulus ( ',' stimulus )* )
                     # sdl92.g:555:20: stimulus ( ',' stimulus )*
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_stimulus_in_inputlist6422)
                     stimulus305 = self.stimulus()
 
@@ -9614,8 +9614,8 @@ class sdl92Parser(Parser):
 
                         if alt93 == 1:
                             # sdl92.g:555:30: ',' stimulus
-                            pass 
-                            char_literal306=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_inputlist6425) 
+                            pass
+                            char_literal306=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_inputlist6425)
                             if self._state.backtracking == 0:
                                 stream_COMMA.add(char_literal306)
                             self._state.following.append(self.FOLLOW_stimulus_in_inputlist6427)
@@ -9634,11 +9634,11 @@ class sdl92Parser(Parser):
 
                     # AST Rewrite
                     # elements: stimulus
-                    # token labels: 
+                    # token labels:
                     # rule labels: retval
-                    # token list labels: 
-                    # rule list labels: 
-                    # wildcard labels: 
+                    # token list labels:
+                    # rule list labels:
+                    # wildcard labels:
                     if self._state.backtracking == 0:
 
                         retval.tree = root_0
@@ -9719,7 +9719,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:560:9: ( stimulus_id ( input_params )? )
                 # sdl92.g:560:17: stimulus_id ( input_params )?
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 self._state.following.append(self.FOLLOW_stimulus_id_in_stimulus6475)
@@ -9736,7 +9736,7 @@ class sdl92Parser(Parser):
                     alt95 = 1
                 if alt95 == 1:
                     # sdl92.g:0:0: input_params
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_input_params_in_stimulus6477)
                     input_params309 = self.input_params()
 
@@ -9805,8 +9805,8 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:564:9: ( L_PAREN variable_id ( ',' variable_id )* R_PAREN -> ^( PARAMS ( variable_id )+ ) )
                 # sdl92.g:564:17: L_PAREN variable_id ( ',' variable_id )* R_PAREN
-                pass 
-                L_PAREN310=self.match(self.input, L_PAREN, self.FOLLOW_L_PAREN_in_input_params6501) 
+                pass
+                L_PAREN310=self.match(self.input, L_PAREN, self.FOLLOW_L_PAREN_in_input_params6501)
                 if self._state.backtracking == 0:
                     stream_L_PAREN.add(L_PAREN310)
                 self._state.following.append(self.FOLLOW_variable_id_in_input_params6503)
@@ -9826,8 +9826,8 @@ class sdl92Parser(Parser):
 
                     if alt96 == 1:
                         # sdl92.g:564:38: ',' variable_id
-                        pass 
-                        char_literal312=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_input_params6506) 
+                        pass
+                        char_literal312=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_input_params6506)
                         if self._state.backtracking == 0:
                             stream_COMMA.add(char_literal312)
                         self._state.following.append(self.FOLLOW_variable_id_in_input_params6508)
@@ -9840,17 +9840,17 @@ class sdl92Parser(Parser):
 
                     else:
                         break #loop96
-                R_PAREN314=self.match(self.input, R_PAREN, self.FOLLOW_R_PAREN_in_input_params6512) 
+                R_PAREN314=self.match(self.input, R_PAREN, self.FOLLOW_R_PAREN_in_input_params6512)
                 if self._state.backtracking == 0:
                     stream_R_PAREN.add(R_PAREN314)
 
                 # AST Rewrite
                 # elements: variable_id
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -9941,7 +9941,7 @@ class sdl92Parser(Parser):
                 alt100 = self.dfa100.predict(self.input)
                 if alt100 == 1:
                     # sdl92.g:569:17: ( action )+ ( label )? ( terminator_statement )?
-                    pass 
+                    pass
                     # sdl92.g:569:17: ( action )+
                     cnt97 = 0
                     while True: #loop97
@@ -9949,7 +9949,7 @@ class sdl92Parser(Parser):
                         alt97 = self.dfa97.predict(self.input)
                         if alt97 == 1:
                             # sdl92.g:0:0: action
-                            pass 
+                            pass
                             self._state.following.append(self.FOLLOW_action_in_transition6557)
                             action315 = self.action()
 
@@ -9974,7 +9974,7 @@ class sdl92Parser(Parser):
                     alt98 = self.dfa98.predict(self.input)
                     if alt98 == 1:
                         # sdl92.g:0:0: label
-                        pass 
+                        pass
                         self._state.following.append(self.FOLLOW_label_in_transition6560)
                         label316 = self.label()
 
@@ -9989,7 +9989,7 @@ class sdl92Parser(Parser):
                     alt99 = self.dfa99.predict(self.input)
                     if alt99 == 1:
                         # sdl92.g:0:0: terminator_statement
-                        pass 
+                        pass
                         self._state.following.append(self.FOLLOW_terminator_statement_in_transition6563)
                         terminator_statement317 = self.terminator_statement()
 
@@ -10002,11 +10002,11 @@ class sdl92Parser(Parser):
 
                     # AST Rewrite
                     # elements: label, action, terminator_statement
-                    # token labels: 
+                    # token labels:
                     # rule labels: retval
-                    # token list labels: 
-                    # rule list labels: 
-                    # wildcard labels: 
+                    # token list labels:
+                    # rule list labels:
+                    # wildcard labels:
                     if self._state.backtracking == 0:
 
                         retval.tree = root_0
@@ -10054,7 +10054,7 @@ class sdl92Parser(Parser):
 
                 elif alt100 == 2:
                     # sdl92.g:571:19: terminator_statement
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_terminator_statement_in_transition6612)
                     terminator_statement318 = self.terminator_statement()
 
@@ -10064,11 +10064,11 @@ class sdl92Parser(Parser):
 
                     # AST Rewrite
                     # elements: terminator_statement
-                    # token labels: 
+                    # token labels:
                     # rule labels: retval
-                    # token list labels: 
-                    # rule list labels: 
-                    # wildcard labels: 
+                    # token list labels:
+                    # rule list labels:
+                    # wildcard labels:
                     if self._state.backtracking == 0:
 
                         retval.tree = root_0
@@ -10159,7 +10159,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:576:9: ( ( label )? ( task | task_body | output | create_request | decision | transition_option | set_timer | reset_timer | export | procedure_call ) )
                 # sdl92.g:576:17: ( label )? ( task | task_body | output | create_request | decision | transition_option | set_timer | reset_timer | export | procedure_call )
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 # sdl92.g:576:17: ( label )?
@@ -10167,7 +10167,7 @@ class sdl92Parser(Parser):
                 alt101 = self.dfa101.predict(self.input)
                 if alt101 == 1:
                     # sdl92.g:0:0: label
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_label_in_action6656)
                     label319 = self.label()
 
@@ -10182,7 +10182,7 @@ class sdl92Parser(Parser):
                 alt102 = self.dfa102.predict(self.input)
                 if alt102 == 1:
                     # sdl92.g:577:18: task
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_task_in_action6676)
                     task320 = self.task()
 
@@ -10193,7 +10193,7 @@ class sdl92Parser(Parser):
 
                 elif alt102 == 2:
                     # sdl92.g:578:19: task_body
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_task_body_in_action6696)
                     task_body321 = self.task_body()
 
@@ -10204,7 +10204,7 @@ class sdl92Parser(Parser):
 
                 elif alt102 == 3:
                     # sdl92.g:579:19: output
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_output_in_action6716)
                     output322 = self.output()
 
@@ -10215,7 +10215,7 @@ class sdl92Parser(Parser):
 
                 elif alt102 == 4:
                     # sdl92.g:580:19: create_request
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_create_request_in_action6736)
                     create_request323 = self.create_request()
 
@@ -10226,7 +10226,7 @@ class sdl92Parser(Parser):
 
                 elif alt102 == 5:
                     # sdl92.g:581:19: decision
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_decision_in_action6756)
                     decision324 = self.decision()
 
@@ -10237,7 +10237,7 @@ class sdl92Parser(Parser):
 
                 elif alt102 == 6:
                     # sdl92.g:582:19: transition_option
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_transition_option_in_action6776)
                     transition_option325 = self.transition_option()
 
@@ -10248,7 +10248,7 @@ class sdl92Parser(Parser):
 
                 elif alt102 == 7:
                     # sdl92.g:583:19: set_timer
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_set_timer_in_action6796)
                     set_timer326 = self.set_timer()
 
@@ -10259,7 +10259,7 @@ class sdl92Parser(Parser):
 
                 elif alt102 == 8:
                     # sdl92.g:584:19: reset_timer
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_reset_timer_in_action6816)
                     reset_timer327 = self.reset_timer()
 
@@ -10270,7 +10270,7 @@ class sdl92Parser(Parser):
 
                 elif alt102 == 9:
                     # sdl92.g:585:19: export
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_export_in_action6836)
                     export328 = self.export()
 
@@ -10281,7 +10281,7 @@ class sdl92Parser(Parser):
 
                 elif alt102 == 10:
                     # sdl92.g:586:19: procedure_call
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_procedure_call_in_action6861)
                     procedure_call329 = self.procedure_call()
 
@@ -10356,11 +10356,11 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:589:9: ( EXPORT L_PAREN variable_id ( COMMA variable_id )* R_PAREN end -> ^( EXPORT ( variable_id )+ ) )
                 # sdl92.g:589:17: EXPORT L_PAREN variable_id ( COMMA variable_id )* R_PAREN end
-                pass 
-                EXPORT330=self.match(self.input, EXPORT, self.FOLLOW_EXPORT_in_export6884) 
+                pass
+                EXPORT330=self.match(self.input, EXPORT, self.FOLLOW_EXPORT_in_export6884)
                 if self._state.backtracking == 0:
                     stream_EXPORT.add(EXPORT330)
-                L_PAREN331=self.match(self.input, L_PAREN, self.FOLLOW_L_PAREN_in_export6902) 
+                L_PAREN331=self.match(self.input, L_PAREN, self.FOLLOW_L_PAREN_in_export6902)
                 if self._state.backtracking == 0:
                     stream_L_PAREN.add(L_PAREN331)
                 self._state.following.append(self.FOLLOW_variable_id_in_export6904)
@@ -10380,8 +10380,8 @@ class sdl92Parser(Parser):
 
                     if alt103 == 1:
                         # sdl92.g:590:38: COMMA variable_id
-                        pass 
-                        COMMA333=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_export6907) 
+                        pass
+                        COMMA333=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_export6907)
                         if self._state.backtracking == 0:
                             stream_COMMA.add(COMMA333)
                         self._state.following.append(self.FOLLOW_variable_id_in_export6909)
@@ -10394,7 +10394,7 @@ class sdl92Parser(Parser):
 
                     else:
                         break #loop103
-                R_PAREN335=self.match(self.input, R_PAREN, self.FOLLOW_R_PAREN_in_export6913) 
+                R_PAREN335=self.match(self.input, R_PAREN, self.FOLLOW_R_PAREN_in_export6913)
                 if self._state.backtracking == 0:
                     stream_R_PAREN.add(R_PAREN335)
                 self._state.following.append(self.FOLLOW_end_in_export6931)
@@ -10406,11 +10406,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: EXPORT, variable_id
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -10502,7 +10502,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:604:9: ( ( cif )? ( hyperlink )? CALL procedure_call_body end -> ^( PROCEDURE_CALL ( cif )? ( hyperlink )? ( end )? procedure_call_body ) )
                 # sdl92.g:604:17: ( cif )? ( hyperlink )? CALL procedure_call_body end
-                pass 
+                pass
                 # sdl92.g:604:17: ( cif )?
                 alt104 = 2
                 LA104_0 = self.input.LA(1)
@@ -10514,7 +10514,7 @@ class sdl92Parser(Parser):
                         alt104 = 1
                 if alt104 == 1:
                     # sdl92.g:0:0: cif
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_cif_in_procedure_call6979)
                     cif337 = self.cif()
 
@@ -10532,7 +10532,7 @@ class sdl92Parser(Parser):
                     alt105 = 1
                 if alt105 == 1:
                     # sdl92.g:0:0: hyperlink
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_hyperlink_in_procedure_call6998)
                     hyperlink338 = self.hyperlink()
 
@@ -10542,7 +10542,7 @@ class sdl92Parser(Parser):
 
 
 
-                CALL339=self.match(self.input, CALL, self.FOLLOW_CALL_in_procedure_call7017) 
+                CALL339=self.match(self.input, CALL, self.FOLLOW_CALL_in_procedure_call7017)
                 if self._state.backtracking == 0:
                     stream_CALL.add(CALL339)
                 self._state.following.append(self.FOLLOW_procedure_call_body_in_procedure_call7019)
@@ -10560,11 +10560,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: end, cif, procedure_call_body, hyperlink
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -10657,7 +10657,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:611:9: ( procedure_id ( actual_parameters )? -> ^( OUTPUT_BODY procedure_id ( actual_parameters )? ) )
                 # sdl92.g:611:17: procedure_id ( actual_parameters )?
-                pass 
+                pass
                 self._state.following.append(self.FOLLOW_procedure_id_in_procedure_call_body7074)
                 procedure_id342 = self.procedure_id()
 
@@ -10672,7 +10672,7 @@ class sdl92Parser(Parser):
                     alt106 = 1
                 if alt106 == 1:
                     # sdl92.g:0:0: actual_parameters
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_actual_parameters_in_procedure_call_body7076)
                     actual_parameters343 = self.actual_parameters()
 
@@ -10685,11 +10685,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: actual_parameters, procedure_id
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -10778,8 +10778,8 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:616:9: ( SET set_statement ( COMMA set_statement )* end -> ( set_statement )+ )
                 # sdl92.g:616:17: SET set_statement ( COMMA set_statement )* end
-                pass 
-                SET344=self.match(self.input, SET, self.FOLLOW_SET_in_set_timer7124) 
+                pass
+                SET344=self.match(self.input, SET, self.FOLLOW_SET_in_set_timer7124)
                 if self._state.backtracking == 0:
                     stream_SET.add(SET344)
                 self._state.following.append(self.FOLLOW_set_statement_in_set_timer7126)
@@ -10799,8 +10799,8 @@ class sdl92Parser(Parser):
 
                     if alt107 == 1:
                         # sdl92.g:616:36: COMMA set_statement
-                        pass 
-                        COMMA346=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_set_timer7129) 
+                        pass
+                        COMMA346=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_set_timer7129)
                         if self._state.backtracking == 0:
                             stream_COMMA.add(COMMA346)
                         self._state.following.append(self.FOLLOW_set_statement_in_set_timer7131)
@@ -10822,11 +10822,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: set_statement
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -10912,8 +10912,8 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:622:9: ( L_PAREN ( expression COMMA )? timer_id R_PAREN -> ^( SET ( expression )? timer_id ) )
                 # sdl92.g:622:17: L_PAREN ( expression COMMA )? timer_id R_PAREN
-                pass 
-                L_PAREN349=self.match(self.input, L_PAREN, self.FOLLOW_L_PAREN_in_set_statement7192) 
+                pass
+                L_PAREN349=self.match(self.input, L_PAREN, self.FOLLOW_L_PAREN_in_set_statement7192)
                 if self._state.backtracking == 0:
                     stream_L_PAREN.add(L_PAREN349)
                 # sdl92.g:622:25: ( expression COMMA )?
@@ -10929,14 +10929,14 @@ class sdl92Parser(Parser):
                     alt108 = 1
                 if alt108 == 1:
                     # sdl92.g:622:26: expression COMMA
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_expression_in_set_statement7195)
                     expression350 = self.expression()
 
                     self._state.following.pop()
                     if self._state.backtracking == 0:
                         stream_expression.add(expression350.tree)
-                    COMMA351=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_set_statement7197) 
+                    COMMA351=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_set_statement7197)
                     if self._state.backtracking == 0:
                         stream_COMMA.add(COMMA351)
 
@@ -10948,17 +10948,17 @@ class sdl92Parser(Parser):
                 self._state.following.pop()
                 if self._state.backtracking == 0:
                     stream_timer_id.add(timer_id352.tree)
-                R_PAREN353=self.match(self.input, R_PAREN, self.FOLLOW_R_PAREN_in_set_statement7203) 
+                R_PAREN353=self.match(self.input, R_PAREN, self.FOLLOW_R_PAREN_in_set_statement7203)
                 if self._state.backtracking == 0:
                     stream_R_PAREN.add(R_PAREN353)
 
                 # AST Rewrite
                 # elements: timer_id, expression
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -11047,8 +11047,8 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:628:9: ( RESET reset_statement ( ',' reset_statement )* end -> ( reset_statement )+ )
                 # sdl92.g:628:17: RESET reset_statement ( ',' reset_statement )* end
-                pass 
-                RESET354=self.match(self.input, RESET, self.FOLLOW_RESET_in_reset_timer7259) 
+                pass
+                RESET354=self.match(self.input, RESET, self.FOLLOW_RESET_in_reset_timer7259)
                 if self._state.backtracking == 0:
                     stream_RESET.add(RESET354)
                 self._state.following.append(self.FOLLOW_reset_statement_in_reset_timer7261)
@@ -11068,8 +11068,8 @@ class sdl92Parser(Parser):
 
                     if alt109 == 1:
                         # sdl92.g:628:40: ',' reset_statement
-                        pass 
-                        char_literal356=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_reset_timer7264) 
+                        pass
+                        char_literal356=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_reset_timer7264)
                         if self._state.backtracking == 0:
                             stream_COMMA.add(char_literal356)
                         self._state.following.append(self.FOLLOW_reset_statement_in_reset_timer7266)
@@ -11091,11 +11091,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: reset_statement
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -11178,7 +11178,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:634:9: ( timer_id ( '(' expression_list ')' )? -> ^( RESET timer_id ( expression_list )? ) )
                 # sdl92.g:634:17: timer_id ( '(' expression_list ')' )?
-                pass 
+                pass
                 self._state.following.append(self.FOLLOW_timer_id_in_reset_statement7327)
                 timer_id359 = self.timer_id()
 
@@ -11193,8 +11193,8 @@ class sdl92Parser(Parser):
                     alt110 = 1
                 if alt110 == 1:
                     # sdl92.g:634:27: '(' expression_list ')'
-                    pass 
-                    char_literal360=self.match(self.input, L_PAREN, self.FOLLOW_L_PAREN_in_reset_statement7330) 
+                    pass
+                    char_literal360=self.match(self.input, L_PAREN, self.FOLLOW_L_PAREN_in_reset_statement7330)
                     if self._state.backtracking == 0:
                         stream_L_PAREN.add(char_literal360)
                     self._state.following.append(self.FOLLOW_expression_list_in_reset_statement7332)
@@ -11203,7 +11203,7 @@ class sdl92Parser(Parser):
                     self._state.following.pop()
                     if self._state.backtracking == 0:
                         stream_expression_list.add(expression_list361.tree)
-                    char_literal362=self.match(self.input, R_PAREN, self.FOLLOW_R_PAREN_in_reset_statement7334) 
+                    char_literal362=self.match(self.input, R_PAREN, self.FOLLOW_R_PAREN_in_reset_statement7334)
                     if self._state.backtracking == 0:
                         stream_R_PAREN.add(char_literal362)
 
@@ -11212,11 +11212,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: expression_list, timer_id
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -11311,8 +11311,8 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:639:9: ( ALTERNATIVE alternative_question e= end answer_part alternative_part ENDALTERNATIVE f= end -> ^( ALTERNATIVE answer_part alternative_part ) )
                 # sdl92.g:639:17: ALTERNATIVE alternative_question e= end answer_part alternative_part ENDALTERNATIVE f= end
-                pass 
-                ALTERNATIVE363=self.match(self.input, ALTERNATIVE, self.FOLLOW_ALTERNATIVE_in_transition_option7383) 
+                pass
+                ALTERNATIVE363=self.match(self.input, ALTERNATIVE, self.FOLLOW_ALTERNATIVE_in_transition_option7383)
                 if self._state.backtracking == 0:
                     stream_ALTERNATIVE.add(ALTERNATIVE363)
                 self._state.following.append(self.FOLLOW_alternative_question_in_transition_option7385)
@@ -11339,7 +11339,7 @@ class sdl92Parser(Parser):
                 self._state.following.pop()
                 if self._state.backtracking == 0:
                     stream_alternative_part.add(alternative_part366.tree)
-                ENDALTERNATIVE367=self.match(self.input, ENDALTERNATIVE, self.FOLLOW_ENDALTERNATIVE_in_transition_option7443) 
+                ENDALTERNATIVE367=self.match(self.input, ENDALTERNATIVE, self.FOLLOW_ENDALTERNATIVE_in_transition_option7443)
                 if self._state.backtracking == 0:
                     stream_ENDALTERNATIVE.add(ENDALTERNATIVE367)
                 self._state.following.append(self.FOLLOW_end_in_transition_option7447)
@@ -11351,11 +11351,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: ALTERNATIVE, alternative_part, answer_part
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -11436,10 +11436,10 @@ class sdl92Parser(Parser):
                 alt113 = self.dfa113.predict(self.input)
                 if alt113 == 1:
                     # sdl92.g:647:17: ( ( answer_part )+ ( else_part )? )
-                    pass 
+                    pass
                     # sdl92.g:647:17: ( ( answer_part )+ ( else_part )? )
                     # sdl92.g:647:18: ( answer_part )+ ( else_part )?
-                    pass 
+                    pass
                     # sdl92.g:647:18: ( answer_part )+
                     cnt111 = 0
                     while True: #loop111
@@ -11447,7 +11447,7 @@ class sdl92Parser(Parser):
                         alt111 = self.dfa111.predict(self.input)
                         if alt111 == 1:
                             # sdl92.g:0:0: answer_part
-                            pass 
+                            pass
                             self._state.following.append(self.FOLLOW_answer_part_in_alternative_part7494)
                             answer_part368 = self.answer_part()
 
@@ -11475,7 +11475,7 @@ class sdl92Parser(Parser):
                         alt112 = 1
                     if alt112 == 1:
                         # sdl92.g:0:0: else_part
-                        pass 
+                        pass
                         self._state.following.append(self.FOLLOW_else_part_in_alternative_part7497)
                         else_part369 = self.else_part()
 
@@ -11491,11 +11491,11 @@ class sdl92Parser(Parser):
 
                     # AST Rewrite
                     # elements: else_part, answer_part
-                    # token labels: 
+                    # token labels:
                     # rule labels: retval
-                    # token list labels: 
-                    # rule list labels: 
-                    # wildcard labels: 
+                    # token list labels:
+                    # rule list labels:
+                    # wildcard labels:
                     if self._state.backtracking == 0:
 
                         retval.tree = root_0
@@ -11531,7 +11531,7 @@ class sdl92Parser(Parser):
 
                 elif alt113 == 2:
                     # sdl92.g:649:19: else_part
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_else_part_in_alternative_part7540)
                     else_part370 = self.else_part()
 
@@ -11541,11 +11541,11 @@ class sdl92Parser(Parser):
 
                     # AST Rewrite
                     # elements: else_part
-                    # token labels: 
+                    # token labels:
                     # rule labels: retval
-                    # token list labels: 
-                    # rule list labels: 
-                    # wildcard labels: 
+                    # token list labels:
+                    # rule list labels:
+                    # wildcard labels:
                     if self._state.backtracking == 0:
 
                         retval.tree = root_0
@@ -11641,7 +11641,7 @@ class sdl92Parser(Parser):
 
                 if alt114 == 1:
                     # sdl92.g:654:17: expression
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     self._state.following.append(self.FOLLOW_expression_in_alternative_question7580)
@@ -11654,7 +11654,7 @@ class sdl92Parser(Parser):
 
                 elif alt114 == 2:
                     # sdl92.g:655:19: informal_text
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     self._state.following.append(self.FOLLOW_informal_text_in_alternative_question7600)
@@ -11733,7 +11733,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:659:9: ( ( cif )? ( hyperlink )? DECISION question e= end ( answer_part )? ( alternative_part )? ENDDECISION f= end -> ^( DECISION ( cif )? ( hyperlink )? ( $e)? question ( answer_part )? ( alternative_part )? ) )
                 # sdl92.g:659:17: ( cif )? ( hyperlink )? DECISION question e= end ( answer_part )? ( alternative_part )? ENDDECISION f= end
-                pass 
+                pass
                 # sdl92.g:659:17: ( cif )?
                 alt115 = 2
                 LA115_0 = self.input.LA(1)
@@ -11745,7 +11745,7 @@ class sdl92Parser(Parser):
                         alt115 = 1
                 if alt115 == 1:
                     # sdl92.g:0:0: cif
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_cif_in_decision7623)
                     cif373 = self.cif()
 
@@ -11763,7 +11763,7 @@ class sdl92Parser(Parser):
                     alt116 = 1
                 if alt116 == 1:
                     # sdl92.g:0:0: hyperlink
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_hyperlink_in_decision7642)
                     hyperlink374 = self.hyperlink()
 
@@ -11773,7 +11773,7 @@ class sdl92Parser(Parser):
 
 
 
-                DECISION375=self.match(self.input, DECISION, self.FOLLOW_DECISION_in_decision7661) 
+                DECISION375=self.match(self.input, DECISION, self.FOLLOW_DECISION_in_decision7661)
                 if self._state.backtracking == 0:
                     stream_DECISION.add(DECISION375)
                 self._state.following.append(self.FOLLOW_question_in_decision7663)
@@ -11804,7 +11804,7 @@ class sdl92Parser(Parser):
                         alt117 = 1
                 if alt117 == 1:
                     # sdl92.g:0:0: answer_part
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_answer_part_in_decision7685)
                     answer_part377 = self.answer_part()
 
@@ -11822,7 +11822,7 @@ class sdl92Parser(Parser):
                     alt118 = 1
                 if alt118 == 1:
                     # sdl92.g:0:0: alternative_part
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_alternative_part_in_decision7704)
                     alternative_part378 = self.alternative_part()
 
@@ -11832,7 +11832,7 @@ class sdl92Parser(Parser):
 
 
 
-                ENDDECISION379=self.match(self.input, ENDDECISION, self.FOLLOW_ENDDECISION_in_decision7723) 
+                ENDDECISION379=self.match(self.input, ENDDECISION, self.FOLLOW_ENDDECISION_in_decision7723)
                 if self._state.backtracking == 0:
                     stream_ENDDECISION.add(ENDDECISION379)
                 self._state.following.append(self.FOLLOW_end_in_decision7727)
@@ -11844,11 +11844,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: hyperlink, alternative_part, question, DECISION, cif, e, answer_part
-                # token labels: 
+                # token labels:
                 # rule labels: retval, e
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -11974,7 +11974,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:670:9: ( ( cif )? ( hyperlink )? L_PAREN answer R_PAREN ':' ( transition )? -> ^( ANSWER ( cif )? ( hyperlink )? answer ( transition )? ) )
                 # sdl92.g:670:17: ( cif )? ( hyperlink )? L_PAREN answer R_PAREN ':' ( transition )?
-                pass 
+                pass
                 # sdl92.g:670:17: ( cif )?
                 alt119 = 2
                 LA119_0 = self.input.LA(1)
@@ -11986,7 +11986,7 @@ class sdl92Parser(Parser):
                         alt119 = 1
                 if alt119 == 1:
                     # sdl92.g:0:0: cif
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_cif_in_answer_part7803)
                     cif380 = self.cif()
 
@@ -12004,7 +12004,7 @@ class sdl92Parser(Parser):
                     alt120 = 1
                 if alt120 == 1:
                     # sdl92.g:0:0: hyperlink
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_hyperlink_in_answer_part7822)
                     hyperlink381 = self.hyperlink()
 
@@ -12014,7 +12014,7 @@ class sdl92Parser(Parser):
 
 
 
-                L_PAREN382=self.match(self.input, L_PAREN, self.FOLLOW_L_PAREN_in_answer_part7841) 
+                L_PAREN382=self.match(self.input, L_PAREN, self.FOLLOW_L_PAREN_in_answer_part7841)
                 if self._state.backtracking == 0:
                     stream_L_PAREN.add(L_PAREN382)
                 self._state.following.append(self.FOLLOW_answer_in_answer_part7843)
@@ -12023,10 +12023,10 @@ class sdl92Parser(Parser):
                 self._state.following.pop()
                 if self._state.backtracking == 0:
                     stream_answer.add(answer383.tree)
-                R_PAREN384=self.match(self.input, R_PAREN, self.FOLLOW_R_PAREN_in_answer_part7845) 
+                R_PAREN384=self.match(self.input, R_PAREN, self.FOLLOW_R_PAREN_in_answer_part7845)
                 if self._state.backtracking == 0:
                     stream_R_PAREN.add(R_PAREN384)
-                char_literal385=self.match(self.input, 216, self.FOLLOW_216_in_answer_part7847) 
+                char_literal385=self.match(self.input, 216, self.FOLLOW_216_in_answer_part7847)
                 if self._state.backtracking == 0:
                     stream_216.add(char_literal385)
                 # sdl92.g:672:44: ( transition )?
@@ -12034,7 +12034,7 @@ class sdl92Parser(Parser):
                 alt121 = self.dfa121.predict(self.input)
                 if alt121 == 1:
                     # sdl92.g:0:0: transition
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_transition_in_answer_part7849)
                     transition386 = self.transition()
 
@@ -12047,11 +12047,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: cif, transition, answer, hyperlink
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -12172,7 +12172,7 @@ class sdl92Parser(Parser):
 
                 if alt122 == 1:
                     # sdl92.g:677:17: range_condition
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     self._state.following.append(self.FOLLOW_range_condition_in_answer7903)
@@ -12185,7 +12185,7 @@ class sdl92Parser(Parser):
 
                 elif alt122 == 2:
                     # sdl92.g:678:19: informal_text
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     self._state.following.append(self.FOLLOW_informal_text_in_answer7923)
@@ -12253,7 +12253,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:682:9: ( ( cif )? ( hyperlink )? ELSE ':' ( transition )? -> ^( ELSE ( cif )? ( hyperlink )? ( transition )? ) )
                 # sdl92.g:682:17: ( cif )? ( hyperlink )? ELSE ':' ( transition )?
-                pass 
+                pass
                 # sdl92.g:682:17: ( cif )?
                 alt123 = 2
                 LA123_0 = self.input.LA(1)
@@ -12265,7 +12265,7 @@ class sdl92Parser(Parser):
                         alt123 = 1
                 if alt123 == 1:
                     # sdl92.g:0:0: cif
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_cif_in_else_part7946)
                     cif389 = self.cif()
 
@@ -12283,7 +12283,7 @@ class sdl92Parser(Parser):
                     alt124 = 1
                 if alt124 == 1:
                     # sdl92.g:0:0: hyperlink
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_hyperlink_in_else_part7965)
                     hyperlink390 = self.hyperlink()
 
@@ -12293,10 +12293,10 @@ class sdl92Parser(Parser):
 
 
 
-                ELSE391=self.match(self.input, ELSE, self.FOLLOW_ELSE_in_else_part7984) 
+                ELSE391=self.match(self.input, ELSE, self.FOLLOW_ELSE_in_else_part7984)
                 if self._state.backtracking == 0:
                     stream_ELSE.add(ELSE391)
-                char_literal392=self.match(self.input, 216, self.FOLLOW_216_in_else_part7986) 
+                char_literal392=self.match(self.input, 216, self.FOLLOW_216_in_else_part7986)
                 if self._state.backtracking == 0:
                     stream_216.add(char_literal392)
                 # sdl92.g:684:26: ( transition )?
@@ -12307,7 +12307,7 @@ class sdl92Parser(Parser):
                     alt125 = 1
                 if alt125 == 1:
                     # sdl92.g:0:0: transition
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_transition_in_else_part7988)
                     transition393 = self.transition()
 
@@ -12320,11 +12320,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: cif, hyperlink, transition, ELSE
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -12448,7 +12448,7 @@ class sdl92Parser(Parser):
 
                 if alt126 == 1:
                     # sdl92.g:689:17: informal_text
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     self._state.following.append(self.FOLLOW_informal_text_in_question8040)
@@ -12461,7 +12461,7 @@ class sdl92Parser(Parser):
 
                 elif alt126 == 2:
                     # sdl92.g:690:19: expression
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_expression_in_question8060)
                     expression395 = self.expression()
 
@@ -12471,11 +12471,11 @@ class sdl92Parser(Parser):
 
                     # AST Rewrite
                     # elements: expression
-                    # token labels: 
+                    # token labels:
                     # rule labels: retval
-                    # token list labels: 
-                    # rule list labels: 
-                    # wildcard labels: 
+                    # token list labels:
+                    # rule list labels:
+                    # wildcard labels:
                     if self._state.backtracking == 0:
 
                         retval.tree = root_0
@@ -12503,18 +12503,18 @@ class sdl92Parser(Parser):
 
                 elif alt126 == 3:
                     # sdl92.g:692:19: ANY
-                    pass 
-                    ANY396=self.match(self.input, ANY, self.FOLLOW_ANY_in_question8101) 
+                    pass
+                    ANY396=self.match(self.input, ANY, self.FOLLOW_ANY_in_question8101)
                     if self._state.backtracking == 0:
                         stream_ANY.add(ANY396)
 
                     # AST Rewrite
                     # elements: ANY
-                    # token labels: 
+                    # token labels:
                     # rule labels: retval
-                    # token list labels: 
-                    # rule list labels: 
-                    # wildcard labels: 
+                    # token list labels:
+                    # rule list labels:
+                    # wildcard labels:
                     if self._state.backtracking == 0:
 
                         retval.tree = root_0
@@ -12585,7 +12585,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:697:9: ( ( closed_range | open_range ) )
                 # sdl92.g:697:17: ( closed_range | open_range )
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 # sdl92.g:697:17: ( closed_range | open_range )
@@ -12593,7 +12593,7 @@ class sdl92Parser(Parser):
                 alt127 = self.dfa127.predict(self.input)
                 if alt127 == 1:
                     # sdl92.g:697:18: closed_range
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_closed_range_in_range_condition8144)
                     closed_range397 = self.closed_range()
 
@@ -12604,7 +12604,7 @@ class sdl92Parser(Parser):
 
                 elif alt127 == 2:
                     # sdl92.g:697:33: open_range
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_open_range_in_range_condition8148)
                     open_range398 = self.open_range()
 
@@ -12667,14 +12667,14 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:702:9: (a= expression ':' b= expression -> ^( CLOSED_RANGE $a $b) )
                 # sdl92.g:702:17: a= expression ':' b= expression
-                pass 
+                pass
                 self._state.following.append(self.FOLLOW_expression_in_closed_range8191)
                 a = self.expression()
 
                 self._state.following.pop()
                 if self._state.backtracking == 0:
                     stream_expression.add(a.tree)
-                char_literal399=self.match(self.input, 216, self.FOLLOW_216_in_closed_range8193) 
+                char_literal399=self.match(self.input, 216, self.FOLLOW_216_in_closed_range8193)
                 if self._state.backtracking == 0:
                     stream_216.add(char_literal399)
                 self._state.following.append(self.FOLLOW_expression_in_closed_range8197)
@@ -12686,11 +12686,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: a, b
-                # token labels: 
+                # token labels:
                 # rule labels: retval, b, a
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -12811,7 +12811,7 @@ class sdl92Parser(Parser):
 
                 if alt129 == 1:
                     # sdl92.g:707:17: constant
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_constant_in_open_range8245)
                     constant400 = self.constant()
 
@@ -12821,11 +12821,11 @@ class sdl92Parser(Parser):
 
                     # AST Rewrite
                     # elements: constant
-                    # token labels: 
+                    # token labels:
                     # rule labels: retval
-                    # token list labels: 
-                    # rule list labels: 
-                    # wildcard labels: 
+                    # token list labels:
+                    # rule list labels:
+                    # wildcard labels:
                     if self._state.backtracking == 0:
 
                         retval.tree = root_0
@@ -12847,10 +12847,10 @@ class sdl92Parser(Parser):
 
                 elif alt129 == 2:
                     # sdl92.g:709:19: ( ( EQ | NEQ | GT | LT | LE | GE ) constant )
-                    pass 
+                    pass
                     # sdl92.g:709:19: ( ( EQ | NEQ | GT | LT | LE | GE ) constant )
                     # sdl92.g:709:21: ( EQ | NEQ | GT | LT | LE | GE ) constant
-                    pass 
+                    pass
                     # sdl92.g:709:21: ( EQ | NEQ | GT | LT | LE | GE )
                     alt128 = 6
                     LA128 = self.input.LA(1)
@@ -12876,48 +12876,48 @@ class sdl92Parser(Parser):
 
                     if alt128 == 1:
                         # sdl92.g:709:22: EQ
-                        pass 
-                        EQ401=self.match(self.input, EQ, self.FOLLOW_EQ_in_open_range8285) 
+                        pass
+                        EQ401=self.match(self.input, EQ, self.FOLLOW_EQ_in_open_range8285)
                         if self._state.backtracking == 0:
                             stream_EQ.add(EQ401)
 
 
                     elif alt128 == 2:
                         # sdl92.g:709:25: NEQ
-                        pass 
-                        NEQ402=self.match(self.input, NEQ, self.FOLLOW_NEQ_in_open_range8287) 
+                        pass
+                        NEQ402=self.match(self.input, NEQ, self.FOLLOW_NEQ_in_open_range8287)
                         if self._state.backtracking == 0:
                             stream_NEQ.add(NEQ402)
 
 
                     elif alt128 == 3:
                         # sdl92.g:709:29: GT
-                        pass 
-                        GT403=self.match(self.input, GT, self.FOLLOW_GT_in_open_range8289) 
+                        pass
+                        GT403=self.match(self.input, GT, self.FOLLOW_GT_in_open_range8289)
                         if self._state.backtracking == 0:
                             stream_GT.add(GT403)
 
 
                     elif alt128 == 4:
                         # sdl92.g:709:32: LT
-                        pass 
-                        LT404=self.match(self.input, LT, self.FOLLOW_LT_in_open_range8291) 
+                        pass
+                        LT404=self.match(self.input, LT, self.FOLLOW_LT_in_open_range8291)
                         if self._state.backtracking == 0:
                             stream_LT.add(LT404)
 
 
                     elif alt128 == 5:
                         # sdl92.g:709:35: LE
-                        pass 
-                        LE405=self.match(self.input, LE, self.FOLLOW_LE_in_open_range8293) 
+                        pass
+                        LE405=self.match(self.input, LE, self.FOLLOW_LE_in_open_range8293)
                         if self._state.backtracking == 0:
                             stream_LE.add(LE405)
 
 
                     elif alt128 == 6:
                         # sdl92.g:709:38: GE
-                        pass 
-                        GE406=self.match(self.input, GE, self.FOLLOW_GE_in_open_range8295) 
+                        pass
+                        GE406=self.match(self.input, GE, self.FOLLOW_GE_in_open_range8295)
                         if self._state.backtracking == 0:
                             stream_GE.add(GE406)
 
@@ -12935,11 +12935,11 @@ class sdl92Parser(Parser):
 
                     # AST Rewrite
                     # elements: NEQ, constant, GT, LE, LT, EQ, GE
-                    # token labels: 
+                    # token labels:
                     # rule labels: retval
-                    # token list labels: 
-                    # rule list labels: 
-                    # wildcard labels: 
+                    # token list labels:
+                    # rule list labels:
+                    # wildcard labels:
                     if self._state.backtracking == 0:
 
                         retval.tree = root_0
@@ -13046,7 +13046,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:714:9: ( expression -> ^( CONSTANT expression ) )
                 # sdl92.g:714:17: expression
-                pass 
+                pass
                 self._state.following.append(self.FOLLOW_expression_in_constant8361)
                 expression408 = self.expression()
 
@@ -13056,11 +13056,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: expression
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -13141,8 +13141,8 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:719:9: ( CREATE createbody ( actual_parameters )? end -> ^( CREATE createbody ( actual_parameters )? ) )
                 # sdl92.g:719:17: CREATE createbody ( actual_parameters )? end
-                pass 
-                CREATE409=self.match(self.input, CREATE, self.FOLLOW_CREATE_in_create_request8405) 
+                pass
+                CREATE409=self.match(self.input, CREATE, self.FOLLOW_CREATE_in_create_request8405)
                 if self._state.backtracking == 0:
                     stream_CREATE.add(CREATE409)
                 self._state.following.append(self.FOLLOW_createbody_in_create_request8423)
@@ -13159,7 +13159,7 @@ class sdl92Parser(Parser):
                     alt130 = 1
                 if alt130 == 1:
                     # sdl92.g:0:0: actual_parameters
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_actual_parameters_in_create_request8441)
                     actual_parameters411 = self.actual_parameters()
 
@@ -13178,11 +13178,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: createbody, actual_parameters, CREATE
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -13278,7 +13278,7 @@ class sdl92Parser(Parser):
 
                 if alt131 == 1:
                     # sdl92.g:727:17: process_id
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     self._state.following.append(self.FOLLOW_process_id_in_createbody8507)
@@ -13291,7 +13291,7 @@ class sdl92Parser(Parser):
 
                 elif alt131 == 2:
                     # sdl92.g:728:19: THIS
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     THIS414=self.match(self.input, THIS, self.FOLLOW_THIS_in_createbody8527)
@@ -13359,7 +13359,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:732:9: ( ( cif )? ( hyperlink )? OUTPUT outputbody end -> ^( OUTPUT ( cif )? ( hyperlink )? ( end )? outputbody ) )
                 # sdl92.g:732:17: ( cif )? ( hyperlink )? OUTPUT outputbody end
-                pass 
+                pass
                 # sdl92.g:732:17: ( cif )?
                 alt132 = 2
                 LA132_0 = self.input.LA(1)
@@ -13371,7 +13371,7 @@ class sdl92Parser(Parser):
                         alt132 = 1
                 if alt132 == 1:
                     # sdl92.g:0:0: cif
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_cif_in_output8550)
                     cif415 = self.cif()
 
@@ -13389,7 +13389,7 @@ class sdl92Parser(Parser):
                     alt133 = 1
                 if alt133 == 1:
                     # sdl92.g:0:0: hyperlink
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_hyperlink_in_output8569)
                     hyperlink416 = self.hyperlink()
 
@@ -13399,7 +13399,7 @@ class sdl92Parser(Parser):
 
 
 
-                OUTPUT417=self.match(self.input, OUTPUT, self.FOLLOW_OUTPUT_in_output8588) 
+                OUTPUT417=self.match(self.input, OUTPUT, self.FOLLOW_OUTPUT_in_output8588)
                 if self._state.backtracking == 0:
                     stream_OUTPUT.add(OUTPUT417)
                 self._state.following.append(self.FOLLOW_outputbody_in_output8590)
@@ -13417,11 +13417,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: OUTPUT, end, cif, outputbody, hyperlink
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -13519,7 +13519,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:739:9: ( outputstmt ( ',' outputstmt )* ( to_part )? -> ^( OUTPUT_BODY ( outputstmt )+ ( to_part )? ) )
                 # sdl92.g:739:17: outputstmt ( ',' outputstmt )* ( to_part )?
-                pass 
+                pass
                 self._state.following.append(self.FOLLOW_outputstmt_in_outputbody8645)
                 outputstmt420 = self.outputstmt()
 
@@ -13537,8 +13537,8 @@ class sdl92Parser(Parser):
 
                     if alt134 == 1:
                         # sdl92.g:739:29: ',' outputstmt
-                        pass 
-                        char_literal421=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_outputbody8648) 
+                        pass
+                        char_literal421=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_outputbody8648)
                         if self._state.backtracking == 0:
                             stream_COMMA.add(char_literal421)
                         self._state.following.append(self.FOLLOW_outputstmt_in_outputbody8650)
@@ -13559,7 +13559,7 @@ class sdl92Parser(Parser):
                     alt135 = 1
                 if alt135 == 1:
                     # sdl92.g:0:0: to_part
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_to_part_in_outputbody8654)
                     to_part423 = self.to_part()
 
@@ -13572,11 +13572,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: to_part, outputstmt
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -13664,7 +13664,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:746:9: ( signal_id ( actual_parameters )? )
                 # sdl92.g:746:17: signal_id ( actual_parameters )?
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 self._state.following.append(self.FOLLOW_signal_id_in_outputstmt8707)
@@ -13681,7 +13681,7 @@ class sdl92Parser(Parser):
                     alt136 = 1
                 if alt136 == 1:
                     # sdl92.g:0:0: actual_parameters
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_actual_parameters_in_outputstmt8725)
                     actual_parameters425 = self.actual_parameters()
 
@@ -13742,11 +13742,11 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:750:9: ( ( TO destination ) -> ^( TO destination ) )
                 # sdl92.g:750:17: ( TO destination )
-                pass 
+                pass
                 # sdl92.g:750:17: ( TO destination )
                 # sdl92.g:750:18: TO destination
-                pass 
-                TO426=self.match(self.input, TO, self.FOLLOW_TO_in_to_part8749) 
+                pass
+                TO426=self.match(self.input, TO, self.FOLLOW_TO_in_to_part8749)
                 if self._state.backtracking == 0:
                     stream_TO.add(TO426)
                 self._state.following.append(self.FOLLOW_destination_in_to_part8751)
@@ -13761,11 +13761,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: destination, TO
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -13840,8 +13840,8 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:754:9: ( VIA viabody -> ^( VIA viabody ) )
                 # sdl92.g:754:17: VIA viabody
-                pass 
-                VIA428=self.match(self.input, VIA, self.FOLLOW_VIA_in_via_part8795) 
+                pass
+                VIA428=self.match(self.input, VIA, self.FOLLOW_VIA_in_via_part8795)
                 if self._state.backtracking == 0:
                     stream_VIA.add(VIA428)
                 self._state.following.append(self.FOLLOW_viabody_in_via_part8797)
@@ -13853,11 +13853,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: VIA, viabody
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -13948,18 +13948,18 @@ class sdl92Parser(Parser):
 
                 if alt137 == 1:
                     # sdl92.g:760:17: ALL
-                    pass 
-                    ALL430=self.match(self.input, ALL, self.FOLLOW_ALL_in_viabody8842) 
+                    pass
+                    ALL430=self.match(self.input, ALL, self.FOLLOW_ALL_in_viabody8842)
                     if self._state.backtracking == 0:
                         stream_ALL.add(ALL430)
 
                     # AST Rewrite
                     # elements: ALL
-                    # token labels: 
+                    # token labels:
                     # rule labels: retval
-                    # token list labels: 
-                    # rule list labels: 
-                    # wildcard labels: 
+                    # token list labels:
+                    # rule list labels:
+                    # wildcard labels:
                     if self._state.backtracking == 0:
 
                         retval.tree = root_0
@@ -13985,7 +13985,7 @@ class sdl92Parser(Parser):
 
                 elif alt137 == 2:
                     # sdl92.g:762:19: via_path
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_via_path_in_viabody8881)
                     via_path431 = self.via_path()
 
@@ -13995,11 +13995,11 @@ class sdl92Parser(Parser):
 
                     # AST Rewrite
                     # elements: via_path
-                    # token labels: 
+                    # token labels:
                     # rule labels: retval
-                    # token list labels: 
-                    # rule list labels: 
-                    # wildcard labels: 
+                    # token list labels:
+                    # rule list labels:
+                    # wildcard labels:
                     if self._state.backtracking == 0:
 
                         retval.tree = root_0
@@ -14091,7 +14091,7 @@ class sdl92Parser(Parser):
 
                 if alt138 == 1:
                     # sdl92.g:767:17: pid_expression
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     self._state.following.append(self.FOLLOW_pid_expression_in_destination8925)
@@ -14104,7 +14104,7 @@ class sdl92Parser(Parser):
 
                 elif alt138 == 2:
                     # sdl92.g:768:19: process_id
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     self._state.following.append(self.FOLLOW_process_id_in_destination8945)
@@ -14117,7 +14117,7 @@ class sdl92Parser(Parser):
 
                 elif alt138 == 3:
                     # sdl92.g:769:19: THIS
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     THIS434=self.match(self.input, THIS, self.FOLLOW_THIS_in_destination8965)
@@ -14178,7 +14178,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:773:9: ( via_path_element ( ',' via_path_element )* -> ( via_path_element )+ )
                 # sdl92.g:773:17: via_path_element ( ',' via_path_element )*
-                pass 
+                pass
                 self._state.following.append(self.FOLLOW_via_path_element_in_via_path8988)
                 via_path_element435 = self.via_path_element()
 
@@ -14196,8 +14196,8 @@ class sdl92Parser(Parser):
 
                     if alt139 == 1:
                         # sdl92.g:773:35: ',' via_path_element
-                        pass 
-                        char_literal436=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_via_path8991) 
+                        pass
+                        char_literal436=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_via_path8991)
                         if self._state.backtracking == 0:
                             stream_COMMA.add(char_literal436)
                         self._state.following.append(self.FOLLOW_via_path_element_in_via_path8993)
@@ -14213,11 +14213,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: via_path_element
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -14291,7 +14291,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:778:9: ( ID )
                 # sdl92.g:778:17: ID
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 ID438=self.match(self.input, ID, self.FOLLOW_ID_in_via_path_element9036)
@@ -14359,8 +14359,8 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:782:9: ( '(' expression ( ',' expression )* ')' -> ^( PARAMS ( expression )+ ) )
                 # sdl92.g:782:16: '(' expression ( ',' expression )* ')'
-                pass 
-                char_literal439=self.match(self.input, L_PAREN, self.FOLLOW_L_PAREN_in_actual_parameters9059) 
+                pass
+                char_literal439=self.match(self.input, L_PAREN, self.FOLLOW_L_PAREN_in_actual_parameters9059)
                 if self._state.backtracking == 0:
                     stream_L_PAREN.add(char_literal439)
                 self._state.following.append(self.FOLLOW_expression_in_actual_parameters9061)
@@ -14380,8 +14380,8 @@ class sdl92Parser(Parser):
 
                     if alt140 == 1:
                         # sdl92.g:782:32: ',' expression
-                        pass 
-                        char_literal441=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_actual_parameters9064) 
+                        pass
+                        char_literal441=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_actual_parameters9064)
                         if self._state.backtracking == 0:
                             stream_COMMA.add(char_literal441)
                         self._state.following.append(self.FOLLOW_expression_in_actual_parameters9066)
@@ -14394,17 +14394,17 @@ class sdl92Parser(Parser):
 
                     else:
                         break #loop140
-                char_literal443=self.match(self.input, R_PAREN, self.FOLLOW_R_PAREN_in_actual_parameters9070) 
+                char_literal443=self.match(self.input, R_PAREN, self.FOLLOW_R_PAREN_in_actual_parameters9070)
                 if self._state.backtracking == 0:
                     stream_R_PAREN.add(char_literal443)
 
                 # AST Rewrite
                 # elements: expression
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -14496,7 +14496,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:787:9: ( ( cif )? ( hyperlink )? TASK ( task_body )? end -> ^( TASK ( cif )? ( hyperlink )? ( end )? ( task_body )? ) )
                 # sdl92.g:787:17: ( cif )? ( hyperlink )? TASK ( task_body )? end
-                pass 
+                pass
                 # sdl92.g:787:17: ( cif )?
                 alt141 = 2
                 LA141_0 = self.input.LA(1)
@@ -14508,7 +14508,7 @@ class sdl92Parser(Parser):
                         alt141 = 1
                 if alt141 == 1:
                     # sdl92.g:0:0: cif
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_cif_in_task9114)
                     cif444 = self.cif()
 
@@ -14526,7 +14526,7 @@ class sdl92Parser(Parser):
                     alt142 = 1
                 if alt142 == 1:
                     # sdl92.g:0:0: hyperlink
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_hyperlink_in_task9133)
                     hyperlink445 = self.hyperlink()
 
@@ -14536,7 +14536,7 @@ class sdl92Parser(Parser):
 
 
 
-                TASK446=self.match(self.input, TASK, self.FOLLOW_TASK_in_task9152) 
+                TASK446=self.match(self.input, TASK, self.FOLLOW_TASK_in_task9152)
                 if self._state.backtracking == 0:
                     stream_TASK.add(TASK446)
                 # sdl92.g:789:22: ( task_body )?
@@ -14547,7 +14547,7 @@ class sdl92Parser(Parser):
                     alt143 = 1
                 if alt143 == 1:
                     # sdl92.g:0:0: task_body
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_task_body_in_task9154)
                     task_body447 = self.task_body()
 
@@ -14566,11 +14566,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: cif, TASK, hyperlink, task_body, end
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -14701,10 +14701,10 @@ class sdl92Parser(Parser):
 
                 if alt147 == 1:
                     # sdl92.g:794:17: ( assignement_statement ( ',' assignement_statement )* )
-                    pass 
+                    pass
                     # sdl92.g:794:17: ( assignement_statement ( ',' assignement_statement )* )
                     # sdl92.g:794:18: assignement_statement ( ',' assignement_statement )*
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_assignement_statement_in_task_body9212)
                     assignement_statement449 = self.assignement_statement()
 
@@ -14722,8 +14722,8 @@ class sdl92Parser(Parser):
 
                         if alt144 == 1:
                             # sdl92.g:794:41: ',' assignement_statement
-                            pass 
-                            char_literal450=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_task_body9215) 
+                            pass
+                            char_literal450=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_task_body9215)
                             if self._state.backtracking == 0:
                                 stream_COMMA.add(char_literal450)
                             self._state.following.append(self.FOLLOW_assignement_statement_in_task_body9217)
@@ -14742,11 +14742,11 @@ class sdl92Parser(Parser):
 
                     # AST Rewrite
                     # elements: assignement_statement
-                    # token labels: 
+                    # token labels:
                     # rule labels: retval
-                    # token list labels: 
-                    # rule list labels: 
-                    # wildcard labels: 
+                    # token list labels:
+                    # rule list labels:
+                    # wildcard labels:
                     if self._state.backtracking == 0:
 
                         retval.tree = root_0
@@ -14782,10 +14782,10 @@ class sdl92Parser(Parser):
 
                 elif alt147 == 2:
                     # sdl92.g:796:19: ( informal_text ( ',' informal_text )* )
-                    pass 
+                    pass
                     # sdl92.g:796:19: ( informal_text ( ',' informal_text )* )
                     # sdl92.g:796:20: informal_text ( ',' informal_text )*
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_informal_text_in_task_body9263)
                     informal_text452 = self.informal_text()
 
@@ -14803,8 +14803,8 @@ class sdl92Parser(Parser):
 
                         if alt145 == 1:
                             # sdl92.g:796:35: ',' informal_text
-                            pass 
-                            char_literal453=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_task_body9266) 
+                            pass
+                            char_literal453=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_task_body9266)
                             if self._state.backtracking == 0:
                                 stream_COMMA.add(char_literal453)
                             self._state.following.append(self.FOLLOW_informal_text_in_task_body9268)
@@ -14823,11 +14823,11 @@ class sdl92Parser(Parser):
 
                     # AST Rewrite
                     # elements: informal_text
-                    # token labels: 
+                    # token labels:
                     # rule labels: retval
-                    # token list labels: 
-                    # rule list labels: 
-                    # wildcard labels: 
+                    # token list labels:
+                    # rule list labels:
+                    # wildcard labels:
                     if self._state.backtracking == 0:
 
                         retval.tree = root_0
@@ -14863,10 +14863,10 @@ class sdl92Parser(Parser):
 
                 elif alt147 == 3:
                     # sdl92.g:798:19: ( forloop ( ',' forloop )* )
-                    pass 
+                    pass
                     # sdl92.g:798:19: ( forloop ( ',' forloop )* )
                     # sdl92.g:798:20: forloop ( ',' forloop )*
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_forloop_in_task_body9314)
                     forloop455 = self.forloop()
 
@@ -14884,8 +14884,8 @@ class sdl92Parser(Parser):
 
                         if alt146 == 1:
                             # sdl92.g:798:29: ',' forloop
-                            pass 
-                            char_literal456=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_task_body9317) 
+                            pass
+                            char_literal456=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_task_body9317)
                             if self._state.backtracking == 0:
                                 stream_COMMA.add(char_literal456)
                             self._state.following.append(self.FOLLOW_forloop_in_task_body9319)
@@ -14904,11 +14904,11 @@ class sdl92Parser(Parser):
 
                     # AST Rewrite
                     # elements: forloop
-                    # token labels: 
+                    # token labels:
                     # rule labels: retval
-                    # token list labels: 
-                    # rule list labels: 
-                    # wildcard labels: 
+                    # token list labels:
+                    # rule list labels:
+                    # wildcard labels:
                     if self._state.backtracking == 0:
 
                         retval.tree = root_0
@@ -15008,8 +15008,8 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:804:9: ( FOR variable_id IN ( range | variable ) ':' ( transition )? ENDFOR -> ^( FOR variable_id ( variable )? ( range )? ( transition )? ) )
                 # sdl92.g:804:17: FOR variable_id IN ( range | variable ) ':' ( transition )? ENDFOR
-                pass 
-                FOR458=self.match(self.input, FOR, self.FOLLOW_FOR_in_forloop9376) 
+                pass
+                FOR458=self.match(self.input, FOR, self.FOLLOW_FOR_in_forloop9376)
                 if self._state.backtracking == 0:
                     stream_FOR.add(FOR458)
                 self._state.following.append(self.FOLLOW_variable_id_in_forloop9378)
@@ -15018,7 +15018,7 @@ class sdl92Parser(Parser):
                 self._state.following.pop()
                 if self._state.backtracking == 0:
                     stream_variable_id.add(variable_id459.tree)
-                IN460=self.match(self.input, IN, self.FOLLOW_IN_in_forloop9380) 
+                IN460=self.match(self.input, IN, self.FOLLOW_IN_in_forloop9380)
                 if self._state.backtracking == 0:
                     stream_IN.add(IN460)
                 # sdl92.g:804:36: ( range | variable )
@@ -15039,7 +15039,7 @@ class sdl92Parser(Parser):
 
                 if alt148 == 1:
                     # sdl92.g:804:37: range
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_range_in_forloop9383)
                     range461 = self.range()
 
@@ -15050,7 +15050,7 @@ class sdl92Parser(Parser):
 
                 elif alt148 == 2:
                     # sdl92.g:804:45: variable
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_variable_in_forloop9387)
                     variable462 = self.variable()
 
@@ -15060,7 +15060,7 @@ class sdl92Parser(Parser):
 
 
 
-                char_literal463=self.match(self.input, 216, self.FOLLOW_216_in_forloop9390) 
+                char_literal463=self.match(self.input, 216, self.FOLLOW_216_in_forloop9390)
                 if self._state.backtracking == 0:
                     stream_216.add(char_literal463)
                 # sdl92.g:805:17: ( transition )?
@@ -15071,7 +15071,7 @@ class sdl92Parser(Parser):
                     alt149 = 1
                 if alt149 == 1:
                     # sdl92.g:0:0: transition
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_transition_in_forloop9408)
                     transition464 = self.transition()
 
@@ -15081,17 +15081,17 @@ class sdl92Parser(Parser):
 
 
 
-                ENDFOR465=self.match(self.input, ENDFOR, self.FOLLOW_ENDFOR_in_forloop9427) 
+                ENDFOR465=self.match(self.input, ENDFOR, self.FOLLOW_ENDFOR_in_forloop9427)
                 if self._state.backtracking == 0:
                     stream_ENDFOR.add(ENDFOR465)
 
                 # AST Rewrite
                 # elements: FOR, transition, variable_id, range, variable
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -15200,11 +15200,11 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:810:9: ( RANGE L_PAREN a= ground_expression ( COMMA b= ground_expression )? ( COMMA step= INT )? R_PAREN -> ^( RANGE $a ( $b)? ( $step)? ) )
                 # sdl92.g:810:17: RANGE L_PAREN a= ground_expression ( COMMA b= ground_expression )? ( COMMA step= INT )? R_PAREN
-                pass 
-                RANGE466=self.match(self.input, RANGE, self.FOLLOW_RANGE_in_range9479) 
+                pass
+                RANGE466=self.match(self.input, RANGE, self.FOLLOW_RANGE_in_range9479)
                 if self._state.backtracking == 0:
                     stream_RANGE.add(RANGE466)
-                L_PAREN467=self.match(self.input, L_PAREN, self.FOLLOW_L_PAREN_in_range9497) 
+                L_PAREN467=self.match(self.input, L_PAREN, self.FOLLOW_L_PAREN_in_range9497)
                 if self._state.backtracking == 0:
                     stream_L_PAREN.add(L_PAREN467)
                 self._state.following.append(self.FOLLOW_ground_expression_in_range9501)
@@ -15229,8 +15229,8 @@ class sdl92Parser(Parser):
                         alt150 = 1
                 if alt150 == 1:
                     # sdl92.g:812:18: COMMA b= ground_expression
-                    pass 
-                    COMMA468=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_range9520) 
+                    pass
+                    COMMA468=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_range9520)
                     if self._state.backtracking == 0:
                         stream_COMMA.add(COMMA468)
                     self._state.following.append(self.FOLLOW_ground_expression_in_range9524)
@@ -15250,17 +15250,17 @@ class sdl92Parser(Parser):
                     alt151 = 1
                 if alt151 == 1:
                     # sdl92.g:812:47: COMMA step= INT
-                    pass 
-                    COMMA469=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_range9529) 
+                    pass
+                    COMMA469=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_range9529)
                     if self._state.backtracking == 0:
                         stream_COMMA.add(COMMA469)
-                    step=self.match(self.input, INT, self.FOLLOW_INT_in_range9533) 
+                    step=self.match(self.input, INT, self.FOLLOW_INT_in_range9533)
                     if self._state.backtracking == 0:
                         stream_INT.add(step)
 
 
 
-                R_PAREN470=self.match(self.input, R_PAREN, self.FOLLOW_R_PAREN_in_range9553) 
+                R_PAREN470=self.match(self.input, R_PAREN, self.FOLLOW_R_PAREN_in_range9553)
                 if self._state.backtracking == 0:
                     stream_R_PAREN.add(R_PAREN470)
 
@@ -15268,9 +15268,9 @@ class sdl92Parser(Parser):
                 # elements: step, a, RANGE, b
                 # token labels: step
                 # rule labels: retval, b, a
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -15373,14 +15373,14 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:817:9: ( variable ':=' expression -> ^( ASSIGN variable expression ) )
                 # sdl92.g:817:17: variable ':=' expression
-                pass 
+                pass
                 self._state.following.append(self.FOLLOW_variable_in_assignement_statement9605)
                 variable471 = self.variable()
 
                 self._state.following.pop()
                 if self._state.backtracking == 0:
                     stream_variable.add(variable471.tree)
-                string_literal472=self.match(self.input, ASSIG_OP, self.FOLLOW_ASSIG_OP_in_assignement_statement9607) 
+                string_literal472=self.match(self.input, ASSIG_OP, self.FOLLOW_ASSIG_OP_in_assignement_statement9607)
                 if self._state.backtracking == 0:
                     stream_ASSIG_OP.add(string_literal472)
                 self._state.following.append(self.FOLLOW_expression_in_assignement_statement9609)
@@ -15392,11 +15392,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: expression, variable
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -15499,7 +15499,7 @@ class sdl92Parser(Parser):
 
                 if alt152 == 1:
                     # sdl92.g:823:17: postfix_expression
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     self._state.following.append(self.FOLLOW_postfix_expression_in_variable9656)
@@ -15512,18 +15512,18 @@ class sdl92Parser(Parser):
 
                 elif alt152 == 2:
                     # sdl92.g:824:17: ID
-                    pass 
-                    ID475=self.match(self.input, ID, self.FOLLOW_ID_in_variable9674) 
+                    pass
+                    ID475=self.match(self.input, ID, self.FOLLOW_ID_in_variable9674)
                     if self._state.backtracking == 0:
                         stream_ID.add(ID475)
 
                     # AST Rewrite
                     # elements: ID
-                    # token labels: 
+                    # token labels:
                     # rule labels: retval
-                    # token list labels: 
-                    # rule list labels: 
-                    # wildcard labels: 
+                    # token list labels:
+                    # rule list labels:
+                    # wildcard labels:
                     if self._state.backtracking == 0:
 
                         retval.tree = root_0
@@ -15596,12 +15596,12 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:828:9: ( ( ( '!' | '.' ) field_name ) )
                 # sdl92.g:828:17: ( ( '!' | '.' ) field_name )
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 # sdl92.g:828:17: ( ( '!' | '.' ) field_name )
                 # sdl92.g:828:18: ( '!' | '.' ) field_name
-                pass 
+                pass
                 set476 = self.input.LT(1)
                 if self.input.LA(1) == DOT or self.input.LA(1) == 217:
                     self.input.consume()
@@ -15674,7 +15674,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:832:9: ( binary_expression )
                 # sdl92.g:832:17: binary_expression
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 self._state.following.append(self.FOLLOW_binary_expression_in_expression9757)
@@ -15735,7 +15735,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:836:9: ( binary_expression_0 ( IMPLIES binary_expression_0 )* )
                 # sdl92.g:836:17: binary_expression_0 ( IMPLIES binary_expression_0 )*
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 self._state.following.append(self.FOLLOW_binary_expression_0_in_binary_expression9780)
@@ -15760,7 +15760,7 @@ class sdl92Parser(Parser):
 
                     if alt153 == 1:
                         # sdl92.g:836:39: IMPLIES binary_expression_0
-                        pass 
+                        pass
                         IMPLIES480=self.match(self.input, IMPLIES, self.FOLLOW_IMPLIES_in_binary_expression9784)
                         if self._state.backtracking == 0:
 
@@ -15833,7 +15833,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:838:9: ( binary_expression_1 ( ( ( OR ( ELSE )? ) | XOR ) binary_expression_1 )* )
                 # sdl92.g:838:17: binary_expression_1 ( ( ( OR ( ELSE )? ) | XOR ) binary_expression_1 )*
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 self._state.following.append(self.FOLLOW_binary_expression_1_in_binary_expression_09810)
@@ -15865,7 +15865,7 @@ class sdl92Parser(Parser):
 
                     if alt156 == 1:
                         # sdl92.g:838:38: ( ( OR ( ELSE )? ) | XOR ) binary_expression_1
-                        pass 
+                        pass
                         # sdl92.g:838:38: ( ( OR ( ELSE )? ) | XOR )
                         alt155 = 2
                         LA155_0 = self.input.LA(1)
@@ -15884,10 +15884,10 @@ class sdl92Parser(Parser):
 
                         if alt155 == 1:
                             # sdl92.g:838:40: ( OR ( ELSE )? )
-                            pass 
+                            pass
                             # sdl92.g:838:40: ( OR ( ELSE )? )
                             # sdl92.g:838:41: OR ( ELSE )?
-                            pass 
+                            pass
                             OR483=self.match(self.input, OR, self.FOLLOW_OR_in_binary_expression_09816)
                             if self._state.backtracking == 0:
 
@@ -15902,7 +15902,7 @@ class sdl92Parser(Parser):
                                 alt154 = 1
                             if alt154 == 1:
                                 # sdl92.g:0:0: ELSE
-                                pass 
+                                pass
                                 ELSE484=self.match(self.input, ELSE, self.FOLLOW_ELSE_in_binary_expression_09819)
                                 if self._state.backtracking == 0:
 
@@ -15919,7 +15919,7 @@ class sdl92Parser(Parser):
 
                         elif alt155 == 2:
                             # sdl92.g:838:54: XOR
-                            pass 
+                            pass
                             XOR485=self.match(self.input, XOR, self.FOLLOW_XOR_in_binary_expression_09825)
                             if self._state.backtracking == 0:
 
@@ -15993,7 +15993,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:840:9: ( binary_expression_2 ( AND ( THEN )? binary_expression_2 )* )
                 # sdl92.g:840:17: binary_expression_2 ( AND ( THEN )? binary_expression_2 )*
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 self._state.following.append(self.FOLLOW_binary_expression_2_in_binary_expression_19853)
@@ -16018,7 +16018,7 @@ class sdl92Parser(Parser):
 
                     if alt158 == 1:
                         # sdl92.g:840:39: AND ( THEN )? binary_expression_2
-                        pass 
+                        pass
                         AND488=self.match(self.input, AND, self.FOLLOW_AND_in_binary_expression_19857)
                         if self._state.backtracking == 0:
 
@@ -16033,7 +16033,7 @@ class sdl92Parser(Parser):
                             alt157 = 1
                         if alt157 == 1:
                             # sdl92.g:0:0: THEN
-                            pass 
+                            pass
                             THEN489=self.match(self.input, THEN, self.FOLLOW_THEN_in_binary_expression_19860)
                             if self._state.backtracking == 0:
 
@@ -16117,7 +16117,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:842:9: ( binary_expression_3 ( ( EQ | NEQ | GT | GE | LT | LE | IN ) binary_expression_3 )* )
                 # sdl92.g:842:17: binary_expression_3 ( ( EQ | NEQ | GT | GE | LT | LE | IN ) binary_expression_3 )*
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 self._state.following.append(self.FOLLOW_binary_expression_3_in_binary_expression_29886)
@@ -16132,7 +16132,7 @@ class sdl92Parser(Parser):
                     alt160 = self.dfa160.predict(self.input)
                     if alt160 == 1:
                         # sdl92.g:842:38: ( EQ | NEQ | GT | GE | LT | LE | IN ) binary_expression_3
-                        pass 
+                        pass
                         # sdl92.g:842:38: ( EQ | NEQ | GT | GE | LT | LE | IN )
                         alt159 = 7
                         LA159 = self.input.LA(1)
@@ -16160,7 +16160,7 @@ class sdl92Parser(Parser):
 
                         if alt159 == 1:
                             # sdl92.g:842:40: EQ
-                            pass 
+                            pass
                             EQ492=self.match(self.input, EQ, self.FOLLOW_EQ_in_binary_expression_29891)
                             if self._state.backtracking == 0:
 
@@ -16171,7 +16171,7 @@ class sdl92Parser(Parser):
 
                         elif alt159 == 2:
                             # sdl92.g:842:46: NEQ
-                            pass 
+                            pass
                             NEQ493=self.match(self.input, NEQ, self.FOLLOW_NEQ_in_binary_expression_29896)
                             if self._state.backtracking == 0:
 
@@ -16182,7 +16182,7 @@ class sdl92Parser(Parser):
 
                         elif alt159 == 3:
                             # sdl92.g:842:53: GT
-                            pass 
+                            pass
                             GT494=self.match(self.input, GT, self.FOLLOW_GT_in_binary_expression_29901)
                             if self._state.backtracking == 0:
 
@@ -16193,7 +16193,7 @@ class sdl92Parser(Parser):
 
                         elif alt159 == 4:
                             # sdl92.g:842:59: GE
-                            pass 
+                            pass
                             GE495=self.match(self.input, GE, self.FOLLOW_GE_in_binary_expression_29906)
                             if self._state.backtracking == 0:
 
@@ -16204,7 +16204,7 @@ class sdl92Parser(Parser):
 
                         elif alt159 == 5:
                             # sdl92.g:842:65: LT
-                            pass 
+                            pass
                             LT496=self.match(self.input, LT, self.FOLLOW_LT_in_binary_expression_29911)
                             if self._state.backtracking == 0:
 
@@ -16215,7 +16215,7 @@ class sdl92Parser(Parser):
 
                         elif alt159 == 6:
                             # sdl92.g:842:71: LE
-                            pass 
+                            pass
                             LE497=self.match(self.input, LE, self.FOLLOW_LE_in_binary_expression_29916)
                             if self._state.backtracking == 0:
 
@@ -16226,7 +16226,7 @@ class sdl92Parser(Parser):
 
                         elif alt159 == 7:
                             # sdl92.g:842:77: IN
-                            pass 
+                            pass
                             IN498=self.match(self.input, IN, self.FOLLOW_IN_in_binary_expression_29921)
                             if self._state.backtracking == 0:
 
@@ -16302,7 +16302,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:844:9: ( binary_expression_4 ( ( PLUS | DASH | APPEND ) binary_expression_4 )* )
                 # sdl92.g:844:17: binary_expression_4 ( ( PLUS | DASH | APPEND ) binary_expression_4 )*
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 self._state.following.append(self.FOLLOW_binary_expression_4_in_binary_expression_39949)
@@ -16339,7 +16339,7 @@ class sdl92Parser(Parser):
 
                     if alt162 == 1:
                         # sdl92.g:844:38: ( PLUS | DASH | APPEND ) binary_expression_4
-                        pass 
+                        pass
                         # sdl92.g:844:38: ( PLUS | DASH | APPEND )
                         alt161 = 3
                         LA161 = self.input.LA(1)
@@ -16359,7 +16359,7 @@ class sdl92Parser(Parser):
 
                         if alt161 == 1:
                             # sdl92.g:844:40: PLUS
-                            pass 
+                            pass
                             PLUS501=self.match(self.input, PLUS, self.FOLLOW_PLUS_in_binary_expression_39954)
                             if self._state.backtracking == 0:
 
@@ -16370,7 +16370,7 @@ class sdl92Parser(Parser):
 
                         elif alt161 == 2:
                             # sdl92.g:844:48: DASH
-                            pass 
+                            pass
                             DASH502=self.match(self.input, DASH, self.FOLLOW_DASH_in_binary_expression_39959)
                             if self._state.backtracking == 0:
 
@@ -16381,7 +16381,7 @@ class sdl92Parser(Parser):
 
                         elif alt161 == 3:
                             # sdl92.g:844:56: APPEND
-                            pass 
+                            pass
                             APPEND503=self.match(self.input, APPEND, self.FOLLOW_APPEND_in_binary_expression_39964)
                             if self._state.backtracking == 0:
 
@@ -16459,7 +16459,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:846:9: ( unary_expression ( ( ASTERISK | DIV | MOD | REM ) unary_expression )* )
                 # sdl92.g:846:17: unary_expression ( ( ASTERISK | DIV | MOD | REM ) unary_expression )*
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 self._state.following.append(self.FOLLOW_unary_expression_in_binary_expression_49992)
@@ -16503,7 +16503,7 @@ class sdl92Parser(Parser):
 
                     if alt164 == 1:
                         # sdl92.g:846:35: ( ASTERISK | DIV | MOD | REM ) unary_expression
-                        pass 
+                        pass
                         # sdl92.g:846:35: ( ASTERISK | DIV | MOD | REM )
                         alt163 = 4
                         LA163 = self.input.LA(1)
@@ -16525,7 +16525,7 @@ class sdl92Parser(Parser):
 
                         if alt163 == 1:
                             # sdl92.g:846:37: ASTERISK
-                            pass 
+                            pass
                             ASTERISK506=self.match(self.input, ASTERISK, self.FOLLOW_ASTERISK_in_binary_expression_49997)
                             if self._state.backtracking == 0:
 
@@ -16536,7 +16536,7 @@ class sdl92Parser(Parser):
 
                         elif alt163 == 2:
                             # sdl92.g:846:49: DIV
-                            pass 
+                            pass
                             DIV507=self.match(self.input, DIV, self.FOLLOW_DIV_in_binary_expression_410002)
                             if self._state.backtracking == 0:
 
@@ -16547,7 +16547,7 @@ class sdl92Parser(Parser):
 
                         elif alt163 == 3:
                             # sdl92.g:846:56: MOD
-                            pass 
+                            pass
                             MOD508=self.match(self.input, MOD, self.FOLLOW_MOD_in_binary_expression_410007)
                             if self._state.backtracking == 0:
 
@@ -16558,7 +16558,7 @@ class sdl92Parser(Parser):
 
                         elif alt163 == 4:
                             # sdl92.g:846:63: REM
-                            pass 
+                            pass
                             REM509=self.match(self.input, REM, self.FOLLOW_REM_in_binary_expression_410012)
                             if self._state.backtracking == 0:
 
@@ -16640,7 +16640,7 @@ class sdl92Parser(Parser):
                 alt165 = self.dfa165.predict(self.input)
                 if alt165 == 1:
                     # sdl92.g:850:17: postfix_expression
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     self._state.following.append(self.FOLLOW_postfix_expression_in_unary_expression10042)
@@ -16653,7 +16653,7 @@ class sdl92Parser(Parser):
 
                 elif alt165 == 2:
                     # sdl92.g:851:17: primary_expression
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     self._state.following.append(self.FOLLOW_primary_expression_in_unary_expression10060)
@@ -16666,7 +16666,7 @@ class sdl92Parser(Parser):
 
                 elif alt165 == 3:
                     # sdl92.g:852:17: NOT unary_expression
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     NOT513=self.match(self.input, NOT, self.FOLLOW_NOT_in_unary_expression10078)
@@ -16685,8 +16685,8 @@ class sdl92Parser(Parser):
 
                 elif alt165 == 4:
                     # sdl92.g:853:17: DASH unary_expression
-                    pass 
-                    DASH515=self.match(self.input, DASH, self.FOLLOW_DASH_in_unary_expression10099) 
+                    pass
+                    DASH515=self.match(self.input, DASH, self.FOLLOW_DASH_in_unary_expression10099)
                     if self._state.backtracking == 0:
                         stream_DASH.add(DASH515)
                     self._state.following.append(self.FOLLOW_unary_expression_in_unary_expression10101)
@@ -16698,11 +16698,11 @@ class sdl92Parser(Parser):
 
                     # AST Rewrite
                     # elements: unary_expression
-                    # token labels: 
+                    # token labels:
                     # rule labels: retval
-                    # token list labels: 
-                    # rule list labels: 
-                    # wildcard labels: 
+                    # token list labels:
+                    # rule list labels:
+                    # wildcard labels:
                     if self._state.backtracking == 0:
 
                         retval.tree = root_0
@@ -16788,21 +16788,21 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:858:9: ( ( ID -> ^( PRIMARY ^( VARIABLE ID ) ) ) ( '(' params= expression_list ')' -> ^( CALL $postfix_expression ^( PARAMS $params) ) | '!' field_name -> ^( SELECTOR $postfix_expression field_name ) )+ )
                 # sdl92.g:858:17: ( ID -> ^( PRIMARY ^( VARIABLE ID ) ) ) ( '(' params= expression_list ')' -> ^( CALL $postfix_expression ^( PARAMS $params) ) | '!' field_name -> ^( SELECTOR $postfix_expression field_name ) )+
-                pass 
+                pass
                 # sdl92.g:858:17: ( ID -> ^( PRIMARY ^( VARIABLE ID ) ) )
                 # sdl92.g:858:18: ID
-                pass 
-                ID517=self.match(self.input, ID, self.FOLLOW_ID_in_postfix_expression10142) 
+                pass
+                ID517=self.match(self.input, ID, self.FOLLOW_ID_in_postfix_expression10142)
                 if self._state.backtracking == 0:
                     stream_ID.add(ID517)
 
                 # AST Rewrite
                 # elements: ID
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -16842,8 +16842,8 @@ class sdl92Parser(Parser):
                     alt166 = self.dfa166.predict(self.input)
                     if alt166 == 1:
                         # sdl92.g:859:21: '(' params= expression_list ')'
-                        pass 
-                        char_literal518=self.match(self.input, L_PAREN, self.FOLLOW_L_PAREN_in_postfix_expression10177) 
+                        pass
+                        char_literal518=self.match(self.input, L_PAREN, self.FOLLOW_L_PAREN_in_postfix_expression10177)
                         if self._state.backtracking == 0:
                             stream_L_PAREN.add(char_literal518)
                         self._state.following.append(self.FOLLOW_expression_list_in_postfix_expression10181)
@@ -16852,17 +16852,17 @@ class sdl92Parser(Parser):
                         self._state.following.pop()
                         if self._state.backtracking == 0:
                             stream_expression_list.add(params.tree)
-                        char_literal519=self.match(self.input, R_PAREN, self.FOLLOW_R_PAREN_in_postfix_expression10183) 
+                        char_literal519=self.match(self.input, R_PAREN, self.FOLLOW_R_PAREN_in_postfix_expression10183)
                         if self._state.backtracking == 0:
                             stream_R_PAREN.add(char_literal519)
 
                         # AST Rewrite
                         # elements: postfix_expression, params
-                        # token labels: 
+                        # token labels:
                         # rule labels: retval, params
-                        # token list labels: 
-                        # rule list labels: 
-                        # wildcard labels: 
+                        # token list labels:
+                        # rule list labels:
+                        # wildcard labels:
                         if self._state.backtracking == 0:
 
                             retval.tree = root_0
@@ -16903,8 +16903,8 @@ class sdl92Parser(Parser):
 
                     elif alt166 == 2:
                         # sdl92.g:860:21: '!' field_name
-                        pass 
-                        char_literal520=self.match(self.input, 217, self.FOLLOW_217_in_postfix_expression10221) 
+                        pass
+                        char_literal520=self.match(self.input, 217, self.FOLLOW_217_in_postfix_expression10221)
                         if self._state.backtracking == 0:
                             stream_217.add(char_literal520)
                         self._state.following.append(self.FOLLOW_field_name_in_postfix_expression10223)
@@ -16916,11 +16916,11 @@ class sdl92Parser(Parser):
 
                         # AST Rewrite
                         # elements: field_name, postfix_expression
-                        # token labels: 
+                        # token labels:
                         # rule labels: retval
-                        # token list labels: 
-                        # rule list labels: 
-                        # wildcard labels: 
+                        # token list labels:
+                        # rule list labels:
+                        # wildcard labels:
                         if self._state.backtracking == 0:
 
                             retval.tree = root_0
@@ -17034,7 +17034,7 @@ class sdl92Parser(Parser):
 
                 if alt167 == 1:
                     # sdl92.g:866:17: primary
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_primary_in_primary_expression10286)
                     primary522 = self.primary()
 
@@ -17044,11 +17044,11 @@ class sdl92Parser(Parser):
 
                     # AST Rewrite
                     # elements: primary
-                    # token labels: 
+                    # token labels:
                     # rule labels: retval
-                    # token list labels: 
-                    # rule list labels: 
-                    # wildcard labels: 
+                    # token list labels:
+                    # rule list labels:
+                    # wildcard labels:
                     if self._state.backtracking == 0:
 
                         retval.tree = root_0
@@ -17076,8 +17076,8 @@ class sdl92Parser(Parser):
 
                 elif alt167 == 2:
                     # sdl92.g:867:17: '(' expression ')'
-                    pass 
-                    char_literal523=self.match(self.input, L_PAREN, self.FOLLOW_L_PAREN_in_primary_expression10334) 
+                    pass
+                    char_literal523=self.match(self.input, L_PAREN, self.FOLLOW_L_PAREN_in_primary_expression10334)
                     if self._state.backtracking == 0:
                         stream_L_PAREN.add(char_literal523)
                     self._state.following.append(self.FOLLOW_expression_in_primary_expression10336)
@@ -17086,17 +17086,17 @@ class sdl92Parser(Parser):
                     self._state.following.pop()
                     if self._state.backtracking == 0:
                         stream_expression.add(expression524.tree)
-                    char_literal525=self.match(self.input, R_PAREN, self.FOLLOW_R_PAREN_in_primary_expression10338) 
+                    char_literal525=self.match(self.input, R_PAREN, self.FOLLOW_R_PAREN_in_primary_expression10338)
                     if self._state.backtracking == 0:
                         stream_R_PAREN.add(char_literal525)
 
                     # AST Rewrite
                     # elements: expression
-                    # token labels: 
+                    # token labels:
                     # rule labels: retval
-                    # token list labels: 
-                    # rule list labels: 
-                    # wildcard labels: 
+                    # token list labels:
+                    # rule list labels:
+                    # wildcard labels:
                     if self._state.backtracking == 0:
 
                         retval.tree = root_0
@@ -17124,7 +17124,7 @@ class sdl92Parser(Parser):
 
                 elif alt167 == 3:
                     # sdl92.g:868:17: conditional_expression
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     self._state.following.append(self.FOLLOW_conditional_expression_in_primary_expression10375)
@@ -17266,7 +17266,7 @@ class sdl92Parser(Parser):
                 alt170 = self.dfa170.predict(self.input)
                 if alt170 == 1:
                     # sdl92.g:873:17: BITSTR
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     BITSTR527=self.match(self.input, BITSTR, self.FOLLOW_BITSTR_in_primary10407)
@@ -17279,7 +17279,7 @@ class sdl92Parser(Parser):
 
                 elif alt170 == 2:
                     # sdl92.g:874:17: OCTSTR
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     OCTSTR528=self.match(self.input, OCTSTR, self.FOLLOW_OCTSTR_in_primary10426)
@@ -17292,7 +17292,7 @@ class sdl92Parser(Parser):
 
                 elif alt170 == 3:
                     # sdl92.g:875:17: TRUE
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     TRUE529=self.match(self.input, TRUE, self.FOLLOW_TRUE_in_primary10445)
@@ -17305,7 +17305,7 @@ class sdl92Parser(Parser):
 
                 elif alt170 == 4:
                     # sdl92.g:876:17: FALSE
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     FALSE530=self.match(self.input, FALSE, self.FOLLOW_FALSE_in_primary10464)
@@ -17318,7 +17318,7 @@ class sdl92Parser(Parser):
 
                 elif alt170 == 5:
                     # sdl92.g:877:17: STRING
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     STRING531=self.match(self.input, STRING, self.FOLLOW_STRING_in_primary10483)
@@ -17331,7 +17331,7 @@ class sdl92Parser(Parser):
 
                 elif alt170 == 6:
                     # sdl92.g:878:17: NULL
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     NULL532=self.match(self.input, NULL, self.FOLLOW_NULL_in_primary10501)
@@ -17344,7 +17344,7 @@ class sdl92Parser(Parser):
 
                 elif alt170 == 7:
                     # sdl92.g:879:17: PLUS_INFINITY
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     PLUS_INFINITY533=self.match(self.input, PLUS_INFINITY, self.FOLLOW_PLUS_INFINITY_in_primary10520)
@@ -17357,7 +17357,7 @@ class sdl92Parser(Parser):
 
                 elif alt170 == 8:
                     # sdl92.g:880:17: MINUS_INFINITY
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     MINUS_INFINITY534=self.match(self.input, MINUS_INFINITY, self.FOLLOW_MINUS_INFINITY_in_primary10539)
@@ -17370,7 +17370,7 @@ class sdl92Parser(Parser):
 
                 elif alt170 == 9:
                     # sdl92.g:881:17: INT
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     INT535=self.match(self.input, INT, self.FOLLOW_INT_in_primary10558)
@@ -17383,7 +17383,7 @@ class sdl92Parser(Parser):
 
                 elif alt170 == 10:
                     # sdl92.g:882:17: FLOAT
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     FLOAT536=self.match(self.input, FLOAT, self.FOLLOW_FLOAT_in_primary10577)
@@ -17396,11 +17396,11 @@ class sdl92Parser(Parser):
 
                 elif alt170 == 11:
                     # sdl92.g:883:17: ID ':' expression
-                    pass 
-                    ID537=self.match(self.input, ID, self.FOLLOW_ID_in_primary10596) 
+                    pass
+                    ID537=self.match(self.input, ID, self.FOLLOW_ID_in_primary10596)
                     if self._state.backtracking == 0:
                         stream_ID.add(ID537)
-                    char_literal538=self.match(self.input, 216, self.FOLLOW_216_in_primary10598) 
+                    char_literal538=self.match(self.input, 216, self.FOLLOW_216_in_primary10598)
                     if self._state.backtracking == 0:
                         stream_216.add(char_literal538)
                     self._state.following.append(self.FOLLOW_expression_in_primary10600)
@@ -17412,11 +17412,11 @@ class sdl92Parser(Parser):
 
                     # AST Rewrite
                     # elements: expression, ID
-                    # token labels: 
+                    # token labels:
                     # rule labels: retval
-                    # token list labels: 
-                    # rule list labels: 
-                    # wildcard labels: 
+                    # token list labels:
+                    # rule list labels:
+                    # wildcard labels:
                     if self._state.backtracking == 0:
 
                         retval.tree = root_0
@@ -17445,18 +17445,18 @@ class sdl92Parser(Parser):
 
                 elif alt170 == 12:
                     # sdl92.g:884:17: ID
-                    pass 
-                    ID540=self.match(self.input, ID, self.FOLLOW_ID_in_primary10638) 
+                    pass
+                    ID540=self.match(self.input, ID, self.FOLLOW_ID_in_primary10638)
                     if self._state.backtracking == 0:
                         stream_ID.add(ID540)
 
                     # AST Rewrite
                     # elements: ID
-                    # token labels: 
+                    # token labels:
                     # rule labels: retval
-                    # token list labels: 
-                    # rule list labels: 
-                    # wildcard labels: 
+                    # token list labels:
+                    # rule list labels:
+                    # wildcard labels:
                     if self._state.backtracking == 0:
 
                         retval.tree = root_0
@@ -17484,21 +17484,21 @@ class sdl92Parser(Parser):
 
                 elif alt170 == 13:
                     # sdl92.g:885:17: '{' '}'
-                    pass 
-                    char_literal541=self.match(self.input, L_BRACKET, self.FOLLOW_L_BRACKET_in_primary10689) 
+                    pass
+                    char_literal541=self.match(self.input, L_BRACKET, self.FOLLOW_L_BRACKET_in_primary10689)
                     if self._state.backtracking == 0:
                         stream_L_BRACKET.add(char_literal541)
-                    char_literal542=self.match(self.input, R_BRACKET, self.FOLLOW_R_BRACKET_in_primary10691) 
+                    char_literal542=self.match(self.input, R_BRACKET, self.FOLLOW_R_BRACKET_in_primary10691)
                     if self._state.backtracking == 0:
                         stream_R_BRACKET.add(char_literal542)
 
                     # AST Rewrite
-                    # elements: 
-                    # token labels: 
+                    # elements:
+                    # token labels:
                     # rule labels: retval
-                    # token list labels: 
-                    # rule list labels: 
-                    # wildcard labels: 
+                    # token list labels:
+                    # rule list labels:
+                    # wildcard labels:
                     if self._state.backtracking == 0:
 
                         retval.tree = root_0
@@ -17524,35 +17524,35 @@ class sdl92Parser(Parser):
 
                 elif alt170 == 14:
                     # sdl92.g:886:17: '{' MANTISSA mant= INT COMMA BASE bas= INT COMMA EXPONENT exp= INT '}'
-                    pass 
-                    char_literal543=self.match(self.input, L_BRACKET, self.FOLLOW_L_BRACKET_in_primary10735) 
+                    pass
+                    char_literal543=self.match(self.input, L_BRACKET, self.FOLLOW_L_BRACKET_in_primary10735)
                     if self._state.backtracking == 0:
                         stream_L_BRACKET.add(char_literal543)
-                    MANTISSA544=self.match(self.input, MANTISSA, self.FOLLOW_MANTISSA_in_primary10753) 
+                    MANTISSA544=self.match(self.input, MANTISSA, self.FOLLOW_MANTISSA_in_primary10753)
                     if self._state.backtracking == 0:
                         stream_MANTISSA.add(MANTISSA544)
-                    mant=self.match(self.input, INT, self.FOLLOW_INT_in_primary10757) 
+                    mant=self.match(self.input, INT, self.FOLLOW_INT_in_primary10757)
                     if self._state.backtracking == 0:
                         stream_INT.add(mant)
-                    COMMA545=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_primary10759) 
+                    COMMA545=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_primary10759)
                     if self._state.backtracking == 0:
                         stream_COMMA.add(COMMA545)
-                    BASE546=self.match(self.input, BASE, self.FOLLOW_BASE_in_primary10777) 
+                    BASE546=self.match(self.input, BASE, self.FOLLOW_BASE_in_primary10777)
                     if self._state.backtracking == 0:
                         stream_BASE.add(BASE546)
-                    bas=self.match(self.input, INT, self.FOLLOW_INT_in_primary10781) 
+                    bas=self.match(self.input, INT, self.FOLLOW_INT_in_primary10781)
                     if self._state.backtracking == 0:
                         stream_INT.add(bas)
-                    COMMA547=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_primary10783) 
+                    COMMA547=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_primary10783)
                     if self._state.backtracking == 0:
                         stream_COMMA.add(COMMA547)
-                    EXPONENT548=self.match(self.input, EXPONENT, self.FOLLOW_EXPONENT_in_primary10801) 
+                    EXPONENT548=self.match(self.input, EXPONENT, self.FOLLOW_EXPONENT_in_primary10801)
                     if self._state.backtracking == 0:
                         stream_EXPONENT.add(EXPONENT548)
-                    exp=self.match(self.input, INT, self.FOLLOW_INT_in_primary10805) 
+                    exp=self.match(self.input, INT, self.FOLLOW_INT_in_primary10805)
                     if self._state.backtracking == 0:
                         stream_INT.add(exp)
-                    char_literal549=self.match(self.input, R_BRACKET, self.FOLLOW_R_BRACKET_in_primary10823) 
+                    char_literal549=self.match(self.input, R_BRACKET, self.FOLLOW_R_BRACKET_in_primary10823)
                     if self._state.backtracking == 0:
                         stream_R_BRACKET.add(char_literal549)
 
@@ -17560,9 +17560,9 @@ class sdl92Parser(Parser):
                     # elements: mant, exp, bas
                     # token labels: exp, mant, bas
                     # rule labels: retval
-                    # token list labels: 
-                    # rule list labels: 
-                    # wildcard labels: 
+                    # token list labels:
+                    # rule list labels:
+                    # wildcard labels:
                     if self._state.backtracking == 0:
 
                         retval.tree = root_0
@@ -17595,8 +17595,8 @@ class sdl92Parser(Parser):
 
                 elif alt170 == 15:
                     # sdl92.g:891:17: '{' named_value ( COMMA named_value )* '}'
-                    pass 
-                    char_literal550=self.match(self.input, L_BRACKET, self.FOLLOW_L_BRACKET_in_primary10880) 
+                    pass
+                    char_literal550=self.match(self.input, L_BRACKET, self.FOLLOW_L_BRACKET_in_primary10880)
                     if self._state.backtracking == 0:
                         stream_L_BRACKET.add(char_literal550)
                     self._state.following.append(self.FOLLOW_named_value_in_primary10898)
@@ -17616,8 +17616,8 @@ class sdl92Parser(Parser):
 
                         if alt168 == 1:
                             # sdl92.g:892:30: COMMA named_value
-                            pass 
-                            COMMA552=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_primary10901) 
+                            pass
+                            COMMA552=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_primary10901)
                             if self._state.backtracking == 0:
                                 stream_COMMA.add(COMMA552)
                             self._state.following.append(self.FOLLOW_named_value_in_primary10903)
@@ -17630,17 +17630,17 @@ class sdl92Parser(Parser):
 
                         else:
                             break #loop168
-                    char_literal554=self.match(self.input, R_BRACKET, self.FOLLOW_R_BRACKET_in_primary10923) 
+                    char_literal554=self.match(self.input, R_BRACKET, self.FOLLOW_R_BRACKET_in_primary10923)
                     if self._state.backtracking == 0:
                         stream_R_BRACKET.add(char_literal554)
 
                     # AST Rewrite
                     # elements: named_value
-                    # token labels: 
+                    # token labels:
                     # rule labels: retval
-                    # token list labels: 
-                    # rule list labels: 
-                    # wildcard labels: 
+                    # token list labels:
+                    # rule list labels:
+                    # wildcard labels:
                     if self._state.backtracking == 0:
 
                         retval.tree = root_0
@@ -17676,8 +17676,8 @@ class sdl92Parser(Parser):
 
                 elif alt170 == 16:
                     # sdl92.g:894:17: '{' primary ( COMMA primary )* '}'
-                    pass 
-                    char_literal555=self.match(self.input, L_BRACKET, self.FOLLOW_L_BRACKET_in_primary10974) 
+                    pass
+                    char_literal555=self.match(self.input, L_BRACKET, self.FOLLOW_L_BRACKET_in_primary10974)
                     if self._state.backtracking == 0:
                         stream_L_BRACKET.add(char_literal555)
                     self._state.following.append(self.FOLLOW_primary_in_primary10992)
@@ -17697,8 +17697,8 @@ class sdl92Parser(Parser):
 
                         if alt169 == 1:
                             # sdl92.g:895:26: COMMA primary
-                            pass 
-                            COMMA557=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_primary10995) 
+                            pass
+                            COMMA557=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_primary10995)
                             if self._state.backtracking == 0:
                                 stream_COMMA.add(COMMA557)
                             self._state.following.append(self.FOLLOW_primary_in_primary10997)
@@ -17711,17 +17711,17 @@ class sdl92Parser(Parser):
 
                         else:
                             break #loop169
-                    char_literal559=self.match(self.input, R_BRACKET, self.FOLLOW_R_BRACKET_in_primary11017) 
+                    char_literal559=self.match(self.input, R_BRACKET, self.FOLLOW_R_BRACKET_in_primary11017)
                     if self._state.backtracking == 0:
                         stream_R_BRACKET.add(char_literal559)
 
                     # AST Rewrite
                     # elements: primary
-                    # token labels: 
+                    # token labels:
                     # rule labels: retval
-                    # token list labels: 
-                    # rule list labels: 
-                    # wildcard labels: 
+                    # token list labels:
+                    # rule list labels:
+                    # wildcard labels:
                     if self._state.backtracking == 0:
 
                         retval.tree = root_0
@@ -17757,7 +17757,7 @@ class sdl92Parser(Parser):
 
                 elif alt170 == 17:
                     # sdl92.g:897:17: STATE
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     STATE560=self.match(self.input, STATE, self.FOLLOW_STATE_in_primary11068)
@@ -17814,18 +17814,18 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:902:9: ( STRING -> ^( INFORMAL_TEXT STRING ) )
                 # sdl92.g:902:18: STRING
-                pass 
-                STRING561=self.match(self.input, STRING, self.FOLLOW_STRING_in_informal_text11102) 
+                pass
+                STRING561=self.match(self.input, STRING, self.FOLLOW_STRING_in_informal_text11102)
                 if self._state.backtracking == 0:
                     stream_STRING.add(STRING561)
 
                 # AST Rewrite
                 # elements: STRING
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -17899,7 +17899,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:908:9: ( ID expression )
                 # sdl92.g:908:17: ID expression
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 ID562=self.match(self.input, ID, self.FOLLOW_ID_in_named_value11148)
@@ -17990,8 +17990,8 @@ class sdl92Parser(Parser):
 
                 if alt171 == 1:
                     # sdl92.g:912:16: '(' expression_list ')'
-                    pass 
-                    char_literal564=self.match(self.input, L_PAREN, self.FOLLOW_L_PAREN_in_primary_params11172) 
+                    pass
+                    char_literal564=self.match(self.input, L_PAREN, self.FOLLOW_L_PAREN_in_primary_params11172)
                     if self._state.backtracking == 0:
                         stream_L_PAREN.add(char_literal564)
                     self._state.following.append(self.FOLLOW_expression_list_in_primary_params11174)
@@ -18000,17 +18000,17 @@ class sdl92Parser(Parser):
                     self._state.following.pop()
                     if self._state.backtracking == 0:
                         stream_expression_list.add(expression_list565.tree)
-                    char_literal566=self.match(self.input, R_PAREN, self.FOLLOW_R_PAREN_in_primary_params11176) 
+                    char_literal566=self.match(self.input, R_PAREN, self.FOLLOW_R_PAREN_in_primary_params11176)
                     if self._state.backtracking == 0:
                         stream_R_PAREN.add(char_literal566)
 
                     # AST Rewrite
                     # elements: expression_list
-                    # token labels: 
+                    # token labels:
                     # rule labels: retval
-                    # token list labels: 
-                    # rule list labels: 
-                    # wildcard labels: 
+                    # token list labels:
+                    # rule list labels:
+                    # wildcard labels:
                     if self._state.backtracking == 0:
 
                         retval.tree = root_0
@@ -18038,8 +18038,8 @@ class sdl92Parser(Parser):
 
                 elif alt171 == 2:
                     # sdl92.g:914:18: '!' literal_id
-                    pass 
-                    char_literal567=self.match(self.input, 217, self.FOLLOW_217_in_primary_params11215) 
+                    pass
+                    char_literal567=self.match(self.input, 217, self.FOLLOW_217_in_primary_params11215)
                     if self._state.backtracking == 0:
                         stream_217.add(char_literal567)
                     self._state.following.append(self.FOLLOW_literal_id_in_primary_params11217)
@@ -18051,11 +18051,11 @@ class sdl92Parser(Parser):
 
                     # AST Rewrite
                     # elements: literal_id
-                    # token labels: 
+                    # token labels:
                     # rule labels: retval
-                    # token list labels: 
-                    # rule list labels: 
-                    # wildcard labels: 
+                    # token list labels:
+                    # rule list labels:
+                    # wildcard labels:
                     if self._state.backtracking == 0:
 
                         retval.tree = root_0
@@ -18132,7 +18132,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:929:9: ( primary '(' expression_list ')' )
                 # sdl92.g:929:17: primary '(' expression_list ')'
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 self._state.following.append(self.FOLLOW_primary_in_indexed_primary11264)
@@ -18209,7 +18209,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:933:9: ( primary field_selection )
                 # sdl92.g:933:17: primary field_selection
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 self._state.following.append(self.FOLLOW_primary_in_field_primary11293)
@@ -18276,7 +18276,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:937:9: ( '(.' expression_list '.)' )
                 # sdl92.g:937:17: '(.' expression_list '.)'
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 string_literal575=self.match(self.input, 218, self.FOLLOW_218_in_structure_primary11318)
@@ -18345,7 +18345,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:943:9: ( active_primary )
                 # sdl92.g:943:17: active_primary
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 self._state.following.append(self.FOLLOW_active_primary_in_active_expression11347)
@@ -18450,7 +18450,7 @@ class sdl92Parser(Parser):
 
                 if alt172 == 1:
                     # sdl92.g:947:17: variable_access
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     self._state.following.append(self.FOLLOW_variable_access_in_active_primary11370)
@@ -18463,7 +18463,7 @@ class sdl92Parser(Parser):
 
                 elif alt172 == 2:
                     # sdl92.g:948:19: operator_application
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     self._state.following.append(self.FOLLOW_operator_application_in_active_primary11390)
@@ -18476,7 +18476,7 @@ class sdl92Parser(Parser):
 
                 elif alt172 == 3:
                     # sdl92.g:949:19: conditional_expression
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     self._state.following.append(self.FOLLOW_conditional_expression_in_active_primary11410)
@@ -18489,7 +18489,7 @@ class sdl92Parser(Parser):
 
                 elif alt172 == 4:
                     # sdl92.g:950:19: imperative_operator
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     self._state.following.append(self.FOLLOW_imperative_operator_in_active_primary11430)
@@ -18502,7 +18502,7 @@ class sdl92Parser(Parser):
 
                 elif alt172 == 5:
                     # sdl92.g:951:19: '(' active_expression ')'
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     char_literal583=self.match(self.input, L_PAREN, self.FOLLOW_L_PAREN_in_active_primary11450)
@@ -18527,7 +18527,7 @@ class sdl92Parser(Parser):
 
                 elif alt172 == 6:
                     # sdl92.g:952:19: 'ERROR'
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     string_literal586=self.match(self.input, 220, self.FOLLOW_220_in_active_primary11474)
@@ -18616,7 +18616,7 @@ class sdl92Parser(Parser):
 
                 if alt173 == 1:
                     # sdl92.g:957:17: now_expression
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     self._state.following.append(self.FOLLOW_now_expression_in_imperative_operator11501)
@@ -18629,7 +18629,7 @@ class sdl92Parser(Parser):
 
                 elif alt173 == 2:
                     # sdl92.g:958:19: import_expression
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     self._state.following.append(self.FOLLOW_import_expression_in_imperative_operator11521)
@@ -18642,7 +18642,7 @@ class sdl92Parser(Parser):
 
                 elif alt173 == 3:
                     # sdl92.g:959:19: pid_expression
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     self._state.following.append(self.FOLLOW_pid_expression_in_imperative_operator11541)
@@ -18655,7 +18655,7 @@ class sdl92Parser(Parser):
 
                 elif alt173 == 4:
                     # sdl92.g:960:19: view_expression
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     self._state.following.append(self.FOLLOW_view_expression_in_imperative_operator11561)
@@ -18668,7 +18668,7 @@ class sdl92Parser(Parser):
 
                 elif alt173 == 5:
                     # sdl92.g:961:19: timer_active_expression
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     self._state.following.append(self.FOLLOW_timer_active_expression_in_imperative_operator11581)
@@ -18681,7 +18681,7 @@ class sdl92Parser(Parser):
 
                 elif alt173 == 6:
                     # sdl92.g:962:19: anyvalue_expression
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     self._state.following.append(self.FOLLOW_anyvalue_expression_in_imperative_operator11601)
@@ -18749,7 +18749,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:966:9: ( ACTIVE '(' timer_id ( '(' expression_list ')' )? ')' )
                 # sdl92.g:966:17: ACTIVE '(' timer_id ( '(' expression_list ')' )? ')'
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 ACTIVE593=self.match(self.input, ACTIVE, self.FOLLOW_ACTIVE_in_timer_active_expression11624)
@@ -18778,7 +18778,7 @@ class sdl92Parser(Parser):
                     alt174 = 1
                 if alt174 == 1:
                     # sdl92.g:966:38: '(' expression_list ')'
-                    pass 
+                    pass
                     char_literal596=self.match(self.input, L_PAREN, self.FOLLOW_L_PAREN_in_timer_active_expression11631)
                     if self._state.backtracking == 0:
 
@@ -18860,7 +18860,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:970:9: ( ANY '(' sort ')' )
                 # sdl92.g:970:17: ANY '(' sort ')'
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 ANY600=self.match(self.input, ANY, self.FOLLOW_ANY_in_anyvalue_expression11662)
@@ -18935,7 +18935,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:973:9: ( sort_id -> ^( SORT sort_id ) )
                 # sdl92.g:973:17: sort_id
-                pass 
+                pass
                 self._state.following.append(self.FOLLOW_sort_id_in_sort11686)
                 sort_id604 = self.sort_id()
 
@@ -18945,11 +18945,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: sort_id
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -19021,7 +19021,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:977:9: ( type_id -> ^( TYPE_INSTANCE type_id ) )
                 # sdl92.g:977:17: type_id
-                pass 
+                pass
                 self._state.following.append(self.FOLLOW_type_id_in_type_inst11729)
                 type_id605 = self.type_id()
 
@@ -19031,11 +19031,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: type_id
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -19107,7 +19107,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:980:9: ( syntype_id )
                 # sdl92.g:980:17: syntype_id
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 self._state.following.append(self.FOLLOW_syntype_id_in_syntype11764)
@@ -19174,7 +19174,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:984:9: ( IMPORT '(' remote_variable_id ( ',' destination )? ')' )
                 # sdl92.g:984:17: IMPORT '(' remote_variable_id ( ',' destination )? ')'
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 IMPORT607=self.match(self.input, IMPORT, self.FOLLOW_IMPORT_in_import_expression11787)
@@ -19203,7 +19203,7 @@ class sdl92Parser(Parser):
                     alt175 = 1
                 if alt175 == 1:
                     # sdl92.g:984:48: ',' destination
-                    pass 
+                    pass
                     char_literal610=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_import_expression11794)
                     if self._state.backtracking == 0:
 
@@ -19283,7 +19283,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:988:9: ( VIEW '(' view_id ( ',' pid_expression )? ')' )
                 # sdl92.g:988:17: VIEW '(' view_id ( ',' pid_expression )? ')'
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 VIEW613=self.match(self.input, VIEW, self.FOLLOW_VIEW_in_view_expression11823)
@@ -19312,7 +19312,7 @@ class sdl92Parser(Parser):
                     alt176 = 1
                 if alt176 == 1:
                     # sdl92.g:988:35: ',' pid_expression
-                    pass 
+                    pass
                     char_literal616=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_view_expression11830)
                     if self._state.backtracking == 0:
 
@@ -19382,7 +19382,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:992:9: ( variable_id )
                 # sdl92.g:992:17: variable_id
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 self._state.following.append(self.FOLLOW_variable_id_in_variable_access11859)
@@ -19445,7 +19445,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:996:9: ( operator_id '(' active_expression_list ')' )
                 # sdl92.g:996:17: operator_id '(' active_expression_list ')'
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 self._state.following.append(self.FOLLOW_operator_id_in_operator_application11882)
@@ -19524,7 +19524,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1000:9: ( active_expression ( ',' expression_list )? )
                 # sdl92.g:1000:17: active_expression ( ',' expression_list )?
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 self._state.following.append(self.FOLLOW_active_expression_in_active_expression_list11910)
@@ -19541,7 +19541,7 @@ class sdl92Parser(Parser):
                     alt177 = 1
                 if alt177 == 1:
                     # sdl92.g:1000:36: ',' expression_list
-                    pass 
+                    pass
                     char_literal625=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_active_expression_list11913)
                     if self._state.backtracking == 0:
 
@@ -19605,7 +19605,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1007:9: ( external_synonym_id )
                 # sdl92.g:1007:17: external_synonym_id
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 self._state.following.append(self.FOLLOW_external_synonym_id_in_external_synonym11946)
@@ -19678,8 +19678,8 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1011:9: ( IF ifexpr= expression THEN thenexpr= expression ELSE elseexpr= expression FI -> ^( CONDITIONAL $ifexpr $thenexpr $elseexpr) )
                 # sdl92.g:1011:17: IF ifexpr= expression THEN thenexpr= expression ELSE elseexpr= expression FI
-                pass 
-                IF628=self.match(self.input, IF, self.FOLLOW_IF_in_conditional_expression11969) 
+                pass
+                IF628=self.match(self.input, IF, self.FOLLOW_IF_in_conditional_expression11969)
                 if self._state.backtracking == 0:
                     stream_IF.add(IF628)
                 self._state.following.append(self.FOLLOW_expression_in_conditional_expression11973)
@@ -19688,7 +19688,7 @@ class sdl92Parser(Parser):
                 self._state.following.pop()
                 if self._state.backtracking == 0:
                     stream_expression.add(ifexpr.tree)
-                THEN629=self.match(self.input, THEN, self.FOLLOW_THEN_in_conditional_expression11991) 
+                THEN629=self.match(self.input, THEN, self.FOLLOW_THEN_in_conditional_expression11991)
                 if self._state.backtracking == 0:
                     stream_THEN.add(THEN629)
                 self._state.following.append(self.FOLLOW_expression_in_conditional_expression11995)
@@ -19697,7 +19697,7 @@ class sdl92Parser(Parser):
                 self._state.following.pop()
                 if self._state.backtracking == 0:
                     stream_expression.add(thenexpr.tree)
-                ELSE630=self.match(self.input, ELSE, self.FOLLOW_ELSE_in_conditional_expression12013) 
+                ELSE630=self.match(self.input, ELSE, self.FOLLOW_ELSE_in_conditional_expression12013)
                 if self._state.backtracking == 0:
                     stream_ELSE.add(ELSE630)
                 self._state.following.append(self.FOLLOW_expression_in_conditional_expression12017)
@@ -19706,17 +19706,17 @@ class sdl92Parser(Parser):
                 self._state.following.pop()
                 if self._state.backtracking == 0:
                     stream_expression.add(elseexpr.tree)
-                FI631=self.match(self.input, FI, self.FOLLOW_FI_in_conditional_expression12019) 
+                FI631=self.match(self.input, FI, self.FOLLOW_FI_in_conditional_expression12019)
                 if self._state.backtracking == 0:
                     stream_FI.add(FI631)
 
                 # AST Rewrite
                 # elements: ifexpr, thenexpr, elseexpr
-                # token labels: 
+                # token labels:
                 # rule labels: elseexpr, retval, ifexpr, thenexpr
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -19813,7 +19813,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1018:9: ( expression ( ',' expression )* -> ( expression )+ )
                 # sdl92.g:1018:17: expression ( ',' expression )*
-                pass 
+                pass
                 self._state.following.append(self.FOLLOW_expression_in_expression_list12070)
                 expression632 = self.expression()
 
@@ -19831,8 +19831,8 @@ class sdl92Parser(Parser):
 
                     if alt178 == 1:
                         # sdl92.g:1018:29: ',' expression
-                        pass 
-                        char_literal633=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_expression_list12073) 
+                        pass
+                        char_literal633=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_expression_list12073)
                         if self._state.backtracking == 0:
                             stream_COMMA.add(char_literal633)
                         self._state.following.append(self.FOLLOW_expression_in_expression_list12075)
@@ -19848,11 +19848,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: expression
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -19938,13 +19938,13 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1023:9: ( ( label )? ( cif )? ( hyperlink )? terminator end -> ^( TERMINATOR ( label )? ( cif )? ( hyperlink )? ( end )? terminator ) )
                 # sdl92.g:1023:17: ( label )? ( cif )? ( hyperlink )? terminator end
-                pass 
+                pass
                 # sdl92.g:1023:17: ( label )?
                 alt179 = 2
                 alt179 = self.dfa179.predict(self.input)
                 if alt179 == 1:
                     # sdl92.g:0:0: label
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_label_in_terminator_statement12118)
                     label635 = self.label()
 
@@ -19965,7 +19965,7 @@ class sdl92Parser(Parser):
                         alt180 = 1
                 if alt180 == 1:
                     # sdl92.g:0:0: cif
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_cif_in_terminator_statement12137)
                     cif636 = self.cif()
 
@@ -19983,7 +19983,7 @@ class sdl92Parser(Parser):
                     alt181 = 1
                 if alt181 == 1:
                     # sdl92.g:0:0: hyperlink
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_hyperlink_in_terminator_statement12156)
                     hyperlink637 = self.hyperlink()
 
@@ -20008,11 +20008,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: label, cif, end, hyperlink, terminator
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -20114,7 +20114,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1031:9: ( ( cif )? connector_name ':' -> ^( LABEL ( cif )? connector_name ) )
                 # sdl92.g:1031:17: ( cif )? connector_name ':'
-                pass 
+                pass
                 # sdl92.g:1031:17: ( cif )?
                 alt182 = 2
                 LA182_0 = self.input.LA(1)
@@ -20123,7 +20123,7 @@ class sdl92Parser(Parser):
                     alt182 = 1
                 if alt182 == 1:
                     # sdl92.g:0:0: cif
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_cif_in_label12248)
                     cif640 = self.cif()
 
@@ -20139,17 +20139,17 @@ class sdl92Parser(Parser):
                 self._state.following.pop()
                 if self._state.backtracking == 0:
                     stream_connector_name.add(connector_name641.tree)
-                char_literal642=self.match(self.input, 216, self.FOLLOW_216_in_label12253) 
+                char_literal642=self.match(self.input, 216, self.FOLLOW_216_in_label12253)
                 if self._state.backtracking == 0:
                     stream_216.add(char_literal642)
 
                 # AST Rewrite
                 # elements: connector_name, cif
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -20252,7 +20252,7 @@ class sdl92Parser(Parser):
 
                 if alt183 == 1:
                     # sdl92.g:1036:17: nextstate
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     self._state.following.append(self.FOLLOW_nextstate_in_terminator12300)
@@ -20265,7 +20265,7 @@ class sdl92Parser(Parser):
 
                 elif alt183 == 2:
                     # sdl92.g:1036:29: join
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     self._state.following.append(self.FOLLOW_join_in_terminator12304)
@@ -20278,7 +20278,7 @@ class sdl92Parser(Parser):
 
                 elif alt183 == 3:
                     # sdl92.g:1036:36: stop
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     self._state.following.append(self.FOLLOW_stop_in_terminator12308)
@@ -20291,7 +20291,7 @@ class sdl92Parser(Parser):
 
                 elif alt183 == 4:
                     # sdl92.g:1036:43: return_stmt
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     self._state.following.append(self.FOLLOW_return_stmt_in_terminator12312)
@@ -20350,8 +20350,8 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1040:9: ( JOIN connector_name -> ^( JOIN connector_name ) )
                 # sdl92.g:1040:18: JOIN connector_name
-                pass 
-                JOIN647=self.match(self.input, JOIN, self.FOLLOW_JOIN_in_join12336) 
+                pass
+                JOIN647=self.match(self.input, JOIN, self.FOLLOW_JOIN_in_join12336)
                 if self._state.backtracking == 0:
                     stream_JOIN.add(JOIN647)
                 self._state.following.append(self.FOLLOW_connector_name_in_join12338)
@@ -20363,11 +20363,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: JOIN, connector_name
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -20439,7 +20439,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1044:9: ( STOP )
                 # sdl92.g:1044:17: STOP
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 STOP649=self.match(self.input, STOP, self.FOLLOW_STOP_in_stop12378)
@@ -20499,8 +20499,8 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1048:9: ( RETURN ( expression )? -> ^( RETURN ( expression )? ) )
                 # sdl92.g:1048:17: RETURN ( expression )?
-                pass 
-                RETURN650=self.match(self.input, RETURN, self.FOLLOW_RETURN_in_return_stmt12401) 
+                pass
+                RETURN650=self.match(self.input, RETURN, self.FOLLOW_RETURN_in_return_stmt12401)
                 if self._state.backtracking == 0:
                     stream_RETURN.add(RETURN650)
                 # sdl92.g:1048:24: ( expression )?
@@ -20511,7 +20511,7 @@ class sdl92Parser(Parser):
                     alt184 = 1
                 if alt184 == 1:
                     # sdl92.g:0:0: expression
-                    pass 
+                    pass
                     self._state.following.append(self.FOLLOW_expression_in_return_stmt12403)
                     expression651 = self.expression()
 
@@ -20524,11 +20524,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: RETURN, expression
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -20608,8 +20608,8 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1053:9: ( NEXTSTATE nextstatebody -> ^( NEXTSTATE nextstatebody ) )
                 # sdl92.g:1053:17: NEXTSTATE nextstatebody
-                pass 
-                NEXTSTATE652=self.match(self.input, NEXTSTATE, self.FOLLOW_NEXTSTATE_in_nextstate12449) 
+                pass
+                NEXTSTATE652=self.match(self.input, NEXTSTATE, self.FOLLOW_NEXTSTATE_in_nextstate12449)
                 if self._state.backtracking == 0:
                     stream_NEXTSTATE.add(NEXTSTATE652)
                 self._state.following.append(self.FOLLOW_nextstatebody_in_nextstate12451)
@@ -20621,11 +20621,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: nextstatebody, NEXTSTATE
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -20717,7 +20717,7 @@ class sdl92Parser(Parser):
 
                 if alt186 == 1:
                     # sdl92.g:1058:17: statename ( via )?
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     self._state.following.append(self.FOLLOW_statename_in_nextstatebody12495)
@@ -20734,7 +20734,7 @@ class sdl92Parser(Parser):
                         alt185 = 1
                     if alt185 == 1:
                         # sdl92.g:0:0: via
-                        pass 
+                        pass
                         self._state.following.append(self.FOLLOW_via_in_nextstatebody12497)
                         via655 = self.via()
 
@@ -20748,7 +20748,7 @@ class sdl92Parser(Parser):
 
                 elif alt186 == 2:
                     # sdl92.g:1059:19: dash_nextstate
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     self._state.following.append(self.FOLLOW_dash_nextstate_in_nextstatebody12518)
@@ -20807,8 +20807,8 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1062:9: ( VIA state_entry_point_name -> ^( VIA state_entry_point_name ) )
                 # sdl92.g:1062:17: VIA state_entry_point_name
-                pass 
-                VIA657=self.match(self.input, VIA, self.FOLLOW_VIA_in_via12537) 
+                pass
+                VIA657=self.match(self.input, VIA, self.FOLLOW_VIA_in_via12537)
                 if self._state.backtracking == 0:
                     stream_VIA.add(VIA657)
                 self._state.following.append(self.FOLLOW_state_entry_point_name_in_via12539)
@@ -20820,11 +20820,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: VIA, state_entry_point_name
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -20908,7 +20908,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1067:9: ( ( ( cif )? ( hyperlink )? COMMENT STRING )? ( SEMI )+ -> ( ^( COMMENT ( cif )? ( hyperlink )? STRING ) )? )
                 # sdl92.g:1067:13: ( ( cif )? ( hyperlink )? COMMENT STRING )? ( SEMI )+
-                pass 
+                pass
                 # sdl92.g:1067:13: ( ( cif )? ( hyperlink )? COMMENT STRING )?
                 alt189 = 2
                 LA189_0 = self.input.LA(1)
@@ -20917,7 +20917,7 @@ class sdl92Parser(Parser):
                     alt189 = 1
                 if alt189 == 1:
                     # sdl92.g:1067:14: ( cif )? ( hyperlink )? COMMENT STRING
-                    pass 
+                    pass
                     # sdl92.g:1067:14: ( cif )?
                     alt187 = 2
                     LA187_0 = self.input.LA(1)
@@ -20929,7 +20929,7 @@ class sdl92Parser(Parser):
                             alt187 = 1
                     if alt187 == 1:
                         # sdl92.g:0:0: cif
-                        pass 
+                        pass
                         self._state.following.append(self.FOLLOW_cif_in_end12580)
                         cif659 = self.cif()
 
@@ -20947,7 +20947,7 @@ class sdl92Parser(Parser):
                         alt188 = 1
                     if alt188 == 1:
                         # sdl92.g:0:0: hyperlink
-                        pass 
+                        pass
                         self._state.following.append(self.FOLLOW_hyperlink_in_end12583)
                         hyperlink660 = self.hyperlink()
 
@@ -20957,10 +20957,10 @@ class sdl92Parser(Parser):
 
 
 
-                    COMMENT661=self.match(self.input, COMMENT, self.FOLLOW_COMMENT_in_end12586) 
+                    COMMENT661=self.match(self.input, COMMENT, self.FOLLOW_COMMENT_in_end12586)
                     if self._state.backtracking == 0:
                         stream_COMMENT.add(COMMENT661)
-                    STRING662=self.match(self.input, STRING, self.FOLLOW_STRING_in_end12588) 
+                    STRING662=self.match(self.input, STRING, self.FOLLOW_STRING_in_end12588)
                     if self._state.backtracking == 0:
                         stream_STRING.add(STRING662)
 
@@ -20978,8 +20978,8 @@ class sdl92Parser(Parser):
 
                     if alt190 == 1:
                         # sdl92.g:0:0: SEMI
-                        pass 
-                        SEMI663=self.match(self.input, SEMI, self.FOLLOW_SEMI_in_end12592) 
+                        pass
+                        SEMI663=self.match(self.input, SEMI, self.FOLLOW_SEMI_in_end12592)
                         if self._state.backtracking == 0:
                             stream_SEMI.add(SEMI663)
 
@@ -20998,11 +20998,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: COMMENT, hyperlink, cif, STRING
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -21126,7 +21126,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1072:9: ( cif_decl symbolname L_PAREN x= INT COMMA y= INT R_PAREN COMMA L_PAREN width= INT COMMA height= INT R_PAREN cif_end -> ^( CIF $x $y $width $height) )
                 # sdl92.g:1072:17: cif_decl symbolname L_PAREN x= INT COMMA y= INT R_PAREN COMMA L_PAREN width= INT COMMA height= INT R_PAREN cif_end
-                pass 
+                pass
                 self._state.following.append(self.FOLLOW_cif_decl_in_cif12639)
                 cif_decl664 = self.cif_decl()
 
@@ -21139,37 +21139,37 @@ class sdl92Parser(Parser):
                 self._state.following.pop()
                 if self._state.backtracking == 0:
                     stream_symbolname.add(symbolname665.tree)
-                L_PAREN666=self.match(self.input, L_PAREN, self.FOLLOW_L_PAREN_in_cif12659) 
+                L_PAREN666=self.match(self.input, L_PAREN, self.FOLLOW_L_PAREN_in_cif12659)
                 if self._state.backtracking == 0:
                     stream_L_PAREN.add(L_PAREN666)
-                x=self.match(self.input, INT, self.FOLLOW_INT_in_cif12663) 
+                x=self.match(self.input, INT, self.FOLLOW_INT_in_cif12663)
                 if self._state.backtracking == 0:
                     stream_INT.add(x)
-                COMMA667=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_cif12665) 
+                COMMA667=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_cif12665)
                 if self._state.backtracking == 0:
                     stream_COMMA.add(COMMA667)
-                y=self.match(self.input, INT, self.FOLLOW_INT_in_cif12669) 
+                y=self.match(self.input, INT, self.FOLLOW_INT_in_cif12669)
                 if self._state.backtracking == 0:
                     stream_INT.add(y)
-                R_PAREN668=self.match(self.input, R_PAREN, self.FOLLOW_R_PAREN_in_cif12671) 
+                R_PAREN668=self.match(self.input, R_PAREN, self.FOLLOW_R_PAREN_in_cif12671)
                 if self._state.backtracking == 0:
                     stream_R_PAREN.add(R_PAREN668)
-                COMMA669=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_cif12689) 
+                COMMA669=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_cif12689)
                 if self._state.backtracking == 0:
                     stream_COMMA.add(COMMA669)
-                L_PAREN670=self.match(self.input, L_PAREN, self.FOLLOW_L_PAREN_in_cif12707) 
+                L_PAREN670=self.match(self.input, L_PAREN, self.FOLLOW_L_PAREN_in_cif12707)
                 if self._state.backtracking == 0:
                     stream_L_PAREN.add(L_PAREN670)
-                width=self.match(self.input, INT, self.FOLLOW_INT_in_cif12711) 
+                width=self.match(self.input, INT, self.FOLLOW_INT_in_cif12711)
                 if self._state.backtracking == 0:
                     stream_INT.add(width)
-                COMMA671=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_cif12713) 
+                COMMA671=self.match(self.input, COMMA, self.FOLLOW_COMMA_in_cif12713)
                 if self._state.backtracking == 0:
                     stream_COMMA.add(COMMA671)
-                height=self.match(self.input, INT, self.FOLLOW_INT_in_cif12717) 
+                height=self.match(self.input, INT, self.FOLLOW_INT_in_cif12717)
                 if self._state.backtracking == 0:
                     stream_INT.add(height)
-                R_PAREN672=self.match(self.input, R_PAREN, self.FOLLOW_R_PAREN_in_cif12719) 
+                R_PAREN672=self.match(self.input, R_PAREN, self.FOLLOW_R_PAREN_in_cif12719)
                 if self._state.backtracking == 0:
                     stream_R_PAREN.add(R_PAREN672)
                 self._state.following.append(self.FOLLOW_cif_end_in_cif12737)
@@ -21183,9 +21183,9 @@ class sdl92Parser(Parser):
                 # elements: x, width, y, height
                 # token labels: height, width, y, x
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -21282,26 +21282,26 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1081:9: ( cif_decl KEEP SPECIFIC GEODE HYPERLINK STRING cif_end -> ^( HYPERLINK STRING ) )
                 # sdl92.g:1081:17: cif_decl KEEP SPECIFIC GEODE HYPERLINK STRING cif_end
-                pass 
+                pass
                 self._state.following.append(self.FOLLOW_cif_decl_in_hyperlink12791)
                 cif_decl674 = self.cif_decl()
 
                 self._state.following.pop()
                 if self._state.backtracking == 0:
                     stream_cif_decl.add(cif_decl674.tree)
-                KEEP675=self.match(self.input, KEEP, self.FOLLOW_KEEP_in_hyperlink12793) 
+                KEEP675=self.match(self.input, KEEP, self.FOLLOW_KEEP_in_hyperlink12793)
                 if self._state.backtracking == 0:
                     stream_KEEP.add(KEEP675)
-                SPECIFIC676=self.match(self.input, SPECIFIC, self.FOLLOW_SPECIFIC_in_hyperlink12795) 
+                SPECIFIC676=self.match(self.input, SPECIFIC, self.FOLLOW_SPECIFIC_in_hyperlink12795)
                 if self._state.backtracking == 0:
                     stream_SPECIFIC.add(SPECIFIC676)
-                GEODE677=self.match(self.input, GEODE, self.FOLLOW_GEODE_in_hyperlink12797) 
+                GEODE677=self.match(self.input, GEODE, self.FOLLOW_GEODE_in_hyperlink12797)
                 if self._state.backtracking == 0:
                     stream_GEODE.add(GEODE677)
-                HYPERLINK678=self.match(self.input, HYPERLINK, self.FOLLOW_HYPERLINK_in_hyperlink12799) 
+                HYPERLINK678=self.match(self.input, HYPERLINK, self.FOLLOW_HYPERLINK_in_hyperlink12799)
                 if self._state.backtracking == 0:
                     stream_HYPERLINK.add(HYPERLINK678)
-                STRING679=self.match(self.input, STRING, self.FOLLOW_STRING_in_hyperlink12801) 
+                STRING679=self.match(self.input, STRING, self.FOLLOW_STRING_in_hyperlink12801)
                 if self._state.backtracking == 0:
                     stream_STRING.add(STRING679)
                 self._state.following.append(self.FOLLOW_cif_end_in_hyperlink12819)
@@ -21313,11 +21313,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: STRING, HYPERLINK
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -21407,23 +21407,23 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1093:9: ( cif_decl KEEP SPECIFIC GEODE PARAMNAMES ( field_name )+ cif_end -> ^( PARAMNAMES ( field_name )+ ) )
                 # sdl92.g:1093:17: cif_decl KEEP SPECIFIC GEODE PARAMNAMES ( field_name )+ cif_end
-                pass 
+                pass
                 self._state.following.append(self.FOLLOW_cif_decl_in_paramnames12864)
                 cif_decl681 = self.cif_decl()
 
                 self._state.following.pop()
                 if self._state.backtracking == 0:
                     stream_cif_decl.add(cif_decl681.tree)
-                KEEP682=self.match(self.input, KEEP, self.FOLLOW_KEEP_in_paramnames12866) 
+                KEEP682=self.match(self.input, KEEP, self.FOLLOW_KEEP_in_paramnames12866)
                 if self._state.backtracking == 0:
                     stream_KEEP.add(KEEP682)
-                SPECIFIC683=self.match(self.input, SPECIFIC, self.FOLLOW_SPECIFIC_in_paramnames12868) 
+                SPECIFIC683=self.match(self.input, SPECIFIC, self.FOLLOW_SPECIFIC_in_paramnames12868)
                 if self._state.backtracking == 0:
                     stream_SPECIFIC.add(SPECIFIC683)
-                GEODE684=self.match(self.input, GEODE, self.FOLLOW_GEODE_in_paramnames12870) 
+                GEODE684=self.match(self.input, GEODE, self.FOLLOW_GEODE_in_paramnames12870)
                 if self._state.backtracking == 0:
                     stream_GEODE.add(GEODE684)
-                PARAMNAMES685=self.match(self.input, PARAMNAMES, self.FOLLOW_PARAMNAMES_in_paramnames12872) 
+                PARAMNAMES685=self.match(self.input, PARAMNAMES, self.FOLLOW_PARAMNAMES_in_paramnames12872)
                 if self._state.backtracking == 0:
                     stream_PARAMNAMES.add(PARAMNAMES685)
                 # sdl92.g:1093:57: ( field_name )+
@@ -21438,7 +21438,7 @@ class sdl92Parser(Parser):
 
                     if alt191 == 1:
                         # sdl92.g:0:0: field_name
-                        pass 
+                        pass
                         self._state.following.append(self.FOLLOW_field_name_in_paramnames12874)
                         field_name686 = self.field_name()
 
@@ -21467,11 +21467,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: PARAMNAMES, field_name
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -21569,26 +21569,26 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1102:9: ( cif_decl KEEP SPECIFIC GEODE ASNFILENAME STRING cif_end -> ^( ASN1 STRING ) )
                 # sdl92.g:1102:17: cif_decl KEEP SPECIFIC GEODE ASNFILENAME STRING cif_end
-                pass 
+                pass
                 self._state.following.append(self.FOLLOW_cif_decl_in_use_asn112924)
                 cif_decl688 = self.cif_decl()
 
                 self._state.following.pop()
                 if self._state.backtracking == 0:
                     stream_cif_decl.add(cif_decl688.tree)
-                KEEP689=self.match(self.input, KEEP, self.FOLLOW_KEEP_in_use_asn112926) 
+                KEEP689=self.match(self.input, KEEP, self.FOLLOW_KEEP_in_use_asn112926)
                 if self._state.backtracking == 0:
                     stream_KEEP.add(KEEP689)
-                SPECIFIC690=self.match(self.input, SPECIFIC, self.FOLLOW_SPECIFIC_in_use_asn112928) 
+                SPECIFIC690=self.match(self.input, SPECIFIC, self.FOLLOW_SPECIFIC_in_use_asn112928)
                 if self._state.backtracking == 0:
                     stream_SPECIFIC.add(SPECIFIC690)
-                GEODE691=self.match(self.input, GEODE, self.FOLLOW_GEODE_in_use_asn112930) 
+                GEODE691=self.match(self.input, GEODE, self.FOLLOW_GEODE_in_use_asn112930)
                 if self._state.backtracking == 0:
                     stream_GEODE.add(GEODE691)
-                ASNFILENAME692=self.match(self.input, ASNFILENAME, self.FOLLOW_ASNFILENAME_in_use_asn112932) 
+                ASNFILENAME692=self.match(self.input, ASNFILENAME, self.FOLLOW_ASNFILENAME_in_use_asn112932)
                 if self._state.backtracking == 0:
                     stream_ASNFILENAME.add(ASNFILENAME692)
-                STRING693=self.match(self.input, STRING, self.FOLLOW_STRING_in_use_asn112934) 
+                STRING693=self.match(self.input, STRING, self.FOLLOW_STRING_in_use_asn112934)
                 if self._state.backtracking == 0:
                     stream_STRING.add(STRING693)
                 self._state.following.append(self.FOLLOW_cif_end_in_use_asn112936)
@@ -21600,11 +21600,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: STRING
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -21685,7 +21685,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1109:9: ( ( STOP IF expression end )+ -> ^( STOPIF ( expression )+ ) )
                 # sdl92.g:1109:17: ( STOP IF expression end )+
-                pass 
+                pass
                 # sdl92.g:1109:17: ( STOP IF expression end )+
                 cnt192 = 0
                 while True: #loop192
@@ -21698,11 +21698,11 @@ class sdl92Parser(Parser):
 
                     if alt192 == 1:
                         # sdl92.g:1109:18: STOP IF expression end
-                        pass 
-                        STOP695=self.match(self.input, STOP, self.FOLLOW_STOP_in_stop_if12983) 
+                        pass
+                        STOP695=self.match(self.input, STOP, self.FOLLOW_STOP_in_stop_if12983)
                         if self._state.backtracking == 0:
                             stream_STOP.add(STOP695)
-                        IF696=self.match(self.input, IF, self.FOLLOW_IF_in_stop_if12985) 
+                        IF696=self.match(self.input, IF, self.FOLLOW_IF_in_stop_if12985)
                         if self._state.backtracking == 0:
                             stream_IF.add(IF696)
                         self._state.following.append(self.FOLLOW_expression_in_stop_if12987)
@@ -21733,11 +21733,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: expression
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -21817,7 +21817,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1113:9: ( START | INPUT | OUTPUT | STATE | PROCEDURE | PROCESS | PROCEDURE_CALL | STOP | RETURN | DECISION | TEXT | TASK | NEXTSTATE | ANSWER | PROVIDED | COMMENT | LABEL | JOIN | CONNECT )
                 # sdl92.g:
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 set699 = self.input.LT(1)
@@ -21883,7 +21883,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1135:9: ( '/* CIF' )
                 # sdl92.g:1135:17: '/* CIF'
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 string_literal700=self.match(self.input, 221, self.FOLLOW_221_in_cif_decl13418)
@@ -21940,7 +21940,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1139:9: ( '*/' )
                 # sdl92.g:1139:17: '*/'
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 string_literal701=self.match(self.input, 222, self.FOLLOW_222_in_cif_end13441)
@@ -22003,14 +22003,14 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1143:9: ( cif_decl ENDTEXT cif_end -> ^( ENDTEXT ) )
                 # sdl92.g:1143:17: cif_decl ENDTEXT cif_end
-                pass 
+                pass
                 self._state.following.append(self.FOLLOW_cif_decl_in_cif_end_text13464)
                 cif_decl702 = self.cif_decl()
 
                 self._state.following.pop()
                 if self._state.backtracking == 0:
                     stream_cif_decl.add(cif_decl702.tree)
-                ENDTEXT703=self.match(self.input, ENDTEXT, self.FOLLOW_ENDTEXT_in_cif_end_text13466) 
+                ENDTEXT703=self.match(self.input, ENDTEXT, self.FOLLOW_ENDTEXT_in_cif_end_text13466)
                 if self._state.backtracking == 0:
                     stream_ENDTEXT.add(ENDTEXT703)
                 self._state.following.append(self.FOLLOW_cif_end_in_cif_end_text13468)
@@ -22022,11 +22022,11 @@ class sdl92Parser(Parser):
 
                 # AST Rewrite
                 # elements: ENDTEXT
-                # token labels: 
+                # token labels:
                 # rule labels: retval
-                # token list labels: 
-                # rule list labels: 
-                # wildcard labels: 
+                # token list labels:
+                # rule list labels:
+                # wildcard labels:
                 if self._state.backtracking == 0:
 
                     retval.tree = root_0
@@ -22102,7 +22102,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1147:9: ( cif_decl END LABEL cif_end )
                 # sdl92.g:1147:17: cif_decl END LABEL cif_end
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 self._state.following.append(self.FOLLOW_cif_decl_in_cif_end_label13509)
@@ -22177,7 +22177,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1150:17: ( DASH )
                 # sdl92.g:1150:25: DASH
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 DASH709=self.match(self.input, DASH, self.FOLLOW_DASH_in_dash_nextstate13531)
@@ -22234,7 +22234,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1151:17: ( ID )
                 # sdl92.g:1151:25: ID
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 ID710=self.match(self.input, ID, self.FOLLOW_ID_in_connector_name13545)
@@ -22291,7 +22291,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1152:17: ( ID )
                 # sdl92.g:1152:25: ID
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 ID711=self.match(self.input, ID, self.FOLLOW_ID_in_signal_id13564)
@@ -22348,7 +22348,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1153:17: ( ID )
                 # sdl92.g:1153:25: ID
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 ID712=self.match(self.input, ID, self.FOLLOW_ID_in_statename13583)
@@ -22405,7 +22405,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1155:17: ( ID )
                 # sdl92.g:1155:25: ID
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 ID713=self.match(self.input, ID, self.FOLLOW_ID_in_state_exit_point_name13612)
@@ -22462,7 +22462,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1157:17: ( ID )
                 # sdl92.g:1157:25: ID
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 ID714=self.match(self.input, ID, self.FOLLOW_ID_in_state_entry_point_name13641)
@@ -22519,7 +22519,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1158:17: ( ID )
                 # sdl92.g:1158:25: ID
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 ID715=self.match(self.input, ID, self.FOLLOW_ID_in_variable_id13658)
@@ -22576,7 +22576,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1159:17: ( ID | INT )
                 # sdl92.g:
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 set716 = self.input.LT(1)
@@ -22642,7 +22642,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1160:17: ( ID )
                 # sdl92.g:1160:25: ID
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 ID717=self.match(self.input, ID, self.FOLLOW_ID_in_process_id13698)
@@ -22699,7 +22699,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1161:17: ( ID )
                 # sdl92.g:1161:25: ID
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 ID718=self.match(self.input, ID, self.FOLLOW_ID_in_system_name13715)
@@ -22756,7 +22756,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1162:17: ( ID )
                 # sdl92.g:1162:25: ID
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 ID719=self.match(self.input, ID, self.FOLLOW_ID_in_package_name13731)
@@ -22813,7 +22813,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1164:17: ( ID )
                 # sdl92.g:1164:25: ID
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 ID720=self.match(self.input, ID, self.FOLLOW_ID_in_priority_signal_id13760)
@@ -22870,7 +22870,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1165:17: ( ID )
                 # sdl92.g:1165:25: ID
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 ID721=self.match(self.input, ID, self.FOLLOW_ID_in_signal_list_id13774)
@@ -22927,7 +22927,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1166:17: ( ID )
                 # sdl92.g:1166:25: ID
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 ID722=self.match(self.input, ID, self.FOLLOW_ID_in_timer_id13794)
@@ -22984,7 +22984,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1167:17: ( ID )
                 # sdl92.g:1167:25: ID
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 ID723=self.match(self.input, ID, self.FOLLOW_ID_in_field_name13812)
@@ -23041,7 +23041,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1168:17: ( ID )
                 # sdl92.g:1168:25: ID
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 ID724=self.match(self.input, ID, self.FOLLOW_ID_in_signal_route_id13825)
@@ -23098,7 +23098,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1169:17: ( ID )
                 # sdl92.g:1169:25: ID
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 ID725=self.match(self.input, ID, self.FOLLOW_ID_in_channel_id13843)
@@ -23155,7 +23155,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1170:17: ( ID )
                 # sdl92.g:1170:25: ID
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 ID726=self.match(self.input, ID, self.FOLLOW_ID_in_route_id13863)
@@ -23212,7 +23212,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1171:17: ( ID )
                 # sdl92.g:1171:25: ID
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 ID727=self.match(self.input, ID, self.FOLLOW_ID_in_block_id13883)
@@ -23269,7 +23269,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1172:17: ( ID )
                 # sdl92.g:1172:25: ID
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 ID728=self.match(self.input, ID, self.FOLLOW_ID_in_source_id13902)
@@ -23326,7 +23326,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1173:17: ( ID )
                 # sdl92.g:1173:25: ID
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 ID729=self.match(self.input, ID, self.FOLLOW_ID_in_dest_id13923)
@@ -23383,7 +23383,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1174:17: ( ID )
                 # sdl92.g:1174:25: ID
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 ID730=self.match(self.input, ID, self.FOLLOW_ID_in_gate_id13944)
@@ -23440,7 +23440,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1175:17: ( ID )
                 # sdl92.g:1175:25: ID
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 ID731=self.match(self.input, ID, self.FOLLOW_ID_in_procedure_id13960)
@@ -23497,7 +23497,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1177:17: ( ID )
                 # sdl92.g:1177:25: ID
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 ID732=self.match(self.input, ID, self.FOLLOW_ID_in_remote_procedure_id13989)
@@ -23554,7 +23554,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1178:17: ( ID )
                 # sdl92.g:1178:25: ID
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 ID733=self.match(self.input, ID, self.FOLLOW_ID_in_operator_id14006)
@@ -23611,7 +23611,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1179:17: ( ID )
                 # sdl92.g:1179:25: ID
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 ID734=self.match(self.input, ID, self.FOLLOW_ID_in_synonym_id14024)
@@ -23668,7 +23668,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1181:17: ( ID )
                 # sdl92.g:1181:25: ID
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 ID735=self.match(self.input, ID, self.FOLLOW_ID_in_external_synonym_id14053)
@@ -23725,7 +23725,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1183:17: ( ID )
                 # sdl92.g:1183:25: ID
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 ID736=self.match(self.input, ID, self.FOLLOW_ID_in_remote_variable_id14082)
@@ -23782,7 +23782,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1184:17: ( ID )
                 # sdl92.g:1184:25: ID
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 ID737=self.match(self.input, ID, self.FOLLOW_ID_in_view_id14103)
@@ -23839,7 +23839,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1185:17: ( ID )
                 # sdl92.g:1185:25: ID
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 ID738=self.match(self.input, ID, self.FOLLOW_ID_in_sort_id14124)
@@ -23896,7 +23896,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1186:17: ( ID )
                 # sdl92.g:1186:25: ID
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 ID739=self.match(self.input, ID, self.FOLLOW_ID_in_type_id14145)
@@ -23953,7 +23953,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1187:17: ( ID )
                 # sdl92.g:1187:25: ID
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 ID740=self.match(self.input, ID, self.FOLLOW_ID_in_syntype_id14163)
@@ -24010,7 +24010,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1188:17: ( ID )
                 # sdl92.g:1188:25: ID
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 ID741=self.match(self.input, ID, self.FOLLOW_ID_in_stimulus_id14180)
@@ -24156,7 +24156,7 @@ class sdl92Parser(Parser):
 
                 if alt193 == 1:
                     # sdl92.g:1224:25: S E L F
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     S742=self.match(self.input, S, self.FOLLOW_S_in_pid_expression15214)
@@ -24187,7 +24187,7 @@ class sdl92Parser(Parser):
 
                 elif alt193 == 2:
                     # sdl92.g:1225:25: P A R E N T
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     P746=self.match(self.input, P, self.FOLLOW_P_in_pid_expression15246)
@@ -24230,7 +24230,7 @@ class sdl92Parser(Parser):
 
                 elif alt193 == 3:
                     # sdl92.g:1226:25: O F F S P R I N G
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     O752=self.match(self.input, O, self.FOLLOW_O_in_pid_expression15282)
@@ -24291,7 +24291,7 @@ class sdl92Parser(Parser):
 
                 elif alt193 == 4:
                     # sdl92.g:1227:25: S E N D E R
-                    pass 
+                    pass
                     root_0 = self._adaptor.nil()
 
                     S761=self.match(self.input, S, self.FOLLOW_S_in_pid_expression15324)
@@ -24381,7 +24381,7 @@ class sdl92Parser(Parser):
             try:
                 # sdl92.g:1228:17: ( N O W )
                 # sdl92.g:1228:25: N O W
-                pass 
+                pass
                 root_0 = self._adaptor.nil()
 
                 N767=self.match(self.input, N, self.FOLLOW_N_in_now_expression15348)
@@ -24428,7 +24428,7 @@ class sdl92Parser(Parser):
     def synpred9_sdl92_fragment(self, ):
         # sdl92.g:171:17: ( signal_declaration )
         # sdl92.g:171:17: signal_declaration
-        pass 
+        pass
         self._state.following.append(self.FOLLOW_signal_declaration_in_synpred9_sdl921628)
         self.signal_declaration()
 
@@ -24443,7 +24443,7 @@ class sdl92Parser(Parser):
     def synpred10_sdl92_fragment(self, ):
         # sdl92.g:172:19: ( text_area )
         # sdl92.g:172:19: text_area
-        pass 
+        pass
         self._state.following.append(self.FOLLOW_text_area_in_synpred10_sdl921648)
         self.text_area()
 
@@ -24458,7 +24458,7 @@ class sdl92Parser(Parser):
     def synpred11_sdl92_fragment(self, ):
         # sdl92.g:173:19: ( procedure )
         # sdl92.g:173:19: procedure
-        pass 
+        pass
         self._state.following.append(self.FOLLOW_procedure_in_synpred11_sdl921668)
         self.procedure()
 
@@ -24473,7 +24473,7 @@ class sdl92Parser(Parser):
     def synpred28_sdl92_fragment(self, ):
         # sdl92.g:233:18: ( text_area )
         # sdl92.g:233:18: text_area
-        pass 
+        pass
         self._state.following.append(self.FOLLOW_text_area_in_synpred28_sdl922384)
         self.text_area()
 
@@ -24488,7 +24488,7 @@ class sdl92Parser(Parser):
     def synpred29_sdl92_fragment(self, ):
         # sdl92.g:233:30: ( procedure )
         # sdl92.g:233:30: procedure
-        pass 
+        pass
         self._state.following.append(self.FOLLOW_procedure_in_synpred29_sdl922388)
         self.procedure()
 
@@ -24503,7 +24503,7 @@ class sdl92Parser(Parser):
     def synpred30_sdl92_fragment(self, ):
         # sdl92.g:233:42: ( composite_state )
         # sdl92.g:233:42: composite_state
-        pass 
+        pass
         self._state.following.append(self.FOLLOW_composite_state_in_synpred30_sdl922392)
         self.composite_state()
 
@@ -24518,7 +24518,7 @@ class sdl92Parser(Parser):
     def synpred31_sdl92_fragment(self, ):
         # sdl92.g:234:17: ( processBody )
         # sdl92.g:234:17: processBody
-        pass 
+        pass
         self._state.following.append(self.FOLLOW_processBody_in_synpred31_sdl922412)
         self.processBody()
 
@@ -24533,7 +24533,7 @@ class sdl92Parser(Parser):
     def synpred41_sdl92_fragment(self, ):
         # sdl92.g:261:18: ( text_area )
         # sdl92.g:261:18: text_area
-        pass 
+        pass
         self._state.following.append(self.FOLLOW_text_area_in_synpred41_sdl922821)
         self.text_area()
 
@@ -24548,7 +24548,7 @@ class sdl92Parser(Parser):
     def synpred42_sdl92_fragment(self, ):
         # sdl92.g:261:30: ( procedure )
         # sdl92.g:261:30: procedure
-        pass 
+        pass
         self._state.following.append(self.FOLLOW_procedure_in_synpred42_sdl922825)
         self.procedure()
 
@@ -24563,7 +24563,7 @@ class sdl92Parser(Parser):
     def synpred43_sdl92_fragment(self, ):
         # sdl92.g:262:19: ( processBody )
         # sdl92.g:262:19: processBody
-        pass 
+        pass
         self._state.following.append(self.FOLLOW_processBody_in_synpred43_sdl922847)
         self.processBody()
 
@@ -24578,7 +24578,7 @@ class sdl92Parser(Parser):
     def synpred50_sdl92_fragment(self, ):
         # sdl92.g:285:17: ( content )
         # sdl92.g:285:17: content
-        pass 
+        pass
         self._state.following.append(self.FOLLOW_content_in_synpred50_sdl923153)
         self.content()
 
@@ -24593,7 +24593,7 @@ class sdl92Parser(Parser):
     def synpred96_sdl92_fragment(self, ):
         # sdl92.g:448:18: ( text_area )
         # sdl92.g:448:18: text_area
-        pass 
+        pass
         self._state.following.append(self.FOLLOW_text_area_in_synpred96_sdl925360)
         self.text_area()
 
@@ -24608,7 +24608,7 @@ class sdl92Parser(Parser):
     def synpred97_sdl92_fragment(self, ):
         # sdl92.g:448:30: ( procedure )
         # sdl92.g:448:30: procedure
-        pass 
+        pass
         self._state.following.append(self.FOLLOW_procedure_in_synpred97_sdl925364)
         self.procedure()
 
@@ -24623,7 +24623,7 @@ class sdl92Parser(Parser):
     def synpred98_sdl92_fragment(self, ):
         # sdl92.g:448:42: ( composite_state )
         # sdl92.g:448:42: composite_state
-        pass 
+        pass
         self._state.following.append(self.FOLLOW_composite_state_in_synpred98_sdl925368)
         self.composite_state()
 
@@ -24638,7 +24638,7 @@ class sdl92Parser(Parser):
     def synpred120_sdl92_fragment(self, ):
         # sdl92.g:545:17: ( enabling_condition )
         # sdl92.g:545:17: enabling_condition
-        pass 
+        pass
         self._state.following.append(self.FOLLOW_enabling_condition_in_synpred120_sdl926304)
         self.enabling_condition()
 
@@ -24653,7 +24653,7 @@ class sdl92Parser(Parser):
     def synpred127_sdl92_fragment(self, ):
         # sdl92.g:569:25: ( label )
         # sdl92.g:569:25: label
-        pass 
+        pass
         self._state.following.append(self.FOLLOW_label_in_synpred127_sdl926560)
         self.label()
 
@@ -24668,7 +24668,7 @@ class sdl92Parser(Parser):
     def synpred151_sdl92_fragment(self, ):
         # sdl92.g:654:17: ( expression )
         # sdl92.g:654:17: expression
-        pass 
+        pass
         self._state.following.append(self.FOLLOW_expression_in_synpred151_sdl927580)
         self.expression()
 
@@ -24683,7 +24683,7 @@ class sdl92Parser(Parser):
     def synpred154_sdl92_fragment(self, ):
         # sdl92.g:662:17: ( answer_part )
         # sdl92.g:662:17: answer_part
-        pass 
+        pass
         self._state.following.append(self.FOLLOW_answer_part_in_synpred154_sdl927685)
         self.answer_part()
 
@@ -24698,7 +24698,7 @@ class sdl92Parser(Parser):
     def synpred159_sdl92_fragment(self, ):
         # sdl92.g:677:17: ( range_condition )
         # sdl92.g:677:17: range_condition
-        pass 
+        pass
         self._state.following.append(self.FOLLOW_range_condition_in_synpred159_sdl927903)
         self.range_condition()
 
@@ -24713,7 +24713,7 @@ class sdl92Parser(Parser):
     def synpred163_sdl92_fragment(self, ):
         # sdl92.g:689:17: ( informal_text )
         # sdl92.g:689:17: informal_text
-        pass 
+        pass
         self._state.following.append(self.FOLLOW_informal_text_in_synpred163_sdl928040)
         self.informal_text()
 
@@ -24728,7 +24728,7 @@ class sdl92Parser(Parser):
     def synpred164_sdl92_fragment(self, ):
         # sdl92.g:690:19: ( expression )
         # sdl92.g:690:19: expression
-        pass 
+        pass
         self._state.following.append(self.FOLLOW_expression_in_synpred164_sdl928060)
         self.expression()
 
@@ -24743,7 +24743,7 @@ class sdl92Parser(Parser):
     def synpred165_sdl92_fragment(self, ):
         # sdl92.g:697:18: ( closed_range )
         # sdl92.g:697:18: closed_range
-        pass 
+        pass
         self._state.following.append(self.FOLLOW_closed_range_in_synpred165_sdl928144)
         self.closed_range()
 
@@ -24758,7 +24758,7 @@ class sdl92Parser(Parser):
     def synpred194_sdl92_fragment(self, ):
         # sdl92.g:812:18: ( COMMA b= ground_expression )
         # sdl92.g:812:18: COMMA b= ground_expression
-        pass 
+        pass
         self.match(self.input, COMMA, self.FOLLOW_COMMA_in_synpred194_sdl929520)
         self._state.following.append(self.FOLLOW_ground_expression_in_synpred194_sdl929524)
         b = self.ground_expression()
@@ -24774,7 +24774,7 @@ class sdl92Parser(Parser):
     def synpred198_sdl92_fragment(self, ):
         # sdl92.g:836:39: ( IMPLIES binary_expression_0 )
         # sdl92.g:836:39: IMPLIES binary_expression_0
-        pass 
+        pass
         self.match(self.input, IMPLIES, self.FOLLOW_IMPLIES_in_synpred198_sdl929784)
         self._state.following.append(self.FOLLOW_binary_expression_0_in_synpred198_sdl929787)
         self.binary_expression_0()
@@ -24790,7 +24790,7 @@ class sdl92Parser(Parser):
     def synpred201_sdl92_fragment(self, ):
         # sdl92.g:838:38: ( ( ( OR ( ELSE )? ) | XOR ) binary_expression_1 )
         # sdl92.g:838:38: ( ( OR ( ELSE )? ) | XOR ) binary_expression_1
-        pass 
+        pass
         # sdl92.g:838:38: ( ( OR ( ELSE )? ) | XOR )
         alt215 = 2
         LA215_0 = self.input.LA(1)
@@ -24809,10 +24809,10 @@ class sdl92Parser(Parser):
 
         if alt215 == 1:
             # sdl92.g:838:40: ( OR ( ELSE )? )
-            pass 
+            pass
             # sdl92.g:838:40: ( OR ( ELSE )? )
             # sdl92.g:838:41: OR ( ELSE )?
-            pass 
+            pass
             self.match(self.input, OR, self.FOLLOW_OR_in_synpred201_sdl929816)
             # sdl92.g:838:45: ( ELSE )?
             alt214 = 2
@@ -24822,7 +24822,7 @@ class sdl92Parser(Parser):
                 alt214 = 1
             if alt214 == 1:
                 # sdl92.g:0:0: ELSE
-                pass 
+                pass
                 self.match(self.input, ELSE, self.FOLLOW_ELSE_in_synpred201_sdl929819)
 
 
@@ -24834,7 +24834,7 @@ class sdl92Parser(Parser):
 
         elif alt215 == 2:
             # sdl92.g:838:54: XOR
-            pass 
+            pass
             self.match(self.input, XOR, self.FOLLOW_XOR_in_synpred201_sdl929825)
 
 
@@ -24853,7 +24853,7 @@ class sdl92Parser(Parser):
     def synpred203_sdl92_fragment(self, ):
         # sdl92.g:840:39: ( AND ( THEN )? binary_expression_2 )
         # sdl92.g:840:39: AND ( THEN )? binary_expression_2
-        pass 
+        pass
         self.match(self.input, AND, self.FOLLOW_AND_in_synpred203_sdl929857)
         # sdl92.g:840:44: ( THEN )?
         alt216 = 2
@@ -24863,7 +24863,7 @@ class sdl92Parser(Parser):
             alt216 = 1
         if alt216 == 1:
             # sdl92.g:0:0: THEN
-            pass 
+            pass
             self.match(self.input, THEN, self.FOLLOW_THEN_in_synpred203_sdl929860)
 
 
@@ -24882,7 +24882,7 @@ class sdl92Parser(Parser):
     def synpred210_sdl92_fragment(self, ):
         # sdl92.g:842:38: ( ( EQ | NEQ | GT | GE | LT | LE | IN ) binary_expression_3 )
         # sdl92.g:842:38: ( EQ | NEQ | GT | GE | LT | LE | IN ) binary_expression_3
-        pass 
+        pass
         if self.input.LA(1) == IN or (EQ <= self.input.LA(1) <= GE):
             self.input.consume()
             self._state.errorRecovery = False
@@ -24909,7 +24909,7 @@ class sdl92Parser(Parser):
     def synpred213_sdl92_fragment(self, ):
         # sdl92.g:844:38: ( ( PLUS | DASH | APPEND ) binary_expression_4 )
         # sdl92.g:844:38: ( PLUS | DASH | APPEND ) binary_expression_4
-        pass 
+        pass
         if (PLUS <= self.input.LA(1) <= APPEND):
             self.input.consume()
             self._state.errorRecovery = False
@@ -24936,7 +24936,7 @@ class sdl92Parser(Parser):
     def synpred217_sdl92_fragment(self, ):
         # sdl92.g:846:35: ( ( ASTERISK | DIV | MOD | REM ) unary_expression )
         # sdl92.g:846:35: ( ASTERISK | DIV | MOD | REM ) unary_expression
-        pass 
+        pass
         if self.input.LA(1) == ASTERISK or (DIV <= self.input.LA(1) <= REM):
             self.input.consume()
             self._state.errorRecovery = False
@@ -24963,7 +24963,7 @@ class sdl92Parser(Parser):
     def synpred218_sdl92_fragment(self, ):
         # sdl92.g:850:17: ( postfix_expression )
         # sdl92.g:850:17: postfix_expression
-        pass 
+        pass
         self._state.following.append(self.FOLLOW_postfix_expression_in_synpred218_sdl9210042)
         self.postfix_expression()
 
@@ -24978,7 +24978,7 @@ class sdl92Parser(Parser):
     def synpred219_sdl92_fragment(self, ):
         # sdl92.g:851:17: ( primary_expression )
         # sdl92.g:851:17: primary_expression
-        pass 
+        pass
         self._state.following.append(self.FOLLOW_primary_expression_in_synpred219_sdl9210060)
         self.primary_expression()
 
@@ -24993,7 +24993,7 @@ class sdl92Parser(Parser):
     def synpred221_sdl92_fragment(self, ):
         # sdl92.g:859:21: ( '(' params= expression_list ')' )
         # sdl92.g:859:21: '(' params= expression_list ')'
-        pass 
+        pass
         self.match(self.input, L_PAREN, self.FOLLOW_L_PAREN_in_synpred221_sdl9210177)
         self._state.following.append(self.FOLLOW_expression_list_in_synpred221_sdl9210181)
         params = self.expression_list()
@@ -25010,7 +25010,7 @@ class sdl92Parser(Parser):
     def synpred222_sdl92_fragment(self, ):
         # sdl92.g:860:21: ( '!' field_name )
         # sdl92.g:860:21: '!' field_name
-        pass 
+        pass
         self.match(self.input, 217, self.FOLLOW_217_in_synpred222_sdl9210221)
         self._state.following.append(self.FOLLOW_field_name_in_synpred222_sdl9210223)
         self.field_name()
@@ -25026,7 +25026,7 @@ class sdl92Parser(Parser):
     def synpred235_sdl92_fragment(self, ):
         # sdl92.g:883:17: ( ID ':' expression )
         # sdl92.g:883:17: ID ':' expression
-        pass 
+        pass
         self.match(self.input, ID, self.FOLLOW_ID_in_synpred235_sdl9210596)
         self.match(self.input, 216, self.FOLLOW_216_in_synpred235_sdl9210598)
         self._state.following.append(self.FOLLOW_expression_in_synpred235_sdl9210600)
@@ -25043,7 +25043,7 @@ class sdl92Parser(Parser):
     def synpred236_sdl92_fragment(self, ):
         # sdl92.g:884:17: ( ID )
         # sdl92.g:884:17: ID
-        pass 
+        pass
         self.match(self.input, ID, self.FOLLOW_ID_in_synpred236_sdl9210638)
 
 
@@ -25055,7 +25055,7 @@ class sdl92Parser(Parser):
     def synpred237_sdl92_fragment(self, ):
         # sdl92.g:885:17: ( '{' '}' )
         # sdl92.g:885:17: '{' '}'
-        pass 
+        pass
         self.match(self.input, L_BRACKET, self.FOLLOW_L_BRACKET_in_synpred237_sdl9210689)
         self.match(self.input, R_BRACKET, self.FOLLOW_R_BRACKET_in_synpred237_sdl9210691)
 
@@ -25068,7 +25068,7 @@ class sdl92Parser(Parser):
     def synpred238_sdl92_fragment(self, ):
         # sdl92.g:886:17: ( '{' MANTISSA mant= INT COMMA BASE bas= INT COMMA EXPONENT exp= INT '}' )
         # sdl92.g:886:17: '{' MANTISSA mant= INT COMMA BASE bas= INT COMMA EXPONENT exp= INT '}'
-        pass 
+        pass
         self.match(self.input, L_BRACKET, self.FOLLOW_L_BRACKET_in_synpred238_sdl9210735)
         self.match(self.input, MANTISSA, self.FOLLOW_MANTISSA_in_synpred238_sdl9210753)
         mant=self.match(self.input, INT, self.FOLLOW_INT_in_synpred238_sdl9210757)
@@ -25089,7 +25089,7 @@ class sdl92Parser(Parser):
     def synpred240_sdl92_fragment(self, ):
         # sdl92.g:891:17: ( '{' named_value ( COMMA named_value )* '}' )
         # sdl92.g:891:17: '{' named_value ( COMMA named_value )* '}'
-        pass 
+        pass
         self.match(self.input, L_BRACKET, self.FOLLOW_L_BRACKET_in_synpred240_sdl9210880)
         self._state.following.append(self.FOLLOW_named_value_in_synpred240_sdl9210898)
         self.named_value()
@@ -25106,7 +25106,7 @@ class sdl92Parser(Parser):
 
             if alt217 == 1:
                 # sdl92.g:892:30: COMMA named_value
-                pass 
+                pass
                 self.match(self.input, COMMA, self.FOLLOW_COMMA_in_synpred240_sdl9210901)
                 self._state.following.append(self.FOLLOW_named_value_in_synpred240_sdl9210903)
                 self.named_value()
@@ -25127,7 +25127,7 @@ class sdl92Parser(Parser):
     def synpred242_sdl92_fragment(self, ):
         # sdl92.g:894:17: ( '{' primary ( COMMA primary )* '}' )
         # sdl92.g:894:17: '{' primary ( COMMA primary )* '}'
-        pass 
+        pass
         self.match(self.input, L_BRACKET, self.FOLLOW_L_BRACKET_in_synpred242_sdl9210974)
         self._state.following.append(self.FOLLOW_primary_in_synpred242_sdl9210992)
         self.primary()
@@ -25144,7 +25144,7 @@ class sdl92Parser(Parser):
 
             if alt218 == 1:
                 # sdl92.g:895:26: COMMA primary
-                pass 
+                pass
                 self.match(self.input, COMMA, self.FOLLOW_COMMA_in_synpred242_sdl9210995)
                 self._state.following.append(self.FOLLOW_primary_in_synpred242_sdl9210997)
                 self.primary()
@@ -25715,7 +25715,7 @@ class sdl92Parser(Parser):
         "\111\uffff"
         )
 
-            
+
     DFA25_transition = [
         DFA.unpack("\1\1\u0092\uffff\1\2"),
         DFA.unpack("\1\3"),
@@ -25841,7 +25841,7 @@ class sdl92Parser(Parser):
         "\17\uffff"
         )
 
-            
+
     DFA38_transition = [
         DFA.unpack("\1\12\22\uffff\1\6\16\uffff\1\11\14\uffff\1\3\16\uffff"
         "\1\5\11\uffff\1\13\1\uffff\1\10\10\uffff\1\7\3\uffff\1\4\155\uffff"
@@ -25902,7 +25902,7 @@ class sdl92Parser(Parser):
         "\33\uffff"
         )
 
-            
+
     DFA45_transition = [
         DFA.unpack("\1\2\161\uffff\1\3\131\uffff\1\1"),
         DFA.unpack("\1\5\11\uffff\1\5\2\uffff\1\5\4\uffff\1\5\31\uffff"
@@ -25972,7 +25972,7 @@ class sdl92Parser(Parser):
         "\30\uffff"
         )
 
-            
+
     DFA51_transition = [
         DFA.unpack("\1\3\103\uffff\1\3\44\uffff\2\3\1\uffff\1\2\133\uffff"
         "\1\1"),
@@ -26040,7 +26040,7 @@ class sdl92Parser(Parser):
         "\31\uffff"
         )
 
-            
+
     DFA52_transition = [
         DFA.unpack("\1\4\103\uffff\1\3\44\uffff\2\1\135\uffff\1\2"),
         DFA.unpack(""),
@@ -26108,7 +26108,7 @@ class sdl92Parser(Parser):
         "\30\uffff"
         )
 
-            
+
     DFA56_transition = [
         DFA.unpack("\1\2\16\uffff\1\3\3\uffff\1\2\6\uffff\1\2\11\uffff\1"
         "\2\13\uffff\1\2\4\uffff\1\2\3\uffff\1\2\16\uffff\2\2\5\uffff\1"
@@ -26183,7 +26183,7 @@ class sdl92Parser(Parser):
         "\30\uffff"
         )
 
-            
+
     DFA74_transition = [
         DFA.unpack("\1\2\103\uffff\1\2\47\uffff\1\3\5\uffff\1\2\125\uffff"
         "\1\1"),
@@ -26251,7 +26251,7 @@ class sdl92Parser(Parser):
         "\31\uffff"
         )
 
-            
+
     DFA75_transition = [
         DFA.unpack("\1\4\103\uffff\1\3\55\uffff\1\1\125\uffff\1\2"),
         DFA.unpack(""),
@@ -26319,7 +26319,7 @@ class sdl92Parser(Parser):
         "\34\uffff"
         )
 
-            
+
     DFA76_transition = [
         DFA.unpack("\1\5\36\uffff\1\2\27\uffff\1\4\5\uffff\1\3\u008b\uffff"
         "\1\1"),
@@ -26391,7 +26391,7 @@ class sdl92Parser(Parser):
         "\30\uffff"
         )
 
-            
+
     DFA80_transition = [
         DFA.unpack("\1\2\15\uffff\1\3\4\uffff\1\2\6\uffff\1\2\11\uffff\1"
         "\2\10\uffff\1\3\2\uffff\1\2\4\uffff\1\2\3\uffff\1\2\13\uffff\1"
@@ -26462,7 +26462,7 @@ class sdl92Parser(Parser):
         "\1\uffff\1\0\27\uffff"
         )
 
-            
+
     DFA91_transition = [
         DFA.unpack("\1\2\15\uffff\1\2\4\uffff\1\2\6\uffff\1\2\11\uffff\1"
         "\2\10\uffff\1\2\2\uffff\1\2\4\uffff\1\2\3\uffff\1\2\13\uffff\1"
@@ -26511,10 +26511,10 @@ class sdl92Parser(Parser):
 
             _s = s
 
-            if s == 0: 
+            if s == 0:
                 LA91_1 = input.LA(1)
 
-                 
+
                 index91_1 = input.index()
                 input.rewind()
                 s = -1
@@ -26524,7 +26524,7 @@ class sdl92Parser(Parser):
                 elif (True):
                     s = 2
 
-                 
+
                 input.seek(index91_1)
                 if s >= 0:
                     return s
@@ -26564,7 +26564,7 @@ class sdl92Parser(Parser):
         "\30\uffff"
         )
 
-            
+
     DFA92_transition = [
         DFA.unpack("\1\2\15\uffff\1\3\4\uffff\1\2\6\uffff\1\2\11\uffff\1"
         "\2\10\uffff\1\3\2\uffff\1\2\4\uffff\1\2\3\uffff\1\2\13\uffff\1"
@@ -26643,7 +26643,7 @@ class sdl92Parser(Parser):
         "\51\uffff"
         )
 
-            
+
     DFA100_transition = [
         DFA.unpack("\1\3\22\uffff\1\3\6\uffff\1\3\11\uffff\1\3\13\uffff"
         "\1\4\4\uffff\1\4\3\uffff\1\3\16\uffff\1\3\1\4\5\uffff\1\3\6\uffff"
@@ -26744,7 +26744,7 @@ class sdl92Parser(Parser):
         "\52\uffff"
         )
 
-            
+
     DFA97_transition = [
         DFA.unpack("\1\4\15\uffff\2\3\3\uffff\1\4\1\uffff\1\3\4\uffff\1"
         "\4\11\uffff\1\4\10\uffff\1\3\2\uffff\1\3\4\uffff\1\3\3\uffff\1"
@@ -26850,7 +26850,7 @@ class sdl92Parser(Parser):
         "\5\uffff\1\0\15\uffff"
         )
 
-            
+
     DFA98_transition = [
         DFA.unpack("\2\3\5\uffff\1\3\27\uffff\1\3\2\uffff\1\3\4\uffff\1"
         "\3\17\uffff\1\3\3\uffff\1\3\1\uffff\1\3\7\uffff\1\3\2\uffff\1\3"
@@ -26897,10 +26897,10 @@ class sdl92Parser(Parser):
 
             _s = s
 
-            if s == 0: 
+            if s == 0:
                 LA98_5 = input.LA(1)
 
-                 
+
                 index98_5 = input.index()
                 input.rewind()
                 s = -1
@@ -26910,7 +26910,7 @@ class sdl92Parser(Parser):
                 elif (True):
                     s = 3
 
-                 
+
                 input.seek(index98_5)
                 if s >= 0:
                     return s
@@ -26950,7 +26950,7 @@ class sdl92Parser(Parser):
         "\30\uffff"
         )
 
-            
+
     DFA99_transition = [
         DFA.unpack("\2\3\5\uffff\1\3\27\uffff\1\3\2\uffff\1\2\4\uffff\1"
         "\2\17\uffff\1\3\3\uffff\1\2\1\uffff\1\3\7\uffff\1\3\2\uffff\1\2"
@@ -27024,7 +27024,7 @@ class sdl92Parser(Parser):
         "\22\uffff"
         )
 
-            
+
     DFA101_transition = [
         DFA.unpack("\1\3\22\uffff\1\3\6\uffff\1\3\11\uffff\1\3\24\uffff"
         "\1\3\16\uffff\1\3\6\uffff\1\3\10\uffff\1\3\5\uffff\1\3\21\uffff"
@@ -27088,7 +27088,7 @@ class sdl92Parser(Parser):
         "\40\uffff"
         )
 
-            
+
     DFA102_transition = [
         DFA.unpack("\1\7\22\uffff\1\6\6\uffff\1\12\11\uffff\1\3\24\uffff"
         "\1\4\16\uffff\1\11\6\uffff\1\10\10\uffff\1\3\5\uffff\1\2\21\uffff"
@@ -27166,7 +27166,7 @@ class sdl92Parser(Parser):
         "\30\uffff"
         )
 
-            
+
     DFA113_transition = [
         DFA.unpack("\1\3\157\uffff\1\2\121\uffff\1\1"),
         DFA.unpack("\1\4\11\uffff\1\4\2\uffff\1\4\4\uffff\1\4\31\uffff"
@@ -27233,7 +27233,7 @@ class sdl92Parser(Parser):
         "\30\uffff"
         )
 
-            
+
     DFA111_transition = [
         DFA.unpack("\1\2\157\uffff\1\3\3\uffff\2\2\114\uffff\1\1"),
         DFA.unpack("\1\4\11\uffff\1\4\2\uffff\1\4\4\uffff\1\4\31\uffff"
@@ -27300,7 +27300,7 @@ class sdl92Parser(Parser):
         "\30\uffff"
         )
 
-            
+
     DFA121_transition = [
         DFA.unpack("\1\2\22\uffff\1\2\1\uffff\1\3\4\uffff\1\2\11\uffff\1"
         "\2\13\uffff\1\2\4\uffff\1\2\3\uffff\1\2\16\uffff\2\2\5\uffff\1"
@@ -27371,7 +27371,7 @@ class sdl92Parser(Parser):
         "\14\1\15\1\16\1\17\1\20\7\uffff"
         )
 
-            
+
     DFA127_transition = [
         DFA.unpack("\1\2\34\uffff\1\13\5\uffff\1\17\16\uffff\1\3\33\uffff"
         "\1\15\4\uffff\1\6\27\uffff\1\1\11\uffff\1\12\12\uffff\1\16\6\uffff"
@@ -27419,10 +27419,10 @@ class sdl92Parser(Parser):
 
             _s = s
 
-            if s == 0: 
+            if s == 0:
                 LA127_1 = input.LA(1)
 
-                 
+
                 index127_1 = input.index()
                 input.rewind()
                 s = -1
@@ -27432,14 +27432,14 @@ class sdl92Parser(Parser):
                 elif (True):
                     s = 18
 
-                 
+
                 input.seek(index127_1)
                 if s >= 0:
                     return s
-            elif s == 1: 
+            elif s == 1:
                 LA127_2 = input.LA(1)
 
-                 
+
                 index127_2 = input.index()
                 input.rewind()
                 s = -1
@@ -27449,14 +27449,14 @@ class sdl92Parser(Parser):
                 elif (True):
                     s = 18
 
-                 
+
                 input.seek(index127_2)
                 if s >= 0:
                     return s
-            elif s == 2: 
+            elif s == 2:
                 LA127_3 = input.LA(1)
 
-                 
+
                 index127_3 = input.index()
                 input.rewind()
                 s = -1
@@ -27466,14 +27466,14 @@ class sdl92Parser(Parser):
                 elif (True):
                     s = 18
 
-                 
+
                 input.seek(index127_3)
                 if s >= 0:
                     return s
-            elif s == 3: 
+            elif s == 3:
                 LA127_4 = input.LA(1)
 
-                 
+
                 index127_4 = input.index()
                 input.rewind()
                 s = -1
@@ -27483,14 +27483,14 @@ class sdl92Parser(Parser):
                 elif (True):
                     s = 18
 
-                 
+
                 input.seek(index127_4)
                 if s >= 0:
                     return s
-            elif s == 4: 
+            elif s == 4:
                 LA127_5 = input.LA(1)
 
-                 
+
                 index127_5 = input.index()
                 input.rewind()
                 s = -1
@@ -27500,14 +27500,14 @@ class sdl92Parser(Parser):
                 elif (True):
                     s = 18
 
-                 
+
                 input.seek(index127_5)
                 if s >= 0:
                     return s
-            elif s == 5: 
+            elif s == 5:
                 LA127_6 = input.LA(1)
 
-                 
+
                 index127_6 = input.index()
                 input.rewind()
                 s = -1
@@ -27517,14 +27517,14 @@ class sdl92Parser(Parser):
                 elif (True):
                     s = 18
 
-                 
+
                 input.seek(index127_6)
                 if s >= 0:
                     return s
-            elif s == 6: 
+            elif s == 6:
                 LA127_7 = input.LA(1)
 
-                 
+
                 index127_7 = input.index()
                 input.rewind()
                 s = -1
@@ -27534,14 +27534,14 @@ class sdl92Parser(Parser):
                 elif (True):
                     s = 18
 
-                 
+
                 input.seek(index127_7)
                 if s >= 0:
                     return s
-            elif s == 7: 
+            elif s == 7:
                 LA127_8 = input.LA(1)
 
-                 
+
                 index127_8 = input.index()
                 input.rewind()
                 s = -1
@@ -27551,14 +27551,14 @@ class sdl92Parser(Parser):
                 elif (True):
                     s = 18
 
-                 
+
                 input.seek(index127_8)
                 if s >= 0:
                     return s
-            elif s == 8: 
+            elif s == 8:
                 LA127_9 = input.LA(1)
 
-                 
+
                 index127_9 = input.index()
                 input.rewind()
                 s = -1
@@ -27568,14 +27568,14 @@ class sdl92Parser(Parser):
                 elif (True):
                     s = 18
 
-                 
+
                 input.seek(index127_9)
                 if s >= 0:
                     return s
-            elif s == 9: 
+            elif s == 9:
                 LA127_10 = input.LA(1)
 
-                 
+
                 index127_10 = input.index()
                 input.rewind()
                 s = -1
@@ -27585,14 +27585,14 @@ class sdl92Parser(Parser):
                 elif (True):
                     s = 18
 
-                 
+
                 input.seek(index127_10)
                 if s >= 0:
                     return s
-            elif s == 10: 
+            elif s == 10:
                 LA127_11 = input.LA(1)
 
-                 
+
                 index127_11 = input.index()
                 input.rewind()
                 s = -1
@@ -27602,14 +27602,14 @@ class sdl92Parser(Parser):
                 elif (True):
                     s = 18
 
-                 
+
                 input.seek(index127_11)
                 if s >= 0:
                     return s
-            elif s == 11: 
+            elif s == 11:
                 LA127_12 = input.LA(1)
 
-                 
+
                 index127_12 = input.index()
                 input.rewind()
                 s = -1
@@ -27619,14 +27619,14 @@ class sdl92Parser(Parser):
                 elif (True):
                     s = 18
 
-                 
+
                 input.seek(index127_12)
                 if s >= 0:
                     return s
-            elif s == 12: 
+            elif s == 12:
                 LA127_13 = input.LA(1)
 
-                 
+
                 index127_13 = input.index()
                 input.rewind()
                 s = -1
@@ -27636,14 +27636,14 @@ class sdl92Parser(Parser):
                 elif (True):
                     s = 18
 
-                 
+
                 input.seek(index127_13)
                 if s >= 0:
                     return s
-            elif s == 13: 
+            elif s == 13:
                 LA127_14 = input.LA(1)
 
-                 
+
                 index127_14 = input.index()
                 input.rewind()
                 s = -1
@@ -27653,14 +27653,14 @@ class sdl92Parser(Parser):
                 elif (True):
                     s = 18
 
-                 
+
                 input.seek(index127_14)
                 if s >= 0:
                     return s
-            elif s == 14: 
+            elif s == 14:
                 LA127_15 = input.LA(1)
 
-                 
+
                 index127_15 = input.index()
                 input.rewind()
                 s = -1
@@ -27670,14 +27670,14 @@ class sdl92Parser(Parser):
                 elif (True):
                     s = 18
 
-                 
+
                 input.seek(index127_15)
                 if s >= 0:
                     return s
-            elif s == 15: 
+            elif s == 15:
                 LA127_16 = input.LA(1)
 
-                 
+
                 index127_16 = input.index()
                 input.rewind()
                 s = -1
@@ -27687,14 +27687,14 @@ class sdl92Parser(Parser):
                 elif (True):
                     s = 18
 
-                 
+
                 input.seek(index127_16)
                 if s >= 0:
                     return s
-            elif s == 16: 
+            elif s == 16:
                 LA127_17 = input.LA(1)
 
-                 
+
                 index127_17 = input.index()
                 input.rewind()
                 s = -1
@@ -27704,7 +27704,7 @@ class sdl92Parser(Parser):
                 elif (True):
                     s = 18
 
-                 
+
                 input.seek(index127_17)
                 if s >= 0:
                     return s
@@ -27740,7 +27740,7 @@ class sdl92Parser(Parser):
         "\2\uffff\1\3\1\1\1\4\1\6\1\2\1\5\1\0\1\uffff"
         )
 
-            
+
     DFA160_transition = [
         DFA.unpack("\1\1\12\uffff\1\1\2\uffff\2\1\3\uffff\1\1\1\uffff\1"
         "\1\2\uffff\1\1\1\uffff\1\1\2\uffff\1\1\6\uffff\1\1\5\uffff\1\10"
@@ -27777,10 +27777,10 @@ class sdl92Parser(Parser):
 
             _s = s
 
-            if s == 0: 
+            if s == 0:
                 LA160_8 = input.LA(1)
 
-                 
+
                 index160_8 = input.index()
                 input.rewind()
                 s = -1
@@ -27790,14 +27790,14 @@ class sdl92Parser(Parser):
                 elif (True):
                     s = 1
 
-                 
+
                 input.seek(index160_8)
                 if s >= 0:
                     return s
-            elif s == 1: 
+            elif s == 1:
                 LA160_3 = input.LA(1)
 
-                 
+
                 index160_3 = input.index()
                 input.rewind()
                 s = -1
@@ -27807,14 +27807,14 @@ class sdl92Parser(Parser):
                 elif (True):
                     s = 1
 
-                 
+
                 input.seek(index160_3)
                 if s >= 0:
                     return s
-            elif s == 2: 
+            elif s == 2:
                 LA160_6 = input.LA(1)
 
-                 
+
                 index160_6 = input.index()
                 input.rewind()
                 s = -1
@@ -27824,14 +27824,14 @@ class sdl92Parser(Parser):
                 elif (True):
                     s = 1
 
-                 
+
                 input.seek(index160_6)
                 if s >= 0:
                     return s
-            elif s == 3: 
+            elif s == 3:
                 LA160_2 = input.LA(1)
 
-                 
+
                 index160_2 = input.index()
                 input.rewind()
                 s = -1
@@ -27841,14 +27841,14 @@ class sdl92Parser(Parser):
                 elif (True):
                     s = 1
 
-                 
+
                 input.seek(index160_2)
                 if s >= 0:
                     return s
-            elif s == 4: 
+            elif s == 4:
                 LA160_4 = input.LA(1)
 
-                 
+
                 index160_4 = input.index()
                 input.rewind()
                 s = -1
@@ -27858,14 +27858,14 @@ class sdl92Parser(Parser):
                 elif (True):
                     s = 1
 
-                 
+
                 input.seek(index160_4)
                 if s >= 0:
                     return s
-            elif s == 5: 
+            elif s == 5:
                 LA160_7 = input.LA(1)
 
-                 
+
                 index160_7 = input.index()
                 input.rewind()
                 s = -1
@@ -27875,14 +27875,14 @@ class sdl92Parser(Parser):
                 elif (True):
                     s = 1
 
-                 
+
                 input.seek(index160_7)
                 if s >= 0:
                     return s
-            elif s == 6: 
+            elif s == 6:
                 LA160_5 = input.LA(1)
 
-                 
+
                 index160_5 = input.index()
                 input.rewind()
                 s = -1
@@ -27892,7 +27892,7 @@ class sdl92Parser(Parser):
                 elif (True):
                     s = 1
 
-                 
+
                 input.seek(index160_5)
                 if s >= 0:
                     return s
@@ -27928,7 +27928,7 @@ class sdl92Parser(Parser):
         "\1\uffff\1\0\21\uffff"
         )
 
-            
+
     DFA165_transition = [
         DFA.unpack("\1\2\34\uffff\1\2\5\uffff\1\2\16\uffff\1\2\33\uffff"
         "\1\2\4\uffff\1\2\27\uffff\1\1\11\uffff\1\2\12\uffff\1\2\23\uffff"
@@ -27969,10 +27969,10 @@ class sdl92Parser(Parser):
 
             _s = s
 
-            if s == 0: 
+            if s == 0:
                 LA165_1 = input.LA(1)
 
-                 
+
                 index165_1 = input.index()
                 input.rewind()
                 s = -1
@@ -27982,7 +27982,7 @@ class sdl92Parser(Parser):
                 elif (self.synpred219_sdl92()):
                     s = 2
 
-                 
+
                 input.seek(index165_1)
                 if s >= 0:
                     return s
@@ -28018,7 +28018,7 @@ class sdl92Parser(Parser):
         "\55\uffff\1\0\20\uffff\1\1\6\uffff"
         )
 
-            
+
     DFA166_transition = [
         DFA.unpack("\1\1\12\uffff\1\1\2\uffff\2\1\3\uffff\1\1\1\uffff\1"
         "\1\2\uffff\1\1\1\uffff\1\1\2\uffff\1\1\6\uffff\1\1\5\uffff\1\1"
@@ -28114,10 +28114,10 @@ class sdl92Parser(Parser):
 
             _s = s
 
-            if s == 0: 
+            if s == 0:
                 LA166_45 = input.LA(1)
 
-                 
+
                 index166_45 = input.index()
                 input.rewind()
                 s = -1
@@ -28127,14 +28127,14 @@ class sdl92Parser(Parser):
                 elif (True):
                     s = 1
 
-                 
+
                 input.seek(index166_45)
                 if s >= 0:
                     return s
-            elif s == 1: 
+            elif s == 1:
                 LA166_62 = input.LA(1)
 
-                 
+
                 index166_62 = input.index()
                 input.rewind()
                 s = -1
@@ -28144,7 +28144,7 @@ class sdl92Parser(Parser):
                 elif (True):
                     s = 1
 
-                 
+
                 input.seek(index166_62)
                 if s >= 0:
                     return s
@@ -28181,7 +28181,7 @@ class sdl92Parser(Parser):
         "\13\uffff\1\0\1\1\7\uffff"
         )
 
-            
+
     DFA170_transition = [
         DFA.unpack("\1\1\34\uffff\1\12\24\uffff\1\2\33\uffff\1\15\4\uffff"
         "\1\5\27\uffff\1\13\11\uffff\1\11\44\uffff\1\3\1\4\1\6\1\7\1\10"
@@ -28223,10 +28223,10 @@ class sdl92Parser(Parser):
 
             _s = s
 
-            if s == 0: 
+            if s == 0:
                 LA170_11 = input.LA(1)
 
-                 
+
                 index170_11 = input.index()
                 input.rewind()
                 s = -1
@@ -28236,14 +28236,14 @@ class sdl92Parser(Parser):
                 elif (self.synpred236_sdl92()):
                     s = 15
 
-                 
+
                 input.seek(index170_11)
                 if s >= 0:
                     return s
-            elif s == 1: 
+            elif s == 1:
                 LA170_12 = input.LA(1)
 
-                 
+
                 index170_12 = input.index()
                 input.rewind()
                 s = -1
@@ -28259,7 +28259,7 @@ class sdl92Parser(Parser):
                 elif (self.synpred242_sdl92()):
                     s = 19
 
-                 
+
                 input.seek(index170_12)
                 if s >= 0:
                     return s
@@ -28297,7 +28297,7 @@ class sdl92Parser(Parser):
         "\21\uffff"
         )
 
-            
+
     DFA179_transition = [
         DFA.unpack("\1\3\4\uffff\1\3\23\uffff\1\3\14\uffff\1\3\31\uffff"
         "\1\2\146\uffff\1\1"),
@@ -28329,7 +28329,7 @@ class sdl92Parser(Parser):
         pass
 
 
- 
+
 
     FOLLOW_use_clause_in_pr_file1321 = frozenset([1, 74, 99, 111, 221])
     FOLLOW_system_definition_in_pr_file1341 = frozenset([1, 74, 99, 111, 221])

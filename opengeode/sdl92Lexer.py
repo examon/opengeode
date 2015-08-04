@@ -2,7 +2,7 @@
 
 import sys
 from antlr3 import *
-from antlr3.compat import set, frozenset
+#from antlr3.compat import set, frozenset
 
 
 # for convenience in actions
@@ -234,7 +234,7 @@ LE=150
 class sdl92Lexer(Lexer):
 
     grammarFileName = "sdl92.g"
-    antlr_version = version_str_to_tuple("3.1.3 Mar 17, 2009 19:23:44")
+    #antlr_version = version_str_to_tuple("3.1.3 Mar 17, 2009 19:23:44")
     antlr_version_str = "3.1.3 Mar 17, 2009 19:23:44"
 
     def __init__(self, input=None, state=None):
@@ -279,7 +279,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:7:8: ( ':' )
             # sdl92.g:7:10: ':'
-            pass 
+            pass
             self.match(58)
 
 
@@ -304,7 +304,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:8:8: ( '!' )
             # sdl92.g:8:10: '!'
-            pass 
+            pass
             self.match(33)
 
 
@@ -329,7 +329,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:9:8: ( '(.' )
             # sdl92.g:9:10: '(.'
-            pass 
+            pass
             self.match("(.")
 
 
@@ -354,7 +354,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:10:8: ( '.)' )
             # sdl92.g:10:10: '.)'
-            pass 
+            pass
             self.match(".)")
 
 
@@ -379,7 +379,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:11:8: ( 'ERROR' )
             # sdl92.g:11:10: 'ERROR'
-            pass 
+            pass
             self.match("ERROR")
 
 
@@ -404,7 +404,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:12:8: ( '/* CIF' )
             # sdl92.g:12:10: '/* CIF'
-            pass 
+            pass
             self.match("/* CIF")
 
 
@@ -429,7 +429,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:13:8: ( '*/' )
             # sdl92.g:13:10: '*/'
-            pass 
+            pass
             self.match("*/")
 
 
@@ -454,7 +454,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1189:17: ( ':=' )
             # sdl92.g:1189:25: ':='
-            pass 
+            pass
             self.match(":=")
 
 
@@ -479,7 +479,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1190:17: ( '{' )
             # sdl92.g:1190:25: '{'
-            pass 
+            pass
             self.match(123)
 
 
@@ -504,7 +504,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1191:17: ( '}' )
             # sdl92.g:1191:25: '}'
-            pass 
+            pass
             self.match(125)
 
 
@@ -529,7 +529,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1192:17: ( '(' )
             # sdl92.g:1192:25: '('
-            pass 
+            pass
             self.match(40)
 
 
@@ -554,7 +554,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1193:17: ( ')' )
             # sdl92.g:1193:25: ')'
-            pass 
+            pass
             self.match(41)
 
 
@@ -579,7 +579,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1194:17: ( ',' )
             # sdl92.g:1194:25: ','
-            pass 
+            pass
             self.match(44)
 
 
@@ -604,7 +604,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1195:17: ( ';' )
             # sdl92.g:1195:25: ';'
-            pass 
+            pass
             self.match(59)
 
 
@@ -629,7 +629,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1196:17: ( '-' )
             # sdl92.g:1196:25: '-'
-            pass 
+            pass
             self.match(45)
 
 
@@ -654,7 +654,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1197:17: ( A N Y )
             # sdl92.g:1197:25: A N Y
-            pass 
+            pass
             self.mA()
             self.mN()
             self.mY()
@@ -681,7 +681,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1198:17: ( '*' )
             # sdl92.g:1198:25: '*'
-            pass 
+            pass
             self.match(42)
 
 
@@ -706,7 +706,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1199:17: ( D C L )
             # sdl92.g:1199:25: D C L
-            pass 
+            pass
             self.mD()
             self.mC()
             self.mL()
@@ -733,7 +733,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1200:17: ( E N D )
             # sdl92.g:1200:25: E N D
-            pass 
+            pass
             self.mE()
             self.mN()
             self.mD()
@@ -760,7 +760,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1201:17: ( K E E P )
             # sdl92.g:1201:25: K E E P
-            pass 
+            pass
             self.mK()
             self.mE()
             self.mE()
@@ -788,7 +788,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1202:17: ( P A R A M N A M E S )
             # sdl92.g:1202:25: P A R A M N A M E S
-            pass 
+            pass
             self.mP()
             self.mA()
             self.mR()
@@ -822,7 +822,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1203:17: ( S P E C I F I C )
             # sdl92.g:1203:25: S P E C I F I C
-            pass 
+            pass
             self.mS()
             self.mP()
             self.mE()
@@ -854,7 +854,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1204:17: ( G E O D E )
             # sdl92.g:1204:25: G E O D E
-            pass 
+            pass
             self.mG()
             self.mE()
             self.mO()
@@ -883,7 +883,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1205:17: ( H Y P E R L I N K )
             # sdl92.g:1205:25: H Y P E R L I N K
-            pass 
+            pass
             self.mH()
             self.mY()
             self.mP()
@@ -916,7 +916,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1206:17: ( E N D T E X T )
             # sdl92.g:1206:25: E N D T E X T
-            pass 
+            pass
             self.mE()
             self.mN()
             self.mD()
@@ -947,7 +947,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1207:17: ( R E T U R N )
             # sdl92.g:1207:25: R E T U R N
-            pass 
+            pass
             self.mR()
             self.mE()
             self.mT()
@@ -977,7 +977,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1208:17: ( T I M E R )
             # sdl92.g:1208:25: T I M E R
-            pass 
+            pass
             self.mT()
             self.mI()
             self.mM()
@@ -1006,7 +1006,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1209:17: ( P R O C E S S )
             # sdl92.g:1209:25: P R O C E S S
-            pass 
+            pass
             self.mP()
             self.mR()
             self.mO()
@@ -1037,7 +1037,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1210:17: ( E N D P R O C E S S )
             # sdl92.g:1210:25: E N D P R O C E S S
-            pass 
+            pass
             self.mE()
             self.mN()
             self.mD()
@@ -1071,7 +1071,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1211:17: ( S T A R T )
             # sdl92.g:1211:25: S T A R T
-            pass 
+            pass
             self.mS()
             self.mT()
             self.mA()
@@ -1100,7 +1100,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1212:17: ( S T A T E )
             # sdl92.g:1212:25: S T A T E
-            pass 
+            pass
             self.mS()
             self.mT()
             self.mA()
@@ -1129,7 +1129,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1213:17: ( T E X T )
             # sdl92.g:1213:25: T E X T
-            pass 
+            pass
             self.mT()
             self.mE()
             self.mX()
@@ -1157,7 +1157,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1214:17: ( P R O C E D U R E )
             # sdl92.g:1214:25: P R O C E D U R E
-            pass 
+            pass
             self.mP()
             self.mR()
             self.mO()
@@ -1190,7 +1190,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1215:17: ( E N D P R O C E D U R E )
             # sdl92.g:1215:25: E N D P R O C E D U R E
-            pass 
+            pass
             self.mE()
             self.mN()
             self.mD()
@@ -1226,7 +1226,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1216:17: ( P R O C E D U R E C A L L )
             # sdl92.g:1216:25: P R O C E D U R E C A L L
-            pass 
+            pass
             self.mP()
             self.mR()
             self.mO()
@@ -1263,7 +1263,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1217:17: ( E N D S T A T E )
             # sdl92.g:1217:25: E N D S T A T E
-            pass 
+            pass
             self.mE()
             self.mN()
             self.mD()
@@ -1295,7 +1295,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1218:17: ( I N P U T )
             # sdl92.g:1218:25: I N P U T
-            pass 
+            pass
             self.mI()
             self.mN()
             self.mP()
@@ -1324,7 +1324,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1219:17: ( P R O V I D E D )
             # sdl92.g:1219:25: P R O V I D E D
-            pass 
+            pass
             self.mP()
             self.mR()
             self.mO()
@@ -1356,7 +1356,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1220:17: ( P R I O R I T Y )
             # sdl92.g:1220:25: P R I O R I T Y
-            pass 
+            pass
             self.mP()
             self.mR()
             self.mI()
@@ -1388,7 +1388,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1221:17: ( S A V E )
             # sdl92.g:1221:25: S A V E
-            pass 
+            pass
             self.mS()
             self.mA()
             self.mV()
@@ -1416,7 +1416,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1222:17: ( N O N E )
             # sdl92.g:1222:25: N O N E
-            pass 
+            pass
             self.mN()
             self.mO()
             self.mN()
@@ -1444,7 +1444,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1229:17: ( F O R )
             # sdl92.g:1229:25: F O R
-            pass 
+            pass
             self.mF()
             self.mO()
             self.mR()
@@ -1471,7 +1471,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1230:17: ( E N D F O R )
             # sdl92.g:1230:25: E N D F O R
-            pass 
+            pass
             self.mE()
             self.mN()
             self.mD()
@@ -1501,7 +1501,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1231:17: ( R A N G E )
             # sdl92.g:1231:25: R A N G E
-            pass 
+            pass
             self.mR()
             self.mA()
             self.mN()
@@ -1530,7 +1530,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1232:17: ( N E X T S T A T E )
             # sdl92.g:1232:25: N E X T S T A T E
-            pass 
+            pass
             self.mN()
             self.mE()
             self.mX()
@@ -1563,7 +1563,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1233:17: ( A N S W E R )
             # sdl92.g:1233:25: A N S W E R
-            pass 
+            pass
             self.mA()
             self.mN()
             self.mS()
@@ -1593,7 +1593,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1234:17: ( C O M M E N T )
             # sdl92.g:1234:25: C O M M E N T
-            pass 
+            pass
             self.mC()
             self.mO()
             self.mM()
@@ -1624,7 +1624,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1235:17: ( L A B E L )
             # sdl92.g:1235:25: L A B E L
-            pass 
+            pass
             self.mL()
             self.mA()
             self.mB()
@@ -1653,7 +1653,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1236:17: ( S T O P )
             # sdl92.g:1236:25: S T O P
-            pass 
+            pass
             self.mS()
             self.mT()
             self.mO()
@@ -1681,7 +1681,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1237:17: ( I F )
             # sdl92.g:1237:25: I F
-            pass 
+            pass
             self.mI()
             self.mF()
 
@@ -1707,7 +1707,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1238:17: ( T H E N )
             # sdl92.g:1238:25: T H E N
-            pass 
+            pass
             self.mT()
             self.mH()
             self.mE()
@@ -1735,7 +1735,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1239:17: ( E L S E )
             # sdl92.g:1239:25: E L S E
-            pass 
+            pass
             self.mE()
             self.mL()
             self.mS()
@@ -1763,7 +1763,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1240:17: ( F I )
             # sdl92.g:1240:25: F I
-            pass 
+            pass
             self.mF()
             self.mI()
 
@@ -1789,7 +1789,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1241:17: ( C R E A T E )
             # sdl92.g:1241:25: C R E A T E
-            pass 
+            pass
             self.mC()
             self.mR()
             self.mE()
@@ -1819,7 +1819,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1242:17: ( O U T P U T )
             # sdl92.g:1242:25: O U T P U T
-            pass 
+            pass
             self.mO()
             self.mU()
             self.mT()
@@ -1849,7 +1849,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1243:17: ( C A L L )
             # sdl92.g:1243:25: C A L L
-            pass 
+            pass
             self.mC()
             self.mA()
             self.mL()
@@ -1877,7 +1877,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1244:17: ( T H I S )
             # sdl92.g:1244:25: T H I S
-            pass 
+            pass
             self.mT()
             self.mH()
             self.mI()
@@ -1905,7 +1905,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1245:17: ( S E T )
             # sdl92.g:1245:25: S E T
-            pass 
+            pass
             self.mS()
             self.mE()
             self.mT()
@@ -1932,7 +1932,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1246:17: ( R E S E T )
             # sdl92.g:1246:25: R E S E T
-            pass 
+            pass
             self.mR()
             self.mE()
             self.mS()
@@ -1961,7 +1961,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1247:17: ( E N D A L T E R N A T I V E )
             # sdl92.g:1247:25: E N D A L T E R N A T I V E
-            pass 
+            pass
             self.mE()
             self.mN()
             self.mD()
@@ -1999,7 +1999,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1248:17: ( A L T E R N A T I V E )
             # sdl92.g:1248:25: A L T E R N A T I V E
-            pass 
+            pass
             self.mA()
             self.mL()
             self.mT()
@@ -2034,7 +2034,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1249:17: ( D E C I S I O N )
             # sdl92.g:1249:25: D E C I S I O N
-            pass 
+            pass
             self.mD()
             self.mE()
             self.mC()
@@ -2066,7 +2066,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1250:17: ( E N D D E C I S I O N )
             # sdl92.g:1250:25: E N D D E C I S I O N
-            pass 
+            pass
             self.mE()
             self.mN()
             self.mD()
@@ -2101,7 +2101,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1251:17: ( E X P O R T )
             # sdl92.g:1251:25: E X P O R T
-            pass 
+            pass
             self.mE()
             self.mX()
             self.mP()
@@ -2131,7 +2131,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1252:17: ( E X T E R N A L )
             # sdl92.g:1252:25: E X T E R N A L
-            pass 
+            pass
             self.mE()
             self.mX()
             self.mT()
@@ -2163,7 +2163,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1253:17: ( R E F E R E N C E D )
             # sdl92.g:1253:25: R E F E R E N C E D
-            pass 
+            pass
             self.mR()
             self.mE()
             self.mF()
@@ -2197,7 +2197,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1254:17: ( C O N N E C T I O N )
             # sdl92.g:1254:25: C O N N E C T I O N
-            pass 
+            pass
             self.mC()
             self.mO()
             self.mN()
@@ -2231,7 +2231,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1255:17: ( E N D C O N N E C T I O N )
             # sdl92.g:1255:25: E N D C O N N E C T I O N
-            pass 
+            pass
             self.mE()
             self.mN()
             self.mD()
@@ -2268,7 +2268,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1256:17: ( F R O M )
             # sdl92.g:1256:25: F R O M
-            pass 
+            pass
             self.mF()
             self.mR()
             self.mO()
@@ -2296,7 +2296,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1257:17: ( T O )
             # sdl92.g:1257:25: T O
-            pass 
+            pass
             self.mT()
             self.mO()
 
@@ -2322,7 +2322,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1258:17: ( W I T H )
             # sdl92.g:1258:25: W I T H
-            pass 
+            pass
             self.mW()
             self.mI()
             self.mT()
@@ -2350,7 +2350,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1259:17: ( V I A )
             # sdl92.g:1259:25: V I A
-            pass 
+            pass
             self.mV()
             self.mI()
             self.mA()
@@ -2377,7 +2377,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1260:17: ( A L L )
             # sdl92.g:1260:25: A L L
-            pass 
+            pass
             self.mA()
             self.mL()
             self.mL()
@@ -2404,7 +2404,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1261:17: ( T A S K )
             # sdl92.g:1261:25: T A S K
-            pass 
+            pass
             self.mT()
             self.mA()
             self.mS()
@@ -2432,7 +2432,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1262:17: ( J O I N )
             # sdl92.g:1262:25: J O I N
-            pass 
+            pass
             self.mJ()
             self.mO()
             self.mI()
@@ -2460,7 +2460,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1263:17: ( '+' )
             # sdl92.g:1263:25: '+'
-            pass 
+            pass
             self.match(43)
 
 
@@ -2485,7 +2485,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1264:17: ( '.' )
             # sdl92.g:1264:25: '.'
-            pass 
+            pass
             self.match(46)
 
 
@@ -2510,7 +2510,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1265:17: ( '//' )
             # sdl92.g:1265:25: '//'
-            pass 
+            pass
             self.match("//")
 
 
@@ -2535,7 +2535,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1266:17: ( I N )
             # sdl92.g:1266:25: I N
-            pass 
+            pass
             self.mI()
             self.mN()
 
@@ -2561,7 +2561,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1267:17: ( O U T )
             # sdl92.g:1267:25: O U T
-            pass 
+            pass
             self.mO()
             self.mU()
             self.mT()
@@ -2588,7 +2588,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1268:17: ( I N '/' O U T )
             # sdl92.g:1268:25: I N '/' O U T
-            pass 
+            pass
             self.mI()
             self.mN()
             self.match(47)
@@ -2618,7 +2618,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1269:17: ( S U B S T R U C T U R E )
             # sdl92.g:1269:25: S U B S T R U C T U R E
-            pass 
+            pass
             self.mS()
             self.mU()
             self.mB()
@@ -2654,7 +2654,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1270:17: ( E N D S U B S T R U C T U R E )
             # sdl92.g:1270:25: E N D S U B S T R U C T U R E
-            pass 
+            pass
             self.mE()
             self.mN()
             self.mD()
@@ -2693,7 +2693,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1271:17: ( F P A R )
             # sdl92.g:1271:25: F P A R
-            pass 
+            pass
             self.mF()
             self.mP()
             self.mA()
@@ -2721,7 +2721,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1272:17: ( P A R A M )
             # sdl92.g:1272:25: P A R A M
-            pass 
+            pass
             self.mP()
             self.mA()
             self.mR()
@@ -2750,7 +2750,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1273:17: ( '=' )
             # sdl92.g:1273:25: '='
-            pass 
+            pass
             self.match(61)
 
 
@@ -2775,7 +2775,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1274:17: ( '/=' )
             # sdl92.g:1274:25: '/='
-            pass 
+            pass
             self.match("/=")
 
 
@@ -2800,7 +2800,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1275:17: ( '>' )
             # sdl92.g:1275:25: '>'
-            pass 
+            pass
             self.match(62)
 
 
@@ -2825,7 +2825,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1276:17: ( '>=' )
             # sdl92.g:1276:25: '>='
-            pass 
+            pass
             self.match(">=")
 
 
@@ -2850,7 +2850,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1277:17: ( '<' )
             # sdl92.g:1277:26: '<'
-            pass 
+            pass
             self.match(60)
 
 
@@ -2875,7 +2875,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1278:17: ( '<=' )
             # sdl92.g:1278:25: '<='
-            pass 
+            pass
             self.match("<=")
 
 
@@ -2900,7 +2900,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1279:17: ( N O T )
             # sdl92.g:1279:25: N O T
-            pass 
+            pass
             self.mN()
             self.mO()
             self.mT()
@@ -2927,7 +2927,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1280:17: ( O R )
             # sdl92.g:1280:25: O R
-            pass 
+            pass
             self.mO()
             self.mR()
 
@@ -2953,7 +2953,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1281:17: ( X O R )
             # sdl92.g:1281:25: X O R
-            pass 
+            pass
             self.mX()
             self.mO()
             self.mR()
@@ -2980,7 +2980,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1282:17: ( A N D )
             # sdl92.g:1282:25: A N D
-            pass 
+            pass
             self.mA()
             self.mN()
             self.mD()
@@ -3007,7 +3007,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1283:17: ( '=>' )
             # sdl92.g:1283:25: '=>'
-            pass 
+            pass
             self.match("=>")
 
 
@@ -3032,7 +3032,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1284:17: ( '/' )
             # sdl92.g:1284:25: '/'
-            pass 
+            pass
             self.match(47)
 
 
@@ -3057,7 +3057,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1285:17: ( M O D )
             # sdl92.g:1285:25: M O D
-            pass 
+            pass
             self.mM()
             self.mO()
             self.mD()
@@ -3084,7 +3084,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1286:17: ( R E M )
             # sdl92.g:1286:25: R E M
-            pass 
+            pass
             self.mR()
             self.mE()
             self.mM()
@@ -3111,7 +3111,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1287:17: ( T R U E )
             # sdl92.g:1287:25: T R U E
-            pass 
+            pass
             self.mT()
             self.mR()
             self.mU()
@@ -3139,7 +3139,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1288:17: ( F A L S E )
             # sdl92.g:1288:25: F A L S E
-            pass 
+            pass
             self.mF()
             self.mA()
             self.mL()
@@ -3168,7 +3168,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1289:17: ( A S N F I L E N A M E )
             # sdl92.g:1289:25: A S N F I L E N A M E
-            pass 
+            pass
             self.mA()
             self.mS()
             self.mN()
@@ -3203,7 +3203,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1290:17: ( N U L L )
             # sdl92.g:1290:25: N U L L
-            pass 
+            pass
             self.mN()
             self.mU()
             self.mL()
@@ -3231,7 +3231,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1291:17: ( P L U S '-' I N F I N I T Y )
             # sdl92.g:1291:25: P L U S '-' I N F I N I T Y
-            pass 
+            pass
             self.mP()
             self.mL()
             self.mU()
@@ -3268,7 +3268,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1292:17: ( M I N U S '-' I N F I N I T Y )
             # sdl92.g:1292:25: M I N U S '-' I N F I N I T Y
-            pass 
+            pass
             self.mM()
             self.mI()
             self.mN()
@@ -3306,7 +3306,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1293:17: ( M A N T I S S A )
             # sdl92.g:1293:25: M A N T I S S A
-            pass 
+            pass
             self.mM()
             self.mA()
             self.mN()
@@ -3338,7 +3338,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1294:17: ( E X P O N E N T )
             # sdl92.g:1294:25: E X P O N E N T
-            pass 
+            pass
             self.mE()
             self.mX()
             self.mP()
@@ -3370,7 +3370,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1295:17: ( B A S E )
             # sdl92.g:1295:25: B A S E
-            pass 
+            pass
             self.mB()
             self.mA()
             self.mS()
@@ -3398,7 +3398,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1296:17: ( S Y S T E M )
             # sdl92.g:1296:25: S Y S T E M
-            pass 
+            pass
             self.mS()
             self.mY()
             self.mS()
@@ -3428,7 +3428,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1297:17: ( E N D S Y S T E M )
             # sdl92.g:1297:25: E N D S Y S T E M
-            pass 
+            pass
             self.mE()
             self.mN()
             self.mD()
@@ -3461,7 +3461,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1298:17: ( C H A N N E L )
             # sdl92.g:1298:25: C H A N N E L
-            pass 
+            pass
             self.mC()
             self.mH()
             self.mA()
@@ -3492,7 +3492,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1299:17: ( E N D C H A N N E L )
             # sdl92.g:1299:25: E N D C H A N N E L
-            pass 
+            pass
             self.mE()
             self.mN()
             self.mD()
@@ -3526,7 +3526,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1300:17: ( U S E )
             # sdl92.g:1300:25: U S E
-            pass 
+            pass
             self.mU()
             self.mS()
             self.mE()
@@ -3553,7 +3553,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1301:17: ( S I G N A L )
             # sdl92.g:1301:25: S I G N A L
-            pass 
+            pass
             self.mS()
             self.mI()
             self.mG()
@@ -3583,7 +3583,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1302:17: ( B L O C K )
             # sdl92.g:1302:25: B L O C K
-            pass 
+            pass
             self.mB()
             self.mL()
             self.mO()
@@ -3612,7 +3612,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1303:17: ( E N D B L O C K )
             # sdl92.g:1303:25: E N D B L O C K
-            pass 
+            pass
             self.mE()
             self.mN()
             self.mD()
@@ -3644,7 +3644,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1304:17: ( S I G N A L R O U T E )
             # sdl92.g:1304:25: S I G N A L R O U T E
-            pass 
+            pass
             self.mS()
             self.mI()
             self.mG()
@@ -3679,7 +3679,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1305:17: ( C O N N E C T )
             # sdl92.g:1305:25: C O N N E C T
-            pass 
+            pass
             self.mC()
             self.mO()
             self.mN()
@@ -3710,7 +3710,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1306:17: ( S Y N T Y P E )
             # sdl92.g:1306:25: S Y N T Y P E
-            pass 
+            pass
             self.mS()
             self.mY()
             self.mN()
@@ -3741,7 +3741,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1307:17: ( E N D S Y N T Y P E )
             # sdl92.g:1307:25: E N D S Y N T Y P E
-            pass 
+            pass
             self.mE()
             self.mN()
             self.mD()
@@ -3775,7 +3775,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1308:17: ( N E W T Y P E )
             # sdl92.g:1308:25: N E W T Y P E
-            pass 
+            pass
             self.mN()
             self.mE()
             self.mW()
@@ -3806,7 +3806,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1309:17: ( E N D N E W T Y P E )
             # sdl92.g:1309:25: E N D N E W T Y P E
-            pass 
+            pass
             self.mE()
             self.mN()
             self.mD()
@@ -3840,7 +3840,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1310:17: ( A R R A Y )
             # sdl92.g:1310:25: A R R A Y
-            pass 
+            pass
             self.mA()
             self.mR()
             self.mR()
@@ -3869,7 +3869,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1311:17: ( C O N S T A N T S )
             # sdl92.g:1311:25: C O N S T A N T S
-            pass 
+            pass
             self.mC()
             self.mO()
             self.mN()
@@ -3902,7 +3902,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1312:17: ( S T R U C T )
             # sdl92.g:1312:25: S T R U C T
-            pass 
+            pass
             self.mS()
             self.mT()
             self.mR()
@@ -3932,7 +3932,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1313:17: ( S Y N O N Y M )
             # sdl92.g:1313:25: S Y N O N Y M
-            pass 
+            pass
             self.mS()
             self.mY()
             self.mN()
@@ -3963,7 +3963,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1314:17: ( I M P O R T )
             # sdl92.g:1314:25: I M P O R T
-            pass 
+            pass
             self.mI()
             self.mM()
             self.mP()
@@ -3993,7 +3993,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1315:17: ( V I E W )
             # sdl92.g:1315:25: V I E W
-            pass 
+            pass
             self.mV()
             self.mI()
             self.mE()
@@ -4021,7 +4021,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1316:17: ( A C T I V E )
             # sdl92.g:1316:25: A C T I V E
-            pass 
+            pass
             self.mA()
             self.mC()
             self.mT()
@@ -4048,7 +4048,7 @@ class sdl92Lexer(Lexer):
         try:
             # sdl92.g:1320:9: ( '\\'' ( options {greedy=false; } : . )* '\\'' )
             # sdl92.g:1320:17: '\\'' ( options {greedy=false; } : . )* '\\''
-            pass 
+            pass
             self.match(39)
             # sdl92.g:1320:22: ( options {greedy=false; } : . )*
             while True: #loop1
@@ -4063,7 +4063,7 @@ class sdl92Lexer(Lexer):
 
                 if alt1 == 1:
                     # sdl92.g:1320:50: .
-                    pass 
+                    pass
                     self.matchAny()
 
 
@@ -4091,7 +4091,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1323:9: ( ( STR )+ )
             # sdl92.g:1323:17: ( STR )+
-            pass 
+            pass
             # sdl92.g:1323:17: ( STR )+
             cnt2 = 0
             while True: #loop2
@@ -4104,7 +4104,7 @@ class sdl92Lexer(Lexer):
 
                 if alt2 == 1:
                     # sdl92.g:1323:17: STR
-                    pass 
+                    pass
                     self.mSTR()
 
 
@@ -4139,7 +4139,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1326:9: ( '\"' ( '0' | '1' | ' ' | '\\t' | '\\r' | '\\n' )* '\"B' )
             # sdl92.g:1326:17: '\"' ( '0' | '1' | ' ' | '\\t' | '\\r' | '\\n' )* '\"B'
-            pass 
+            pass
             self.match(34)
             # sdl92.g:1326:21: ( '0' | '1' | ' ' | '\\t' | '\\r' | '\\n' )*
             while True: #loop3
@@ -4152,7 +4152,7 @@ class sdl92Lexer(Lexer):
 
                 if alt3 == 1:
                     # sdl92.g:
-                    pass 
+                    pass
                     if (9 <= self.input.LA(1) <= 10) or self.input.LA(1) == 13 or self.input.LA(1) == 32 or (48 <= self.input.LA(1) <= 49):
                         self.input.consume()
                     else:
@@ -4188,7 +4188,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1330:9: ( '\"' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | ' ' | '\\t' | '\\r' | '\\n' )* '\"H' )
             # sdl92.g:1330:17: '\"' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | ' ' | '\\t' | '\\r' | '\\n' )* '\"H'
-            pass 
+            pass
             self.match(34)
             # sdl92.g:1330:21: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | ' ' | '\\t' | '\\r' | '\\n' )*
             while True: #loop4
@@ -4201,7 +4201,7 @@ class sdl92Lexer(Lexer):
 
                 if alt4 == 1:
                     # sdl92.g:
-                    pass 
+                    pass
                     if (9 <= self.input.LA(1) <= 10) or self.input.LA(1) == 13 or self.input.LA(1) == 32 or (48 <= self.input.LA(1) <= 57) or (65 <= self.input.LA(1) <= 70) or (97 <= self.input.LA(1) <= 102):
                         self.input.consume()
                     else:
@@ -4237,7 +4237,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1334:9: ( ALPHA ( ALPHA | DIGITS | '_' )* )
             # sdl92.g:1334:17: ALPHA ( ALPHA | DIGITS | '_' )*
-            pass 
+            pass
             self.mALPHA()
             # sdl92.g:1334:23: ( ALPHA | DIGITS | '_' )*
             while True: #loop5
@@ -4252,19 +4252,19 @@ class sdl92Lexer(Lexer):
 
                 if alt5 == 1:
                     # sdl92.g:1334:24: ALPHA
-                    pass 
+                    pass
                     self.mALPHA()
 
 
                 elif alt5 == 2:
                     # sdl92.g:1334:32: DIGITS
-                    pass 
+                    pass
                     self.mDIGITS()
 
 
                 elif alt5 == 3:
                     # sdl92.g:1334:41: '_'
-                    pass 
+                    pass
                     self.match(95)
 
 
@@ -4303,10 +4303,10 @@ class sdl92Lexer(Lexer):
 
             if alt6 == 1:
                 # sdl92.g:1337:17: ( 'a' .. 'z' )
-                pass 
+                pass
                 # sdl92.g:1337:17: ( 'a' .. 'z' )
                 # sdl92.g:1337:18: 'a' .. 'z'
-                pass 
+                pass
                 self.matchRange(97, 122)
 
 
@@ -4315,10 +4315,10 @@ class sdl92Lexer(Lexer):
 
             elif alt6 == 2:
                 # sdl92.g:1337:28: ( 'A' .. 'Z' )
-                pass 
+                pass
                 # sdl92.g:1337:28: ( 'A' .. 'Z' )
                 # sdl92.g:1337:29: 'A' .. 'Z'
-                pass 
+                pass
                 self.matchRange(65, 90)
 
 
@@ -4343,7 +4343,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1339:9: ( ( DASH )? ( '0' | ( '1' .. '9' ) ( '0' .. '9' )* ) )
             # sdl92.g:1339:17: ( DASH )? ( '0' | ( '1' .. '9' ) ( '0' .. '9' )* )
-            pass 
+            pass
             # sdl92.g:1339:17: ( DASH )?
             alt7 = 2
             LA7_0 = self.input.LA(1)
@@ -4352,7 +4352,7 @@ class sdl92Lexer(Lexer):
                 alt7 = 1
             if alt7 == 1:
                 # sdl92.g:1339:17: DASH
-                pass 
+                pass
                 self.mDASH()
 
 
@@ -4372,16 +4372,16 @@ class sdl92Lexer(Lexer):
 
             if alt9 == 1:
                 # sdl92.g:1339:25: '0'
-                pass 
+                pass
                 self.match(48)
 
 
             elif alt9 == 2:
                 # sdl92.g:1339:31: ( '1' .. '9' ) ( '0' .. '9' )*
-                pass 
+                pass
                 # sdl92.g:1339:31: ( '1' .. '9' )
                 # sdl92.g:1339:32: '1' .. '9'
-                pass 
+                pass
                 self.matchRange(49, 57)
 
 
@@ -4397,7 +4397,7 @@ class sdl92Lexer(Lexer):
 
                     if alt8 == 1:
                         # sdl92.g:1339:43: '0' .. '9'
-                        pass 
+                        pass
                         self.matchRange(48, 57)
 
 
@@ -4426,7 +4426,7 @@ class sdl92Lexer(Lexer):
         try:
             # sdl92.g:1344:9: ( ( '0' .. '9' )+ )
             # sdl92.g:1344:17: ( '0' .. '9' )+
-            pass 
+            pass
             # sdl92.g:1344:17: ( '0' .. '9' )+
             cnt10 = 0
             while True: #loop10
@@ -4439,7 +4439,7 @@ class sdl92Lexer(Lexer):
 
                 if alt10 == 1:
                     # sdl92.g:1344:18: '0' .. '9'
-                    pass 
+                    pass
                     self.matchRange(48, 57)
 
 
@@ -4475,7 +4475,7 @@ class sdl92Lexer(Lexer):
             alt13 = self.dfa13.predict(self.input)
             if alt13 == 1:
                 # sdl92.g:1347:17: INT DOT ( DIGITS )? ( Exponent )?
-                pass 
+                pass
                 self.mINT()
                 self.mDOT()
                 # sdl92.g:1347:25: ( DIGITS )?
@@ -4486,7 +4486,7 @@ class sdl92Lexer(Lexer):
                     alt11 = 1
                 if alt11 == 1:
                     # sdl92.g:1347:26: DIGITS
-                    pass 
+                    pass
                     self.mDIGITS()
 
 
@@ -4499,7 +4499,7 @@ class sdl92Lexer(Lexer):
                     alt12 = 1
                 if alt12 == 1:
                     # sdl92.g:1347:36: Exponent
-                    pass 
+                    pass
                     self.mExponent()
 
 
@@ -4508,7 +4508,7 @@ class sdl92Lexer(Lexer):
 
             elif alt13 == 2:
                 # sdl92.g:1348:17: INT
-                pass 
+                pass
                 self.mINT()
 
 
@@ -4532,7 +4532,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1351:5: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
             # sdl92.g:1351:9: ( ' ' | '\\t' | '\\r' | '\\n' )+
-            pass 
+            pass
             # sdl92.g:1351:9: ( ' ' | '\\t' | '\\r' | '\\n' )+
             cnt14 = 0
             while True: #loop14
@@ -4545,7 +4545,7 @@ class sdl92Lexer(Lexer):
 
                 if alt14 == 1:
                     # sdl92.g:
-                    pass 
+                    pass
                     if (9 <= self.input.LA(1) <= 10) or self.input.LA(1) == 13 or self.input.LA(1) == 32:
                         self.input.consume()
                     else:
@@ -4586,7 +4586,7 @@ class sdl92Lexer(Lexer):
         try:
             # sdl92.g:1359:10: ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )
             # sdl92.g:1359:12: ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+
-            pass 
+            pass
             if self.input.LA(1) == 69 or self.input.LA(1) == 101:
                 self.input.consume()
             else:
@@ -4602,7 +4602,7 @@ class sdl92Lexer(Lexer):
                 alt15 = 1
             if alt15 == 1:
                 # sdl92.g:
-                pass 
+                pass
                 if self.input.LA(1) == 43 or self.input.LA(1) == 45:
                     self.input.consume()
                 else:
@@ -4625,7 +4625,7 @@ class sdl92Lexer(Lexer):
 
                 if alt16 == 1:
                     # sdl92.g:1359:34: '0' .. '9'
-                    pass 
+                    pass
                     self.matchRange(48, 57)
 
 
@@ -4658,7 +4658,7 @@ class sdl92Lexer(Lexer):
 
             # sdl92.g:1363:9: ( '--' ( options {greedy=false; } : . )* ( '--' | ( '\\r' )? '\\n' ) )
             # sdl92.g:1363:18: '--' ( options {greedy=false; } : . )* ( '--' | ( '\\r' )? '\\n' )
-            pass 
+            pass
             self.match("--")
             # sdl92.g:1363:23: ( options {greedy=false; } : . )*
             while True: #loop17
@@ -4684,7 +4684,7 @@ class sdl92Lexer(Lexer):
 
                 if alt17 == 1:
                     # sdl92.g:1363:51: .
-                    pass 
+                    pass
                     self.matchAny()
 
 
@@ -4705,13 +4705,13 @@ class sdl92Lexer(Lexer):
 
             if alt19 == 1:
                 # sdl92.g:1363:57: '--'
-                pass 
+                pass
                 self.match("--")
 
 
             elif alt19 == 2:
                 # sdl92.g:1363:62: ( '\\r' )? '\\n'
-                pass 
+                pass
                 # sdl92.g:1363:62: ( '\\r' )?
                 alt18 = 2
                 LA18_0 = self.input.LA(1)
@@ -4720,7 +4720,7 @@ class sdl92Lexer(Lexer):
                     alt18 = 1
                 if alt18 == 1:
                     # sdl92.g:1363:62: '\\r'
-                    pass 
+                    pass
                     self.match(13)
 
 
@@ -4752,7 +4752,7 @@ class sdl92Lexer(Lexer):
         try:
             # sdl92.g:1368:11: ( ( 'a' | 'A' ) )
             # sdl92.g:1368:12: ( 'a' | 'A' )
-            pass 
+            pass
             if self.input.LA(1) == 65 or self.input.LA(1) == 97:
                 self.input.consume()
             else:
@@ -4778,7 +4778,7 @@ class sdl92Lexer(Lexer):
         try:
             # sdl92.g:1369:11: ( ( 'b' | 'B' ) )
             # sdl92.g:1369:12: ( 'b' | 'B' )
-            pass 
+            pass
             if self.input.LA(1) == 66 or self.input.LA(1) == 98:
                 self.input.consume()
             else:
@@ -4804,7 +4804,7 @@ class sdl92Lexer(Lexer):
         try:
             # sdl92.g:1370:11: ( ( 'c' | 'C' ) )
             # sdl92.g:1370:12: ( 'c' | 'C' )
-            pass 
+            pass
             if self.input.LA(1) == 67 or self.input.LA(1) == 99:
                 self.input.consume()
             else:
@@ -4830,7 +4830,7 @@ class sdl92Lexer(Lexer):
         try:
             # sdl92.g:1371:11: ( ( 'd' | 'D' ) )
             # sdl92.g:1371:12: ( 'd' | 'D' )
-            pass 
+            pass
             if self.input.LA(1) == 68 or self.input.LA(1) == 100:
                 self.input.consume()
             else:
@@ -4856,7 +4856,7 @@ class sdl92Lexer(Lexer):
         try:
             # sdl92.g:1372:11: ( ( 'e' | 'E' ) )
             # sdl92.g:1372:12: ( 'e' | 'E' )
-            pass 
+            pass
             if self.input.LA(1) == 69 or self.input.LA(1) == 101:
                 self.input.consume()
             else:
@@ -4882,7 +4882,7 @@ class sdl92Lexer(Lexer):
         try:
             # sdl92.g:1373:11: ( ( 'f' | 'F' ) )
             # sdl92.g:1373:12: ( 'f' | 'F' )
-            pass 
+            pass
             if self.input.LA(1) == 70 or self.input.LA(1) == 102:
                 self.input.consume()
             else:
@@ -4908,7 +4908,7 @@ class sdl92Lexer(Lexer):
         try:
             # sdl92.g:1374:11: ( ( 'g' | 'G' ) )
             # sdl92.g:1374:12: ( 'g' | 'G' )
-            pass 
+            pass
             if self.input.LA(1) == 71 or self.input.LA(1) == 103:
                 self.input.consume()
             else:
@@ -4934,7 +4934,7 @@ class sdl92Lexer(Lexer):
         try:
             # sdl92.g:1375:11: ( ( 'h' | 'H' ) )
             # sdl92.g:1375:12: ( 'h' | 'H' )
-            pass 
+            pass
             if self.input.LA(1) == 72 or self.input.LA(1) == 104:
                 self.input.consume()
             else:
@@ -4960,7 +4960,7 @@ class sdl92Lexer(Lexer):
         try:
             # sdl92.g:1376:11: ( ( 'i' | 'I' ) )
             # sdl92.g:1376:12: ( 'i' | 'I' )
-            pass 
+            pass
             if self.input.LA(1) == 73 or self.input.LA(1) == 105:
                 self.input.consume()
             else:
@@ -4986,7 +4986,7 @@ class sdl92Lexer(Lexer):
         try:
             # sdl92.g:1377:11: ( ( 'j' | 'J' ) )
             # sdl92.g:1377:12: ( 'j' | 'J' )
-            pass 
+            pass
             if self.input.LA(1) == 74 or self.input.LA(1) == 106:
                 self.input.consume()
             else:
@@ -5012,7 +5012,7 @@ class sdl92Lexer(Lexer):
         try:
             # sdl92.g:1378:11: ( ( 'k' | 'K' ) )
             # sdl92.g:1378:12: ( 'k' | 'K' )
-            pass 
+            pass
             if self.input.LA(1) == 75 or self.input.LA(1) == 107:
                 self.input.consume()
             else:
@@ -5038,7 +5038,7 @@ class sdl92Lexer(Lexer):
         try:
             # sdl92.g:1379:11: ( ( 'l' | 'L' ) )
             # sdl92.g:1379:12: ( 'l' | 'L' )
-            pass 
+            pass
             if self.input.LA(1) == 76 or self.input.LA(1) == 108:
                 self.input.consume()
             else:
@@ -5064,7 +5064,7 @@ class sdl92Lexer(Lexer):
         try:
             # sdl92.g:1380:11: ( ( 'm' | 'M' ) )
             # sdl92.g:1380:12: ( 'm' | 'M' )
-            pass 
+            pass
             if self.input.LA(1) == 77 or self.input.LA(1) == 109:
                 self.input.consume()
             else:
@@ -5090,7 +5090,7 @@ class sdl92Lexer(Lexer):
         try:
             # sdl92.g:1381:11: ( ( 'n' | 'N' ) )
             # sdl92.g:1381:12: ( 'n' | 'N' )
-            pass 
+            pass
             if self.input.LA(1) == 78 or self.input.LA(1) == 110:
                 self.input.consume()
             else:
@@ -5116,7 +5116,7 @@ class sdl92Lexer(Lexer):
         try:
             # sdl92.g:1382:11: ( ( 'o' | 'O' ) )
             # sdl92.g:1382:12: ( 'o' | 'O' )
-            pass 
+            pass
             if self.input.LA(1) == 79 or self.input.LA(1) == 111:
                 self.input.consume()
             else:
@@ -5142,7 +5142,7 @@ class sdl92Lexer(Lexer):
         try:
             # sdl92.g:1383:11: ( ( 'p' | 'P' ) )
             # sdl92.g:1383:12: ( 'p' | 'P' )
-            pass 
+            pass
             if self.input.LA(1) == 80 or self.input.LA(1) == 112:
                 self.input.consume()
             else:
@@ -5168,7 +5168,7 @@ class sdl92Lexer(Lexer):
         try:
             # sdl92.g:1384:11: ( ( 'q' | 'Q' ) )
             # sdl92.g:1384:12: ( 'q' | 'Q' )
-            pass 
+            pass
             if self.input.LA(1) == 81 or self.input.LA(1) == 113:
                 self.input.consume()
             else:
@@ -5194,7 +5194,7 @@ class sdl92Lexer(Lexer):
         try:
             # sdl92.g:1385:11: ( ( 'r' | 'R' ) )
             # sdl92.g:1385:12: ( 'r' | 'R' )
-            pass 
+            pass
             if self.input.LA(1) == 82 or self.input.LA(1) == 114:
                 self.input.consume()
             else:
@@ -5220,7 +5220,7 @@ class sdl92Lexer(Lexer):
         try:
             # sdl92.g:1386:11: ( ( 's' | 'S' ) )
             # sdl92.g:1386:12: ( 's' | 'S' )
-            pass 
+            pass
             if self.input.LA(1) == 83 or self.input.LA(1) == 115:
                 self.input.consume()
             else:
@@ -5246,7 +5246,7 @@ class sdl92Lexer(Lexer):
         try:
             # sdl92.g:1387:11: ( ( 't' | 'T' ) )
             # sdl92.g:1387:12: ( 't' | 'T' )
-            pass 
+            pass
             if self.input.LA(1) == 84 or self.input.LA(1) == 116:
                 self.input.consume()
             else:
@@ -5272,7 +5272,7 @@ class sdl92Lexer(Lexer):
         try:
             # sdl92.g:1388:11: ( ( 'u' | 'U' ) )
             # sdl92.g:1388:12: ( 'u' | 'U' )
-            pass 
+            pass
             if self.input.LA(1) == 85 or self.input.LA(1) == 117:
                 self.input.consume()
             else:
@@ -5298,7 +5298,7 @@ class sdl92Lexer(Lexer):
         try:
             # sdl92.g:1389:11: ( ( 'v' | 'V' ) )
             # sdl92.g:1389:12: ( 'v' | 'V' )
-            pass 
+            pass
             if self.input.LA(1) == 86 or self.input.LA(1) == 118:
                 self.input.consume()
             else:
@@ -5324,7 +5324,7 @@ class sdl92Lexer(Lexer):
         try:
             # sdl92.g:1390:11: ( ( 'w' | 'W' ) )
             # sdl92.g:1390:12: ( 'w' | 'W' )
-            pass 
+            pass
             if self.input.LA(1) == 87 or self.input.LA(1) == 119:
                 self.input.consume()
             else:
@@ -5350,7 +5350,7 @@ class sdl92Lexer(Lexer):
         try:
             # sdl92.g:1391:11: ( ( 'x' | 'X' ) )
             # sdl92.g:1391:12: ( 'x' | 'X' )
-            pass 
+            pass
             if self.input.LA(1) == 88 or self.input.LA(1) == 120:
                 self.input.consume()
             else:
@@ -5376,7 +5376,7 @@ class sdl92Lexer(Lexer):
         try:
             # sdl92.g:1392:11: ( ( 'y' | 'Y' ) )
             # sdl92.g:1392:12: ( 'y' | 'Y' )
-            pass 
+            pass
             if self.input.LA(1) == 89 or self.input.LA(1) == 121:
                 self.input.consume()
             else:
@@ -5402,7 +5402,7 @@ class sdl92Lexer(Lexer):
         try:
             # sdl92.g:1393:11: ( ( 'z' | 'Z' ) )
             # sdl92.g:1393:12: ( 'z' | 'Z' )
-            pass 
+            pass
             if self.input.LA(1) == 90 or self.input.LA(1) == 122:
                 self.input.consume()
             else:
@@ -5428,823 +5428,823 @@ class sdl92Lexer(Lexer):
         alt20 = self.dfa20.predict(self.input)
         if alt20 == 1:
             # sdl92.g:1:10: T__216
-            pass 
+            pass
             self.mT__216()
 
 
         elif alt20 == 2:
             # sdl92.g:1:17: T__217
-            pass 
+            pass
             self.mT__217()
 
 
         elif alt20 == 3:
             # sdl92.g:1:24: T__218
-            pass 
+            pass
             self.mT__218()
 
 
         elif alt20 == 4:
             # sdl92.g:1:31: T__219
-            pass 
+            pass
             self.mT__219()
 
 
         elif alt20 == 5:
             # sdl92.g:1:38: T__220
-            pass 
+            pass
             self.mT__220()
 
 
         elif alt20 == 6:
             # sdl92.g:1:45: T__221
-            pass 
+            pass
             self.mT__221()
 
 
         elif alt20 == 7:
             # sdl92.g:1:52: T__222
-            pass 
+            pass
             self.mT__222()
 
 
         elif alt20 == 8:
             # sdl92.g:1:59: ASSIG_OP
-            pass 
+            pass
             self.mASSIG_OP()
 
 
         elif alt20 == 9:
             # sdl92.g:1:68: L_BRACKET
-            pass 
+            pass
             self.mL_BRACKET()
 
 
         elif alt20 == 10:
             # sdl92.g:1:78: R_BRACKET
-            pass 
+            pass
             self.mR_BRACKET()
 
 
         elif alt20 == 11:
             # sdl92.g:1:88: L_PAREN
-            pass 
+            pass
             self.mL_PAREN()
 
 
         elif alt20 == 12:
             # sdl92.g:1:96: R_PAREN
-            pass 
+            pass
             self.mR_PAREN()
 
 
         elif alt20 == 13:
             # sdl92.g:1:104: COMMA
-            pass 
+            pass
             self.mCOMMA()
 
 
         elif alt20 == 14:
             # sdl92.g:1:110: SEMI
-            pass 
+            pass
             self.mSEMI()
 
 
         elif alt20 == 15:
             # sdl92.g:1:115: DASH
-            pass 
+            pass
             self.mDASH()
 
 
         elif alt20 == 16:
             # sdl92.g:1:120: ANY
-            pass 
+            pass
             self.mANY()
 
 
         elif alt20 == 17:
             # sdl92.g:1:124: ASTERISK
-            pass 
+            pass
             self.mASTERISK()
 
 
         elif alt20 == 18:
             # sdl92.g:1:133: DCL
-            pass 
+            pass
             self.mDCL()
 
 
         elif alt20 == 19:
             # sdl92.g:1:137: END
-            pass 
+            pass
             self.mEND()
 
 
         elif alt20 == 20:
             # sdl92.g:1:141: KEEP
-            pass 
+            pass
             self.mKEEP()
 
 
         elif alt20 == 21:
             # sdl92.g:1:146: PARAMNAMES
-            pass 
+            pass
             self.mPARAMNAMES()
 
 
         elif alt20 == 22:
             # sdl92.g:1:157: SPECIFIC
-            pass 
+            pass
             self.mSPECIFIC()
 
 
         elif alt20 == 23:
             # sdl92.g:1:166: GEODE
-            pass 
+            pass
             self.mGEODE()
 
 
         elif alt20 == 24:
             # sdl92.g:1:172: HYPERLINK
-            pass 
+            pass
             self.mHYPERLINK()
 
 
         elif alt20 == 25:
             # sdl92.g:1:182: ENDTEXT
-            pass 
+            pass
             self.mENDTEXT()
 
 
         elif alt20 == 26:
             # sdl92.g:1:190: RETURN
-            pass 
+            pass
             self.mRETURN()
 
 
         elif alt20 == 27:
             # sdl92.g:1:197: TIMER
-            pass 
+            pass
             self.mTIMER()
 
 
         elif alt20 == 28:
             # sdl92.g:1:203: PROCESS
-            pass 
+            pass
             self.mPROCESS()
 
 
         elif alt20 == 29:
             # sdl92.g:1:211: ENDPROCESS
-            pass 
+            pass
             self.mENDPROCESS()
 
 
         elif alt20 == 30:
             # sdl92.g:1:222: START
-            pass 
+            pass
             self.mSTART()
 
 
         elif alt20 == 31:
             # sdl92.g:1:228: STATE
-            pass 
+            pass
             self.mSTATE()
 
 
         elif alt20 == 32:
             # sdl92.g:1:234: TEXT
-            pass 
+            pass
             self.mTEXT()
 
 
         elif alt20 == 33:
             # sdl92.g:1:239: PROCEDURE
-            pass 
+            pass
             self.mPROCEDURE()
 
 
         elif alt20 == 34:
             # sdl92.g:1:249: ENDPROCEDURE
-            pass 
+            pass
             self.mENDPROCEDURE()
 
 
         elif alt20 == 35:
             # sdl92.g:1:262: PROCEDURE_CALL
-            pass 
+            pass
             self.mPROCEDURE_CALL()
 
 
         elif alt20 == 36:
             # sdl92.g:1:277: ENDSTATE
-            pass 
+            pass
             self.mENDSTATE()
 
 
         elif alt20 == 37:
             # sdl92.g:1:286: INPUT
-            pass 
+            pass
             self.mINPUT()
 
 
         elif alt20 == 38:
             # sdl92.g:1:292: PROVIDED
-            pass 
+            pass
             self.mPROVIDED()
 
 
         elif alt20 == 39:
             # sdl92.g:1:301: PRIORITY
-            pass 
+            pass
             self.mPRIORITY()
 
 
         elif alt20 == 40:
             # sdl92.g:1:310: SAVE
-            pass 
+            pass
             self.mSAVE()
 
 
         elif alt20 == 41:
             # sdl92.g:1:315: NONE
-            pass 
+            pass
             self.mNONE()
 
 
         elif alt20 == 42:
             # sdl92.g:1:320: FOR
-            pass 
+            pass
             self.mFOR()
 
 
         elif alt20 == 43:
             # sdl92.g:1:324: ENDFOR
-            pass 
+            pass
             self.mENDFOR()
 
 
         elif alt20 == 44:
             # sdl92.g:1:331: RANGE
-            pass 
+            pass
             self.mRANGE()
 
 
         elif alt20 == 45:
             # sdl92.g:1:337: NEXTSTATE
-            pass 
+            pass
             self.mNEXTSTATE()
 
 
         elif alt20 == 46:
             # sdl92.g:1:347: ANSWER
-            pass 
+            pass
             self.mANSWER()
 
 
         elif alt20 == 47:
             # sdl92.g:1:354: COMMENT
-            pass 
+            pass
             self.mCOMMENT()
 
 
         elif alt20 == 48:
             # sdl92.g:1:362: LABEL
-            pass 
+            pass
             self.mLABEL()
 
 
         elif alt20 == 49:
             # sdl92.g:1:368: STOP
-            pass 
+            pass
             self.mSTOP()
 
 
         elif alt20 == 50:
             # sdl92.g:1:373: IF
-            pass 
+            pass
             self.mIF()
 
 
         elif alt20 == 51:
             # sdl92.g:1:376: THEN
-            pass 
+            pass
             self.mTHEN()
 
 
         elif alt20 == 52:
             # sdl92.g:1:381: ELSE
-            pass 
+            pass
             self.mELSE()
 
 
         elif alt20 == 53:
             # sdl92.g:1:386: FI
-            pass 
+            pass
             self.mFI()
 
 
         elif alt20 == 54:
             # sdl92.g:1:389: CREATE
-            pass 
+            pass
             self.mCREATE()
 
 
         elif alt20 == 55:
             # sdl92.g:1:396: OUTPUT
-            pass 
+            pass
             self.mOUTPUT()
 
 
         elif alt20 == 56:
             # sdl92.g:1:403: CALL
-            pass 
+            pass
             self.mCALL()
 
 
         elif alt20 == 57:
             # sdl92.g:1:408: THIS
-            pass 
+            pass
             self.mTHIS()
 
 
         elif alt20 == 58:
             # sdl92.g:1:413: SET
-            pass 
+            pass
             self.mSET()
 
 
         elif alt20 == 59:
             # sdl92.g:1:417: RESET
-            pass 
+            pass
             self.mRESET()
 
 
         elif alt20 == 60:
             # sdl92.g:1:423: ENDALTERNATIVE
-            pass 
+            pass
             self.mENDALTERNATIVE()
 
 
         elif alt20 == 61:
             # sdl92.g:1:438: ALTERNATIVE
-            pass 
+            pass
             self.mALTERNATIVE()
 
 
         elif alt20 == 62:
             # sdl92.g:1:450: DECISION
-            pass 
+            pass
             self.mDECISION()
 
 
         elif alt20 == 63:
             # sdl92.g:1:459: ENDDECISION
-            pass 
+            pass
             self.mENDDECISION()
 
 
         elif alt20 == 64:
             # sdl92.g:1:471: EXPORT
-            pass 
+            pass
             self.mEXPORT()
 
 
         elif alt20 == 65:
             # sdl92.g:1:478: EXTERNAL
-            pass 
+            pass
             self.mEXTERNAL()
 
 
         elif alt20 == 66:
             # sdl92.g:1:487: REFERENCED
-            pass 
+            pass
             self.mREFERENCED()
 
 
         elif alt20 == 67:
             # sdl92.g:1:498: CONNECTION
-            pass 
+            pass
             self.mCONNECTION()
 
 
         elif alt20 == 68:
             # sdl92.g:1:509: ENDCONNECTION
-            pass 
+            pass
             self.mENDCONNECTION()
 
 
         elif alt20 == 69:
             # sdl92.g:1:523: FROM
-            pass 
+            pass
             self.mFROM()
 
 
         elif alt20 == 70:
             # sdl92.g:1:528: TO
-            pass 
+            pass
             self.mTO()
 
 
         elif alt20 == 71:
             # sdl92.g:1:531: WITH
-            pass 
+            pass
             self.mWITH()
 
 
         elif alt20 == 72:
             # sdl92.g:1:536: VIA
-            pass 
+            pass
             self.mVIA()
 
 
         elif alt20 == 73:
             # sdl92.g:1:540: ALL
-            pass 
+            pass
             self.mALL()
 
 
         elif alt20 == 74:
             # sdl92.g:1:544: TASK
-            pass 
+            pass
             self.mTASK()
 
 
         elif alt20 == 75:
             # sdl92.g:1:549: JOIN
-            pass 
+            pass
             self.mJOIN()
 
 
         elif alt20 == 76:
             # sdl92.g:1:554: PLUS
-            pass 
+            pass
             self.mPLUS()
 
 
         elif alt20 == 77:
             # sdl92.g:1:559: DOT
-            pass 
+            pass
             self.mDOT()
 
 
         elif alt20 == 78:
             # sdl92.g:1:563: APPEND
-            pass 
+            pass
             self.mAPPEND()
 
 
         elif alt20 == 79:
             # sdl92.g:1:570: IN
-            pass 
+            pass
             self.mIN()
 
 
         elif alt20 == 80:
             # sdl92.g:1:573: OUT
-            pass 
+            pass
             self.mOUT()
 
 
         elif alt20 == 81:
             # sdl92.g:1:577: INOUT
-            pass 
+            pass
             self.mINOUT()
 
 
         elif alt20 == 82:
             # sdl92.g:1:583: SUBSTRUCTURE
-            pass 
+            pass
             self.mSUBSTRUCTURE()
 
 
         elif alt20 == 83:
             # sdl92.g:1:596: ENDSUBSTRUCTURE
-            pass 
+            pass
             self.mENDSUBSTRUCTURE()
 
 
         elif alt20 == 84:
             # sdl92.g:1:612: FPAR
-            pass 
+            pass
             self.mFPAR()
 
 
         elif alt20 == 85:
             # sdl92.g:1:617: PARAM
-            pass 
+            pass
             self.mPARAM()
 
 
         elif alt20 == 86:
             # sdl92.g:1:623: EQ
-            pass 
+            pass
             self.mEQ()
 
 
         elif alt20 == 87:
             # sdl92.g:1:626: NEQ
-            pass 
+            pass
             self.mNEQ()
 
 
         elif alt20 == 88:
             # sdl92.g:1:630: GT
-            pass 
+            pass
             self.mGT()
 
 
         elif alt20 == 89:
             # sdl92.g:1:633: GE
-            pass 
+            pass
             self.mGE()
 
 
         elif alt20 == 90:
             # sdl92.g:1:636: LT
-            pass 
+            pass
             self.mLT()
 
 
         elif alt20 == 91:
             # sdl92.g:1:639: LE
-            pass 
+            pass
             self.mLE()
 
 
         elif alt20 == 92:
             # sdl92.g:1:642: NOT
-            pass 
+            pass
             self.mNOT()
 
 
         elif alt20 == 93:
             # sdl92.g:1:646: OR
-            pass 
+            pass
             self.mOR()
 
 
         elif alt20 == 94:
             # sdl92.g:1:649: XOR
-            pass 
+            pass
             self.mXOR()
 
 
         elif alt20 == 95:
             # sdl92.g:1:653: AND
-            pass 
+            pass
             self.mAND()
 
 
         elif alt20 == 96:
             # sdl92.g:1:657: IMPLIES
-            pass 
+            pass
             self.mIMPLIES()
 
 
         elif alt20 == 97:
             # sdl92.g:1:665: DIV
-            pass 
+            pass
             self.mDIV()
 
 
         elif alt20 == 98:
             # sdl92.g:1:669: MOD
-            pass 
+            pass
             self.mMOD()
 
 
         elif alt20 == 99:
             # sdl92.g:1:673: REM
-            pass 
+            pass
             self.mREM()
 
 
         elif alt20 == 100:
             # sdl92.g:1:677: TRUE
-            pass 
+            pass
             self.mTRUE()
 
 
         elif alt20 == 101:
             # sdl92.g:1:682: FALSE
-            pass 
+            pass
             self.mFALSE()
 
 
         elif alt20 == 102:
             # sdl92.g:1:688: ASNFILENAME
-            pass 
+            pass
             self.mASNFILENAME()
 
 
         elif alt20 == 103:
             # sdl92.g:1:700: NULL
-            pass 
+            pass
             self.mNULL()
 
 
         elif alt20 == 104:
             # sdl92.g:1:705: PLUS_INFINITY
-            pass 
+            pass
             self.mPLUS_INFINITY()
 
 
         elif alt20 == 105:
             # sdl92.g:1:719: MINUS_INFINITY
-            pass 
+            pass
             self.mMINUS_INFINITY()
 
 
         elif alt20 == 106:
             # sdl92.g:1:734: MANTISSA
-            pass 
+            pass
             self.mMANTISSA()
 
 
         elif alt20 == 107:
             # sdl92.g:1:743: EXPONENT
-            pass 
+            pass
             self.mEXPONENT()
 
 
         elif alt20 == 108:
             # sdl92.g:1:752: BASE
-            pass 
+            pass
             self.mBASE()
 
 
         elif alt20 == 109:
             # sdl92.g:1:757: SYSTEM
-            pass 
+            pass
             self.mSYSTEM()
 
 
         elif alt20 == 110:
             # sdl92.g:1:764: ENDSYSTEM
-            pass 
+            pass
             self.mENDSYSTEM()
 
 
         elif alt20 == 111:
             # sdl92.g:1:774: CHANNEL
-            pass 
+            pass
             self.mCHANNEL()
 
 
         elif alt20 == 112:
             # sdl92.g:1:782: ENDCHANNEL
-            pass 
+            pass
             self.mENDCHANNEL()
 
 
         elif alt20 == 113:
             # sdl92.g:1:793: USE
-            pass 
+            pass
             self.mUSE()
 
 
         elif alt20 == 114:
             # sdl92.g:1:797: SIGNAL
-            pass 
+            pass
             self.mSIGNAL()
 
 
         elif alt20 == 115:
             # sdl92.g:1:804: BLOCK
-            pass 
+            pass
             self.mBLOCK()
 
 
         elif alt20 == 116:
             # sdl92.g:1:810: ENDBLOCK
-            pass 
+            pass
             self.mENDBLOCK()
 
 
         elif alt20 == 117:
             # sdl92.g:1:819: SIGNALROUTE
-            pass 
+            pass
             self.mSIGNALROUTE()
 
 
         elif alt20 == 118:
             # sdl92.g:1:831: CONNECT
-            pass 
+            pass
             self.mCONNECT()
 
 
         elif alt20 == 119:
             # sdl92.g:1:839: SYNTYPE
-            pass 
+            pass
             self.mSYNTYPE()
 
 
         elif alt20 == 120:
             # sdl92.g:1:847: ENDSYNTYPE
-            pass 
+            pass
             self.mENDSYNTYPE()
 
 
         elif alt20 == 121:
             # sdl92.g:1:858: NEWTYPE
-            pass 
+            pass
             self.mNEWTYPE()
 
 
         elif alt20 == 122:
             # sdl92.g:1:866: ENDNEWTYPE
-            pass 
+            pass
             self.mENDNEWTYPE()
 
 
         elif alt20 == 123:
             # sdl92.g:1:877: ARRAY
-            pass 
+            pass
             self.mARRAY()
 
 
         elif alt20 == 124:
             # sdl92.g:1:883: CONSTANTS
-            pass 
+            pass
             self.mCONSTANTS()
 
 
         elif alt20 == 125:
             # sdl92.g:1:893: STRUCT
-            pass 
+            pass
             self.mSTRUCT()
 
 
         elif alt20 == 126:
             # sdl92.g:1:900: SYNONYM
-            pass 
+            pass
             self.mSYNONYM()
 
 
         elif alt20 == 127:
             # sdl92.g:1:908: IMPORT
-            pass 
+            pass
             self.mIMPORT()
 
 
         elif alt20 == 128:
             # sdl92.g:1:915: VIEW
-            pass 
+            pass
             self.mVIEW()
 
 
         elif alt20 == 129:
             # sdl92.g:1:920: ACTIVE
-            pass 
+            pass
             self.mACTIVE()
 
 
         elif alt20 == 130:
             # sdl92.g:1:927: STRING
-            pass 
+            pass
             self.mSTRING()
 
 
         elif alt20 == 131:
             # sdl92.g:1:934: BITSTR
-            pass 
+            pass
             self.mBITSTR()
 
 
         elif alt20 == 132:
             # sdl92.g:1:941: OCTSTR
-            pass 
+            pass
             self.mOCTSTR()
 
 
         elif alt20 == 133:
             # sdl92.g:1:948: ID
-            pass 
+            pass
             self.mID()
 
 
         elif alt20 == 134:
             # sdl92.g:1:951: INT
-            pass 
+            pass
             self.mINT()
 
 
         elif alt20 == 135:
             # sdl92.g:1:955: FLOAT
-            pass 
+            pass
             self.mFLOAT()
 
 
         elif alt20 == 136:
             # sdl92.g:1:961: WS
-            pass 
+            pass
             self.mWS()
 
 
         elif alt20 == 137:
             # sdl92.g:1:964: COMMENT2
-            pass 
+            pass
             self.mCOMMENT2()
 
 
@@ -6279,7 +6279,7 @@ class sdl92Lexer(Lexer):
         "\7\uffff"
         )
 
-            
+
     DFA13_transition = [
         DFA.unpack("\1\1\2\uffff\1\2\11\3"),
         DFA.unpack("\1\2\11\3"),
@@ -6496,7 +6496,7 @@ class sdl92Lexer(Lexer):
         "\u0425\uffff"
         )
 
-            
+
     DFA20_transition = [
         DFA.unpack("\2\104\2\uffff\1\104\22\uffff\1\104\1\2\1\52\4\uffff"
         "\1\51\1\3\1\12\1\7\1\41\1\13\1\15\1\4\1\6\1\102\11\103\1\1\1\14"
@@ -7669,7 +7669,7 @@ class sdl92Lexer(Lexer):
         pass
 
 
- 
+
 
 
 
