@@ -18,7 +18,7 @@
 import logging
 from collections import deque
 from itertools import chain
-from singledispatch import singledispatch
+from functools import singledispatch
 
 import genericSymbols, sdlSymbols, Connectors
 

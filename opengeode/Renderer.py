@@ -35,7 +35,7 @@ import sdlSymbols
 import genericSymbols
 import logging
 from itertools import chain
-from singledispatch import singledispatch
+from functools import singledispatch
 from ogParser import type_name
 
 LOG = logging.getLogger(__name__)

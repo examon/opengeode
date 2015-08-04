@@ -26,7 +26,7 @@ import logging
 from itertools import chain
 from collections import defaultdict
 
-from singledispatch import singledispatch
+from functools import singledispatch
 
 import ogAST
 

@@ -50,7 +50,7 @@ import sdl92Parser  # NOQA
 import genericSymbols  # NOQA
 import sdlSymbols
 import PySide.QtXml  # NOQA
-import singledispatch  # NOQA
+#import singledispatch  # NOQA
 import Asn1scc  # NOQA
 import Connectors  # NOQA
 import TextInteraction  # NOQA
