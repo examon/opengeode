@@ -1962,7 +1962,7 @@ class OG_MainWindow(QtGui.QMainWindow, object):
 
 def parse_args():
     ''' Parse command line arguments '''
-    parser = argparse.ArgumentParser(version=__version__)
+    parser = argparse.ArgumentParser()
     parser.add_argument('-g', '--debug', action='store_true', default=False,
             help='Display debug information')
     parser.add_argument('--shared', action='store_true', default=False,
