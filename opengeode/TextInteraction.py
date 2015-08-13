@@ -413,7 +413,7 @@ class EditableText(QGraphicsTextItem, object):
 
     def __str__(self):
         ''' Print the text inside the symbol '''
-        raise TypeError('Use UNICODE, not string!')
+        return self.toPlainText()
 
     def __unicode__(self):
         return self.toPlainText()
