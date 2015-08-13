@@ -603,16 +603,16 @@ package {process_name} is'''.format(process_name=process_name,
     ads_template.append('end {process_name};'
             .format(process_name=process_name))
 
-    with open(process_name + '.adb', 'w') as ada_file:
+    with open(process_name + '.adb', 'wb') as ada_file:
         ada_file.write(
                 '\n'.join(format_ada_code(taste_template)).encode('latin1'))
 
-    with open(process_name + '.ads', 'w') as ada_file:
+    with open(process_name + '.ads', 'wb') as ada_file:
         ada_file.write(
                 '\n'.join(format_ada_code(ads_template)).encode('latin1'))
 
     if simu:
-        with open('{}_interface.aadl'.format(process_name), 'w') as aadl:
+        with open('{}_interface.aadl'.format(process_name), 'wb') as aadl:
             aadl.write('\n'.join(minicv).encode('latin1'))
 
     if not simu:
