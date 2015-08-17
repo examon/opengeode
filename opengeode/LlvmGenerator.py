@@ -12,22 +12,22 @@
 
     Copyright (c) 2012-2013 European Space Agency
 
-    Designed and implemented by Diego Barbera 
+    Designed and implemented by Diego Barbera
 
     Contact: maxime.perrotin@esa.int
 """
 
 import logging
 
-from singledispatch import singledispatch
+from functools import singledispatch
 
 from llvm import core as lc
 from llvm import ee as le
 from llvm import passes
 from llvm import LLVMException
 
-from . import ogAST
-from . import Helper
+import ogAST
+import Helper
 
 LOG = logging.getLogger(__name__)
 
